@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InEgypt — Explore. Navigate. Offline.</title>
+    <meta name="description" content="Navigate Egypt's entire transit network offline. Metro, buses, trains, trams & more — with smart routing and a complete travel guide.">
+    <meta property="og:title" content="InEgypt — Explore. Navigate. Offline.">
+    <meta property="og:description" content="Navigate Egypt's entire transit network offline. Smart routing, attraction guides, and city exploration.">
+    <meta property="og:image" content="assets/logo-bg-dark.png">
+    <link rel="icon" type="image/png" href="assets/logo-dark.png">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --bg2: #f5f5f7;
+            --text: #1a1a1a;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+            --accent: #E05500;
+            --accent2: #FF6B00;
+            --card: #ffffff;
+            --card-shadow: rgba(0,0,0,0.06);
+            --hero-overlay: rgba(0,0,0,0.55);
+            --badge-bg: rgba(255,107,0,0.1);
+            --check: #22c55e;
+            --xmark: #d1d5db;
+            --pro-highlight: rgba(255,107,0,0.06);
+            --lifetime-g1: #101010;
+            --lifetime-g2: #3A7BD5;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f0f0f;
+                --bg2: #1a1a1a;
+                --text: #f0f0f0;
+                --muted: #9ca3af;
+                --border: #2a2a2a;
+                --card: #1c1c1e;
+                --card-shadow: rgba(0,0,0,0.3);
+                --hero-overlay: rgba(0,0,0,0.6);
+                --badge-bg: rgba(255,107,0,0.15);
+                --pro-highlight: rgba(255,107,0,0.08);
+                --xmark: #4a4a4a;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #1a1a1a;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 40px 24px;
+        }
+        .hero-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 22px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+        .hero h1 span {
+            font-weight: 300;
+            opacity: 0.8;
+        }
+        .hero .slogan {
+            font-size: 16px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .hero .tagline {
+            font-size: 18px;
+            color: rgba(255,255,255,0.85);
+            max-width: 440px;
+            margin: 0 auto 28px;
+        }
+        .app-store-badge {
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+        .app-store-badge:hover {
+            transform: scale(1.05);
+        }
+        .app-store-badge img {
+            height: 52px;
+        }
+
+        /* Section container */
+        .section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 64px 24px;
+        }
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+        }
+        .section-subtitle {
+            font-size: 17px;
+            color: var(--muted);
+            text-align: center;
+            margin-bottom: 48px;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Feature grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .feature-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--card-shadow);
+        }
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+        .feature-card h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .feature-card p {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* Transport modes */
+        .modes-section {
+            background: var(--bg2);
+        }
+        .modes-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+        .mode-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .mode-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        /* Pro plans */
+        .plans-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        @media (max-width: 560px) {
+            .plans-container { grid-template-columns: 1fr; }
+        }
+        .plan-card {
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            padding: 28px 24px;
+            text-align: center;
+            position: relative;
+            background: var(--card);
+        }
+        .plan-card.plus {
+            border-color: var(--accent);
+        }
+        .plan-card.lifetime {
+            border-color: var(--lifetime-g2);
+        }
+        .plan-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 4px 14px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #fff;
+        }
+        .plan-badge.plus-badge {
+            background: linear-gradient(135deg, #E05500, #FF6B00);
+        }
+        .plan-badge.lifetime-badge {
+            background: linear-gradient(135deg, #101010, #3A7BD5);
+        }
+        .plan-name {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 8px;
+            margin-bottom: 4px;
+        }
+        .plan-type {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+        .plan-features {
+            list-style: none;
+            text-align: left;
+            padding: 0;
+        }
+        .plan-features li {
+            font-size: 14px;
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .plan-features li::before {
+            content: "✓";
+            color: var(--check);
+            font-weight: 700;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+        .plan-features li.exclusive::before {
+            content: "★";
+            color: var(--lifetime-g2);
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 32px;
+            background: var(--card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px 16px;
+            font-size: 14px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .comparison-table th {
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: var(--bg2);
+        }
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        .comparison-table tr.pro-row {
+            background: var(--pro-highlight);
+        }
+        .check { color: var(--check); font-weight: 700; }
+        .xmark { color: var(--xmark); }
+        .limited-text { color: var(--muted); font-size: 12px; }
+
+        /* Languages */
+        .languages {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 24px;
+        }
+        .lang-tag {
+            padding: 8px 16px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: var(--bg2);
+            text-align: center;
+        }
+        .cta-section .section-title {
+            margin-bottom: 16px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 32px 24px;
+            border-top: 1px solid var(--border);
+            font-size: 14px;
+            color: var(--muted);
+        }
+        .footer-links {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+    <img src="assets/hero.jpg" alt="Egypt temple columns at sunset" class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <img src="assets/logo-bg-dark.png" alt="InEgypt logo" class="hero-logo">
+        <h1><span>In</span>Egypt</h1>
+        <p class="slogan">Explore &middot; Navigate &middot; Offline</p>
+        <p class="tagline">Navigate Egypt's entire transit network and explore the country's treasures — all without internet.</p>
+        <a href="https://apps.apple.com/eg/app/inegypt/id1533234023" class="app-store-badge">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="section">
+    <h2 class="section-title">Everything You Need in Egypt</h2>
+    <p class="section-subtitle">Transit routing, city guides, attraction details, and safety tips — all in one app.</p>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🗺️</div>
+            <h3>Smart Routing</h3>
+            <p>Step-by-step transit directions across Metro, Bus, Train, Tram, BRT, LRT, and Monorail.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📡</div>
+            <h3>Fully Offline</h3>
+            <p>Routes, schedules, guides, and safety tips work without internet. Download once, use anywhere.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏛️</div>
+            <h3>Explore Attractions</h3>
+            <p>1,000+ attractions with ratings, hours, tickets, activity scores, and nearby transit.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏙️</div>
+            <h3>City Guides</h3>
+            <p>28+ cities with population, weather, hotel costs, and top attractions for each.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🚆</div>
+            <h3>Intercity Travel</h3>
+            <p>Plan long-distance trips by train, intercity bus, or flight between major cities.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Scam Shield</h3>
+            <p>Stay safe with common scam alerts, fair pricing guide, and emergency contacts.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Transport Modes -->
+<section class="section modes-section">
+    <h2 class="section-title">Every Transit Mode Covered</h2>
+    <p class="section-subtitle">One app for Egypt's entire public transport network.</p>
+
+    <div class="modes-grid">
+        <span class="mode-badge"><span class="mode-dot" style="background:#E53935"></span> Metro</span>
+        <span class="mode-badge"><span class="mode-dot" style="background:#43A047"></span> BRT</span>
+        <span class="mode-badge"><span class="mode-dot" style="background:#1E88E5"></span> LRT</span>
+        <span class="mode-badge"><span class="mode-dot" style="background:#8E24AA"></span> Monorail</span>
+        <span class="mode-badge"><span class="mode-dot" style="background:#FB8C00"></span> Tram</span>
+        <span class="mode-badge"><span class="mode-dot" style="background:#D32F2F"></span> Train</span>
+        <span class="mode-badge"><span class="mode-dot" style="background:#00897B"></span> Bus</span>
+        <span class="mode-badge"><span class="mode-dot" style="background:#5C6BC0"></span> Intercity Bus</span>
+        <span class="mode-badge"><span class="mode-dot" style="background:#3F51B5"></span> Flight</span>
+    </div>
+</section>
+
+<!-- Pro Plans -->
+<section class="section">
+    <h2 class="section-title">InEgypt Pro</h2>
+    <p class="section-subtitle">Unlock the full experience with a one-time purchase. No subscriptions.</p>
+
+    <div class="plans-container">
+        <!-- Plus -->
+        <div class="plan-card plus">
+            <span class="plan-badge plus-badge">Most Popular</span>
+            <h3 class="plan-name">Plus</h3>
+            <p class="plan-type">One-time purchase</p>
+            <ul class="plan-features">
+                <li>Unlimited route searches</li>
+                <li>Full offline mode</li>
+                <li>Station guide</li>
+                <li>Line profiles</li>
+                <li>Train schedules</li>
+                <li>Fair Price Guide</li>
+                <li>Scam Shield</li>
+            </ul>
+        </div>
+        <!-- Lifetime -->
+        <div class="plan-card lifetime">
+            <span class="plan-badge lifetime-badge">Best Value</span>
+            <h3 class="plan-name">Lifetime</h3>
+            <p class="plan-type">All future updates included</p>
+            <ul class="plan-features">
+                <li>Everything in Plus</li>
+                <li>All future features</li>
+                <li>Priority support</li>
+                <li class="exclusive">Supporter Badge</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th style="text-align:left">Feature</th>
+                <th>Free</th>
+                <th>Plus</th>
+                <th>Lifetime</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Explore Egypt</td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+                <td>Discover Places</td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+                <td>Save Favorites</td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+                <td>Interactive Map</td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+                <td>9 Languages</td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+            </tr>
+            <tr class="pro-row">
+                <td>Unlimited Routes</td>
+                <td><span class="limited-text">Limited</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+            </tr>
+            <tr class="pro-row">
+                <td>Station Guide</td>
+                <td><span class="xmark">✕</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+            </tr>
+            <tr class="pro-row">
+                <td>Line Profile</td>
+                <td><span class="xmark">✕</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+            </tr>
+            <tr class="pro-row">
+                <td>Train Schedules</td>
+                <td><span class="xmark">✕</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+            </tr>
+            <tr class="pro-row">
+                <td>Offline Mode</td>
+                <td><span class="xmark">✕</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+            </tr>
+            <tr class="pro-row">
+                <td>Fair Price Guide</td>
+                <td><span class="xmark">✕</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+            </tr>
+            <tr class="pro-row">
+                <td>Scam Shield</td>
+                <td><span class="xmark">✕</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+            </tr>
+            <tr class="pro-row">
+                <td>Supporter Badge</td>
+                <td><span class="xmark">✕</span></td>
+                <td><span class="xmark">✕</span></td>
+                <td><span class="check">✓</span></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Languages -->
+<section class="section modes-section">
+    <h2 class="section-title">Available in 9 Languages</h2>
+    <p class="section-subtitle">Built for residents and travelers from around the world.</p>
+    <div class="languages">
+        <span class="lang-tag">🇺🇸 English</span>
+        <span class="lang-tag">🇪🇬 العربية</span>
+        <span class="lang-tag">🇫🇷 Français</span>
+        <span class="lang-tag">🇩🇪 Deutsch</span>
+        <span class="lang-tag">🇪🇸 Español</span>
+        <span class="lang-tag">🇮🇹 Italiano</span>
+        <span class="lang-tag">🇷🇺 Русский</span>
+        <span class="lang-tag">🇹🇷 Türkçe</span>
+        <span class="lang-tag">🇨🇳 中文</span>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta-section">
+    <h2 class="section-title">All of Egypt in Your Pocket</h2>
+    <p class="section-subtitle">Download InEgypt and start exploring — even without internet.</p>
+    <a href="https://apps.apple.com/eg/app/inegypt/id1533234023" class="app-store-badge">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+    </a>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="support.html">Support</a>
+        <a href="mailto:inegyptapp@gmail.com">Contact</a>
+    </div>
+    <p>&copy; 2026 InEgypt. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
