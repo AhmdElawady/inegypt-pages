@@ -80,33 +80,33 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="effective">Effective Date: April 1, 2026</p>
+<p class="effective">Effective Date: April 18, 2026</p>
 
 <p>InEgypt is developed by Ahmed Elawady, an independent developer based in Egypt. This policy explains how the InEgypt iOS application handles your information.</p>
 
 <div class="highlight">
-    <p><strong>The short version:</strong> InEgypt is designed with privacy at its core. We do not collect personal data, we do not track you, and we do not use any analytics services.</p>
+    <p><strong>The short version:</strong> InEgypt does not require an account and does not collect your name, email, or personal identifiers. We use Meta's advertising SDK to measure the effectiveness of our ads — you decide whether to allow this via the iOS App Tracking Transparency prompt, and you can change your choice at any time.</p>
 </div>
 
 <hr class="divider">
 
 <h2>1. Information We Collect</h2>
-<p>InEgypt collects minimal information, only what is necessary to provide its core features:</p>
+<p>InEgypt collects minimal information, only what is necessary to provide its core features and measure our advertising:</p>
 <ul>
-    <li><strong>Location Data</strong> — When you grant permission, the app accesses your location <em>while the app is in use</em> to find nearby transit stops and calculate routes from your current position. Location data is processed entirely on your device and is never transmitted to any server.</li>
+    <li><strong>Location Data</strong> — When you grant permission, the app accesses your location <em>while the app is in use</em> to find nearby transit stops and calculate routes from your current position. Location data is processed entirely on your device and is never transmitted to any server operated by us.</li>
     <li><strong>Device Information (Support Only)</strong> — If you choose to contact support via the in-app email feature, your device model, iOS version, and app version are included in the email to help us assist you. This only happens when you explicitly send a support email.</li>
     <li><strong>Language Preference</strong> — Your selected app language is stored locally on your device.</li>
+    <li><strong>Advertising & App Events</strong> — When you authorize tracking via Apple's App Tracking Transparency (ATT) prompt, the Meta (Facebook) SDK collects your advertising identifier (IDFA), app events such as installs, first launches, and in-app purchases, your IP address, and basic device information. This is used to measure and optimize our advertising campaigns. If you do not authorize tracking, only limited, non-identifying aggregate event data is sent (as required by Apple's SKAdNetwork framework).</li>
 </ul>
 
 <h2>2. Information We Do Not Collect</h2>
 <p>We want to be clear about what we do <strong>not</strong> do:</p>
 <ul>
     <li>We do not require account creation or registration</li>
-    <li>We do not collect names, email addresses, or personal identifiers</li>
-    <li>We do not use analytics or tracking services of any kind</li>
-    <li>We do not track your behavior across apps or websites</li>
-    <li>We do not sell, share, or transfer any data to third parties</li>
+    <li>We do not collect your name, email address, or contact list</li>
     <li>We do not collect background location data</li>
+    <li>We do not access your photos, camera, microphone, or contacts</li>
+    <li>We do not sell your personal data</li>
 </ul>
 
 <h2>3. How We Use Information</h2>
@@ -116,6 +116,7 @@
     <li>Displaying nearby transit stops and attractions</li>
     <li>Providing proximity alerts for nearby points of interest (when enabled)</li>
     <li>Managing local cache on your device</li>
+    <li>Measuring the performance of our advertising campaigns and understanding how users find and use the app</li>
 </ul>
 
 <h2>4. Data Storage</h2>
@@ -125,34 +126,49 @@
     <li><strong>Cached Images</strong> — Temporarily stored on your device; can be cleared from Settings</li>
     <li><strong>App Content</strong> — Transit and attraction data is included within the app to support its core functionality. Access to certain features and data may require an active internet connection depending on your plan.</li>
 </ul>
-<p>No personal data is stored on external servers under our control.</p>
+<p>We do not operate our own servers for personal data storage. Advertising-related events are transmitted directly from your device to Meta's servers and are governed by <a href="https://www.facebook.com/policy.php">Meta's Privacy Policy</a>.</p>
 
-<h2>5. Third-Party Services</h2>
+<h2>5. Advertising & Analytics</h2>
+<p>InEgypt uses the <strong>Meta (Facebook) SDK</strong> to measure the effectiveness of advertising campaigns that bring users to the app and to improve the app experience. Here is exactly how it works:</p>
+<ul>
+    <li><strong>Your choice comes first.</strong> On first launch (after onboarding), iOS shows a system prompt asking whether you want to allow tracking. You can choose "Allow" or "Ask App Not to Track". Your choice is fully respected.</li>
+    <li><strong>What is collected if you allow tracking:</strong> your advertising identifier (IDFA), app events such as launch and purchase, IP address, approximate location derived from IP, device model, OS version, and app version.</li>
+    <li><strong>What is collected if you decline:</strong> only anonymized, aggregated install and conversion data via Apple's SKAdNetwork framework — no identifiers, no individual tracking.</li>
+    <li><strong>Where the data goes:</strong> directly from your device to Meta's servers. It is subject to <a href="https://www.facebook.com/policy.php">Meta's Data Policy</a>.</li>
+    <li><strong>Changing your mind:</strong> you can change your tracking choice at any time in <em>iOS Settings → Privacy & Security → Tracking → InEgypt</em>. You can also manage how Meta uses advertising data about you at <a href="https://www.facebook.com/ads/preferences">facebook.com/ads/preferences</a>.</li>
+</ul>
+
+<h2>6. Third-Party Services</h2>
 <p>InEgypt uses the following third-party services:</p>
 <ul>
+    <li><strong>Meta (Facebook) SDK</strong> — For advertising attribution, conversion measurement, and app analytics. Data collection depends on your ATT choice (see above). Subject to <a href="https://www.facebook.com/policy.php">Meta's Privacy Policy</a>.</li>
     <li><strong>Apple MapKit</strong> — For map display and place search. Subject to <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</li>
     <li><strong>Apple StoreKit</strong> — For processing in-app purchases. All payment information is handled entirely by Apple. We never see or store your payment details.</li>
     <li><strong>Apple CloudKit</strong> — For loading attraction images and content. Subject to Apple's Privacy Policy.</li>
     <li><strong>Apple WeatherKit</strong> — For weather information. Subject to Apple's Privacy Policy.</li>
+    <li><strong>Apple SKAdNetwork</strong> — Apple's privacy-preserving framework for measuring ad conversions without identifying individual users.</li>
     <li><strong>Nuke (Open Source)</strong> — An image loading library that caches images locally on your device. It does not collect or transmit any data.</li>
 </ul>
 
-<h2>6. In-App Purchases</h2>
-<p>InEgypt offers optional one-time purchases (Plus and Lifetime Access). All transactions are processed by Apple through the App Store. We do not have access to your payment information, credit card details, or Apple ID. Purchase records are managed by Apple and can be viewed in your App Store account.</p>
+<h2>7. In-App Purchases</h2>
+<p>InEgypt offers optional one-time purchases (Plus and Lifetime Access). All transactions are processed by Apple through the App Store. We do not have access to your payment information, credit card details, or Apple ID. Purchase records are managed by Apple and can be viewed in your App Store account. Purchase events may be reported to Meta for ad attribution if you have authorized tracking.</p>
 
-<h2>7. Children's Privacy</h2>
-<p>InEgypt is not directed at children under the age of 13. We do not knowingly collect any personal information from children. Since the app does not collect personal data from any user, no special provisions are necessary.</p>
+<h2>8. Children's Privacy</h2>
+<p>InEgypt is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information through our app, please contact us and we will take appropriate steps.</p>
 
-<h2>8. Location Permission</h2>
+<h2>9. Location Permission</h2>
 <p>InEgypt requests location access only with the <strong>"While Using the App"</strong> permission level. The app never requests "Always" location access and does not track your location in the background. You can revoke location permission at any time in your device's Settings, and the app will continue to function — you will simply need to enter locations manually.</p>
 
-<h2>9. Data Security</h2>
-<p>Transit data files are encrypted and stored within the app bundle. All network communication with Apple services uses industry-standard encryption (HTTPS/TLS). Since we do not operate servers or collect user data, there is no centralized database that could be compromised.</p>
+<h2>10. Your Rights</h2>
+<p>Depending on your location, you may have rights under applicable laws (such as GDPR in the EU or CCPA in California) to access, correct, or delete personal data held about you. Because InEgypt does not collect direct personal identifiers, most data-subject requests should be directed to Meta using the controls linked above. For anything related to your InEgypt device data (favorites, cached content), you can clear it at any time from the app's Settings.</p>
 
-<h2>10. Changes to This Policy</h2>
+<h2>11. Data Security</h2>
+<p>Transit data files are encrypted and stored within the app bundle. All network communication uses industry-standard encryption (HTTPS/TLS). Advertising data transmitted to Meta is secured in transit by their infrastructure.</p>
+
+<h2>12. Changes to This Policy</h2>
 <p>We may update this Privacy Policy from time to time. Changes will be reflected on this page with an updated effective date. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
 
-<h2>11. Contact Us</h2>
+<h2>13. Contact Us</h2>
 <p>If you have questions about this Privacy Policy, please contact us at:</p>
 <p><a href="mailto:inegyptapp@gmail.com">inegyptapp@gmail.com</a></p>
 
