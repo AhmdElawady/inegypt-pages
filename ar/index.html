@@ -1,32 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <script>document.documentElement.classList.add('js');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InEgypt — Explore. Plan. Navigate.</title>
-    <meta name="description" content="Navigate Egypt's entire transit network and plan your whole trip — offline. Metro, bus, train, tram & more with smart routing, itinerary planner, fair-price guide and a complete travel guide.">
+    <title>InEgypt — استكشف. خطّط. تنقّل.</title>
+    <meta name="description" content="تنقّل في شبكة مواصلات مصر بالكامل وخطّط رحلتك — دون إنترنت. مترو وأتوبيس وقطار وترام والمزيد، مع تخطيط ذكي للمسارات، ومُخطِّط لبرنامج الرحلة، ودليل للأسعار العادلة، ودليل سياحي كامل.">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_EG">
+    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:site_name" content="InEgypt">
-    <meta property="og:url" content="https://ahmdelawady.github.io/inegypt-pages/">
-    <meta property="og:title" content="InEgypt — Explore. Plan. Navigate.">
-    <meta property="og:description" content="Smart transit routing, a tap-to-plan trip builder, fair-price safety tools and a full travel guide for Egypt — all offline.">
+    <meta property="og:url" content="https://ahmdelawady.github.io/inegypt-pages/ar/">
+    <meta property="og:title" content="InEgypt — استكشف. خطّط. تنقّل.">
+    <meta property="og:description" content="تخطيط ذكي للمسارات، ومُخطِّط رحلات بلمسة واحدة، وأدوات أمان بأسعار عادلة، ودليل سياحي كامل لمصر — كل ذلك دون إنترنت.">
     <meta property="og:image" content="https://ahmdelawady.github.io/inegypt-pages/assets/logo-bg-dark.png">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="1024">
-    <meta property="og:image:alt" content="InEgypt app icon">
+    <meta property="og:image:alt" content="أيقونة تطبيق InEgypt">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="InEgypt — Explore. Plan. Navigate.">
-    <meta name="twitter:description" content="Smart transit routing, a tap-to-plan trip builder, fair-price safety tools and a full travel guide for Egypt — all offline.">
+    <meta name="twitter:title" content="InEgypt — استكشف. خطّط. تنقّل.">
+    <meta name="twitter:description" content="تخطيط ذكي للمسارات، ومُخطِّط رحلات بلمسة واحدة، وأدوات أمان بأسعار عادلة، ودليل سياحي كامل لمصر — كل ذلك دون إنترنت.">
     <meta name="twitter:image" content="https://ahmdelawady.github.io/inegypt-pages/assets/logo-bg-dark.png">
-    <link rel="canonical" href="https://ahmdelawady.github.io/inegypt-pages/">
+    <link rel="canonical" href="https://ahmdelawady.github.io/inegypt-pages/ar/">
     <link rel="alternate" hreflang="en" href="https://ahmdelawady.github.io/inegypt-pages/">
     <link rel="alternate" hreflang="ar" href="https://ahmdelawady.github.io/inegypt-pages/ar/">
     <link rel="alternate" hreflang="x-default" href="https://ahmdelawady.github.io/inegypt-pages/">
     <meta name="theme-color" content="#000000">
-    <link rel="icon" type="image/png" href="assets/logo-dark.png">
-    <link rel="apple-touch-icon" href="assets/logo-dark.png">
-    <link rel="preload" as="image" href="assets/explore-home.jpg" fetchpriority="high">
+    <link rel="icon" type="image/png" href="../assets/logo-dark.png">
+    <link rel="apple-touch-icon" href="../assets/logo-dark.png">
+    <link rel="preload" as="image" href="../assets/explore-home.jpg" fetchpriority="high">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -34,8 +36,8 @@
         "name": "InEgypt",
         "operatingSystem": "iOS",
         "applicationCategory": "TravelApplication",
-        "description": "Navigate Egypt's entire transit network and plan your whole trip — offline. Metro, bus, train, tram and more with smart routing, an itinerary planner, fair-price guide and a complete travel guide.",
-        "url": "https://ahmdelawady.github.io/inegypt-pages/",
+        "description": "تنقّل في شبكة مواصلات مصر بالكامل وخطّط رحلتك — دون إنترنت، مع تخطيط ذكي للمسارات ومُخطِّط لبرنامج الرحلة ودليل للأسعار العادلة ودليل سياحي كامل.",
+        "url": "https://ahmdelawady.github.io/inegypt-pages/ar/",
         "downloadUrl": "https://apps.apple.com/eg/app/inegypt/id1533234023",
         "image": "https://ahmdelawady.github.io/inegypt-pages/assets/logo-bg-dark.png",
         "inLanguage": ["en", "ar", "fr", "de", "es", "it", "ru", "tr", "zh"],
@@ -82,7 +84,7 @@
     * { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
     body {
-        font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",sans-serif;
+        font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","Geeza Pro",sans-serif;
         background:var(--bg); color:var(--text);
         line-height:1.5; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
         overflow-x:hidden;
@@ -265,7 +267,7 @@
     .showcase-media { flex:0 0 auto; width:min(42vw,320px); }
     .showcase-media.dual { width:min(52vw,440px); display:flex; align-items:flex-end; gap:18px; }
     .showcase-media.dual .device.back { width:66%; margin-bottom:26px; opacity:.9; }
-    .showcase-media.dual .device.front { width:74%; margin-left:-24%; }
+    .showcase-media.dual .device.front { width:74%; margin-inline-start:-24%; }
     .showcase-copy { flex:1; min-width:0; }
     .showcase-copy .label { font-size:13px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--accent); margin-bottom:12px; }
     .showcase-copy h3 { font-size:clamp(26px,3.6vw,40px); font-weight:700; letter-spacing:-.02em; line-height:1.12; margin-bottom:16px; }
@@ -275,8 +277,8 @@
     @media (max-width:800px){
         .showcase, .showcase.rev { flex-direction:column; text-align:center; gap:36px; }
         .showcase-media, .showcase-media.dual { width:min(72vw,300px); }
-        .showcase-media.dual .device.front{ margin-left:-30%; }
-        .ticks{ display:inline-flex; text-align:left; }
+        .showcase-media.dual .device.front{ margin-inline-start:-30%; }
+        .ticks{ display:inline-flex; text-align:start; }
     }
 
     /* ── Offline band ── */
@@ -339,6 +341,11 @@
     .foot-brand { display:inline-flex; align-items:center; gap:9px; font-weight:600; font-size:16px; }
     .foot-brand img { width:24px; height:24px; border-radius:7px; }
     .foot-copy { font-size:12px; color:var(--text-3); }
+    /* Arabic RTL: Arabic script must not be letter-spaced (breaks joining) or uppercased; keep the Latin brand LTR */
+    .hero-eyebrow, .eyebrow, .showcase-copy .label, .plan .pop-tag, .plan-badge, .tag-new { letter-spacing:normal; text-transform:none; }
+    .hero h1, .h2, .showcase-copy h3, .pillar h3, .stat b { letter-spacing:normal; }
+    .hero h1 { line-height:1.14; } .h2 { line-height:1.2; } .showcase-copy h3 { line-height:1.28; }
+    .nav-brand, .foot-brand { direction:ltr; }
     </style>
 </head>
 <body>
@@ -346,87 +353,87 @@
 <!-- ══ Nav ══ -->
 <nav class="nav" id="nav" aria-label="Primary">
     <div class="wrap">
-        <a class="nav-brand" href="#top"><img src="assets/logo-dark.png" alt=""><span><b>In</b>Egypt</span></a>
+        <a class="nav-brand" href="#top"><img src="../assets/logo-dark.png" alt=""><span><b>In</b>Egypt</span></a>
         <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#plan">Plan a Trip</a>
-            <a href="#transit">Transit</a>
-            <a href="#pricing">Pricing</a>
+            <a href="#features">المميزات</a>
+            <a href="#plan">خطّط رحلة</a>
+            <a href="#transit">المواصلات</a>
+            <a href="#pricing">الأسعار</a>
         </div>
         <div class="nav-right">
-            <a class="nav-lang" href="ar/" hreflang="ar" lang="ar">العربية</a>
-            <a class="nav-cta" href="https://apps.apple.com/eg/app/inegypt/id1533234023">Download</a>
+            <a class="nav-lang" href="../" hreflang="en" lang="en">English</a>
+            <a class="nav-cta" href="https://apps.apple.com/eg/app/inegypt/id1533234023">تحميل</a>
         </div>
     </div>
 </nav>
 
 <!-- ══ Hero ══ -->
 <header class="hero" id="top">
-    <span class="hero-eyebrow">Explore · Plan · Navigate</span>
-    <h1>Explore Egypt.<br><span class="line2">Move like a local.</span></h1>
-    <p class="tag">Every metro, bus, train and tram — plus a full trip planner, fair-price guide and travel guide. One app, made only for Egypt. Works with no signal.</p>
+    <span class="hero-eyebrow">استكشف · خطّط · تنقّل</span>
+    <h1>استكشف مصر.<br><span class="line2">تنقّل كأهل البلد.</span></h1>
+    <p class="tag">كل المترو والأتوبيس والقطار والترام — بالإضافة إلى مُخطِّط رحلات متكامل، ودليل للأسعار العادلة، ودليل سياحي. تطبيق واحد، مصمّم لمصر وحدها. يعمل دون إنترنت.</p>
     <div class="hero-cta">
         <a class="badge" href="https://apps.apple.com/eg/app/inegypt/id1533234023">
-            <img src="assets/app-store-badge.svg" alt="Download on the App Store">
+            <img src="../assets/app-store-badge.svg" alt="التحميل من App Store">
         </a>
     </div>
-    <p class="hero-note">Free to download · 9 languages · No account needed</p>
+    <p class="hero-note">تحميل مجاني · 9 لغات · دون الحاجة إلى حساب</p>
 
     <div class="hero-phones" id="heroPhones">
-        <div class="device side left" data-par="0.10"><div class="scr"><div class="island"></div><img src="assets/routes.jpg" alt="Transit routing" decoding="async" onerror="this.src='assets/screen-routing.jpg'"></div></div>
-        <div class="device" data-par="0.04"><div class="scr"><div class="island"></div><img src="assets/explore-home.jpg" alt="Explore Egypt map" fetchpriority="high" decoding="async" onerror="this.src='assets/screen-explore.jpg'"></div></div>
-        <div class="device side right" data-par="0.10"><div class="scr"><div class="island"></div><img src="assets/trip-itinerary.jpg" alt="Trip itinerary" decoding="async" onerror="this.src='assets/screen-attraction.jpg'"></div></div>
+        <div class="device side left" data-par="0.10"><div class="scr"><div class="island"></div><img src="../assets/routes.jpg" alt="مسارات المواصلات" decoding="async" onerror="this.src='assets/screen-routing.jpg'"></div></div>
+        <div class="device" data-par="0.04"><div class="scr"><div class="island"></div><img src="../assets/explore-home.jpg" alt="خريطة استكشاف مصر" fetchpriority="high" decoding="async" onerror="this.src='assets/screen-explore.jpg'"></div></div>
+        <div class="device side right" data-par="0.10"><div class="scr"><div class="island"></div><img src="../assets/trip-itinerary.jpg" alt="برنامج الرحلة" decoding="async" onerror="this.src='assets/screen-attraction.jpg'"></div></div>
     </div>
 </header>
 
 <!-- ══ Stats ══ -->
 <section class="tinted">
     <div class="stats"><div class="wrap">
-        <div class="stat reveal"><b>9</b><span>Transit modes</span></div>
-        <div class="stat reveal d1"><b>220<span class="grad-text">+</span></b><span>Attractions</span></div>
-        <div class="stat reveal d2"><b>34</b><span>Cities</span></div>
-        <div class="stat reveal d3"><b>9</b><span>Languages</span></div>
-        <div class="stat reveal d4"><b>100%</b><span>Offline</span></div>
+        <div class="stat reveal"><b>9</b><span>وسائل نقل</span></div>
+        <div class="stat reveal d1"><b>220<span class="grad-text">+</span></b><span>معلم سياحي</span></div>
+        <div class="stat reveal d2"><b>34</b><span>مدينة</span></div>
+        <div class="stat reveal d3"><b>9</b><span>لغات</span></div>
+        <div class="stat reveal d4"><b>100%</b><span>دون إنترنت</span></div>
     </div></div>
 </section>
 
 <!-- ══ Features ══ -->
 <section class="band" id="features">
     <div class="wrap">
-        <span class="eyebrow reveal">Everything in one app</span>
-        <h2 class="h2 reveal">Your complete guide to Egypt</h2>
-        <p class="sub reveal">From door-to-door transit to a fully planned trip and staying safe — InEgypt does it all, online or off.</p>
+        <span class="eyebrow reveal">كل شيء في تطبيق واحد</span>
+        <h2 class="h2 reveal">دليلك الكامل لمصر</h2>
+        <p class="sub reveal">من التنقّل من الباب إلى الباب، إلى رحلة مُخطَّطة بالكامل، إلى سلامتك — يفعل InEgypt ذلك كله، بإنترنت أو دونه.</p>
 
         <div class="pillars">
             <div class="pillar reveal">
                 <div class="ic" aria-hidden="true">🗺️</div>
-                <h3>Smart routing</h3>
-                <p>Step-by-step directions across metro, bus, train, tram, BRT, LRT, monorail and intercity — in one search, with fares and times.</p>
+                <h3>مسارات ذكية</h3>
+                <p>إرشادات خطوة بخطوة عبر المترو والأتوبيس والقطار والترام والـ BRT والـ LRT والمونوريل والنقل بين المدن — في بحث واحد، مع الأسعار والمواعيد.</p>
             </div>
             <div class="pillar reveal d1">
                 <div class="ic" aria-hidden="true">🧭</div>
-                <h3>Trip planner <span class="tag-new">NEW</span></h3>
-                <p>Tell it your dates and interests and get a complete day-by-day itinerary in a tap — sequenced, mapped and costed.</p>
+                <h3>مُخطِّط الرحلات <span class="tag-new">جديد</span></h3>
+                <p>أخبره بمواعيدك واهتماماتك واحصل على برنامج يومي متكامل بلمسة واحدة — مُرتَّب، ومُحدَّد على الخريطة، ومحسوب التكلفة.</p>
             </div>
             <div class="pillar reveal d2">
                 <div class="ic" aria-hidden="true">🔔</div>
-                <h3>Daily commute <span class="tag-new">NEW</span></h3>
-                <p>Save your regular route and get personalized departure alerts so you're never late — right on time, every day.</p>
+                <h3>التنقّل اليومي <span class="tag-new">جديد</span></h3>
+                <p>احفظ مسارك المعتاد واحصل على تنبيهات مغادرة مخصّصة كي لا تتأخّر أبدًا — في الموعد تمامًا، كل يوم.</p>
             </div>
             <div class="pillar reveal">
                 <div class="ic" aria-hidden="true">🏛️</div>
-                <h3>Explore &amp; discover</h3>
-                <p>220+ attractions and 34 cities with ratings, hours, activity scores, galleries and the nearest transit to each.</p>
+                <h3>استكشف واكتشف</h3>
+                <p>أكثر من 220 معلمًا و34 مدينة مع التقييمات والمواعيد ودرجات النشاط ومعارض الصور وأقرب وسيلة نقل لكلٍّ منها.</p>
             </div>
             <div class="pillar reveal d1">
                 <div class="ic" aria-hidden="true">🛡️</div>
-                <h3>Scam Shield</h3>
-                <p>Common-scam alerts, a fair-price guide and emergency numbers — travel with confidence, anywhere in Egypt.</p>
+                <h3>درع الحماية</h3>
+                <p>تنبيهات لأشهر عمليات النصب، ودليل للأسعار العادلة، وأرقام الطوارئ — سافر بثقة في أي مكان في مصر.</p>
             </div>
             <div class="pillar reveal d2">
                 <div class="ic" aria-hidden="true">💱</div>
-                <h3>Currency &amp; costs <span class="tag-new">NEW</span></h3>
-                <p>Convert any currency to EGP and track what your trip is costing you as you go — no connection required.</p>
+                <h3>العملة والمصاريف <span class="tag-new">جديد</span></h3>
+                <p>حوّل أي عملة إلى الجنيه المصري وتابع تكلفة رحلتك أولًا بأول — دون الحاجة إلى إنترنت.</p>
             </div>
         </div>
     </div>
@@ -435,19 +442,19 @@
 <!-- ══ Transit modes ══ -->
 <section class="band pt0" id="transit">
     <div class="wrap">
-        <span class="eyebrow reveal">One network</span>
-        <h2 class="h2 reveal">Nine ways to move. One search.</h2>
-        <p class="sub reveal">InEgypt understands the whole country's transit network and combines every mode to get you there.</p>
+        <span class="eyebrow reveal">شبكة واحدة</span>
+        <h2 class="h2 reveal">تسع وسائل للتنقّل. بحث واحد.</h2>
+        <p class="sub reveal">يفهم InEgypt شبكة مواصلات البلد بأكملها، ويجمع كل الوسائل ليوصلك إلى وجهتك.</p>
         <div class="modes reveal d1">
-            <span class="mode"><span class="dot" style="background:#E53935"></span>Metro</span>
+            <span class="mode"><span class="dot" style="background:#E53935"></span>مترو</span>
             <span class="mode"><span class="dot" style="background:#43A047"></span>BRT</span>
             <span class="mode"><span class="dot" style="background:#1E88E5"></span>LRT</span>
-            <span class="mode"><span class="dot" style="background:#8E24AA"></span>Monorail</span>
-            <span class="mode"><span class="dot" style="background:#FB8C00"></span>Tram</span>
-            <span class="mode"><span class="dot" style="background:#D32F2F"></span>Train</span>
-            <span class="mode"><span class="dot" style="background:#00897B"></span>Bus</span>
-            <span class="mode"><span class="dot" style="background:#5C6BC0"></span>Intercity Bus</span>
-            <span class="mode"><span class="dot" style="background:#3F51B5"></span>Flight</span>
+            <span class="mode"><span class="dot" style="background:#8E24AA"></span>مونوريل</span>
+            <span class="mode"><span class="dot" style="background:#FB8C00"></span>ترام</span>
+            <span class="mode"><span class="dot" style="background:#D32F2F"></span>قطار</span>
+            <span class="mode"><span class="dot" style="background:#00897B"></span>أتوبيس</span>
+            <span class="mode"><span class="dot" style="background:#5C6BC0"></span>أتوبيس بين المدن</span>
+            <span class="mode"><span class="dot" style="background:#3F51B5"></span>طيران</span>
         </div>
     </div>
 </section>
@@ -458,30 +465,30 @@
 
         <!-- Explore -->
         <div class="showcase reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="assets/explore-home.jpg" alt="Explore map" loading="lazy" decoding="async" onerror="this.src='assets/screen-explore.jpg'"></div></div></div>
+            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="../assets/explore-home.jpg" alt="خريطة الاستكشاف" loading="lazy" decoding="async" onerror="this.src='assets/screen-explore.jpg'"></div></div></div>
             <div class="showcase-copy">
-                <div class="label">Explore</div>
-                <h3>All of Egypt, on one map</h3>
-                <p>Browse cities, nearby cafés and hotels, and hundreds of attractions on a fast, interactive map — organized the way travelers actually think.</p>
+                <div class="label">استكشف</div>
+                <h3>كل مصر على خريطة واحدة</h3>
+                <p>تصفّح المدن، والمقاهي والفنادق القريبة، ومئات المعالم على خريطة تفاعلية سريعة — مُنظَّمة بالطريقة التي يفكّر بها المسافرون فعلًا.</p>
                 <ul class="ticks">
-                    <li>34 cities with detailed guides</li>
-                    <li>Nature, history, mosques, shopping &amp; more</li>
-                    <li>Custom categories for the places you care about</li>
+                    <li>34 مدينة بأدلة تفصيلية</li>
+                    <li>طبيعة، وتاريخ، ومساجد، وتسوّق، والمزيد</li>
+                    <li>فئات مخصّصة للأماكن التي تهمّك</li>
                 </ul>
             </div>
         </div>
 
         <!-- Routing -->
         <div class="showcase rev reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="assets/routes.jpg" alt="Routing" loading="lazy" decoding="async" onerror="this.src='assets/screen-routing.jpg'"></div></div></div>
+            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="../assets/routes.jpg" alt="المسارات" loading="lazy" decoding="async" onerror="this.src='assets/screen-routing.jpg'"></div></div></div>
             <div class="showcase-copy">
-                <div class="label">Transit</div>
-                <h3>Nine networks, one route</h3>
-                <p>Get step-by-step directions that combine metro, bus, train and more — with fare estimates, transfers and departure times, computed entirely on-device.</p>
+                <div class="label">المواصلات</div>
+                <h3>تسع شبكات، مسار واحد</h3>
+                <p>احصل على إرشادات خطوة بخطوة تجمع المترو والأتوبيس والقطار والمزيد — مع تقديرات الأسعار والتحويلات ومواعيد المغادرة، محسوبة بالكامل على جهازك.</p>
                 <ul class="ticks">
-                    <li>Fares, duration &amp; transfers shown up front</li>
-                    <li>Intercity by train, bus or flight</li>
-                    <li>Works completely offline</li>
+                    <li>الأسعار والمدة والتحويلات ظاهرة مُقدَّمًا</li>
+                    <li>بين المدن بالقطار أو الأتوبيس أو الطائرة</li>
+                    <li>يعمل دون إنترنت تمامًا</li>
                 </ul>
             </div>
         </div>
@@ -489,77 +496,77 @@
         <!-- Trip Planner (flagship, dual) -->
         <div class="showcase reveal">
             <div class="showcase-media dual">
-                <div class="device back"><div class="scr"><div class="island"></div><img src="assets/plan-quickstart.jpg" alt="Quick-start trip presets" loading="lazy" decoding="async" onerror="this.src='assets/screen-explore.jpg'"></div></div>
-                <div class="device front"><div class="scr"><div class="island"></div><img src="assets/trip-itinerary.jpg" alt="Generated itinerary" loading="lazy" decoding="async" onerror="this.src='assets/screen-attraction.jpg'"></div></div>
+                <div class="device back"><div class="scr"><div class="island"></div><img src="../assets/plan-quickstart.jpg" alt="برامج رحلات جاهزة" loading="lazy" decoding="async" onerror="this.src='assets/screen-explore.jpg'"></div></div>
+                <div class="device front"><div class="scr"><div class="island"></div><img src="../assets/trip-itinerary.jpg" alt="برنامج رحلة مُولَّد" loading="lazy" decoding="async" onerror="this.src='assets/screen-attraction.jpg'"></div></div>
             </div>
             <div class="showcase-copy">
-                <div class="label">Trip Planner · New</div>
-                <h3>A whole trip, planned in a tap</h3>
-                <p>Pick a preset or your own dates and interests, and InEgypt builds a complete day-by-day itinerary — attractions sequenced by location, meals paired in, and every stop mapped and costed.</p>
+                <div class="label">مُخطِّط الرحلات · جديد</div>
+                <h3>رحلة كاملة، مُخطَّطة بلمسة</h3>
+                <p>اختر برنامجًا جاهزًا أو حدّد مواعيدك واهتماماتك، ويبني InEgypt برنامجًا يوميًا متكاملًا — معالم مُرتَّبة حسب الموقع، ووجبات مُدمَجة، وكل محطة مُحدَّدة على الخريطة ومحسوبة التكلفة.</p>
                 <ul class="ticks">
-                    <li>One-tap presets: Cairo Classics, Red Sea Escape &amp; more</li>
-                    <li>Smart sequencing, weather &amp; safety built in</li>
-                    <li>Edit, reorder and add your own places</li>
+                    <li>برامج جاهزة بلمسة: كلاسيكيات القاهرة، وعطلة البحر الأحمر، والمزيد</li>
+                    <li>ترتيب ذكي، وطقس، وسلامة مُدمَجة</li>
+                    <li>عدّل، وأعِد الترتيب، وأضِف أماكنك الخاصة</li>
                 </ul>
             </div>
         </div>
 
         <!-- Trip Dashboard -->
         <div class="showcase rev reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="assets/trip-dashboard.jpg" alt="Trip dashboard" loading="lazy" decoding="async" onerror="this.src='assets/screen-attraction.jpg'"></div></div></div>
+            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="../assets/trip-dashboard.jpg" alt="لوحة الرحلة" loading="lazy" decoding="async" onerror="this.src='assets/screen-attraction.jpg'"></div></div></div>
             <div class="showcase-copy">
-                <div class="label">Your trip, live</div>
-                <h3>Every day, at a glance</h3>
-                <p>Your trip lives in a beautiful dashboard — today's plan, your route between stops, running costs and notes, with Live Activities keeping the next stop on your Lock Screen.</p>
+                <div class="label">رحلتك، مباشرةً</div>
+                <h3>كل يوم في لمحة</h3>
+                <p>رحلتك في لوحة أنيقة — خطة اليوم، ومسارك بين المحطات، والمصاريف الجارية والملاحظات، مع الأنشطة المباشرة (Live Activities) التي تُبقي محطتك التالية على شاشة القفل.</p>
                 <ul class="ticks">
-                    <li>Live Activity for your next stop</li>
-                    <li>Track spending as you go</li>
-                    <li>Notes &amp; reminders for each day</li>
+                    <li>نشاط مباشر لمحطتك التالية</li>
+                    <li>تابع مصاريفك أولًا بأول</li>
+                    <li>ملاحظات وتذكيرات لكل يوم</li>
                 </ul>
             </div>
         </div>
 
         <!-- Commute -->
         <div class="showcase reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="assets/routes.jpg" alt="Daily commute setup" loading="lazy" decoding="async"></div></div></div>
+            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="../assets/routes.jpg" alt="إعداد التنقّل اليومي" loading="lazy" decoding="async"></div></div></div>
             <div class="showcase-copy">
-                <div class="label">Daily commute · New</div>
-                <h3>Your commute, right on time</h3>
-                <p>Save the route you take every day and InEgypt learns your rhythm — sending a departure alert when it's time to leave, and a nudge as your stop approaches.</p>
+                <div class="label">التنقّل اليومي · جديد</div>
+                <h3>تنقّلك، في موعده تمامًا</h3>
+                <p>احفظ المسار الذي تسلكه كل يوم، ويتعلّم InEgypt إيقاعك — فيُرسل تنبيه مغادرة عندما يحين وقت الانطلاق، وتنبيهًا عند اقتراب محطتك.</p>
                 <ul class="ticks">
-                    <li>Personalized departure alerts</li>
-                    <li>Proximity nudges near your stop</li>
-                    <li>Set up in seconds during onboarding</li>
+                    <li>تنبيهات مغادرة مخصّصة</li>
+                    <li>تنبيهات عند اقتراب محطتك</li>
+                    <li>إعداد في ثوانٍ أثناء بدء الاستخدام</li>
                 </ul>
             </div>
         </div>
 
         <!-- Attraction -->
         <div class="showcase rev reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="assets/screen-attraction.jpg" alt="Attraction detail" loading="lazy" decoding="async"></div></div></div>
+            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="../assets/screen-attraction.jpg" alt="تفاصيل المعلم" loading="lazy" decoding="async"></div></div></div>
             <div class="showcase-copy">
-                <div class="label">Discover</div>
-                <h3>Know before you go</h3>
-                <p>Every attraction comes with descriptions, activity ratings, photo galleries and things to do — plus weather, location and the nearest transit stop.</p>
+                <div class="label">اكتشف</div>
+                <h3>اعرف قبل أن تذهب</h3>
+                <p>كل معلم يأتي بوصفٍ ودرجات نشاط ومعارض صور وأشياء لتفعلها — إضافةً إلى الطقس والموقع وأقرب محطة نقل.</p>
                 <ul class="ticks">
-                    <li>Activity scores for every attraction</li>
-                    <li>Photo galleries &amp; rich descriptions</li>
-                    <li>Weather &amp; nearby transit</li>
+                    <li>درجات نشاط لكل معلم</li>
+                    <li>معارض صور وأوصاف غنية</li>
+                    <li>الطقس ووسائل النقل القريبة</li>
                 </ul>
             </div>
         </div>
 
         <!-- Safety -->
         <div class="showcase reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img class="crop-bottom" src="assets/explore-home.jpg" alt="Travel-smart safety tools" loading="lazy" decoding="async" onerror="this.src='assets/screen-explore.jpg'"></div></div></div>
+            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img class="crop-bottom" src="../assets/explore-home.jpg" alt="أدوات الأمان أثناء السفر" loading="lazy" decoding="async" onerror="this.src='assets/screen-explore.jpg'"></div></div></div>
             <div class="showcase-copy">
-                <div class="label">Safety</div>
-                <h3>Travel with confidence</h3>
-                <p>Learn the common scams before they happen, check what things should really cost, and keep every emergency number one tap away — no signal required.</p>
+                <div class="label">الأمان</div>
+                <h3>سافر بثقة</h3>
+                <p>تعرّف على أشهر عمليات النصب قبل حدوثها، وتحقّق من الأسعار الحقيقية للأشياء، واحتفظ بكل أرقام الطوارئ على بُعد لمسة — دون الحاجة إلى إنترنت.</p>
                 <ul class="ticks">
-                    <li>Common-scam alerts &amp; how to avoid them</li>
-                    <li>Fair-price guide for taxis, tips &amp; markets</li>
-                    <li>Police, ambulance &amp; tourist-police numbers</li>
+                    <li>تنبيهات لأشهر عمليات النصب وكيفية تجنّبها</li>
+                    <li>دليل الأسعار العادلة للتاكسي والإكراميات والأسواق</li>
+                    <li>أرقام الشرطة والإسعاف وشرطة السياحة</li>
                 </ul>
             </div>
         </div>
@@ -570,21 +577,21 @@
 <!-- ══ Offline band ══ -->
 <section class="band offline">
     <div class="wrap">
-        <span class="eyebrow alt reveal">No signal? No problem.</span>
-        <h2 class="h2 reveal">Built to work without the internet</h2>
-        <p class="sub reveal">Routes, schedules, maps, guides and safety tips are all on-device. Download once and navigate Egypt anywhere — the desert, the metro, or a dead-zone alley in Cairo.</p>
+        <span class="eyebrow alt reveal">لا إشارة؟ لا مشكلة.</span>
+        <h2 class="h2 reveal">مُصمَّم للعمل دون إنترنت</h2>
+        <p class="sub reveal">المسارات والمواعيد والخرائط والأدلة ونصائح السلامة كلها على جهازك. حمّل مرة واحدة وتنقّل في مصر أينما كنت — في الصحراء، أو المترو، أو زقاق بلا تغطية في القاهرة.</p>
     </div>
 </section>
 
 <!-- ══ System integration ══ -->
 <section class="band">
     <div class="wrap">
-        <span class="eyebrow reveal">Right where you need it</span>
-        <h2 class="h2 reveal">Woven into iOS</h2>
+        <span class="eyebrow reveal">في متناول يدك</span>
+        <h2 class="h2 reveal">مُدمَج في iOS</h2>
         <div class="sys">
-            <div class="sys-card reveal"><div class="ic" aria-hidden="true">🎙️</div><h3>Siri &amp; Shortcuts</h3><p>Ask for directions, your next stop or a trip — hands-free, in English or Arabic.</p></div>
-            <div class="sys-card reveal d1"><div class="ic" aria-hidden="true">📲</div><h3>Home &amp; Lock Screen</h3><p>Widgets and Live Activities keep your trip and favorites a glance away.</p></div>
-            <div class="sys-card reveal d2"><div class="ic" aria-hidden="true">♿️</div><h3>Fully accessible</h3><p>Complete VoiceOver support and Dynamic Type, in every language.</p></div>
+            <div class="sys-card reveal"><div class="ic" aria-hidden="true">🎙️</div><h3>Siri والاختصارات</h3><p>اطلب الاتجاهات، أو محطتك التالية، أو رحلة — دون لمس، بالعربية أو الإنجليزية.</p></div>
+            <div class="sys-card reveal d1"><div class="ic" aria-hidden="true">📲</div><h3>الشاشة الرئيسية وشاشة القفل</h3><p>الأدوات (Widgets) والأنشطة المباشرة تُبقي رحلتك ومفضّلاتك على بُعد نظرة.</p></div>
+            <div class="sys-card reveal d2"><div class="ic" aria-hidden="true">♿️</div><h3>متاح للجميع</h3><p>دعم كامل لـ VoiceOver والخط الديناميكي (Dynamic Type)، بكل اللغات.</p></div>
         </div>
     </div>
 </section>
@@ -592,8 +599,8 @@
 <!-- ══ Languages ══ -->
 <section class="band pt0">
     <div class="wrap">
-        <span class="eyebrow reveal">For everyone in Egypt</span>
-        <h2 class="h2 reveal">Available in 9 languages</h2>
+        <span class="eyebrow reveal">للجميع في مصر</span>
+        <h2 class="h2 reveal">متاح بـ 9 لغات</h2>
         <div class="langs reveal d1">
             <span class="lang">English</span><span class="lang">العربية</span><span class="lang">Français</span>
             <span class="lang">Deutsch</span><span class="lang">Español</span><span class="lang">Italiano</span>
@@ -605,81 +612,81 @@
 <!-- ══ Pricing ══ -->
 <section class="band tinted" id="pricing">
     <div class="wrap">
-        <span class="eyebrow reveal">Plans</span>
-        <h2 class="h2 reveal">Start free. Go further with Pro.</h2>
-        <p class="sub reveal">Explore Egypt for free. Unlock unlimited routing, offline access and every travel tool with Pro — or own it forever with Lifetime.</p>
+        <span class="eyebrow reveal">الباقات</span>
+        <h2 class="h2 reveal">ابدأ مجانًا. وانطلق أبعد مع Pro.</h2>
+        <p class="sub reveal">استكشف مصر مجانًا. افتح مسارات غير محدودة، ووصولًا دون إنترنت، وكل أدوات السفر مع Pro — أو امتلكه للأبد مع باقة مدى الحياة.</p>
 
         <div class="plans">
             <div class="plan reveal">
-                <span class="plan-badge b-free">Free</span>
-                <h3>Explorer</h3>
-                <div class="price"><b>Free</b></div>
-                <div class="blurb">Everything you need to start discovering Egypt.</div>
+                <span class="plan-badge b-free">مجاني</span>
+                <h3>المستكشف</h3>
+                <div class="price"><b>مجانًا</b></div>
+                <div class="blurb">كل ما تحتاجه لتبدأ اكتشاف مصر.</div>
                 <ul>
-                    <li>Attractions, cities &amp; interactive map</li>
-                    <li>Search, favorites &amp; trip planner</li>
-                    <li>Siri, widgets &amp; 9 languages</li>
-                    <li class="muted">A few routes each day</li>
+                    <li>المعالم والمدن والخريطة التفاعلية</li>
+                    <li>البحث والمفضّلة ومُخطِّط الرحلات</li>
+                    <li>‏Siri والأدوات و9 لغات</li>
+                    <li class="muted">عدد محدود من المسارات يوميًا</li>
                 </ul>
             </div>
 
             <div class="plan pop reveal d1">
-                <span class="pop-tag">Most popular</span>
+                <span class="pop-tag">الأكثر شيوعًا</span>
                 <span class="plan-badge b-pro">Pro</span>
                 <h3>Pro</h3>
-                <div class="price">Monthly &amp; <b>Yearly</b></div>
-                <div class="blurb">Yearly includes a 7-day free trial &amp; Family Sharing.</div>
+                <div class="price">شهري و<b>سنوي</b></div>
+                <div class="blurb">الباقة السنوية تشمل تجربة مجانية 7 أيام والمشاركة العائلية.</div>
                 <ul>
-                    <li>Everything in Free</li>
-                    <li>Unlimited route planning</li>
-                    <li>Full offline access — routes, stops &amp; schedules</li>
-                    <li>Line details, timetables &amp; station guides</li>
-                    <li>Scam Shield, fair-price guide &amp; Get Ready</li>
+                    <li>كل مزايا الباقة المجانية</li>
+                    <li>تخطيط مسارات غير محدود</li>
+                    <li>وصول كامل دون إنترنت — المسارات والمحطات والمواعيد</li>
+                    <li>تفاصيل الخطوط والجداول وأدلة المحطات</li>
+                    <li>درع الحماية، ودليل الأسعار العادلة، و«جهّز نفسك»</li>
                 </ul>
             </div>
 
             <div class="plan reveal d2">
-                <span class="plan-badge b-life">Lifetime</span>
-                <h3>Lifetime</h3>
-                <div class="price">One-time · <b>yours forever</b></div>
-                <div class="blurb">Pay once, keep everything — including what's next.</div>
+                <span class="plan-badge b-life">مدى الحياة</span>
+                <h3>مدى الحياة</h3>
+                <div class="price">دفعة واحدة · <b>ملكك للأبد</b></div>
+                <div class="blurb">ادفع مرة واحدة واحتفظ بكل شيء — بما في ذلك ما هو قادم.</div>
                 <ul>
-                    <li>Everything in Pro, forever</li>
-                    <li>All future features included</li>
-                    <li>Priority support</li>
-                    <li>Early-supporter badge</li>
+                    <li>كل مزايا Pro، للأبد</li>
+                    <li>كل المزايا المستقبلية مشمولة</li>
+                    <li>دعم بأولوية</li>
+                    <li>شارة الداعم المبكر</li>
                 </ul>
             </div>
         </div>
-        <p class="plans-note reveal">Just visiting? A <b>7-Day Trip Pass</b> unlocks all Pro features for your stay — a one-time purchase, no auto-renewal.<br>Subscriptions renew automatically until canceled. Manage or cancel anytime in your App Store account.</p>
+        <p class="plans-note reveal">في زيارة قصيرة؟ <b>تذكرة الـ 7 أيام</b> تفتح كل مزايا Pro طوال إقامتك — شراء لمرة واحدة، دون تجديد تلقائي.<br>تتجدّد الاشتراكات تلقائيًا حتى إلغائها. يمكنك الإدارة أو الإلغاء في أي وقت من حساب App Store.</p>
     </div>
 </section>
 
 <!-- ══ Final CTA ══ -->
 <section class="band final">
     <div class="wrap">
-        <span class="eyebrow alt reveal">Get the app</span>
-        <h2 class="h2 reveal">Egypt, in your pocket.</h2>
-        <p class="sub reveal">Download InEgypt and navigate the whole country with confidence — online or off.</p>
+        <span class="eyebrow alt reveal">احصل على التطبيق</span>
+        <h2 class="h2 reveal">مصر، في جيبك.</h2>
+        <p class="sub reveal">حمّل InEgypt وتنقّل في البلد كله بثقة — بإنترنت أو دونه.</p>
         <a class="badge reveal d1" href="https://apps.apple.com/eg/app/inegypt/id1533234023">
-            <img src="assets/app-store-badge.svg" alt="Download on the App Store" loading="lazy">
+            <img src="../assets/app-store-badge.svg" alt="التحميل من App Store" loading="lazy">
         </a>
     </div>
 </section>
 
 <!-- ══ Footer ══ -->
 <footer>
-    <a class="foot-brand" href="#top"><img src="assets/logo-dark.png" alt="" loading="lazy"><span><b>In</b>Egypt</span></a>
+    <a class="foot-brand" href="#top"><img src="../assets/logo-dark.png" alt="" loading="lazy"><span><b>In</b>Egypt</span></a>
     <div class="foot-links">
-        <a href="#features">Features</a>
-        <a href="#plan">Plan a Trip</a>
-        <a href="#pricing">Pricing</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="support.html">Support</a>
-        <a href="mailto:inegyptapp@gmail.com">Contact</a>
+        <a href="#features">المميزات</a>
+        <a href="#plan">خطّط رحلة</a>
+        <a href="#pricing">الأسعار</a>
+        <a href="../privacy.html">الخصوصية</a>
+        <a href="../terms.html">الشروط</a>
+        <a href="../support.html">الدعم</a>
+        <a href="mailto:inegyptapp@gmail.com">تواصل</a>
     </div>
-    <p class="foot-copy">&copy; <span id="yr">2026</span> InEgypt. All rights reserved.</p>
+    <p class="foot-copy">&copy; <span id="yr">2026</span> InEgypt. جميع الحقوق محفوظة.</p>
 </footer>
 
 <script>
