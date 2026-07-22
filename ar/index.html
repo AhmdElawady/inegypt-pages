@@ -28,7 +28,7 @@
     <meta name="theme-color" content="#000000">
     <link rel="icon" type="image/png" href="../assets/logo-dark.png">
     <link rel="apple-touch-icon" href="../assets/logo-dark.png">
-    <link rel="preload" as="image" href="../assets/explore-home.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="../assets/shot-attraction-ar.webp" fetchpriority="high">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -56,7 +56,6 @@
         --accent:    #FF6B00;
         --accent-2:  #FF8A3D;
         --accent-deep:#CC5500;
-        --lifetime:  #3A7BD5;
         --shadow-md: 0 10px 40px rgba(0,0,0,.08);
         --shadow-lg: 0 30px 80px rgba(0,0,0,.14);
         --radius:    22px;
@@ -192,19 +191,10 @@
         .hero-phones .device{ width:66vw; }
     }
 
-    /* ── Device frame ── */
-    .device {
-        position:relative; border-radius:min(9vw,44px); padding:2.6%;
-        background:linear-gradient(160deg,#3a3a3e,#141416);
-        box-shadow:var(--shadow-lg), inset 0 0 0 1px rgba(255,255,255,.06);
-    }
-    .device .scr { position:relative; border-radius:min(7vw,34px); overflow:hidden; background:#000; aspect-ratio:1206/2622; }
-    .device .scr img { width:100%; height:100%; object-fit:cover; object-position:top center; }
-    .device .scr img.crop-bottom { object-position:bottom center; }
-    .device .island {
-        position:absolute; top:2.4%; left:50%; transform:translateX(-50%);
-        width:30%; height:1.7%; min-height:9px; background:#000; border-radius:100px; z-index:2;
-    }
+    /* ── Device (screenshots ship with the iPhone frame baked in) ── */
+    .device { position:relative; filter:drop-shadow(0 22px 40px rgba(0,0,0,.30)); }
+    .device img { width:100%; height:auto; display:block; }
+    @media (prefers-color-scheme: dark){ .device { filter:drop-shadow(0 22px 48px rgba(0,0,0,.62)); } }
 
     /* ── Section scaffolding ── */
     section { position:relative; }
@@ -249,7 +239,6 @@
     }
     .pillar h3 { font-size:18px; font-weight:650; letter-spacing:-.01em; margin-bottom:6px; }
     .pillar p { font-size:14px; color:var(--text-2); line-height:1.55; }
-    .tag-new { font-size:10px; font-weight:700; letter-spacing:.05em; color:var(--accent); border:1px solid var(--accent); border-radius:6px; padding:1px 6px; margin-left:8px; vertical-align:middle; }
 
     /* ── Modes strip ── */
     .modes { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:44px; }
@@ -307,11 +296,10 @@
     .lang { font-size:14px; color:var(--text-2); background:var(--bg2); border:1px solid var(--border); border-radius:100px; padding:7px 15px; }
 
     /* ── Pricing ── */
-    .plans { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:56px; align-items:stretch; }
-    @media (max-width:860px){ .plans{ grid-template-columns:1fr; max-width:440px; margin-left:auto; margin-right:auto; } }
+    .plans { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin:56px auto 0; max-width:760px; align-items:stretch; }
+    @media (max-width:760px){ .plans{ grid-template-columns:1fr; max-width:440px; } }
     .plan { position:relative; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:32px 26px; display:flex; flex-direction:column; }
     .plan.pop { border-color:var(--accent); box-shadow:0 20px 60px rgba(255,107,0,.18); }
-    .plan .pop-tag { position:absolute; top:-11px; left:50%; transform:translateX(-50%); font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:#fff; background:var(--accent); padding:4px 14px; border-radius:100px; }
     .plan h3 { font-size:20px; font-weight:700; }
     .plan .price { font-size:15px; color:var(--text-2); margin:6px 0 4px; }
     .plan .price b { color:var(--text); font-size:17px; font-weight:600; }
@@ -322,8 +310,10 @@
     .plan-badge { display:inline-block; align-self:flex-start; font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:4px 12px; border-radius:100px; margin-bottom:14px; }
     .b-free { color:var(--text-2); background:var(--bg2); border:1px solid var(--border); }
     .b-pro { color:#fff; background:linear-gradient(120deg,var(--accent-deep),var(--accent)); }
-    .b-life { color:#fff; background:linear-gradient(120deg,#2f6fca,var(--lifetime)); }
     .plans-note { text-align:center; font-size:13px; color:var(--text-3); margin-top:26px; line-height:1.6; }
+    .plan-buy { margin-top:20px; padding-top:18px; border-top:1px solid var(--border); display:flex; flex-direction:column; gap:13px; }
+    .buy-opt .k { font-size:13px; font-weight:700; color:var(--accent); }
+    .buy-opt .v { font-size:13px; color:var(--text-2); line-height:1.5; margin-top:2px; }
 
     /* ── Final CTA ── */
     .final { text-align:center; color:#fff; overflow:hidden;
@@ -342,7 +332,7 @@
     .foot-brand img { width:24px; height:24px; border-radius:7px; }
     .foot-copy { font-size:12px; color:var(--text-3); }
     /* Arabic RTL: Arabic script must not be letter-spaced (breaks joining) or uppercased; keep the Latin brand LTR */
-    .hero-eyebrow, .eyebrow, .showcase-copy .label, .plan .pop-tag, .plan-badge, .tag-new { letter-spacing:normal; text-transform:none; }
+    .hero-eyebrow, .eyebrow, .showcase-copy .label, .plan-badge { letter-spacing:normal; text-transform:none; }
     .hero h1, .h2, .showcase-copy h3, .pillar h3, .stat b { letter-spacing:normal; }
     .hero h1 { line-height:1.14; } .h2 { line-height:1.2; } .showcase-copy h3 { line-height:1.28; }
     .nav-brand, .foot-brand { direction:ltr; }
@@ -380,9 +370,9 @@
     <p class="hero-note">تحميل مجاني · 9 لغات · دون الحاجة إلى حساب</p>
 
     <div class="hero-phones" id="heroPhones">
-        <div class="device side left" data-par="0.10"><div class="scr"><div class="island"></div><img src="../assets/routes.jpg" alt="مسارات المواصلات" decoding="async" onerror="this.src='assets/screen-routing.jpg'"></div></div>
-        <div class="device" data-par="0.04"><div class="scr"><div class="island"></div><img src="../assets/explore-home.jpg" alt="خريطة استكشاف مصر" fetchpriority="high" decoding="async" onerror="this.src='assets/screen-explore.jpg'"></div></div>
-        <div class="device side right" data-par="0.10"><div class="scr"><div class="island"></div><img src="../assets/trip-itinerary.jpg" alt="برنامج الرحلة" decoding="async" onerror="this.src='assets/screen-attraction.jpg'"></div></div>
+        <div class="device side left" data-par="0.10"><img src="../assets/shot-routes-ar.webp" alt="مسار مواصلات مع الأسعار والمواعيد" decoding="async"></div>
+        <div class="device" data-par="0.04"><img src="../assets/shot-attraction-ar.webp" alt="تفاصيل معلم سياحي" fetchpriority="high" decoding="async"></div>
+        <div class="device side right" data-par="0.10"><img src="../assets/shot-dashboard-ar.webp" alt="لوحة الرحلة المباشرة" decoding="async"></div>
     </div>
 </header>
 
@@ -412,12 +402,12 @@
             </div>
             <div class="pillar reveal d1">
                 <div class="ic" aria-hidden="true">🧭</div>
-                <h3>مُخطِّط الرحلات <span class="tag-new">جديد</span></h3>
+                <h3>مُخطِّط الرحلات</h3>
                 <p>أخبره بمواعيدك واهتماماتك واحصل على برنامج يومي متكامل بلمسة واحدة — مُرتَّب، ومُحدَّد على الخريطة، ومحسوب التكلفة.</p>
             </div>
             <div class="pillar reveal d2">
                 <div class="ic" aria-hidden="true">🔔</div>
-                <h3>التنقّل اليومي <span class="tag-new">جديد</span></h3>
+                <h3>التنقّل اليومي</h3>
                 <p>احفظ مسارك المعتاد واحصل على تنبيهات مغادرة مخصّصة كي لا تتأخّر أبدًا — في الموعد تمامًا، كل يوم.</p>
             </div>
             <div class="pillar reveal">
@@ -432,7 +422,7 @@
             </div>
             <div class="pillar reveal d2">
                 <div class="ic" aria-hidden="true">💱</div>
-                <h3>العملة والمصاريف <span class="tag-new">جديد</span></h3>
+                <h3>العملة والمصاريف</h3>
                 <p>حوّل أي عملة إلى الجنيه المصري وتابع تكلفة رحلتك أولًا بأول — دون الحاجة إلى إنترنت.</p>
             </div>
         </div>
@@ -465,7 +455,7 @@
 
         <!-- Explore -->
         <div class="showcase reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="../assets/explore-home.jpg" alt="خريطة الاستكشاف" loading="lazy" decoding="async" onerror="this.src='assets/screen-explore.jpg'"></div></div></div>
+            <div class="showcase-media"><div class="device"><img src="../assets/shot-itinerary-ar.webp" alt="خريطة الاستكشاف" loading="lazy" decoding="async"></div></div>
             <div class="showcase-copy">
                 <div class="label">استكشف</div>
                 <h3>كل مصر على خريطة واحدة</h3>
@@ -480,7 +470,7 @@
 
         <!-- Routing -->
         <div class="showcase rev reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="../assets/routes.jpg" alt="المسارات" loading="lazy" decoding="async" onerror="this.src='assets/screen-routing.jpg'"></div></div></div>
+            <div class="showcase-media"><div class="device"><img src="../assets/shot-steps-ar.webp" alt="إرشادات المسار خطوة بخطوة" loading="lazy" decoding="async"></div></div>
             <div class="showcase-copy">
                 <div class="label">المواصلات</div>
                 <h3>تسع شبكات، مسار واحد</h3>
@@ -493,14 +483,29 @@
             </div>
         </div>
 
-        <!-- Trip Planner (flagship, dual) -->
+        <!-- Line details -->
         <div class="showcase reveal">
+            <div class="showcase-media"><div class="device"><img src="../assets/shot-line-ar.webp" alt="تفاصيل خط المترو ودليل المحطات" loading="lazy" decoding="async"></div></div>
+            <div class="showcase-copy">
+                <div class="label">الخطوط والمحطات</div>
+                <h3>كل خط، مُوضَّح على الخريطة</h3>
+                <p>افتح أي خط لترى كل محطاته، وساعات التشغيل، والمُشغِّل — إضافةً إلى دليل محطةً بمحطة للمعالم التي يمكن أن توصلك إليها كل محطة.</p>
+                <ul class="ticks">
+                    <li>قائمة المحطات كاملة، والمسافة، وساعات التشغيل</li>
+                    <li>المُشغِّل، والجدول، وأول وآخر رحلة</li>
+                    <li>أدلة المحطات لأقرب المعالم</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Trip Planner (flagship, dual) -->
+        <div class="showcase rev reveal">
             <div class="showcase-media dual">
-                <div class="device back"><div class="scr"><div class="island"></div><img src="../assets/plan-quickstart.jpg" alt="برامج رحلات جاهزة" loading="lazy" decoding="async" onerror="this.src='assets/screen-explore.jpg'"></div></div>
-                <div class="device front"><div class="scr"><div class="island"></div><img src="../assets/trip-itinerary.jpg" alt="برنامج رحلة مُولَّد" loading="lazy" decoding="async" onerror="this.src='assets/screen-attraction.jpg'"></div></div>
+                <div class="device back"><img src="../assets/shot-itinerary-ar.webp" alt="برنامج يومي على الخريطة" loading="lazy" decoding="async"></div>
+                <div class="device front"><img src="../assets/shot-dashboard-ar.webp" alt="نظرة عامة على الرحلة" loading="lazy" decoding="async"></div>
             </div>
             <div class="showcase-copy">
-                <div class="label">مُخطِّط الرحلات · جديد</div>
+                <div class="label">مُخطِّط الرحلات</div>
                 <h3>رحلة كاملة، مُخطَّطة بلمسة</h3>
                 <p>اختر برنامجًا جاهزًا أو حدّد مواعيدك واهتماماتك، ويبني InEgypt برنامجًا يوميًا متكاملًا — معالم مُرتَّبة حسب الموقع، ووجبات مُدمَجة، وكل محطة مُحدَّدة على الخريطة ومحسوبة التكلفة.</p>
                 <ul class="ticks">
@@ -512,8 +517,8 @@
         </div>
 
         <!-- Trip Dashboard -->
-        <div class="showcase rev reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="../assets/trip-dashboard.jpg" alt="لوحة الرحلة" loading="lazy" decoding="async" onerror="this.src='assets/screen-attraction.jpg'"></div></div></div>
+        <div class="showcase reveal">
+            <div class="showcase-media"><div class="device"><img src="../assets/shot-dashboard-ar.webp" alt="خطة اليوم والمحطة التالية" loading="lazy" decoding="async"></div></div>
             <div class="showcase-copy">
                 <div class="label">رحلتك، مباشرةً</div>
                 <h3>كل يوم في لمحة</h3>
@@ -527,10 +532,10 @@
         </div>
 
         <!-- Commute -->
-        <div class="showcase reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="../assets/routes.jpg" alt="إعداد التنقّل اليومي" loading="lazy" decoding="async"></div></div></div>
+        <div class="showcase rev reveal">
+            <div class="showcase-media"><div class="device"><img src="../assets/shot-routes-ar.webp" alt="إعداد التنقّل اليومي" loading="lazy" decoding="async"></div></div>
             <div class="showcase-copy">
-                <div class="label">التنقّل اليومي · جديد</div>
+                <div class="label">التنقّل اليومي</div>
                 <h3>تنقّلك، في موعده تمامًا</h3>
                 <p>احفظ المسار الذي تسلكه كل يوم، ويتعلّم InEgypt إيقاعك — فيُرسل تنبيه مغادرة عندما يحين وقت الانطلاق، وتنبيهًا عند اقتراب محطتك.</p>
                 <ul class="ticks">
@@ -542,8 +547,8 @@
         </div>
 
         <!-- Attraction -->
-        <div class="showcase rev reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="../assets/screen-attraction.jpg" alt="تفاصيل المعلم" loading="lazy" decoding="async"></div></div></div>
+        <div class="showcase reveal">
+            <div class="showcase-media"><div class="device"><img src="../assets/shot-attraction-ar.webp" alt="تفاصيل المعلم مع معرض الصور والأنشطة" loading="lazy" decoding="async"></div></div>
             <div class="showcase-copy">
                 <div class="label">اكتشف</div>
                 <h3>اعرف قبل أن تذهب</h3>
@@ -557,8 +562,8 @@
         </div>
 
         <!-- Safety -->
-        <div class="showcase reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img class="crop-bottom" src="../assets/explore-home.jpg" alt="أدوات الأمان أثناء السفر" loading="lazy" decoding="async" onerror="this.src='assets/screen-explore.jpg'"></div></div></div>
+        <div class="showcase rev reveal">
+            <div class="showcase-media"><div class="device"><img src="../assets/shot-getready-ar.webp" alt="استعد — الأسعار العادلة وما يمكن توقّعه" loading="lazy" decoding="async"></div></div>
             <div class="showcase-copy">
                 <div class="label">الأمان</div>
                 <h3>سافر بثقة</h3>
@@ -614,7 +619,7 @@
     <div class="wrap">
         <span class="eyebrow reveal">الباقات</span>
         <h2 class="h2 reveal">ابدأ مجانًا. وانطلق أبعد مع Pro.</h2>
-        <p class="sub reveal">استكشف مصر مجانًا. افتح مسارات غير محدودة، ووصولًا دون إنترنت، وكل أدوات السفر مع Pro — أو امتلكه للأبد مع باقة مدى الحياة.</p>
+        <p class="sub reveal">استكشف مصر مجانًا. افتح كل المزايا مع Pro — اختر اشتراكًا، أو دفعة واحدة تمتلكها بالكامل.</p>
 
         <div class="plans">
             <div class="plan reveal">
@@ -631,11 +636,10 @@
             </div>
 
             <div class="plan pop reveal d1">
-                <span class="pop-tag">الأكثر شيوعًا</span>
                 <span class="plan-badge b-pro">Pro</span>
                 <h3>Pro</h3>
-                <div class="price">شهري و<b>سنوي</b></div>
-                <div class="blurb">الباقة السنوية تشمل تجربة مجانية 7 أيام والمشاركة العائلية.</div>
+                <div class="price">اشتراك <b>أو دفعة واحدة</b></div>
+                <div class="blurb">كل شيء مفتوح — المسارات، والوصول دون إنترنت، وكل أدوات السفر.</div>
                 <ul>
                     <li>كل مزايا الباقة المجانية</li>
                     <li>تخطيط مسارات غير محدود</li>
@@ -643,22 +647,13 @@
                     <li>تفاصيل الخطوط والجداول وأدلة المحطات</li>
                     <li>درع الحماية، ودليل الأسعار العادلة، و«جهّز نفسك»</li>
                 </ul>
-            </div>
-
-            <div class="plan reveal d2">
-                <span class="plan-badge b-life">مدى الحياة</span>
-                <h3>مدى الحياة</h3>
-                <div class="price">دفعة واحدة · <b>ملكك للأبد</b></div>
-                <div class="blurb">ادفع مرة واحدة واحتفظ بكل شيء — بما في ذلك ما هو قادم.</div>
-                <ul>
-                    <li>كل مزايا Pro، للأبد</li>
-                    <li>كل المزايا المستقبلية مشمولة</li>
-                    <li>دعم بأولوية</li>
-                    <li>شارة الداعم المبكر</li>
-                </ul>
+                <div class="plan-buy">
+                    <div class="buy-opt"><div class="k">اشتراك</div><div class="v">شهري أو سنوي — الباقة السنوية تضيف تجربة مجانية 7 أيام والمشاركة العائلية.</div></div>
+                    <div class="buy-opt"><div class="k">دفعة واحدة</div><div class="v">مدى الحياة — Pro للأبد. أو تذكرة 7 أيام تكفي زيارتك.</div></div>
+                </div>
             </div>
         </div>
-        <p class="plans-note reveal">في زيارة قصيرة؟ <b>تذكرة الـ 7 أيام</b> تفتح كل مزايا Pro طوال إقامتك — شراء لمرة واحدة، دون تجديد تلقائي.<br>تتجدّد الاشتراكات تلقائيًا حتى إلغائها. يمكنك الإدارة أو الإلغاء في أي وقت من حساب App Store.</p>
+        <p class="plans-note reveal">تتجدّد الاشتراكات تلقائيًا حتى إلغائها؛ أمّا المشتريات لمرة واحدة فلا تتجدّد. يمكنك الإدارة أو الإلغاء في أي وقت من حساب App Store.</p>
     </div>
 </section>
 
