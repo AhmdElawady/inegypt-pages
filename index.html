@@ -26,7 +26,7 @@
     <meta name="theme-color" content="#000000">
     <link rel="icon" type="image/png" href="assets/logo-dark.png">
     <link rel="apple-touch-icon" href="assets/logo-dark.png">
-    <link rel="preload" as="image" href="assets/explore-home.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/shot-discover.webp" fetchpriority="high">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -54,7 +54,6 @@
         --accent:    #FF6B00;
         --accent-2:  #FF8A3D;
         --accent-deep:#CC5500;
-        --lifetime:  #3A7BD5;
         --shadow-md: 0 10px 40px rgba(0,0,0,.08);
         --shadow-lg: 0 30px 80px rgba(0,0,0,.14);
         --radius:    22px;
@@ -190,19 +189,10 @@
         .hero-phones .device{ width:66vw; }
     }
 
-    /* ── Device frame ── */
-    .device {
-        position:relative; border-radius:min(9vw,44px); padding:2.6%;
-        background:linear-gradient(160deg,#3a3a3e,#141416);
-        box-shadow:var(--shadow-lg), inset 0 0 0 1px rgba(255,255,255,.06);
-    }
-    .device .scr { position:relative; border-radius:min(7vw,34px); overflow:hidden; background:#000; aspect-ratio:1206/2622; }
-    .device .scr img { width:100%; height:100%; object-fit:cover; object-position:top center; }
-    .device .scr img.crop-bottom { object-position:bottom center; }
-    .device .island {
-        position:absolute; top:2.4%; left:50%; transform:translateX(-50%);
-        width:30%; height:1.7%; min-height:9px; background:#000; border-radius:100px; z-index:2;
-    }
+    /* ── Device (screenshots ship with the iPhone frame baked in) ── */
+    .device { position:relative; filter:drop-shadow(0 22px 40px rgba(0,0,0,.30)); }
+    .device img { width:100%; height:auto; display:block; }
+    @media (prefers-color-scheme: dark){ .device { filter:drop-shadow(0 22px 48px rgba(0,0,0,.62)); } }
 
     /* ── Section scaffolding ── */
     section { position:relative; }
@@ -247,7 +237,6 @@
     }
     .pillar h3 { font-size:18px; font-weight:650; letter-spacing:-.01em; margin-bottom:6px; }
     .pillar p { font-size:14px; color:var(--text-2); line-height:1.55; }
-    .tag-new { font-size:10px; font-weight:700; letter-spacing:.05em; color:var(--accent); border:1px solid var(--accent); border-radius:6px; padding:1px 6px; margin-left:8px; vertical-align:middle; }
 
     /* ── Modes strip ── */
     .modes { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:44px; }
@@ -305,11 +294,10 @@
     .lang { font-size:14px; color:var(--text-2); background:var(--bg2); border:1px solid var(--border); border-radius:100px; padding:7px 15px; }
 
     /* ── Pricing ── */
-    .plans { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:56px; align-items:stretch; }
-    @media (max-width:860px){ .plans{ grid-template-columns:1fr; max-width:440px; margin-left:auto; margin-right:auto; } }
+    .plans { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin:56px auto 0; max-width:760px; align-items:stretch; }
+    @media (max-width:760px){ .plans{ grid-template-columns:1fr; max-width:440px; } }
     .plan { position:relative; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:32px 26px; display:flex; flex-direction:column; }
     .plan.pop { border-color:var(--accent); box-shadow:0 20px 60px rgba(255,107,0,.18); }
-    .plan .pop-tag { position:absolute; top:-11px; left:50%; transform:translateX(-50%); font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:#fff; background:var(--accent); padding:4px 14px; border-radius:100px; }
     .plan h3 { font-size:20px; font-weight:700; }
     .plan .price { font-size:15px; color:var(--text-2); margin:6px 0 4px; }
     .plan .price b { color:var(--text); font-size:17px; font-weight:600; }
@@ -320,8 +308,10 @@
     .plan-badge { display:inline-block; align-self:flex-start; font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:4px 12px; border-radius:100px; margin-bottom:14px; }
     .b-free { color:var(--text-2); background:var(--bg2); border:1px solid var(--border); }
     .b-pro { color:#fff; background:linear-gradient(120deg,var(--accent-deep),var(--accent)); }
-    .b-life { color:#fff; background:linear-gradient(120deg,#2f6fca,var(--lifetime)); }
     .plans-note { text-align:center; font-size:13px; color:var(--text-3); margin-top:26px; line-height:1.6; }
+    .plan-buy { margin-top:20px; padding-top:18px; border-top:1px solid var(--border); display:flex; flex-direction:column; gap:13px; }
+    .buy-opt .k { font-size:13px; font-weight:700; color:var(--accent); }
+    .buy-opt .v { font-size:13px; color:var(--text-2); line-height:1.5; margin-top:2px; }
 
     /* ── Final CTA ── */
     .final { text-align:center; color:#fff; overflow:hidden;
@@ -373,9 +363,9 @@
     <p class="hero-note">Free to download · 9 languages · No account needed</p>
 
     <div class="hero-phones" id="heroPhones">
-        <div class="device side left" data-par="0.10"><div class="scr"><div class="island"></div><img src="assets/routes.jpg" alt="Transit routing" decoding="async" onerror="this.src='assets/screen-routing.jpg'"></div></div>
-        <div class="device" data-par="0.04"><div class="scr"><div class="island"></div><img src="assets/explore-home.jpg" alt="Explore Egypt map" fetchpriority="high" decoding="async" onerror="this.src='assets/screen-explore.jpg'"></div></div>
-        <div class="device side right" data-par="0.10"><div class="scr"><div class="island"></div><img src="assets/trip-itinerary.jpg" alt="Trip itinerary" decoding="async" onerror="this.src='assets/screen-attraction.jpg'"></div></div>
+        <div class="device side left" data-par="0.10"><img src="assets/shot-routes.webp" alt="Transit route with fares and times" decoding="async"></div>
+        <div class="device" data-par="0.04"><img src="assets/shot-discover.webp" alt="Discover Egypt — cities and places to visit" fetchpriority="high" decoding="async"></div>
+        <div class="device side right" data-par="0.10"><img src="assets/shot-dashboard.webp" alt="Live trip dashboard" decoding="async"></div>
     </div>
 </header>
 
@@ -405,12 +395,12 @@
             </div>
             <div class="pillar reveal d1">
                 <div class="ic" aria-hidden="true">🧭</div>
-                <h3>Trip planner <span class="tag-new">NEW</span></h3>
+                <h3>Trip planner</h3>
                 <p>Tell it your dates and interests and get a complete day-by-day itinerary in a tap — sequenced, mapped and costed.</p>
             </div>
             <div class="pillar reveal d2">
                 <div class="ic" aria-hidden="true">🔔</div>
-                <h3>Daily commute <span class="tag-new">NEW</span></h3>
+                <h3>Daily commute</h3>
                 <p>Save your regular route and get personalized departure alerts so you're never late — right on time, every day.</p>
             </div>
             <div class="pillar reveal">
@@ -425,7 +415,7 @@
             </div>
             <div class="pillar reveal d2">
                 <div class="ic" aria-hidden="true">💱</div>
-                <h3>Currency &amp; costs <span class="tag-new">NEW</span></h3>
+                <h3>Currency &amp; costs</h3>
                 <p>Convert any currency to EGP and track what your trip is costing you as you go — no connection required.</p>
             </div>
         </div>
@@ -458,7 +448,7 @@
 
         <!-- Explore -->
         <div class="showcase reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="assets/explore-home.jpg" alt="Explore map" loading="lazy" decoding="async" onerror="this.src='assets/screen-explore.jpg'"></div></div></div>
+            <div class="showcase-media"><div class="device"><img src="assets/shot-explore.webp" alt="A city and its places on the Egypt map" loading="lazy" decoding="async"></div></div>
             <div class="showcase-copy">
                 <div class="label">Explore</div>
                 <h3>All of Egypt, on one map</h3>
@@ -473,7 +463,7 @@
 
         <!-- Routing -->
         <div class="showcase rev reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="assets/routes.jpg" alt="Routing" loading="lazy" decoding="async" onerror="this.src='assets/screen-routing.jpg'"></div></div></div>
+            <div class="showcase-media"><div class="device"><img src="assets/shot-steps.webp" alt="Step-by-step transit directions with transfers" loading="lazy" decoding="async"></div></div>
             <div class="showcase-copy">
                 <div class="label">Transit</div>
                 <h3>Nine networks, one route</h3>
@@ -486,14 +476,29 @@
             </div>
         </div>
 
-        <!-- Trip Planner (flagship, dual) -->
+        <!-- Line details -->
         <div class="showcase reveal">
+            <div class="showcase-media"><div class="device"><img src="assets/shot-line.webp" alt="Metro line detail with stops and station guide" loading="lazy" decoding="async"></div></div>
+            <div class="showcase-copy">
+                <div class="label">Lines &amp; stations</div>
+                <h3>Every line, mapped and explained</h3>
+                <p>Open any line to see all its stops, service hours and operator — plus a station-by-station guide to the attractions each stop can take you to.</p>
+                <ul class="ticks">
+                    <li>Full stop list, distance &amp; service hours</li>
+                    <li>Operator, timetable &amp; first / last rides</li>
+                    <li>Station guides to nearby attractions</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Trip Planner (flagship, dual) -->
+        <div class="showcase rev reveal">
             <div class="showcase-media dual">
-                <div class="device back"><div class="scr"><div class="island"></div><img src="assets/plan-quickstart.jpg" alt="Quick-start trip presets" loading="lazy" decoding="async" onerror="this.src='assets/screen-explore.jpg'"></div></div>
-                <div class="device front"><div class="scr"><div class="island"></div><img src="assets/trip-itinerary.jpg" alt="Generated itinerary" loading="lazy" decoding="async" onerror="this.src='assets/screen-attraction.jpg'"></div></div>
+                <div class="device back"><img src="assets/shot-itinerary.webp" alt="Day-by-day itinerary on the map" loading="lazy" decoding="async"></div>
+                <div class="device front"><img src="assets/shot-dashboard.webp" alt="Generated trip overview" loading="lazy" decoding="async"></div>
             </div>
             <div class="showcase-copy">
-                <div class="label">Trip Planner · New</div>
+                <div class="label">Trip Planner</div>
                 <h3>A whole trip, planned in a tap</h3>
                 <p>Pick a preset or your own dates and interests, and InEgypt builds a complete day-by-day itinerary — attractions sequenced by location, meals paired in, and every stop mapped and costed.</p>
                 <ul class="ticks">
@@ -505,8 +510,8 @@
         </div>
 
         <!-- Trip Dashboard -->
-        <div class="showcase rev reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="assets/trip-dashboard.jpg" alt="Trip dashboard" loading="lazy" decoding="async" onerror="this.src='assets/screen-attraction.jpg'"></div></div></div>
+        <div class="showcase reveal">
+            <div class="showcase-media"><div class="device"><img src="assets/shot-plan-home.webp" alt="Today's trip with next stop and Live Activity" loading="lazy" decoding="async"></div></div>
             <div class="showcase-copy">
                 <div class="label">Your trip, live</div>
                 <h3>Every day, at a glance</h3>
@@ -520,10 +525,10 @@
         </div>
 
         <!-- Commute -->
-        <div class="showcase reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="assets/routes.jpg" alt="Daily commute setup" loading="lazy" decoding="async"></div></div></div>
+        <div class="showcase rev reveal">
+            <div class="showcase-media"><div class="device"><img src="assets/shot-commute.webp" alt="Daily commute setup with widget and Siri" loading="lazy" decoding="async"></div></div>
             <div class="showcase-copy">
-                <div class="label">Daily commute · New</div>
+                <div class="label">Daily commute</div>
                 <h3>Your commute, right on time</h3>
                 <p>Save the route you take every day and InEgypt learns your rhythm — sending a departure alert when it's time to leave, and a nudge as your stop approaches.</p>
                 <ul class="ticks">
@@ -535,8 +540,8 @@
         </div>
 
         <!-- Attraction -->
-        <div class="showcase rev reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img src="assets/screen-attraction.jpg" alt="Attraction detail" loading="lazy" decoding="async"></div></div></div>
+        <div class="showcase reveal">
+            <div class="showcase-media"><div class="device"><img src="assets/shot-attraction.webp" alt="Attraction detail with gallery and activities" loading="lazy" decoding="async"></div></div>
             <div class="showcase-copy">
                 <div class="label">Discover</div>
                 <h3>Know before you go</h3>
@@ -550,8 +555,8 @@
         </div>
 
         <!-- Safety -->
-        <div class="showcase reveal">
-            <div class="showcase-media"><div class="device"><div class="scr"><div class="island"></div><img class="crop-bottom" src="assets/explore-home.jpg" alt="Travel-smart safety tools" loading="lazy" decoding="async" onerror="this.src='assets/screen-explore.jpg'"></div></div></div>
+        <div class="showcase rev reveal">
+            <div class="showcase-media"><div class="device"><img src="assets/shot-getready.webp" alt="Get Ready — fair prices and what to expect" loading="lazy" decoding="async"></div></div>
             <div class="showcase-copy">
                 <div class="label">Safety</div>
                 <h3>Travel with confidence</h3>
@@ -607,7 +612,7 @@
     <div class="wrap">
         <span class="eyebrow reveal">Plans</span>
         <h2 class="h2 reveal">Start free. Go further with Pro.</h2>
-        <p class="sub reveal">Explore Egypt for free. Unlock unlimited routing, offline access and every travel tool with Pro — or own it forever with Lifetime.</p>
+        <p class="sub reveal">Explore Egypt for free. Unlock every feature with Pro — choose a subscription, or a one-time purchase you own outright.</p>
 
         <div class="plans">
             <div class="plan reveal">
@@ -624,11 +629,10 @@
             </div>
 
             <div class="plan pop reveal d1">
-                <span class="pop-tag">Most popular</span>
                 <span class="plan-badge b-pro">Pro</span>
                 <h3>Pro</h3>
-                <div class="price">Monthly &amp; <b>Yearly</b></div>
-                <div class="blurb">Yearly includes a 7-day free trial &amp; Family Sharing.</div>
+                <div class="price">Subscription <b>or one-time</b></div>
+                <div class="blurb">Everything unlocked — routing, offline access and every travel tool.</div>
                 <ul>
                     <li>Everything in Free</li>
                     <li>Unlimited route planning</li>
@@ -636,22 +640,13 @@
                     <li>Line details, timetables &amp; station guides</li>
                     <li>Scam Shield, fair-price guide &amp; Get Ready</li>
                 </ul>
-            </div>
-
-            <div class="plan reveal d2">
-                <span class="plan-badge b-life">Lifetime</span>
-                <h3>Lifetime</h3>
-                <div class="price">One-time · <b>yours forever</b></div>
-                <div class="blurb">Pay once, keep everything — including what's next.</div>
-                <ul>
-                    <li>Everything in Pro, forever</li>
-                    <li>All future features included</li>
-                    <li>Priority support</li>
-                    <li>Early-supporter badge</li>
-                </ul>
+                <div class="plan-buy">
+                    <div class="buy-opt"><div class="k">Subscribe</div><div class="v">Monthly or Yearly — Yearly adds a 7-day free trial &amp; Family Sharing.</div></div>
+                    <div class="buy-opt"><div class="k">One-time</div><div class="v">Lifetime — Pro, forever. Or a 7-Day Trip Pass for your visit.</div></div>
+                </div>
             </div>
         </div>
-        <p class="plans-note reveal">Just visiting? A <b>7-Day Trip Pass</b> unlocks all Pro features for your stay — a one-time purchase, no auto-renewal.<br>Subscriptions renew automatically until canceled. Manage or cancel anytime in your App Store account.</p>
+        <p class="plans-note reveal">Subscriptions renew automatically until canceled; one-time purchases don't renew. Manage or cancel anytime in your App Store account.</p>
     </div>
 </section>
 
