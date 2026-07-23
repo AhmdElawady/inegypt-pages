@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <script>document.documentElement.classList.add('js');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InEgypt — استكشف. خطّط. تنقّل.</title>
-    <meta name="description" content="تنقّل في شبكة مواصلات مصر بالكامل وخطّط رحلتك — دون إنترنت. مترو وأتوبيس وقطار وترام والمزيد، مع تخطيط ذكي للمسارات، ومُخطِّط لبرنامج الرحلة، ودليل للأسعار العادلة، ودليل سياحي كامل.">
+    <title>InEgypt — استكشف مصر. تنقّل بثقة.</title>
+    <meta name="description" content="اكتشف مدن مصر ومعالمها، وخطّط كل يوم، وتنقّل بالمترو والقطار والترام والمزيد — مع إرشادات للأسعار العادلة والسلامة، بإنترنت أو دونه. تحميل مجاني.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ar_EG">
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:site_name" content="InEgypt">
     <meta property="og:url" content="https://ahmdelawady.github.io/inegypt-pages/ar/">
-    <meta property="og:title" content="InEgypt — استكشف. خطّط. تنقّل.">
-    <meta property="og:description" content="تخطيط ذكي للمسارات، ومُخطِّط رحلات بلمسة واحدة، وأدوات أمان بأسعار عادلة، ودليل سياحي كامل لمصر — كل ذلك دون إنترنت.">
+    <meta property="og:title" content="InEgypt — استكشف مصر. تنقّل بثقة.">
+    <meta property="og:description" content="اكتشف الأماكن التي تستحق وقتك، وخطّط كل يوم، وتنقّل في مصر بإرشادات محلية عملية — بإنترنت أو دونه.">
     <meta property="og:image" content="https://ahmdelawady.github.io/inegypt-pages/assets/logo-bg-dark.png">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="1024">
     <meta property="og:image:alt" content="أيقونة تطبيق InEgypt">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="InEgypt — استكشف. خطّط. تنقّل.">
-    <meta name="twitter:description" content="تخطيط ذكي للمسارات، ومُخطِّط رحلات بلمسة واحدة، وأدوات أمان بأسعار عادلة، ودليل سياحي كامل لمصر — كل ذلك دون إنترنت.">
+    <meta name="twitter:title" content="InEgypt — استكشف مصر. تنقّل بثقة.">
+    <meta name="twitter:description" content="اكتشف الأماكن التي تستحق وقتك، وخطّط كل يوم، وتنقّل في مصر بإرشادات محلية عملية — بإنترنت أو دونه.">
     <meta name="twitter:image" content="https://ahmdelawady.github.io/inegypt-pages/assets/logo-bg-dark.png">
     <link rel="canonical" href="https://ahmdelawady.github.io/inegypt-pages/ar/">
     <link rel="alternate" hreflang="en" href="https://ahmdelawady.github.io/inegypt-pages/">
@@ -28,7 +28,7 @@
     <meta name="theme-color" content="#000000">
     <link rel="icon" type="image/png" href="../assets/logo-dark.png">
     <link rel="apple-touch-icon" href="../assets/logo-dark.png">
-    <link rel="preload" as="image" href="../assets/shot-attraction-ar.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="../assets/hero-transit-ar.webp">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -36,7 +36,7 @@
         "name": "InEgypt",
         "operatingSystem": "iOS",
         "applicationCategory": "TravelApplication",
-        "description": "تنقّل في شبكة مواصلات مصر بالكامل وخطّط رحلتك — دون إنترنت، مع تخطيط ذكي للمسارات ومُخطِّط لبرنامج الرحلة ودليل للأسعار العادلة ودليل سياحي كامل.",
+        "description": "اكتشف مدن مصر ومعالمها، وخطّط برامج يومية، وتنقّل بالمترو والقطار والترام والنقل بين المدن — مع إرشادات للأسعار العادلة والسلامة، بإنترنت أو دونه.",
         "url": "https://ahmdelawady.github.io/inegypt-pages/ar/",
         "downloadUrl": "https://apps.apple.com/eg/app/inegypt/id1533234023",
         "image": "https://ahmdelawady.github.io/inegypt-pages/assets/logo-bg-dark.png",
@@ -57,7 +57,6 @@
         --accent-2:  #FF8A3D;
         --accent-deep:#CC5500;
         --shadow-md: 0 10px 40px rgba(0,0,0,.08);
-        --shadow-lg: 0 30px 80px rgba(0,0,0,.14);
         --radius:    22px;
         --maxw:      1080px;
         --nav-h:     52px;
@@ -76,7 +75,6 @@
             --border:  #29292d;
             --card:    #131316;
             --shadow-md: 0 10px 40px rgba(0,0,0,.5);
-            --shadow-lg: 0 30px 90px rgba(0,0,0,.6);
         }
     }
 
@@ -122,11 +120,13 @@
         border-bottom:1px solid var(--border);
     }
     .nav .wrap { display:flex; align-items:center; justify-content:space-between; width:100%; }
-    .nav-brand { display:flex; align-items:center; gap:9px; font-weight:600; font-size:17px; letter-spacing:-.2px; }
+    .nav-brand { display:flex; align-items:center; gap:9px; font-weight:600; font-size:17px; letter-spacing:-.2px; color:#fff; }
+    .nav.scrolled .nav-brand { color:var(--text); }
     .nav-brand img { width:26px; height:26px; border-radius:7px; }
     .nav-brand b { font-weight:700; }
     .nav-links { display:flex; gap:28px; }
-    .nav-links a { font-size:13px; color:var(--text-2); transition:color .2s; }
+    .nav-links a { font-size:13px; color:rgba(255,255,255,.72); transition:color .2s; }
+    .nav.scrolled .nav-links a { color:var(--text-2); }
     .nav-links a:hover { color:var(--accent); }
     .nav-cta {
         font-size:13px; font-weight:600; color:#fff;
@@ -135,65 +135,88 @@
     }
     .nav-cta:hover { transform:scale(1.05); box-shadow:0 6px 20px rgba(255,107,0,.4); }
     .nav-right { display:flex; align-items:center; gap:12px; }
-    .nav-lang { font-size:13px; font-weight:600; color:var(--text-2); border:1px solid var(--border); padding:6px 12px; border-radius:100px; transition:color .2s, border-color .2s; }
+    .nav-lang { font-size:13px; font-weight:600; color:rgba(255,255,255,.8); border:1px solid rgba(255,255,255,.28); padding:6px 12px; border-radius:100px; transition:color .2s, border-color .2s; }
+    .nav.scrolled .nav-lang { color:var(--text-2); border-color:var(--border); }
     .nav-lang:hover { color:var(--accent); border-color:var(--accent); }
     @media (max-width:760px){ .nav-links{ display:none; } }
 
-    /* ── Hero ── */
+    /* ── Hero (dark two-column billboard — copy + a real phone) ── */
     .hero {
-        position:relative; min-height:100vh; min-height:100svh; display:flex; flex-direction:column;
-        align-items:center; justify-content:flex-start; text-align:center; overflow:hidden;
-        padding:calc(var(--nav-h) + 60px) 24px 0;
+        position:relative; overflow:hidden;
+        padding:calc(var(--nav-h) + 64px) 24px clamp(56px,8vw,96px);
         background:
-            radial-gradient(120% 80% at 50% -10%, rgba(255,107,0,.28), transparent 55%),
-            radial-gradient(90% 60% at 50% 0%, rgba(204,85,0,.20), transparent 60%),
-            linear-gradient(180deg,#050505 0%, #0b0a09 40%, var(--bg) 100%);
+            radial-gradient(120% 80% at 50% -10%, rgba(255,107,0,.30), transparent 55%),
+            radial-gradient(90% 60% at 12% 0%, rgba(204,85,0,.22), transparent 60%),
+            linear-gradient(180deg,#0a0806 0%, #0d0a08 100%);
     }
     @media (prefers-color-scheme: light){
         .hero{
             background:
-                radial-gradient(120% 80% at 50% -10%, rgba(255,107,0,.9), transparent 52%),
-                radial-gradient(90% 70% at 50% 0%, rgba(255,138,61,.55), transparent 62%),
-                linear-gradient(180deg,#1a1005 0%, #2a1a06 30%, var(--bg) 92%);
+                radial-gradient(120% 80% at 50% -10%, rgba(255,107,0,.55), transparent 55%),
+                radial-gradient(90% 60% at 12% 0%, rgba(255,138,61,.42), transparent 62%),
+                linear-gradient(180deg,#140d05 0%, #1d1206 100%);
         }
     }
+    .hero-inner {
+        max-width:var(--maxw); margin:0 auto; display:grid;
+        grid-template-columns:1.02fr .98fr; gap:clamp(28px,5vw,64px); align-items:center;
+    }
+    .hero-copy { text-align:start; }
     .hero-eyebrow {
         display:inline-block; font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase;
         color:rgba(255,255,255,.9); padding:6px 16px; border:1px solid rgba(255,255,255,.22);
         border-radius:100px; background:rgba(255,255,255,.08);
-        -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); margin-bottom:26px;
+        -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); margin-bottom:24px;
     }
     .hero h1 {
-        font-size:clamp(40px,8vw,76px); font-weight:700; line-height:1.02; letter-spacing:-.03em;
+        font-size:clamp(38px,6.4vw,66px); font-weight:700; line-height:1.03; letter-spacing:-.03em;
         color:#fff; margin-bottom:20px;
     }
     .hero h1 .line2 { color:rgba(255,255,255,.55); font-weight:600; }
     .hero p.tag {
         font-size:clamp(16px,2.2vw,20px); color:rgba(255,255,255,.72);
-        max-width:520px; margin:0 auto 30px; line-height:1.5;
+        max-width:500px; margin:0 0 30px; line-height:1.5;
     }
-    .hero-cta { display:flex; gap:16px; align-items:center; justify-content:center; flex-wrap:wrap; margin-bottom:8px; }
+    .hero-cta { display:flex; gap:16px; align-items:center; justify-content:flex-start; flex-wrap:wrap; margin-bottom:8px; }
     .badge img { height:52px; transition:transform .2s var(--ease); }
     .badge:hover img { transform:scale(1.05); }
-    .hero-note { font-size:12px; color:rgba(255,255,255,.5); margin-top:14px; }
+    .hero-note { font-size:12.5px; color:rgba(255,255,255,.55); margin-top:14px; }
+    .hero-visual { justify-self:center; width:min(74vw,288px); }
+    .hero-visual .device { filter:drop-shadow(0 32px 60px rgba(0,0,0,.55)); }
+    @media (max-width:900px){
+        .hero-inner{ grid-template-columns:1fr; }
+        .hero-copy{ text-align:center; }
+        .hero p.tag{ margin-inline:auto; }
+        .hero-cta{ justify-content:center; }
+        .hero-visual{ width:min(64vw,244px); margin-top:8px; }
+    }
 
-    /* floating phones */
-    .hero-phones {
-        display:flex; justify-content:center; align-items:flex-end; gap:24px;
-        margin-top:52px; perspective:1600px; width:100%;
+    /* Hero feature-icon cluster — the animated tiles from the app's onboarding hook,
+       kept as a smaller secondary accent so the phone stays the proof and the icons
+       show the app's breadth. Hero is dark in both themes, so no light override needed. */
+    .hero-icons { display:flex; align-items:center; flex-wrap:wrap; gap:clamp(9px,1.4vw,13px); margin-top:30px; max-width:440px; }
+    .hero-tile {
+        --sz:clamp(46px,7vw,56px);
+        width:var(--sz); height:var(--sz); flex:0 0 auto; display:grid; place-items:center;
+        border-radius:calc(var(--sz)*.29);
+        background:linear-gradient(150deg, color-mix(in srgb,var(--t) 34%,transparent), color-mix(in srgb,var(--t) 10%,transparent));
+        border:1px solid color-mix(in srgb,var(--t) 40%,transparent);
+        box-shadow:0 10px 22px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.14);
+        -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+        transform:rotate(var(--r));
+        animation:tileFloat 6s var(--ease) infinite; animation-delay:var(--d,0s);
     }
-    .hero-phones .device { width:min(46vw,270px); }
-    .hero-phones .device.side { width:min(38vw,224px); margin-bottom:34px; opacity:.96; }
-    .hero-phones .device.left  { transform:rotate(-5deg) translateY(10px); }
-    .hero-phones .device.right { transform:rotate(5deg)  translateY(10px); }
-    @media (max-width:620px){
-        .hero-phones .device.side{ display:none; }
-        .hero-phones .device{ width:66vw; }
-    }
+    .hero-tile svg { width:48%; height:48%; display:block; }
+    .hero-tile .ic-stroke { fill:none; stroke:var(--t); stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+    @keyframes tileFloat { 0%,100%{ transform:rotate(var(--r)) translateY(0); } 50%{ transform:rotate(var(--r)) translateY(-6px); } }
+    @media (max-width:900px){ .hero-icons{ justify-content:center; margin-inline:auto; } }
+    @media (prefers-reduced-motion: reduce){ .hero-tile{ animation:none; } }
 
     /* ── Device (screenshots ship with the iPhone frame baked in) ── */
     .device { position:relative; filter:drop-shadow(0 22px 40px rgba(0,0,0,.30)); }
-    .device img { width:100%; height:auto; display:block; }
+    /* Reserve the frame's aspect ratio so lazy-loaded shots don't reflow the page
+       (which would make in-page anchor jumps land in the wrong place). */
+    .device img { width:100%; height:auto; aspect-ratio:900/1840; display:block; }
     @media (prefers-color-scheme: dark){ .device { filter:drop-shadow(0 22px 48px rgba(0,0,0,.62)); } }
 
     /* ── Section scaffolding ── */
@@ -217,28 +240,48 @@
         .js .reveal{ opacity:1; transform:none; transition:none; }
     }
 
+    /* ── Audience choice ── */
+    .audience { display:grid; grid-template-columns:1fr 1fr; gap:18px; max-width:820px; margin:0 auto; }
+    @media (max-width:640px){ .audience{ grid-template-columns:1fr; max-width:440px; } }
+    .aud-card {
+        background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+        padding:26px 26px; transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
+    }
+    .aud-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:transparent; }
+    .aud-card .ic { font-size:26px; margin-bottom:12px; }
+    .aud-card h3 { font-size:19px; font-weight:700; letter-spacing:-.01em; margin-bottom:8px; }
+    .aud-card p { font-size:14.5px; color:var(--text-2); line-height:1.55; margin-bottom:16px; }
+    .aud-link { font-size:14px; font-weight:600; color:var(--accent); display:inline-flex; align-items:center; gap:6px; transition:gap .2s var(--ease); }
+    .aud-card:hover .aud-link { gap:10px; }
+
     /* ── Stat strip ── */
-    .stats .wrap { display:grid; grid-template-columns:repeat(5,1fr); gap:18px; padding-top:44px; padding-bottom:44px; }
-    .stat { text-align:center; }
+    .stats .wrap { display:flex; flex-wrap:wrap; justify-content:center; gap:30px 40px; padding-top:44px; padding-bottom:44px; }
+    .stat { text-align:center; flex:0 0 auto; min-width:90px; }
     .stat b { display:block; font-size:clamp(26px,4vw,40px); font-weight:700; letter-spacing:-.02em; }
     .stat span { font-size:13px; color:var(--text-2); }
-    @media (max-width:720px){ .stats .wrap{ grid-template-columns:repeat(2,1fr); gap:28px 18px; } }
+    @media (max-width:720px){ .stats .wrap{ gap:26px 30px; } }
 
-    /* ── Feature pillars ── */
-    .pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:56px; }
-    @media (max-width:820px){ .pillars{ grid-template-columns:repeat(2,1fr); } }
-    @media (max-width:520px){ .pillars{ grid-template-columns:1fr; } }
-    .pillar {
+    /* ── Outcome cards (brand-tinted tile + copy) ── */
+    .outcomes { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:56px; }
+    @media (max-width:820px){ .outcomes{ grid-template-columns:1fr; max-width:520px; margin-inline:auto; } }
+    .outcome {
         background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
-        padding:28px 24px; transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
+        padding:32px 28px; transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
     }
-    .pillar:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:transparent; }
-    .pillar .ic {
-        width:46px; height:46px; border-radius:13px; display:grid; place-items:center; font-size:23px;
-        background:linear-gradient(150deg, rgba(255,107,0,.16), rgba(255,107,0,.06)); margin-bottom:16px;
+    .outcome:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:transparent; }
+    .otile {
+        --sz:64px; width:var(--sz); height:var(--sz); display:grid; place-items:center;
+        border-radius:calc(var(--sz)*.29); margin-bottom:20px;
+        background:linear-gradient(150deg, color-mix(in srgb,var(--t) 26%,transparent), color-mix(in srgb,var(--t) 8%,transparent));
+        border:1px solid color-mix(in srgb,var(--t) 34%,transparent);
     }
-    .pillar h3 { font-size:18px; font-weight:650; letter-spacing:-.01em; margin-bottom:6px; }
-    .pillar p { font-size:14px; color:var(--text-2); line-height:1.55; }
+    @media (prefers-color-scheme: light){
+        .otile { background:linear-gradient(150deg, color-mix(in srgb,var(--t) 20%,#fff), color-mix(in srgb,var(--t) 9%,#fff)); }
+    }
+    .otile svg { width:48%; height:48%; display:block; }
+    .otile .ic-stroke { fill:none; stroke:var(--t); stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+    .outcome h3 { font-size:21px; font-weight:700; letter-spacing:-.01em; margin-bottom:10px; }
+    .outcome p { font-size:15px; color:var(--text-2); line-height:1.6; }
 
     /* ── Modes strip ── */
     .modes { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:44px; }
@@ -291,9 +334,23 @@
     .sys-card h3 { font-size:17px; font-weight:650; margin-bottom:6px; }
     .sys-card p { font-size:14px; color:var(--text-2); line-height:1.55; }
 
-    /* ── Languages ── */
-    .langs { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:40px; }
-    .lang { font-size:14px; color:var(--text-2); background:var(--bg2); border:1px solid var(--border); border-radius:100px; padding:7px 15px; }
+    /* ── Trust strip ── */
+    .trust { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .trust .wrap { display:flex; flex-wrap:wrap; justify-content:center; gap:14px 30px; padding:26px 24px; }
+    .trust span { font-size:14.5px; font-weight:500; color:var(--text-2); display:inline-flex; align-items:center; gap:9px; }
+    .trust span::before { content:""; flex:0 0 auto; width:16px; height:16px; background:var(--tick) no-repeat center/contain; }
+
+    /* ── FAQ ── */
+    .faq { max-width:760px; margin:52px auto 0; }
+    .faq-item { border-bottom:1px solid var(--border); }
+    .faq-item summary {
+        list-style:none; cursor:pointer; padding:22px 4px; display:flex; justify-content:space-between;
+        align-items:center; gap:16px; font-size:17px; font-weight:600; color:var(--text);
+    }
+    .faq-item summary::-webkit-details-marker { display:none; }
+    .faq-item summary::after { content:"+"; font-size:24px; font-weight:400; line-height:1; color:var(--accent); transition:transform .3s var(--ease); }
+    .faq-item[open] summary::after { transform:rotate(45deg); }
+    .faq-item p { font-size:15px; color:var(--text-2); line-height:1.65; padding:0 4px 22px; margin:0; max-width:66ch; }
 
     /* ── Pricing ── */
     .plans { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin:56px auto 0; max-width:760px; align-items:stretch; }
@@ -333,8 +390,8 @@
     .foot-copy { font-size:12px; color:var(--text-3); }
     /* Arabic RTL: Arabic script must not be letter-spaced (breaks joining) or uppercased; keep the Latin brand LTR */
     .hero-eyebrow, .eyebrow, .showcase-copy .label, .plan-badge { letter-spacing:normal; text-transform:none; }
-    .hero h1, .h2, .showcase-copy h3, .pillar h3, .stat b { letter-spacing:normal; }
-    .hero h1 { line-height:1.14; } .h2 { line-height:1.2; } .showcase-copy h3 { line-height:1.28; }
+    .hero h1, .h2, .showcase-copy h3, .outcome h3, .aud-card h3, .faq-item summary, .stat b { letter-spacing:normal; }
+    .hero h1 { line-height:1.16; } .h2 { line-height:1.2; } .showcase-copy h3 { line-height:1.28; }
     .nav-brand, .foot-brand { direction:ltr; }
     </style>
 </head>
@@ -347,7 +404,7 @@
         <div class="nav-links">
             <a href="#features">المميزات</a>
             <a href="#plan">خطّط رحلة</a>
-            <a href="#transit">المواصلات</a>
+            <a href="#move">التنقّل</a>
             <a href="#pricing">الأسعار</a>
         </div>
         <div class="nav-right">
@@ -359,82 +416,156 @@
 
 <!-- ══ Hero ══ -->
 <header class="hero" id="top">
-    <span class="hero-eyebrow">استكشف · خطّط · تنقّل</span>
-    <h1>استكشف مصر.<br><span class="line2">تنقّل كأهل البلد.</span></h1>
-    <p class="tag">كل المترو والأتوبيس والقطار والترام — بالإضافة إلى مُخطِّط رحلات متكامل، ودليل للأسعار العادلة، ودليل سياحي. تطبيق واحد، مصمّم لمصر وحدها. يعمل دون إنترنت.</p>
-    <div class="hero-cta">
-        <a class="badge" href="https://apps.apple.com/eg/app/inegypt/id1533234023">
-            <img src="../assets/app-store-badge.svg" alt="التحميل من App Store">
-        </a>
-    </div>
-    <p class="hero-note">تحميل مجاني · 9 لغات · دون الحاجة إلى حساب</p>
-
-    <div class="hero-phones" id="heroPhones">
-        <div class="device side left" data-par="0.10"><img src="../assets/shot-routes-ar.webp" alt="مسار مواصلات مع الأسعار والمواعيد" decoding="async"></div>
-        <div class="device" data-par="0.04"><img src="../assets/shot-attraction-ar.webp" alt="تفاصيل معلم سياحي" fetchpriority="high" decoding="async"></div>
-        <div class="device side right" data-par="0.10"><img src="../assets/shot-dashboard-ar.webp" alt="لوحة الرحلة المباشرة" decoding="async"></div>
+    <div class="hero-inner">
+        <div class="hero-copy">
+            <span class="hero-eyebrow">استكشف · خطّط · تنقّل</span>
+            <h1>استكشف مصر.<br><span class="line2">تنقّل بثقة.</span></h1>
+            <p class="tag">اكتشف الأماكن التي تستحق وقتك، وخطّط كل يوم، وتنقّل في مصر بإرشادات محلية عملية — بإنترنت أو دونه.</p>
+            <div class="hero-cta">
+                <a class="badge" href="https://apps.apple.com/eg/app/inegypt/id1533234023">
+                    <img src="../assets/app-store-badge.svg" alt="التحميل من App Store">
+                </a>
+            </div>
+            <p class="hero-note">تحميل مجاني · 9 لغات · دون الحاجة إلى حساب</p>
+            <div class="hero-icons" aria-hidden="true">
+                <span class="hero-tile" style="--t:#8BC34A;--r:-8deg;--d:0s"><svg class="ic-stroke" viewBox="0 0 24 24"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg></span>
+                <span class="hero-tile" style="--t:#C62128;--r:6deg;--d:.5s"><svg class="ic-stroke" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg></span>
+                <span class="hero-tile" style="--t:#FF9500;--r:-5deg;--d:1s"><svg class="ic-stroke" viewBox="0 0 24 24"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg></span>
+                <span class="hero-tile" style="--t:#007AFF;--r:7deg;--d:.3s"><svg class="ic-stroke" viewBox="0 0 24 24"><path d="M12 2v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="M20 12h2"/><path d="m19.07 4.93-1.41 1.41"/><path d="M15.947 12.65a4 4 0 0 0-5.925-4.128"/><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"/></svg></span>
+                <span class="hero-tile" style="--t:#5856D6;--r:-6deg;--d:.8s"><svg class="ic-stroke" viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/><path d="M5 12.859a10 10 0 0 1 5.17-2.69"/><path d="M19 12.859a10 10 0 0 0-2.007-1.523"/><path d="M2 8.82a15 15 0 0 1 4.177-2.643"/><path d="M22 8.82a15 15 0 0 0-11.288-3.764"/><path d="m2 2 20 20"/></svg></span>
+                <span class="hero-tile" style="--t:#34C759;--r:5deg;--d:.2s"><svg class="ic-stroke" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="device"><img src="../assets/hero-transit-ar.webp" alt="الشاشة الرئيسية للمواصلات في InEgypt — خطّط مساراتك عبر المترو والقطار والأتوبيس والمزيد" fetchpriority="high" decoding="async"></div>
+        </div>
     </div>
 </header>
+
+<!-- ══ Audience choice ══ -->
+<section class="band" style="padding:clamp(56px,8vw,90px) 0">
+    <div class="wrap">
+        <span class="eyebrow reveal">من أين تبدأ؟</span>
+        <h2 class="h2 reveal">لكل زائر ومقيم في مصر</h2>
+        <div class="audience" style="margin-top:44px">
+            <a class="aud-card reveal" href="#plan">
+                <div class="ic" aria-hidden="true">🧳</div>
+                <h3>زائر مصر؟</h3>
+                <p>اكتشف الأماكن، وخطّط أيامك، واعرف الأسعار العادلة، وسافر بثقة.</p>
+                <span class="aud-link">خطّط رحلة <span aria-hidden="true">←</span></span>
+            </a>
+            <a class="aud-card reveal d1" href="#move">
+                <div class="ic" aria-hidden="true">🚇</div>
+                <h3>مقيم في مصر؟</h3>
+                <p>اعرف المسارات، وافهم روابط المترو والقطار، وبسّط تنقّلك اليومي.</p>
+                <span class="aud-link">شاهد المسارات <span aria-hidden="true">←</span></span>
+            </a>
+        </div>
+    </div>
+</section>
 
 <!-- ══ Stats ══ -->
 <section class="tinted">
     <div class="stats"><div class="wrap">
         <div class="stat reveal"><b>9</b><span>وسائل نقل</span></div>
-        <div class="stat reveal d1"><b>220<span class="grad-text">+</span></b><span>معلم سياحي</span></div>
-        <div class="stat reveal d2"><b>34</b><span>مدينة</span></div>
-        <div class="stat reveal d3"><b>9</b><span>لغات</span></div>
-        <div class="stat reveal d4"><b>100%</b><span>دون إنترنت</span></div>
+        <div class="stat reveal d1"><b>975</b><span>مسار</span></div>
+        <div class="stat reveal d2"><b>900<span class="grad-text">+</span></b><span>محطة</span></div>
+        <div class="stat reveal d3"><b>220<span class="grad-text">+</span></b><span>معلم سياحي</span></div>
+        <div class="stat reveal d4"><b>34</b><span>مدينة</span></div>
     </div></div>
 </section>
 
-<!-- ══ Features ══ -->
+<!-- ══ Three outcomes ══ -->
 <section class="band" id="features">
     <div class="wrap">
-        <span class="eyebrow reveal">كل شيء في تطبيق واحد</span>
-        <h2 class="h2 reveal">دليلك الكامل لمصر</h2>
-        <p class="sub reveal">من التنقّل من الباب إلى الباب، إلى رحلة مُخطَّطة بالكامل، إلى سلامتك — يفعل InEgypt ذلك كله، بإنترنت أو دونه.</p>
+        <span class="eyebrow reveal">تطبيق واحد، مصمّم لمصر وحدها</span>
+        <h2 class="h2 reveal">استكشف، وخطّط، وتنقّل</h2>
+        <p class="sub reveal">الاكتشاف، والتخطيط، والتنقّل المحلي، والثقة على الأرض — أربع صور مترابطة من المساعدة، مجموعة من أجل مصر.</p>
 
-        <div class="pillars">
-            <div class="pillar reveal">
-                <div class="ic" aria-hidden="true">🗺️</div>
-                <h3>مسارات ذكية</h3>
-                <p>إرشادات خطوة بخطوة عبر المترو والأتوبيس والقطار والترام والـ BRT والـ LRT والمونوريل والنقل بين المدن — في بحث واحد، مع الأسعار والمواعيد.</p>
+        <div class="outcomes">
+            <div class="outcome reveal">
+                <div class="otile" style="--t:#8BC34A" aria-hidden="true"><svg class="ic-stroke" viewBox="0 0 24 24"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg></div>
+                <h3>اكتشف ما يستحق وقتك</h3>
+                <p>تصفّح 34 مدينة وأكثر من 220 معلمًا مع الأنشطة والصور والمواعيد وأقرب وسيلة نقل — على خريطة تفاعلية سريعة.</p>
             </div>
-            <div class="pillar reveal d1">
-                <div class="ic" aria-hidden="true">🧭</div>
-                <h3>مُخطِّط الرحلات</h3>
-                <p>أخبره بمواعيدك واهتماماتك واحصل على برنامج يومي متكامل بلمسة واحدة — مُرتَّب، ومُحدَّد على الخريطة، ومحسوب التكلفة.</p>
+            <div class="outcome reveal d1">
+                <div class="otile" style="--t:#FF6B00" aria-hidden="true"><svg class="ic-stroke" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></div>
+                <h3>خطّط رحلة تنجح فعلًا</h3>
+                <p>احصل على برنامج يومي مع الطقس والمصاريف الجارية والمسارات بين كل محطة — يُبنى بلمسة، ولك أن تعدّله.</p>
             </div>
-            <div class="pillar reveal d2">
-                <div class="ic" aria-hidden="true">🔔</div>
-                <h3>التنقّل اليومي</h3>
-                <p>احفظ مسارك المعتاد واحصل على تنبيهات مغادرة مخصّصة كي لا تتأخّر أبدًا — في الموعد تمامًا، كل يوم.</p>
-            </div>
-            <div class="pillar reveal">
-                <div class="ic" aria-hidden="true">🏛️</div>
-                <h3>استكشف واكتشف</h3>
-                <p>أكثر من 220 معلمًا و34 مدينة مع التقييمات والمواعيد ودرجات النشاط ومعارض الصور وأقرب وسيلة نقل لكلٍّ منها.</p>
-            </div>
-            <div class="pillar reveal d1">
-                <div class="ic" aria-hidden="true">🛡️</div>
-                <h3>درع الحماية</h3>
-                <p>تنبيهات لأشهر عمليات النصب، ودليل للأسعار العادلة، وأرقام الطوارئ — سافر بثقة في أي مكان في مصر.</p>
-            </div>
-            <div class="pillar reveal d2">
-                <div class="ic" aria-hidden="true">💱</div>
-                <h3>العملة والمصاريف</h3>
-                <p>حوّل أي عملة إلى الجنيه المصري وتابع تكلفة رحلتك أولًا بأول — دون الحاجة إلى إنترنت.</p>
+            <div class="outcome reveal d2">
+                <div class="otile" style="--t:#C62128" aria-hidden="true"><svg class="ic-stroke" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg></div>
+                <h3>تنقّل بثقة</h3>
+                <p>إرشادات عملية من الباب إلى الباب عبر مترو مصر وقطاراتها والمزيد — مع الأسعار وتفاصيل الخطوط ووصول كامل دون إنترنت.</p>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- ══ Showcases ══ -->
+<section class="band pt0">
+    <div class="wrap">
+
+        <!-- Plan -->
+        <div class="showcase reveal" id="plan">
+            <div class="showcase-media dual">
+                <div class="device back"><img src="../assets/shot-itinerary-ar.webp" alt="برنامج يومي على الخريطة" loading="lazy" decoding="async"></div>
+                <div class="device front"><img src="../assets/shot-dashboard-ar.webp" alt="نظرة عامة على الرحلة" loading="lazy" decoding="async"></div>
+            </div>
+            <div class="showcase-copy">
+                <div class="label">مُخطِّط الرحلات</div>
+                <h3>رحلة كاملة، مُخطَّطة بلمسة</h3>
+                <p>اختر برنامجًا جاهزًا أو حدّد مواعيدك واهتماماتك، ويبني InEgypt برنامجًا يوميًا متكاملًا — معالم مُرتَّبة حسب الموقع، ووجبات مُدمَجة، وكل محطة مُحدَّدة على الخريطة ومحسوبة التكلفة.</p>
+                <ul class="ticks">
+                    <li>برامج جاهزة بلمسة، أو مواعيدك واهتماماتك أنت</li>
+                    <li>الطقس والمصاريف الجارية والسلامة مُدمَجة</li>
+                    <li>عدّل، وأعِد الترتيب، وأضِف أماكنك الخاصة</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Move -->
+        <div class="showcase rev reveal" id="move">
+            <div class="showcase-media dual">
+                <div class="device back"><img src="../assets/shot-line-ar.webp" alt="تفاصيل خط المترو ودليل المحطات" loading="lazy" decoding="async"></div>
+                <div class="device front"><img src="../assets/shot-steps-ar.webp" alt="إرشادات المسار خطوة بخطوة" loading="lazy" decoding="async"></div>
+            </div>
+            <div class="showcase-copy">
+                <div class="label">التنقّل</div>
+                <h3>اعبر مصر ببحث واحد</h3>
+                <p>إرشادات خطوة بخطوة تجمع المترو والقطار والترام والمزيد — مع تقديرات الأسعار والتحويلات والمواعيد، محسوبة بالكامل على جهازك. افتح أي خط لترى كل محطاته وساعات تشغيله.</p>
+                <ul class="ticks">
+                    <li>الأسعار والمدة والتحويلات ظاهرة مُقدَّمًا</li>
+                    <li>بين المدن بالقطار أو الأتوبيس أو الطائرة</li>
+                    <li>تفاصيل الخطوط والجداول وأدلة المحطات</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Travel smart -->
+        <div class="showcase reveal" id="smart">
+            <div class="showcase-media"><div class="device"><img src="../assets/shot-getready-ar.webp" alt="استعد — الأسعار العادلة وما يمكن توقّعه" loading="lazy" decoding="async"></div></div>
+            <div class="showcase-copy">
+                <div class="label">سافر بذكاء</div>
+                <h3>ثقة على الأرض</h3>
+                <p>تعرّف على أشهر عمليات النصب قبل حدوثها، وتحقّق من الأسعار الحقيقية للأشياء، واحتفظ بكل أرقام الطوارئ على بُعد لمسة — كل ذلك على جهازك، دون الحاجة إلى إنترنت.</p>
+                <ul class="ticks">
+                    <li>درع الحماية ودليل الأسعار العادلة</li>
+                    <li>حزم «جهّز نفسك» لأيامك الأولى</li>
+                    <li>أرقام الشرطة والإسعاف وشرطة السياحة</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 </section>
 
 <!-- ══ Transit modes ══ -->
 <section class="band pt0" id="transit">
     <div class="wrap">
-        <span class="eyebrow reveal">شبكة واحدة</span>
-        <h2 class="h2 reveal">تسع وسائل للتنقّل. بحث واحد.</h2>
-        <p class="sub reveal">يفهم InEgypt شبكة مواصلات البلد بأكملها، ويجمع كل الوسائل ليوصلك إلى وجهتك.</p>
+        <span class="eyebrow reveal">شبكة واحدة، مجموعة</span>
+        <h2 class="h2 reveal">تسع وسائل للتنقّل، مسار واحد</h2>
+        <p class="sub reveal">يخطّط InEgypt عبر شبكة مصر الأساسية — المترو والقطار والمونوريل والـ BRT والـ LRT والترام — إضافةً إلى النقل بين المدن بالأتوبيس والقطار والطائرة، ويستخدم بيانات أتوبيسات القاهرة والإسكندرية كخيار احتياطي مفيد.</p>
         <div class="modes reveal d1">
             <span class="mode"><span class="dot" style="background:#E53935"></span>مترو</span>
             <span class="mode"><span class="dot" style="background:#43A047"></span>BRT</span>
@@ -446,136 +577,6 @@
             <span class="mode"><span class="dot" style="background:#5C6BC0"></span>أتوبيس بين المدن</span>
             <span class="mode"><span class="dot" style="background:#3F51B5"></span>طيران</span>
         </div>
-    </div>
-</section>
-
-<!-- ══ Showcase ══ -->
-<section class="band pt0" id="plan">
-    <div class="wrap">
-
-        <!-- Explore -->
-        <div class="showcase reveal">
-            <div class="showcase-media"><div class="device"><img src="../assets/shot-itinerary-ar.webp" alt="خريطة الاستكشاف" loading="lazy" decoding="async"></div></div>
-            <div class="showcase-copy">
-                <div class="label">استكشف</div>
-                <h3>كل مصر على خريطة واحدة</h3>
-                <p>تصفّح المدن، والمقاهي والفنادق القريبة، ومئات المعالم على خريطة تفاعلية سريعة — مُنظَّمة بالطريقة التي يفكّر بها المسافرون فعلًا.</p>
-                <ul class="ticks">
-                    <li>34 مدينة بأدلة تفصيلية</li>
-                    <li>طبيعة، وتاريخ، ومساجد، وتسوّق، والمزيد</li>
-                    <li>فئات مخصّصة للأماكن التي تهمّك</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Routing -->
-        <div class="showcase rev reveal">
-            <div class="showcase-media"><div class="device"><img src="../assets/shot-steps-ar.webp" alt="إرشادات المسار خطوة بخطوة" loading="lazy" decoding="async"></div></div>
-            <div class="showcase-copy">
-                <div class="label">المواصلات</div>
-                <h3>تسع شبكات، مسار واحد</h3>
-                <p>احصل على إرشادات خطوة بخطوة تجمع المترو والأتوبيس والقطار والمزيد — مع تقديرات الأسعار والتحويلات ومواعيد المغادرة، محسوبة بالكامل على جهازك.</p>
-                <ul class="ticks">
-                    <li>الأسعار والمدة والتحويلات ظاهرة مُقدَّمًا</li>
-                    <li>بين المدن بالقطار أو الأتوبيس أو الطائرة</li>
-                    <li>يعمل دون إنترنت تمامًا</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Line details -->
-        <div class="showcase reveal">
-            <div class="showcase-media"><div class="device"><img src="../assets/shot-line-ar.webp" alt="تفاصيل خط المترو ودليل المحطات" loading="lazy" decoding="async"></div></div>
-            <div class="showcase-copy">
-                <div class="label">الخطوط والمحطات</div>
-                <h3>كل خط، مُوضَّح على الخريطة</h3>
-                <p>افتح أي خط لترى كل محطاته، وساعات التشغيل، والمُشغِّل — إضافةً إلى دليل محطةً بمحطة للمعالم التي يمكن أن توصلك إليها كل محطة.</p>
-                <ul class="ticks">
-                    <li>قائمة المحطات كاملة، والمسافة، وساعات التشغيل</li>
-                    <li>المُشغِّل، والجدول، وأول وآخر رحلة</li>
-                    <li>أدلة المحطات لأقرب المعالم</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Trip Planner (flagship, dual) -->
-        <div class="showcase rev reveal">
-            <div class="showcase-media dual">
-                <div class="device back"><img src="../assets/shot-itinerary-ar.webp" alt="برنامج يومي على الخريطة" loading="lazy" decoding="async"></div>
-                <div class="device front"><img src="../assets/shot-dashboard-ar.webp" alt="نظرة عامة على الرحلة" loading="lazy" decoding="async"></div>
-            </div>
-            <div class="showcase-copy">
-                <div class="label">مُخطِّط الرحلات</div>
-                <h3>رحلة كاملة، مُخطَّطة بلمسة</h3>
-                <p>اختر برنامجًا جاهزًا أو حدّد مواعيدك واهتماماتك، ويبني InEgypt برنامجًا يوميًا متكاملًا — معالم مُرتَّبة حسب الموقع، ووجبات مُدمَجة، وكل محطة مُحدَّدة على الخريطة ومحسوبة التكلفة.</p>
-                <ul class="ticks">
-                    <li>برامج جاهزة بلمسة: كلاسيكيات القاهرة، وعطلة البحر الأحمر، والمزيد</li>
-                    <li>ترتيب ذكي، وطقس، وسلامة مُدمَجة</li>
-                    <li>عدّل، وأعِد الترتيب، وأضِف أماكنك الخاصة</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Trip Dashboard -->
-        <div class="showcase reveal">
-            <div class="showcase-media"><div class="device"><img src="../assets/shot-dashboard-ar.webp" alt="خطة اليوم والمحطة التالية" loading="lazy" decoding="async"></div></div>
-            <div class="showcase-copy">
-                <div class="label">رحلتك، مباشرةً</div>
-                <h3>كل يوم في لمحة</h3>
-                <p>رحلتك في لوحة أنيقة — خطة اليوم، ومسارك بين المحطات، والمصاريف الجارية والملاحظات، مع الأنشطة المباشرة (Live Activities) التي تُبقي محطتك التالية على شاشة القفل.</p>
-                <ul class="ticks">
-                    <li>نشاط مباشر لمحطتك التالية</li>
-                    <li>تابع مصاريفك أولًا بأول</li>
-                    <li>ملاحظات وتذكيرات لكل يوم</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Commute -->
-        <div class="showcase rev reveal">
-            <div class="showcase-media"><div class="device"><img src="../assets/shot-routes-ar.webp" alt="إعداد التنقّل اليومي" loading="lazy" decoding="async"></div></div>
-            <div class="showcase-copy">
-                <div class="label">التنقّل اليومي</div>
-                <h3>تنقّلك، في موعده تمامًا</h3>
-                <p>احفظ المسار الذي تسلكه كل يوم، ويتعلّم InEgypt إيقاعك — فيُرسل تنبيه مغادرة عندما يحين وقت الانطلاق، وتنبيهًا عند اقتراب محطتك.</p>
-                <ul class="ticks">
-                    <li>تنبيهات مغادرة مخصّصة</li>
-                    <li>تنبيهات عند اقتراب محطتك</li>
-                    <li>إعداد في ثوانٍ أثناء بدء الاستخدام</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Attraction -->
-        <div class="showcase reveal">
-            <div class="showcase-media"><div class="device"><img src="../assets/shot-attraction-ar.webp" alt="تفاصيل المعلم مع معرض الصور والأنشطة" loading="lazy" decoding="async"></div></div>
-            <div class="showcase-copy">
-                <div class="label">اكتشف</div>
-                <h3>اعرف قبل أن تذهب</h3>
-                <p>كل معلم يأتي بوصفٍ ودرجات نشاط ومعارض صور وأشياء لتفعلها — إضافةً إلى الطقس والموقع وأقرب محطة نقل.</p>
-                <ul class="ticks">
-                    <li>درجات نشاط لكل معلم</li>
-                    <li>معارض صور وأوصاف غنية</li>
-                    <li>الطقس ووسائل النقل القريبة</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Safety -->
-        <div class="showcase rev reveal">
-            <div class="showcase-media"><div class="device"><img src="../assets/shot-getready-ar.webp" alt="استعد — الأسعار العادلة وما يمكن توقّعه" loading="lazy" decoding="async"></div></div>
-            <div class="showcase-copy">
-                <div class="label">الأمان</div>
-                <h3>سافر بثقة</h3>
-                <p>تعرّف على أشهر عمليات النصب قبل حدوثها، وتحقّق من الأسعار الحقيقية للأشياء، واحتفظ بكل أرقام الطوارئ على بُعد لمسة — دون الحاجة إلى إنترنت.</p>
-                <ul class="ticks">
-                    <li>تنبيهات لأشهر عمليات النصب وكيفية تجنّبها</li>
-                    <li>دليل الأسعار العادلة للتاكسي والإكراميات والأسواق</li>
-                    <li>أرقام الشرطة والإسعاف وشرطة السياحة</li>
-                </ul>
-            </div>
-        </div>
-
     </div>
 </section>
 
@@ -601,15 +602,42 @@
     </div>
 </section>
 
-<!-- ══ Languages ══ -->
-<section class="band pt0">
+<!-- ══ Trust strip ══ -->
+<section class="trust">
     <div class="wrap">
-        <span class="eyebrow reveal">للجميع في مصر</span>
-        <h2 class="h2 reveal">متاح بـ 9 لغات</h2>
-        <div class="langs reveal d1">
-            <span class="lang">English</span><span class="lang">العربية</span><span class="lang">Français</span>
-            <span class="lang">Deutsch</span><span class="lang">Español</span><span class="lang">Italiano</span>
-            <span class="lang">Русский</span><span class="lang">Türkçe</span><span class="lang">中文</span>
+        <span>يعمل دون إنترنت</span>
+        <span>تسع لغات</span>
+        <span>دون الحاجة إلى حساب</span>
+        <span>مصمّم للآيفون</span>
+    </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="band" id="faq">
+    <div class="wrap">
+        <span class="eyebrow reveal">معلومات مفيدة</span>
+        <h2 class="h2 reveal">أسئلة وأجوبة</h2>
+        <div class="faq reveal d1">
+            <details class="faq-item">
+                <summary>هل يعمل InEgypt دون إنترنت؟</summary>
+                <p>نعم. المسارات والخرائط وأدلة المدن والمعالم وتفاصيل الخطوط ومعلومات السلامة كلها على جهازك بعد التحميل. لا يلزم اتصال إلا لتحديث أشياء مثل أسعار العملات المباشرة.</p>
+            </details>
+            <details class="faq-item">
+                <summary>ما وسائل النقل والمدن المشمولة؟</summary>
+                <p>يخطّط InEgypt عبر المترو والقطار والمونوريل والـ BRT والـ LRT والترام والنقل بين المدن بالأتوبيس والقطار والطائرة. أتوبيسات القاهرة والإسكندرية مشمولة كخيار احتياطي مفيد — لكنه ليس بنفس اكتمال أو دقّة وسائل السكك. يغطّي 34 مدينة وأكثر من 220 معلمًا.</p>
+            </details>
+            <details class="faq-item">
+                <summary>هل InEgypt مجاني؟</summary>
+                <p>نعم — التحميل واستكشاف المدن والمعالم والخريطة ومُخطِّط الرحلات مجاني. تفتح باقة Pro تخطيط المسارات غير المحدود، والوصول الكامل دون إنترنت، وأدوات السفر الذكية.</p>
+            </details>
+            <details class="faq-item">
+                <summary>هل يمكنني استخدامه قبل الوصول إلى مصر؟</summary>
+                <p>بالتأكيد. خطّط رحلتك كاملة مسبقًا وحمّل كل شيء للاستخدام دون إنترنت، ليكون جاهزًا لحظة وصولك.</p>
+            </details>
+            <details class="faq-item">
+                <summary>ماذا تفتح باقة Pro؟</summary>
+                <p>تخطيط مسارات غير محدود، ووصول كامل دون إنترنت، وتفاصيل الخطوط والجداول، ودرع الحماية، ودليل الأسعار العادلة، و«جهّز نفسك». اختر شهري أو سنوي (السنوي يضيف المشاركة العائلية)، أو دفعة واحدة مدى الحياة، أو تذكرة 7 أيام للزيارة.</p>
+            </details>
         </div>
     </div>
 </section>
@@ -648,7 +676,7 @@
                     <li>درع الحماية، ودليل الأسعار العادلة، و«جهّز نفسك»</li>
                 </ul>
                 <div class="plan-buy">
-                    <div class="buy-opt"><div class="k">اشتراك</div><div class="v">شهري أو سنوي — الباقة السنوية تضيف تجربة مجانية 7 أيام والمشاركة العائلية.</div></div>
+                    <div class="buy-opt"><div class="k">اشتراك</div><div class="v">شهري أو سنوي — الباقة السنوية أوفر من الشهرية وتضيف المشاركة العائلية.</div></div>
                     <div class="buy-opt"><div class="k">دفعة واحدة</div><div class="v">مدى الحياة — Pro للأبد. أو تذكرة 7 أيام تكفي زيارتك.</div></div>
                 </div>
             </div>
@@ -675,6 +703,7 @@
     <div class="foot-links">
         <a href="#features">المميزات</a>
         <a href="#plan">خطّط رحلة</a>
+        <a href="#move">التنقّل</a>
         <a href="#pricing">الأسعار</a>
         <a href="../privacy.html">الخصوصية</a>
         <a href="../terms.html">الشروط</a>
@@ -685,27 +714,14 @@
 </footer>
 
 <script>
-    // Nav scroll state + hero parallax (transform preserves each phone's base rotation)
+    // Nav scroll state — solidify the bar once the page scrolls
     const nav = document.getElementById('nav');
-    const phones = document.querySelectorAll('#heroPhones [data-par]');
-    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const applyScroll = () => {
-        const y = window.scrollY;
-        if (!reduceMotion) {
-            phones.forEach(el => {
-                const p = parseFloat(el.dataset.par);
-                const base = el.classList.contains('left') ? 'rotate(-5deg)' :
-                             el.classList.contains('right') ? 'rotate(5deg)' : '';
-                el.style.transform = `${base} translateY(${10 - y * p}px)`;
-            });
-        }
-        nav.classList.toggle('scrolled', y > 24);
-    };
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
     let ticking = false;
     addEventListener('scroll', () => {
-        if (!ticking) { requestAnimationFrame(() => { applyScroll(); ticking = false; }); ticking = true; }
+        if (!ticking) { requestAnimationFrame(() => { onScroll(); ticking = false; }); ticking = true; }
     }, { passive: true });
-    applyScroll();
+    onScroll();
 
     // Reveal on scroll — reveal once, then stop observing
     const io = new IntersectionObserver((entries) => {
