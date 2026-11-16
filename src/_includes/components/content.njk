@@ -1,0 +1,129 @@
+{#- Content components (§8.5). -#}
+{% from "components/signs.njk" import sign, tile %}
+{% from "components/media.njk" import picture with context %}
+{% from "components/calls.njk" import badgeLink, qrBlock with context %}
+
+{#- Feature block: sign, H2, lead, up to 3 check lines; caller() fills the media area. -#}
+{% macro feature(id, signEn, signAr, line, title, lead, checks=[], flip=false, lang="en", stacked=false) -%}
+<section class="section has-line line-{{ line }}" id="{{ id }}" style="--line: var(--{{ line }})">
+  <div class="container feature{% if flip %} feature--flip{% endif %}{% if stacked %} feature--stacked{% endif %}">
+    <div class="feature__text" data-reveal>
+      {{ sign(signEn, signAr, line, lang) }}
+      <h2>{{ title }}</h2>
+      <p class="lead">{{ lead }}</p>
+      {%- if checks.length %}
+      <ul class="feature__checks">{% for c in checks %}<li>{% icon "check-circle-fill" %}<span>{{ c }}</span></li>{% endfor %}</ul>
+      {%- endif %}
+    </div>
+    <div class="feature__media">{{ caller() }}</div>
+  </div>
+</section>
+{%- endmacro %}
+
+{#- Price ticket from a knowledge atom (Plan 46 §4.4): value, unit, checked date, estimate/official. -#}
+{% macro ticket(id, lang="en") -%}
+{%- set a = atoms.atoms[id] -%}
+{%- set t = strings[lang] -%}
+{%- if a and a.siteUsable -%}
+<article class="ticket">
+  <div class="ticket__label">{{ a[lang].title }}</div>
+  <div class="ticket__value num" dir="ltr"><bdi>{{ a.min }}–{{ a.max }}</bdi> <span class="ticket__unit">{{ a.currency }}</span></div>
+  <div class="ticket__tear" aria-hidden="true"></div>
+  <div class="ticket__meta">
+    <span>{{ t.checked }} <bdi>{{ a.lastVerifiedAt | monthYear(lang) }}</bdi></span>
+    <span>{% if a.estimate %}{{ t.estimate }}{% else %}{% if a.source and a.source.url %}<a href="{{ a.source.url }}" rel="noopener">{{ t.official }}</a>{% else %}{{ t.official }}{% endif %}{% endif %}</span>
+  </div>
+</article>
+{%- else -%}<!-- ticket {{ id }} not usable on the site (unpublished, no checked date or no number) -->{%- endif -%}
+{%- endmacro %}
+
+{#- Bento card: icon bubble (only in the "On your iPhone" band, G1) or a screen crop via caller. -#}
+{% macro bento(icon, color, title, text, wide=false, phrase="") -%}
+<article class="bento__card{% if wide %} bento__card--wide{% endif %}">
+  <span class="bubble" style="--c: var(--{{ color }})" aria-hidden="true">{% icon icon %}</span>
+  <h3>{{ title }}</h3>
+  {%- if phrase %}<p class="bento__phrase">“{{ phrase }}”</p>{% endif %}
+  <p class="muted">{{ text }}</p>
+</article>
+{%- endmacro %}
+
+{#- items: [{ icon, text, href }] -#}
+{% macro strip(items) -%}
+<div class="strip">{% for it in items %}<a class="strip__item" href="{{ it.href | url }}">{% icon it.icon %}<span>{{ it.text }}</span></a>{% endfor %}</div>
+{%- endmacro %}
+
+{#- items: [{ value, label }] — values come from facts.json -#}
+{% macro numbers(items) -%}
+<dl class="numbers">{% for it in items %}<div class="numbers__item"><dt class="numbers__label">{{ it.label }}</dt><dd class="numbers__value num">{% if it.prefix %}<span class="numbers__prefix">{{ it.prefix }}</span>{% endif %}<bdi>{{ it.value }}</bdi></dd></div>{% endfor %}</dl>
+{%- endmacro %}
+
+{#- cards: [{ mark: yes|partly|no, title, items: [] }] -#}
+{% macro coverage(cards) -%}
+{%- set icons = { yes: "check", partly: "tilde", no: "x" } -%}
+<div class="coverage">{% for c in cards %}
+  <article class="coverage__card">
+    <span class="coverage__mark coverage__mark--{{ c.mark }}" aria-hidden="true">{% icon icons[c.mark] %}</span>
+    <h3>{{ c.title }}</h3>
+    <ul>{% for i in c.items %}<li>{{ i }}</li>{% endfor %}</ul>
+  </article>{% endfor %}
+</div>
+{%- endmacro %}
+
+{% macro review(title, text, who, date, store) -%}
+<figure class="review">
+  <p class="review__title">{{ title }}</p>
+  <blockquote><p>{{ text }}</p></blockquote>
+  <figcaption>{{ who }} · <bdi>{{ date }}</bdi> · {{ store }}</figcaption>
+</figure>
+{%- endmacro %}
+
+{#- Free/paid table: a real table (§8.5). rows: [{ label, free: bool, pro: bool }] -#}
+{% macro plansTable(caption, rows, freeLabel, proLabel, yes, no) -%}
+<table class="plans">
+  <caption>{{ caption }}</caption>
+  <thead><tr><th scope="col"><span class="visually-hidden">{{ caption }}</span></th><th scope="col">{{ freeLabel }}</th><th scope="col">{{ proLabel }}</th></tr></thead>
+  <tbody>{% for r in rows %}
+    <tr><th scope="row">{{ r.label }}</th>
+      <td>{% if r.free %}<span class="yes">{% icon "check", yes %}</span>{% else %}<span class="no">{% icon "x", no %}</span>{% endif %}</td>
+      <td>{% if r.pro %}<span class="yes">{% icon "check", yes %}</span>{% else %}<span class="no">{% icon "x", no %}</span>{% endif %}</td></tr>{% endfor %}
+  </tbody>
+</table>
+{%- endmacro %}
+
+{#- FAQ: H3 + paragraph in <details> (works without JS). items: [{ q, a }] -#}
+{% macro faq(items, open=false) -%}
+<div class="faq">{% for it in items %}
+  <details{% if open and loop.first %} open{% endif %}><summary><h3>{{ it.q }}</h3>{% icon "caret-down" %}</summary><p>{{ it.a }}</p></details>{% endfor %}
+</div>
+{%- endmacro %}
+
+{% macro answer(text, checked, lang="en") -%}
+<div class="answer"><p class="lead" style="color: var(--ink)">{{ text }}</p>
+  <p class="answer__checked">{% icon "check-circle" %}<span>{{ strings[lang].checked }} <bdi>{{ checked | monthYear(lang) }}</bdi></span></p></div>
+{%- endmacro %}
+
+{#- App box for guides (P1 M6): what the app does for this task + badge + QR on desktop. -#}
+{% macro appbox(title, points, ct, qrCt="", compact=false, lang="en") -%}
+<aside class="appbox{% if compact %} appbox--compact{% endif %}">
+  <div class="stack"><h3>{{ title }}</h3>{% if points.length %}<ul>{% for p in points %}<li>{{ p }}</li>{% endfor %}</ul>{% endif %}</div>
+  <div class="cta">{{ badgeLink(ct, lang, compact) }}{% if qrCt and not compact %}{{ qrBlock(qrCt, lang) }}{% endif %}</div>
+</aside>
+{%- endmacro %}
+
+{#- items: [{ href, title, meta }] -#}
+{% macro related(items) -%}
+<div class="related">{% for it in items %}<a href="{{ it.href | url }}"><span class="related__title">{{ it.title }}</span><span class="related__meta">{{ it.meta }}</span></a>{% endfor %}</div>
+{%- endmacro %}
+
+{#- Two doors (section 3). doors: [{ href, key, alt, tile, title, text, more }] -#}
+{% macro doors(items) -%}
+<div class="doors">{% for d in items %}
+  <a class="door" href="{{ d.href }}">
+    {{ picture(d.key, d.alt, "(max-width: 1023px) 100vw, 540px", false, "photo") }}
+    <span class="door__tile">{{ tile(d.tile, 64) }}</span>
+    <h3>{{ d.title }}</h3>
+    <p class="muted">{{ d.text }}</p>
+    <span class="door__more">{{ d.more }} <span class="flip-rtl">{% icon "arrow-right" %}</span></span>
+  </a>{% endfor %}
+</div>
+{%- endmacro %}

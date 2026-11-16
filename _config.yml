@@ -1,0 +1,12 @@
+# GitHub Pages (Jekyll) settings for the CURRENT hand-written site, until the Eleventy relaunch (Plan 47 phase 8).
+# Keeps the new build's sources out of the live site so phase 1 can be committed without publishing it.
+exclude:
+  - src
+  - scripts
+  - materials
+  - node_modules
+  - _site
+  - BUILD.md
+  - eleventy.config.js
+  - package.json
+  - package-lock.json

@@ -1,0 +1,26 @@
+{#- Station sign: dot + Arabic above English (G8). The language that only repeats the page language for
+    sighted readers is aria-hidden, so a screen reader reads the sign once (§10.5). -#}
+{% macro sign(en, ar, line="plan", lang="en") -%}
+<span class="sign line-{{ line }}">
+  <span class="sign__dot" aria-hidden="true"></span>
+  <span class="sign__label">
+    <span class="sign__first" lang="ar"{% if lang != "ar" %} aria-hidden="true"{% endif %}>{{ ar }}</span>
+    <span class="sign__second" lang="en"{% if lang == "ar" %} aria-hidden="true"{% endif %}>{{ en }}</span>
+  </span>
+</span>
+{%- endmacro %}
+
+{#- The four-tile mark: plan, routes, price, safety (§2.2). -#}
+{% macro tiles(size=64, flat=false) -%}
+<div class="tiles{% if flat %} tiles--flat{% endif %}" style="--tile: {{ size }}px" aria-hidden="true">
+  <span class="tile tile--plan">{% icon "map-trifold-fill" %}</span>
+  <span class="tile tile--route">{% icon "path-fill" %}</span>
+  <span class="tile tile--price">{% icon "tag-fill" %}</span>
+  <span class="tile tile--safe">{% icon "shield-check-fill" %}</span>
+</div>
+{%- endmacro %}
+
+{% macro tile(kind, size=64) -%}
+{%- set glyph = { plan: "map-trifold-fill", route: "path-fill", price: "tag-fill", safe: "shield-check-fill" } -%}
+<span class="tile tile--{{ kind }}" style="--tile: {{ size }}px" aria-hidden="true">{% icon glyph[kind] %}</span>
+{%- endmacro %}

@@ -1,0 +1,229 @@
+{#- Every component of Plan 47 §8.5, shown once per theme. Expects: lang, v (variant suffix for ids). -#}
+{%- from "components/signs.njk" import sign, tiles, tile -%}
+{%- from "components/media.njk" import picture, device, floatCard, gallery, ribbon, band with context -%}
+{%- from "components/content.njk" import feature, ticket, bento, strip, numbers, coverage, review, plansTable, faq, answer, appbox, related, doors with context -%}
+{%- from "components/calls.njk" import badgeLink, qrBlock, cta, inlineCall, shareRow with context -%}
+{%- set c = devCopy[lang] -%}
+{%- set ar = lang == "ar" -%}
+
+<div class="container">
+
+<section class="dev-section" id="tokens-{{ v }}">
+  <h2>Colour tokens (§8.1)</h2>
+  <p class="dev-note" lang="en" dir="ltr">Text pairs are checked by <code>scripts/check-contrast.mjs</code>. The orange <code>#F25C00</code> is for fills and shapes; links and small orange text use <code>--link</code>; focus rings use <code>--focus-ring</code>.</p>
+  <div class="dev-swatches">
+    {%- for tok in ["paper", "surface", "sand", "ink", "ink-2", "action", "action-deep", "link", "focus-ring", "plan", "route", "price", "safe", "nile", "dusk"] %}
+    <div class="dev-swatch"><div class="dev-swatch__chip" style="background: var(--{{ tok }})"></div><div class="dev-swatch__text" dir="ltr"><b>--{{ tok }}</b></div></div>
+    {%- endfor %}
+  </div>
+  <div class="dev-swatches" style="margin-block-start: var(--s4)">
+    {%- for tok in ["mode-metro", "mode-monorail", "mode-lrt", "mode-brt", "mode-train", "mode-coach", "mode-bus"] %}
+    <div class="dev-swatch"><div class="dev-swatch__chip" style="background: var(--{{ tok }}); block-size: 24px"></div><div class="dev-swatch__text" dir="ltr">{{ tok }} (dots only)</div></div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="dev-section">
+  <h2>Type scale (§8.2)</h2>
+  <div class="stack">
+    <h1>{{ c.h1 }}</h1>
+    <h2>{{ c.planH2 }}</h2>
+    <h3>{{ c.visiting.title }}</h3>
+    <p class="lead">{{ facts.sentence[lang] }}</p>
+    <p>{{ c.planLead }}</p>
+    <p class="small muted">{{ c.planSmall }}</p>
+    <p class="num" style="font-size: var(--fs-num)"><bdi>975</bdi> · <bdi>224</bdi> · <bdi>9:41</bdi> · <bdi dir="ltr">10–20 EGP</bdi></p>
+  </div>
+</section>
+
+<section class="dev-section">
+  <h2>Buttons, chips, badge, QR</h2>
+  <div class="cta">
+    <a class="btn" href="{{ 'web_dev' | appLink }}">{{ strings[lang].nav.get }}</a>
+    <a class="btn btn--quiet" href="#">{{ strings[lang].nav.features }}</a>
+    <span class="chip chip--free">{{ "مجاني" if ar else "Free" }}</span>
+    <span class="chip chip--pro">Pro</span>
+    {{ badgeLink("web_dev", lang) }}
+    {{ qrBlock("web_home_hero_qr", lang) }}
+  </div>
+  <p class="dev-note" lang="en" dir="ltr" style="margin-block-start: var(--s4)">Official App Store badges, English and Arabic artwork by page language (§7.4). The QR code shows at ≥ 1024 px only. Campaign links carry <code>ct</code>; <code>pt</code> is added once F10/D4 gives the provider ID.</p>
+</section>
+
+<section class="dev-section">
+  <h2>Station sign, line, tiles</h2>
+  <div class="stack-lg">
+    <div class="cta">
+      {{ sign("Plan", "خطِّط", "plan", lang) }}
+      {{ sign("Get around", "اتنقّل", "route", lang) }}
+      {{ sign("Know the price", "اعرف السعر", "price", lang) }}
+      {{ sign("Stay safe", "خلّي بالك", "safe", lang) }}
+      {{ sign("Discover", "اكتشف", "nile", lang) }}
+      {{ sign("On your iPhone", "على الآيفون", "dusk", lang) }}
+    </div>
+    <div class="has-line line-route" style="--line: var(--route); padding-inline-start: 4px">
+      <p class="small muted">The line runs 24 px outside the content edge at ≥ 1024 px (hidden below), in the section's colour. It moves to the right edge on Arabic pages.</p>
+    </div>
+    {{ tiles(72) }}
+    {{ tiles(56, true) }}
+  </div>
+</section>
+
+</div>
+
+<section class="dev-section" style="padding: 0">
+  <div class="container"><h2 style="margin-block-end: var(--s4)">Photo band (hero, G7)</h2></div>
+  {%- call band("photos/P01", "", true if v == "light" else false) -%}
+    {{ tiles(56) }}
+    <h1>{{ c.h1 }}</h1>
+    <p class="lead" style="color: var(--ink)">{{ facts.sentence[lang] }}</p>
+    {{ cta("web_dev", c.underBadge, lang, "web_home_hero_qr") }}
+  {%- endcall -%}
+</section>
+
+<div class="container">
+
+<section class="dev-section">
+  <h2>Fact strip and numbers strip</h2>
+  {{ strip([
+    { icon: "calendar-blank", text: ("على App Store منذ 2020" if ar else "On the App Store since 2020"), href: "/about/" },
+    { icon: "user", text: ("صُنع في مصر على يد مطوّر واحد" if ar else "Made in Egypt by one developer"), href: "/about/" },
+    { icon: "lock-simple", text: ("بلا حساب وبلا تسجيل" if ar else "No account, no sign-up"), href: "/about/" },
+    { icon: "check-circle", text: ("أسعار ونصائح بتاريخ مراجعتها" if ar else "Prices and tips checked and dated"), href: "/about/" }
+  ]) }}
+  <div style="margin-block-start: var(--s7)">
+  {{ numbers([
+    { value: facts.coverage.routes.value, label: ("خط ورحلة" if ar else "lines and services") },
+    { prefix: ("قرابة" if ar else "nearly"), value: facts.coverage.stops.display | replace("nearly ", ""), label: ("محطة" if ar else "stops and stations") },
+    { value: facts.coverage.attractions.display, label: ("مكان سياحي" if ar else "places to visit") },
+    { value: facts.coverage.cities.display, label: ("مدينة" if ar else "cities") },
+    { value: facts.app.languages.value.length, label: ("لغات" if ar else "languages") }
+  ]) }}
+  </div>
+  <p class="dev-note" lang="en" dir="ltr" style="margin-block-start: var(--s4)">Values come from <code>facts.json</code> (counted {{ facts.coverage.countedAt.value }}).</p>
+</section>
+
+<section class="dev-section">
+  <h2>Two doors</h2>
+  {%- set dv = { href: "#plan-" + v, key: "photos/P04", alt: "", tile: "plan", title: c.visiting.title, text: c.visiting.text, more: c.visiting.more } -%}
+  {%- set dl = { href: "#prices-" + v, key: "photos/P07", alt: "", tile: "route", title: c.living.title, text: c.living.text, more: c.living.more } -%}
+  {{ doors([dl, dv] if ar else [dv, dl]) }}
+  <p class="dev-note" lang="en" dir="ltr" style="margin-block-start: var(--s4)">Demo photos (P04, P07). The plan's door photos are P02 Karnak and P03 today's Cairo. On /ar/ "Living in Egypt?" comes first (R4).</p>
+</section>
+
+</div>
+
+{%- call feature("plan-" + v, "Plan", "خطِّط", "plan", c.planH2, c.planLead, c.planChecks, false, lang, true) -%}
+  {{ device("screens/s02-planner-input-framed-demo", "The automatic trip planner form", 240) }}
+  {{ device("screens/s03-trip-day-framed-demo", "A Luxor day: Karnak, lunch and the map", 240) }}
+  {{ device("screens/s01-home-trip-upcoming-framed-demo", "The trip page before it starts", 240) }}
+{%- endcall -%}
+
+<div class="container">
+
+<section class="dev-section">
+  <h2>Device frames (D17) and floating cards</h2>
+  <p class="dev-note" lang="en" dir="ltr">Owner's framed export (default) next to the CSS fallback for a raw capture, then cropped and tilted variants. Never mix framed and CSS frames on one real page. All screens are demos (dark; D9 wants light).</p>
+  <div class="cta" style="align-items: flex-start; gap: var(--s7)">
+    {{ device("screens/s10-tips-framed-demo", "Safety tips list", 220) }}
+    {{ device("screens/s06-route-result-demo", "Airport to Giza: 1h 22m, about 32 EGP, bus, M3 and M2", 220) }}
+    {{ device("screens/s09-prices-framed-demo", "Metro prices", 220, true) }}
+    {{ device("screens/s08-search-demo", "Search results for Hurghada", 220, false, true) }}
+  </div>
+  <div class="float-stage" style="margin-block-start: var(--s8); min-block-size: 620px">
+    {{ device("screens/s06-route-result-demo", "Airport to Giza route", 280) }}
+    {{ floatCard("path", ("طريق" if ar else "Route"), '<bdi dir="ltr">1h 22m · ~32 EGP</bdi>', '<bdi dir="ltr">Bus › M3 › M2</bdi>', "route") }}
+    {%- set a = atoms.atoms.price_metro_single_journey -%}
+    {{ floatCard("tag", ("سعر عادل" if ar else "Fair price"), a[lang].title, '<bdi dir="ltr">' + a.min + "–" + a.max + " " + a.currency + "</bdi> · " + strings[lang].checked + " " + (a.lastVerifiedAt | monthYear(lang)), "price") }}
+    {{ floatCard("map-pin", ("المحطة الجاية" if ar else "Next stop"), ("معبد الكرنك" if ar else "Karnak Temple Complex"), '<bdi dir="ltr">9:00</bdi> · ~2 h', "plan") }}
+  </div>
+</section>
+
+<section class="dev-section">
+  <h2>Screen gallery (scroll-snap, tab links)</h2>
+  {{ gallery("g-" + v, ("خطوات الخطة" if ar else "Plan steps"), [
+    { id: "choose", tab: ("اختار" if ar else "Choose"), key: "screens/s02-planner-input-framed-demo", alt: "Planner form", caption: c.planChecks[0] },
+    { id: "days", tab: ("أيامك" if ar else "Your days"), key: "screens/s03-trip-day-framed-demo", alt: "Trip day", caption: c.planChecks[1] },
+    { id: "why", tab: ("ليه" if ar else "Why this order"), key: "screens/s04-about-plan-demo", alt: "About this plan (stand-in)", caption: c.planChecks[2] }
+  ]) }}
+</section>
+
+<section class="dev-section has-line line-price" id="prices-{{ v }}" style="--line: var(--price)">
+  <h2>Price tickets (from the app's knowledge atoms)</h2>
+  <div class="stack-lg">
+    {{ sign("Know the price", "اعرف السعر", "price", lang) }}
+    <div class="tickets">
+      {%- for id in facts.knowledge.priceTicketAtoms.value %}{{ ticket(id, lang) }}{% endfor %}
+    </div>
+    <p class="dev-note" lang="en" dir="ltr">Values, units and dates come from <code>atoms.json</code> (synced {{ atoms.syncedAt }}, revision {{ atoms.contentRevision }}). Three of the four are InEgypt estimates; only the metro fare is official.</p>
+  </div>
+</section>
+
+<section class="dev-section">
+  <h2>Photo ribbon (Discover)</h2>
+  {{ ribbon("rb-" + v, ("مدن مصر" if ar else "Egypt's cities"), [
+    { key: "photos/P04", alt: "", en: "Luxor", ar: "الأقصر", line: "nile" },
+    { key: "photos/P05", alt: "", en: "Aswan", ar: "أسوان", line: "nile" },
+    { key: "photos/P06", alt: "", en: "Alexandria", ar: "الإسكندرية", line: "nile" },
+    { key: "photos/P07", alt: "", en: "Islamic Cairo", ar: "القاهرة الإسلامية", line: "nile" },
+    { key: "photos/P09", alt: "", en: "Abu Simbel", ar: "أبو سمبل", line: "nile" },
+    { key: "photos/P12", alt: "", en: "Cairo", ar: "القاهرة", line: "nile" }
+  ], lang) }}
+  <p class="dev-note" lang="en" dir="ltr" style="margin-block-start: var(--s4)">All photos pass through one grade in <code>scripts/build-images.mjs</code> (G2). Alt text is empty here because the sign names the place.</p>
+</section>
+
+</div>
+
+<section class="section theme-dark" style="background: var(--paper); color: var(--ink)">
+  <div class="container stack-lg">
+    {{ sign("On your iPhone", "على الآيفون", "dusk", lang) }}
+    <h2>{{ c.iphoneH2 }}</h2>
+    <div class="bento">
+      {{ bento("microphone", "dusk", ("سيري والاختصارات" if ar else "Siri and Shortcuts"), ("اسأل عن الاتجاهات أو محطتك الجاية أو سعر عادل." if ar else "Ask for directions, your next stop or a fair price."), true, facts.iphoneFeatures.siriPhrases.value[0]) }}
+      {{ bento("translate", "nile", ("9 لغات" if ar else "9 languages"), facts.app.languages.value | join(" · ")) }}
+      {{ bento("wifi-slash", "plan", ("بدون إنترنت" if ar else "With no signal"), ("الرحلة المحفوظة وصفحات الأماكن والطوارئ مجانًا." if ar else "A saved trip, place pages and the emergency page, free.")) }}
+    </div>
+    <p class="small muted">Dark band (G3). Lock Screen, Home Screen and control cards are left out until the owner confirms they ship (F5); the claims check enforces it.</p>
+    <div class="cta">{{ device("screens/x-siri-shortcuts-framed", "InEgypt shortcuts in the Shortcuts app", 220) }}</div>
+  </div>
+</section>
+
+<div class="container">
+
+<section class="dev-section">
+  <h2>Coverage cards</h2>
+  {{ coverage(c.coverage) }}
+</section>
+
+<section class="dev-section" id="free-paid-{{ v }}">
+  <h2>Free and paid table</h2>
+  {%- set rows = facts | plansRows -%}
+  {{ plansTable(c.plansCaption, rows, c.free, c.pro, c.yes, c.no) }}
+  <p class="dev-note" lang="en" dir="ltr" style="margin-block-start: var(--s4)">Rows are the fact sheet's free and paid lists (English in both versions until the owner's Arabic arrives). Prices: <bdi>{{ facts.prices.proMonthly.value }}</bdi> a month, <bdi>{{ facts.prices.proYearly.value }}</bdi> a year. No pass line while <code>passesOnSale</code> is false (D6).</p>
+</section>
+
+<section class="dev-section">
+  <h2>Review card</h2>
+  <div class="dev-pair">
+    {{ review(("مكان لمراجعة حقيقية" if ar else "Placeholder for a real review"), ("هنا يظهر نص مراجعة حقيقية من App Store باسم كاتبها وتاريخها، بدون نجوم (§6.1)." if ar else "A real App Store review goes here, quoted word for word with the nickname and date; no stars are drawn (§6.1)."), "nickname", "2026-01-01", "App Store (EG)") }}
+  </div>
+</section>
+
+<section class="dev-section">
+  <h2>FAQ</h2>
+  {{ faq(c.faq, true) }}
+</section>
+
+<section class="dev-section">
+  <h2>Guide parts: answer box, app box, related guides, share row, inline call</h2>
+  <div class="stack-lg">
+    {{ answer(c.answer, "2026-08-21", lang) }}
+    {{ appbox(c.appbox.title, [], "web_guide_airport", "", true, lang) }}
+    {{ appbox(c.appbox.title, c.appbox.points, "web_guide_airport", "web_guide_airport_qr", false, lang) }}
+    {{ related(c.related) }}
+    {{ shareRow("/dev/components.html", lang) }}
+    {{ inlineCall("web_home_plan", c.inline, lang) }}
+  </div>
+  <p class="dev-note" lang="en" dir="ltr" style="margin-block-start: var(--s4)">Sample guide text only; the real guides are phase 7 and every number in them comes from an atom.</p>
+</section>
+
+</div>

@@ -1,0 +1,197 @@
+{
+  "_note": "Sample copy for /dev/ pages only. English lines are Plan 46 §4.3 / Plan 47 §4 [Proposal] text; Arabic lines are AGENT DRAFTS for layout testing, to be replaced by the owner's text (D14, phase 5).",
+  "en": {
+    "h1": "Plan your Egypt trip. Get around with confidence.",
+    "underBadge": "Free · No account · 9 languages · iPhone and iPad",
+    "doorsH2": "One app for the trip and for every day.",
+    "visiting": {
+      "title": "Visiting Egypt?",
+      "text": "Build your days, see how to get between places, know what things should cost.",
+      "more": "See the trip planner"
+    },
+    "living": {
+      "title": "Living in Egypt?",
+      "text": "Metro, train, monorail, LRT, BRT and bus routes in one search.",
+      "more": "See routes"
+    },
+    "planH2": "A trip plan that works on the ground.",
+    "planLead": "Pick when, how long and what you like, or paste a plan you already made, even one from ChatGPT. InEgypt puts the days in a sensible order, adds real travel time between stops, and tells you when a day does not fit.",
+    "planChecks": [
+      "Choose when, how long and what you like.",
+      "Days in a sensible order, with travel time between stops.",
+      "Each plan says why, and warns when a day does not fit."
+    ],
+    "planSmall": "The first automatic plans are free. More are part of InEgypt Pro.",
+    "pricesH2": "Know the fair price before you pay.",
+    "pricesLead": "Dated prices for taxis, tickets, food and tips, and the common tricks to watch for.",
+    "discoverH2": "Egypt, city by city.",
+    "iphoneH2": "Where you already look.",
+    "inline": "Get InEgypt — free on the App Store",
+    "faq": [
+      {
+        "q": "Is InEgypt free?",
+        "a": "Yes. Routes, places, Essentials, trip planning and Bring your plan are free, with no daily limit on route search. InEgypt Pro ($3.99 a month or $19.99 a year) adds offline route search, offline Discover, more automatic plans, multi-day trip weather and trip expenses."
+      },
+      {
+        "q": "Does it work without the internet?",
+        "a": "A saved trip, place pages and the emergency page open offline for free. Offline route search and offline Discover are part of InEgypt Pro."
+      }
+    ],
+    "coverage": [
+      {
+        "mark": "yes",
+        "title": "Structured and timetabled",
+        "items": [
+          "Cairo Metro, monorail, LRT, BRT",
+          "Alexandria tram",
+          "National trains and intercity coaches"
+        ]
+      },
+      {
+        "mark": "partly",
+        "title": "Fallback, less complete",
+        "items": [
+          "Local buses in Cairo and Alexandria"
+        ]
+      },
+      {
+        "mark": "no",
+        "title": "What we don't do",
+        "items": [
+          "No live tracking",
+          "No ticket sales",
+          "No hotel, flight or tour booking",
+          "No Android version"
+        ]
+      }
+    ],
+    "answer": "From Cairo Airport, the cheapest way into the city is the airport bus to the metro; a ride-hailing car is the simplest. Agree the price before you get in.",
+    "related": [
+      {
+        "href": "/guides/cairo-metro/",
+        "title": "Cairo Metro: lines, tickets and fares",
+        "meta": "Guide · coming soon"
+      },
+      {
+        "href": "/guides/egypt-prices/",
+        "title": "What things cost in Egypt",
+        "meta": "Guide · coming soon"
+      },
+      {
+        "href": "/guides/egypt-scams/",
+        "title": "Common scams and how to avoid them",
+        "meta": "Guide · coming soon"
+      }
+    ],
+    "appbox": {
+      "title": "In the app: the airport trip, with fares",
+      "points": [
+        "Every way from the airport to your hotel, with fare and changes",
+        "The fair taxi price, checked and dated",
+        "The airport arrival guide, offline in your saved trip"
+      ]
+    },
+    "free": "InEgypt",
+    "pro": "InEgypt Pro",
+    "yes": "Included",
+    "no": "Not included",
+    "plansCaption": "What is free and what InEgypt Pro adds"
+  },
+  "ar": {
+    "h1": "خطّط لرحلتك في مصر، وتنقّل بثقة.",
+    "underBadge": "مجاني · بلا حساب · 9 لغات · آيفون وآيباد",
+    "doorsH2": "تطبيق واحد للرحلة ولكل يوم.",
+    "visiting": {
+      "title": "زائر لمصر؟",
+      "text": "رتّب أيامك، واعرف إزاي تتنقل بين الأماكن، وكام المفروض تدفع.",
+      "more": "شوف مخطط الرحلة"
+    },
+    "living": {
+      "title": "ساكن في مصر؟",
+      "text": "مترو وقطار ومونوريل وقطار خفيف وأتوبيس ترددي وأتوبيسات في بحث واحد.",
+      "more": "شوف المواصلات"
+    },
+    "planH2": "خطة رحلة تنفع على أرض الواقع.",
+    "planLead": "اختار إمتى وقد إيه وإيه اللي بتحبه، أو الصق خطة عندك. InEgypt يرتّب الأيام ويضيف وقت التنقل الحقيقي بين الأماكن، وينبهك لما يوم ما يكفيش.",
+    "planChecks": [
+      "اختار إمتى وقد إيه وإيه اللي بتحبه.",
+      "أيام بترتيب منطقي، بوقت التنقل بين الأماكن.",
+      "كل خطة بتقول ليه، وتنبّه لما يوم ما يكفيش."
+    ],
+    "planSmall": "أول الخطط التلقائية مجانية، والمزيد ضمن InEgypt Pro.",
+    "pricesH2": "اعرف السعر العادل قبل ما تدفع.",
+    "pricesLead": "أسعار بتاريخ مراجعتها للتاكسي والتذاكر والأكل والبقشيش، وأشهر الحيل اللي تاخد بالك منها.",
+    "discoverH2": "مصر، مدينة بمدينة.",
+    "iphoneH2": "في المكان اللي بتبص فيه أصلًا.",
+    "inline": "حمّل InEgypt مجانًا من App Store",
+    "faq": [
+      {
+        "q": "هل InEgypt مجاني؟",
+        "a": "أيوه. المواصلات والأماكن والأساسيات وتخطيط الرحلة و«الصق خطتك» مجانية، وبحث المواصلات بلا حد يومي. InEgypt Pro (‏3.99$ في الشهر أو 19.99$ في السنة) يضيف بحث المواصلات بدون إنترنت، واستكشف بدون إنترنت، وخطط تلقائية أكثر، وطقس الرحلة لعدة أيام، ومصاريف الرحلة."
+      },
+      {
+        "q": "هل يعمل بدون إنترنت؟",
+        "a": "الرحلة المحفوظة وصفحات الأماكن وصفحة الطوارئ تفتح بدون إنترنت مجانًا. بحث المواصلات بدون إنترنت واستكشف بدون إنترنت ضمن InEgypt Pro."
+      }
+    ],
+    "coverage": [
+      {
+        "mark": "yes",
+        "title": "بيانات منظمة ومواعيد",
+        "items": [
+          "مترو القاهرة والمونوريل والقطار الخفيف والأتوبيس الترددي",
+          "ترام الإسكندرية",
+          "القطارات وأتوبيسات السفر"
+        ]
+      },
+      {
+        "mark": "partly",
+        "title": "بديل، أقل اكتمالًا",
+        "items": [
+          "الأتوبيسات المحلية في القاهرة والإسكندرية"
+        ]
+      },
+      {
+        "mark": "no",
+        "title": "اللي ما بنعملوش",
+        "items": [
+          "لا تتبّع مباشر",
+          "لا بيع تذاكر",
+          "لا حجز فنادق أو طيران أو رحلات",
+          "لا نسخة أندرويد"
+        ]
+      }
+    ],
+    "answer": "من مطار القاهرة، أرخص طريقة للمدينة هي أتوبيس المطار للمترو، وأسهلها عربية من تطبيق توصيل. اتفق على السعر قبل ما تركب.",
+    "related": [
+      {
+        "href": "/ar/guides/cairo-metro/",
+        "title": "مترو القاهرة: الخطوط والتذاكر والأسعار",
+        "meta": "دليل · قريبًا"
+      },
+      {
+        "href": "/guides/egypt-prices/",
+        "title": "الأسعار في مصر",
+        "meta": "دليل · قريبًا"
+      },
+      {
+        "href": "/guides/egypt-scams/",
+        "title": "أشهر طرق الاحتيال",
+        "meta": "دليل · قريبًا"
+      }
+    ],
+    "appbox": {
+      "title": "في التطبيق: مشوار المطار بالأسعار",
+      "points": [
+        "كل الطرق من المطار للفندق بالسعر والتغييرات",
+        "سعر التاكسي العادل بتاريخ مراجعته",
+        "دليل الوصول للمطار، بدون إنترنت في رحلتك المحفوظة"
+      ]
+    },
+    "free": "InEgypt",
+    "pro": "InEgypt Pro",
+    "yes": "متاح",
+    "no": "غير متاح",
+    "plansCaption": "المجاني وما يضيفه InEgypt Pro"
+  }
+}

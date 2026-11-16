@@ -1,0 +1,345 @@
+{
+  "_meta": {
+    "version": "v1",
+    "drafted": "2026-11-16",
+    "by": "agent, from the app repo (read-only) and Plan 46 §3",
+    "status": "SIGNED by the owner on 2026-11-16 ('apply all recommended F1–F10'). Only open item: app.campaignProviderId_pt (D4/F10), needed before phase 4. Becomes src/_data/facts.json in phase 1.",
+    "stateKey": {
+      "code": "read from the shipped app data or code on 2026-11-16",
+      "plan": "owner-approved text in Plan 46 / Plan 43; not re-derived",
+      "owner": "confirmed by the owner (D5 answers, 2026-11-16)"
+    },
+    "answers": {
+      "F1": "a",
+      "F2": "a",
+      "F3": "a",
+      "F4": "a",
+      "F5": "a",
+      "F6": "a",
+      "F7": "a",
+      "F8": "a",
+      "F9": "a",
+      "F10": "open"
+    }
+  },
+  "site": {
+    "url": {
+      "value": "https://ahmdelawady.github.io",
+      "state": "plan"
+    },
+    "pathPrefix": {
+      "value": "/inegypt-pages/",
+      "state": "plan"
+    },
+    "contactEmail": {
+      "value": "inegyptapp@gmail.com",
+      "state": "plan"
+    }
+  },
+  "app": {
+    "name": {
+      "value": "InEgypt",
+      "state": "plan"
+    },
+    "formerName": {
+      "value": "Egypt Trains & Cairo Metro",
+      "note": "say 'formerly' for one year after the rename",
+      "state": "plan"
+    },
+    "appStoreId": {
+      "value": "1533234023",
+      "state": "code",
+      "source": "site JSON-LD, Smart App Banner"
+    },
+    "appStoreUrl": {
+      "value": "https://apps.apple.com/app/id1533234023",
+      "state": "plan"
+    },
+    "campaignProviderId_pt": {
+      "value": null,
+      "state": "owner",
+      "note": "D4/F10 still open: App Store Connect → Analytics → campaign link generator. Needed before phase 4, not before phase 1"
+    },
+    "maker": {
+      "value": "Ahmed Elawady, independent developer in Egypt",
+      "state": "plan"
+    },
+    "onAppStoreSince": {
+      "value": "September 2020",
+      "state": "plan"
+    },
+    "platforms": {
+      "value": "iPhone and iPad, iOS 18 or later",
+      "state": "plan"
+    },
+    "android": {
+      "value": false,
+      "state": "plan"
+    },
+    "accountNeeded": {
+      "value": false,
+      "state": "plan"
+    },
+    "languages": {
+      "value": [
+        "English",
+        "Arabic",
+        "German",
+        "French",
+        "Spanish",
+        "Italian",
+        "Russian",
+        "Turkish",
+        "Chinese (Simplified)"
+      ],
+      "state": "code",
+      "source": "InEgypt/Resources/*.lproj (9 folders)"
+    }
+  },
+  "sentence": {
+    "en": "InEgypt is a free iPhone app for visiting and getting around Egypt. It plans your trip day by day, finds routes by metro, train, bus and other public transport, and shows fair prices and common scams before you pay.",
+    "ar": "InEgypt تطبيق مجاني للآيفون للسفر والتنقل في مصر: يخطط رحلتك يومًا بيوم، ويعرض طرق الوصول بالمترو والقطار والأتوبيس وباقي المواصلات، ويوضح الأسعار العادلة وأشهر طرق الاحتيال قبل أن تدفع.",
+    "short": "Egypt trip planner + metro, train and bus routes + fair prices. Free on iPhone.",
+    "state": "plan"
+  },
+  "coverage": {
+    "transitModes": {
+      "value": 9,
+      "list": [
+        "Metro",
+        "Monorail",
+        "LRT",
+        "BRT",
+        "Tram",
+        "National trains",
+        "Intercity coaches",
+        "City buses (fallback)",
+        "Domestic flights"
+      ],
+      "state": "owner",
+      "note": "F2 (a): publish these 9. The data has 14 public-transit codes; flights are routed by IntercityGraphRouter"
+    },
+    "routes": {
+      "value": 975,
+      "breakdown": {
+        "urbanLines": 14,
+        "enrTrainServices": 681,
+        "intercityCoachRoutes": 280
+      },
+      "state": "code",
+      "source": "GTFS pack 2026.08.13-national-transit-candidate-4 (bundled, per EncryptGTFS/manifest.json); Plan 12 method: NAT 4 + ALEX_TRAM 6 + MONO 1 + LRT 2 + BRT 1 routes; ENR routes; INTERCITY_* routes. City/microbus agencies and the newer Madinaty, Shorouk, Mwaslat, Green Bus agencies are not counted."
+    },
+    "stops": {
+      "value": 897,
+      "display": "nearly 900",
+      "breakdown": {
+        "urban": 183,
+        "train": 620,
+        "intercity": 94
+      },
+      "state": "owner",
+      "source": "same pack and method: unique stops served by fixed-mode trips",
+      "note": "F1 (a): display 'nearly 900' (the old '900+' was 3 short). Madinaty/Shorouk/Mwaslat/Green Bus stops not counted"
+    },
+    "attractions": {
+      "value": 224,
+      "display": "220+",
+      "state": "code",
+      "source": "GeneratedExplore.bundle dataset 3cc3d01c… MANIFEST attractions.dat recordCount; Plan 45 intake may change it"
+    },
+    "cities": {
+      "value": 34,
+      "display": "34",
+      "state": "code",
+      "source": "same MANIFEST, cities.dat recordCount"
+    },
+    "countedAt": {
+      "value": "November 2026",
+      "state": "code"
+    }
+  },
+  "transitHonesty": {
+    "structured": [
+      "Cairo Metro",
+      "Monorail",
+      "LRT",
+      "BRT",
+      "Alexandria tram",
+      "National trains",
+      "Intercity coaches"
+    ],
+    "fallback": "Local buses in Cairo and Alexandria are a fallback and less complete.",
+    "liveTracking": false,
+    "ticketSales": false,
+    "timesSource": "published timetables",
+    "state": "plan"
+  },
+  "free": {
+    "value": [
+      "Routes and directions, online, no daily limit",
+      "Places and city pages",
+      "Essentials: what things cost, situations & tips, emergency",
+      "Manual trip planning and editing",
+      "Bring your plan",
+      "The first automatic plans",
+      "A saved trip, place pages and the emergency page open offline",
+      "Trip notes and the currency converter",
+      "Today card and next stop"
+    ],
+    "state": "plan",
+    "source": "Plan 43 §4",
+    "note": "The free automatic-plan limit is remote config freeAutomaticTripLimit (Plan 43 decision D6 = 10). The site says 'the first automatic plans' and no number (D5). F5 (a): widgets and Live Activity removed from this list until confirmed shipping."
+  },
+  "paid": {
+    "value": [
+      "Offline route search",
+      "Offline Discover and city pages",
+      "More automatic plans",
+      "Multi-day trip weather",
+      "Trip expenses"
+    ],
+    "state": "plan",
+    "source": "Plan 43 §4",
+    "note": "Plan 43 also lists 'fare advisor detail' as paid; Plan 47 §5 keeps the AI fare check off the site."
+  },
+  "prices": {
+    "currency": "USD",
+    "proMonthly": {
+      "value": "$3.99",
+      "state": "plan"
+    },
+    "proYearly": {
+      "value": "$19.99",
+      "state": "plan"
+    },
+    "tripPass7": {
+      "value": "$4.99",
+      "state": "plan"
+    },
+    "tripPass14": {
+      "value": "$7.99",
+      "state": "plan"
+    },
+    "passesOnSale": {
+      "value": false,
+      "state": "owner",
+      "note": "Stays false until the owner switches D6; no Trip Pass line on the site before that"
+    },
+    "weeklyProduct": {
+      "value": false,
+      "state": "owner",
+      "note": "F3 (a): not on sale; not on the site"
+    },
+    "lifetimeProduct": {
+      "value": false,
+      "state": "owner",
+      "note": "F3 (a): not on sale; not on the site"
+    },
+    "familySharing": {
+      "value": null,
+      "state": "owner",
+      "note": "F4 (a): unknown, never mentioned on the site"
+    }
+  },
+  "iphoneFeatures": {
+    "widgets": {
+      "value": [
+        "Your Trip",
+        "Fair Prices",
+        "My places",
+        "Discover"
+      ],
+      "onSite": false,
+      "state": "owner",
+      "note": "F5 (a): only what the owner confirms ships goes on the site. None confirmed yet, so widgets stay off; flip onSite per widget when confirmed"
+    },
+    "liveActivity": {
+      "value": "trip day on the Lock Screen",
+      "onSite": false,
+      "state": "owner",
+      "note": "F5 (a): off the site until confirmed shipping (Plan 40 stages 5 and 4b untested)"
+    },
+    "siriPhrases": {
+      "value": [
+        "Plan a trip in InEgypt",
+        "What's my next stop in InEgypt",
+        "Ask InEgypt for directions",
+        "What's my InEgypt trip plan",
+        "Ask InEgypt for a fair price"
+      ],
+      "state": "code",
+      "source": "InEgypt/Core/AppIntents/Provider/InEgyptShortcutsProvider.swift (English phrases)",
+      "note": "Registered in code; the owner's Shortcuts-app screenshot of 2026-11-16 shows the App Shortcuts installed. The Plan 47 phrase 'Prepare an Egypt trip' is not registered",
+      "onSite": true
+    },
+    "controlCenter": {
+      "value": "Control Center buttons",
+      "onSite": false,
+      "state": "owner",
+      "note": "F5 (a): off the site until confirmed shipping"
+    }
+  },
+  "knowledge": {
+    "atoms": {
+      "value": 79,
+      "published": 78,
+      "byKind": {
+        "price": 34,
+        "warning": 23,
+        "contact": 11,
+        "rule": 6,
+        "process": 5
+      },
+      "state": "code",
+      "source": "InEgypt/Resources/Knowledge/topics/*.json"
+    },
+    "priceTicketAtoms": {
+      "value": [
+        "price_airport_taxi",
+        "price_metro_single_journey",
+        "price_bottled_water",
+        "price_camel_ride_short"
+      ],
+      "state": "code",
+      "note": "all published; checked dates 2026-03-27 (metro) and 2026-08-21 (others)"
+    },
+    "notForTheSite": {
+      "value": [
+        "price_transit_train (no lastVerifiedAt)",
+        "price_visa_on_arrival (F9 (a): kept off the site for now, although it is published in the app)"
+      ],
+      "state": "code"
+    }
+  },
+  "whatWeDontDo": {
+    "value": [
+      "No live tracking",
+      "No ticket sales",
+      "No hotel, flight or tour booking",
+      "No Android version",
+      "Local buses less complete",
+      "No sync between devices"
+    ],
+    "state": "owner",
+    "note": "F8 (a): 'No sync between devices' confirmed for publishing"
+  },
+  "privacy": {
+    "adSdk": {
+      "value": false,
+      "display": "No advertising SDK",
+      "state": "owner",
+      "note": "F6 (a): the owner confirms the ad SDK is removed in the release build (Plan 43 M5 / Plan 42 D6)"
+    },
+    "siteTracking": {
+      "value": "none: no cookies, no analytics script, no third-party requests",
+      "state": "plan"
+    }
+  },
+  "photos": {
+    "P08RedSea": {
+      "value": false,
+      "state": "owner",
+      "note": "F7 (a): P08 stays off until Plan 45 intake deepens the Red Sea"
+    }
+  }
+}

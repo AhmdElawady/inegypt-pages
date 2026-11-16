@@ -1,0 +1,129 @@
+---
+layout: layouts/base.njk
+permalink: /dev/look.html
+title: Look test · InEgypt (dev)
+description: Plan 47 phase 2 look test (not linked, not indexed).
+noindex: true
+lang: en
+extraCss: ["/assets/css/dev.css"]
+---
+{%- from "components/signs.njk" import sign, tiles -%}
+{%- from "components/media.njk" import picture, device, floatCard, ribbon with context -%}
+{%- from "components/content.njk" import feature with context -%}
+{%- from "components/calls.njk" import cta, inlineCall with context -%}
+{%- set c = devCopy.en -%}
+{%- set metro = atoms.atoms.price_metro_single_journey -%}
+
+{#- ===== Section 1: hero (G7 split composition) ===== -#}
+<div class="hero">
+  <section class="band band--hero theme-dark" aria-labelledby="hero-h1">
+    <div class="band__img">{{ picture("photos/P01", "The Giza pyramids at dusk", "100vw", true) }}</div>
+    <div class="container container--wide">
+      <div class="band__body">
+        {{ tiles(56) }}
+        <h1 id="hero-h1">{{ c.h1 }}</h1>
+        <p class="lead" style="color: var(--ink)">{{ facts.sentence.en }}</p>
+        {{ cta("web_home_hero", c.underBadge, "en", "web_home_hero_qr") }}
+      </div>
+    </div>
+  </section>
+  <div class="hero__phone">
+    {{ device("screens/s01-home-trip-upcoming-framed-demo", "InEgypt showing a trip to Luxor and Aswan that starts in 14 days", 300, false, false, true) }}
+    {{ floatCard("path", "Route", '<bdi dir="ltr">1h 22m · ~32 EGP</bdi>', "Airport → Giza · Bus › M3 › M2", "route") }}
+    {{ floatCard("tag", "Fair price", metro.en.title, '<bdi dir="ltr">' + metro.min + "–" + metro.max + " " + metro.currency + "</bdi> · checked " + (metro.lastVerifiedAt | monthYear)) }}
+    {{ floatCard("map-pin", "Next stop", "Karnak Temple Complex", "9:00 · about 2 hours") }}
+  </div>
+</div>
+
+{#- ===== Section 4: PLAN station ===== -#}
+{%- call feature("plan", "Plan", "خطِّط", "plan", c.planH2, c.planLead, c.planChecks, false, "en", true) -%}
+  {{ device("screens/s02-planner-input-framed-demo", "The trip planner: when, how long and what you like", 260) }}
+  {{ device("screens/s03-trip-day-framed-demo", "A day in Luxor: Karnak, lunch and the walk between, on the map", 260) }}
+  {{ device("screens/s01-home-trip-upcoming-framed-demo", "The trip page: dates, cities and what to get ready", 260) }}
+{%- endcall -%}
+<div class="container" style="margin-block-start: calc(-1 * var(--s7))">
+  <div class="strip-line" data-reveal>
+    <div class="strip-line__track" aria-hidden="true">
+      <div class="strip-line__stop"><span class="art">{{ art.pyramids | safe }}</span>{{ sign("Cairo", "القاهرة", "plan") }}</div>
+      <div class="strip-line__stop"><span class="art">{{ art.karnakColumn | safe }}</span>{{ sign("Luxor", "الأقصر", "plan") }}</div>
+      <div class="strip-line__stop"><span class="art">{{ art.felucca | safe }}</span>{{ sign("Aswan", "أسوان", "plan") }}</div>
+    </div>
+    <p class="strip-line__caption">Combined trips are joined by real transport: for example the sleeper train to Luxor.</p>
+  </div>
+  <p class="small muted" style="text-align: center; margin-inline: auto; margin-block-start: var(--s3)">{{ c.planSmall }}</p>
+  {{ inlineCall("web_home_plan", c.inline) }}
+</div>
+
+{#- ===== Section 9: DISCOVER station ===== -#}
+<section class="section has-line line-nile" id="discover" style="--line: var(--nile)">
+  <div class="container stack-lg">
+    <div class="stack" data-reveal>
+      {{ sign("Discover", "اكتشف", "nile") }}
+      <h2><bdi>{{ facts.coverage.attractions.display }}</bdi> places in <bdi>{{ facts.coverage.cities.display }}</bdi> cities, each one step from your plan.</h2>
+      <p class="lead">Browse cities, places and things to do. Every place page has opening notes, what to know before you go and a button to add it to your trip. Where an official ticket seller exists, InEgypt links to it.</p>
+    </div>
+    {{ ribbon("discover-ribbon", "Egypt, city by city", [
+      { key: "photos/P04", alt: "Hot-air balloons over the West Bank at Luxor", en: "Luxor", ar: "الأقصر" },
+      { key: "photos/P05", alt: "The Nile at Aswan", en: "Aswan", ar: "أسوان" },
+      { key: "photos/P06", alt: "The Citadel of Qaitbay in Alexandria", en: "Alexandria", ar: "الإسكندرية" },
+      { key: "photos/P07", alt: "The Mosque of Ibn Tulun in Islamic Cairo", en: "Islamic Cairo", ar: "القاهرة الإسلامية" },
+      { key: "photos/P09", alt: "The temple of Abu Simbel", en: "Abu Simbel", ar: "أبو سمبل" }
+    ]) }}
+    <div class="feature__media" style="justify-content: flex-start">
+      {{ device("screens/s12-discover-framed-demo", "Discover: situations and tips (stand-in for the Discover home)", 240) }}
+    </div>
+  </div>
+</section>
+
+{#- ===== Section 19: final call ===== -#}
+<section class="band theme-dark" aria-labelledby="final-h2">
+  <div class="band__img">{{ picture("photos/P12", "The Nile in Cairo at dusk, with minarets on the skyline") }}</div>
+  <div class="container container--wide">
+    <div class="band__body">
+      <svg class="terminus" viewBox="0 0 120 64" aria-hidden="true" focusable="false">
+        <path d="M0 8 H52 Q60 8 60 16 V48" stroke="var(--plan)" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M0 22 H44 Q54 22 56 32 L58 48" stroke="var(--route)" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M120 8 H68 Q60 8 60 16 V48" stroke="var(--price)" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M120 22 H76 Q66 22 64 32 L62 48" stroke="var(--safe)" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <circle cx="60" cy="52" r="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="4"/>
+      </svg>
+      {{ tiles(48) }}
+      <h2 id="final-h2">Egypt, planned and in your pocket.</h2>
+      {{ cta("web_home_final", c.underBadge, "en", "web_home_final_qr") }}
+    </div>
+  </div>
+</section>
+
+{#- ===== Look-test notes, photo contact sheet (G2), placeholder art ===== -#}
+<div class="container">
+  <section class="dev-section" id="notes">
+    <h2>About this look test (Plan 47 phase 2)</h2>
+    <div class="stack" style="max-inline-size: 80ch">
+      <p>It has to answer the three points of the round-1 verdict: do the fonts look like the app's, is Egypt on the page, and is there an idea of its own (the line and the signs)?</p>
+      <p class="small muted"><b>Demo material:</b> all phone screens are your dark test captures (the light, seeded "Cairo, Luxor &amp; Aswan" set comes later), and S04 "About this plan" and the Discover home are stand-ins.
+        The landmark line drawings are agent-drawn placeholders until the Claude Design set arrives. The nav stays solid here; on the real home it starts transparent over the hero (§4 section 0).
+        Headings are SF Pro Rounded in Safari and Rubik elsewhere (D20).</p>
+    </div>
+  </section>
+
+  <section class="dev-section" id="contact-sheet">
+    <h2>Photo contact sheet: every photo after the one grade (G2)</h2>
+    <p class="dev-note" lang="en" dir="ltr">Warm white balance, saturation −8 %, blacks lifted to #14110D, highlights rolled off, a 6 % limestone multiply (<code>scripts/build-images.mjs</code>). P08 Red Sea stays off (F7). P02, P03, P10, P11, P13 are shortlisted but not downloaded yet.</p>
+    <div class="contact">
+      {%- for p in photos.photos %}
+      <figure>{{ picture("photos/" + p.slot, "", "220px") }}<figcaption><b>{{ p.slot }}</b> · {{ p.use }} · {{ p.photographer }}</figcaption></figure>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <section class="dev-section" id="line-art">
+    <h2>Line art (placeholder set, §7.3 brief 1)</h2>
+    <p class="dev-note" lang="en" dir="ltr">One 4 px stroke, round caps, a station dot at each end, line colours only. Drawn by the agent to hold the place; the Claude Design set replaces these six files (<code>src/assets/art/</code>) with no template change.</p>
+    <div class="art-grid">
+      {%- for k, label in { pyramids: "Pyramids", karnakColumn: "Karnak column", qaitbay: "Qaitbay", felucca: "Felucca", abuSimbel: "Abu Simbel", balloon: "Balloon" } %}
+      {%- set lines = ["plan", "route", "price", "safe", "nile", "dusk"] %}
+      <figure style="--line: var(--{{ lines[loop.index0] }})"><span class="art" style="--art: 120px">{{ art[k] | safe }}</span><figcaption>{{ label }}</figcaption></figure>
+      {%- endfor %}
+    </div>
+  </section>
+</div>

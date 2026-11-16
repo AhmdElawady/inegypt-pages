@@ -1,0 +1,82 @@
+---
+layout: layouts/base.njk
+permalink: /dev/type.html
+title: Type specimen · InEgypt (dev)
+description: Font specimen for the InEgypt website redesign (not linked, not indexed).
+noindex: true
+lang: en
+extraCss: ["/assets/css/dev.css"]
+---
+{%- set h1 = devCopy.en.h1 -%}
+{%- set h2 = devCopy.en.planH2 -%}
+{%- set h1ar = devCopy.ar.h1 -%}
+{%- set h2ar = devCopy.ar.planH2 -%}
+<div class="container dev-head">
+  <h1 style="font-size: 40px">Type specimen</h1>
+  <p><b>Decided 2026-11-16 by eye (owner: "apply as you recommend"): Rubik for Latin headings outside Safari and for Arabic headings; Safari keeps SF Pro Rounded.</b> Plan 47 §2.4 (D7 option 2) and P2 G6. The two decisions were: (1) the Latin fallback heading font
+  that non-Safari visitors see (D20): Nunito 800, M PLUS Rounded 1c 800 or Rubik 700, compared with SF Pro Rounded;
+  (2) the Arabic heading font: Rubik or Readex Pro. Open this page in <b>Safari</b> (Mac and iPhone) and in <b>Chrome</b>.
+  In Safari row 1 is the app's own SF Pro Rounded; in Chrome row 1 falls back to the plain system font, which is the
+  problem the fallback solves. Headings use −0.02em tracking (G6).</p>
+  <p class="spec-detect" id="detect">Browser: <span data-ua>—</span></p>
+</div>
+
+<div class="container">
+<section class="dev-section">
+  <h2>Latin headings</h2>
+  <div class="spec">
+    {%- for f in [
+      { cls: "f-system", name: "1 · ui-rounded → SF Pro Rounded (Safari only; elsewhere the system font)", w: "800 / 700" },
+      { cls: "f-nunito", name: "2 · Nunito 800 (the plan default before the specimen; not chosen)", w: "800 / 700" },
+      { cls: "f-mplus", name: "3 · M PLUS Rounded 1c 800", w: "800 / 700" },
+      { cls: "f-rubik", name: "4 · Rubik 700 — CHOSEN for headings outside Safari (D20, 2026-11-16); 35 KB, loads only outside Safari", w: "700 / 600" }
+    ] %}
+    <div class="spec__row {{ f.cls }}">
+      <p class="spec__name"><b>{{ f.name }}</b> · weights {{ f.w }}</p>
+      <h1>{{ h1 }}</h1>
+      <h2>{{ h2 }}</h2>
+      <h3>Visiting Egypt? Living in Egypt?</h3>
+      <p class="num" style="font-size: var(--fs-num)">975 · nearly 900 · 224 · 9:41 · 10–20 EGP</p>
+      <p style="font-family: var(--font-head); font-weight: 700; font-size: 21px">Station sign · PLAN · GET AROUND · KNOW THE PRICE · Aa Gg Rr 0123456789</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="dev-section">
+  <h2>Body text (system font on every platform)</h2>
+  <div class="spec__row"><p class="lead">{{ facts.sentence.en }}</p><p>{{ devCopy.en.planLead }}</p><p class="small muted">{{ devCopy.en.planSmall }}</p></div>
+</section>
+
+<section class="dev-section" lang="ar" dir="rtl">
+  <h2 lang="en" dir="ltr">Arabic headings (G8: one step smaller, looser line height, no tracking)</h2>
+  <div class="spec">
+    {%- for f in [
+      { cls: "f-ar-system", name: "1 · ui-rounded → SF Arabic Rounded if the system has it, else SF Arabic (Safari)" },
+      { cls: "f-ar-rubik", name: "2 · Rubik — CHOSEN for Arabic headings (2026-11-16); 32 KB Arabic subset" },
+      { cls: "f-ar-readex", name: "3 · Readex Pro (the alternative; 23 KB Arabic subset)" }
+    ] %}
+    <div class="spec__row {{ f.cls }}">
+      <p class="spec__name" lang="en" dir="ltr"><b>{{ f.name }}</b></p>
+      <h1>{{ h1ar }}</h1>
+      <h2>{{ h2ar }}</h2>
+      <h3>زائر لمصر؟ ساكن في مصر؟</h3>
+      <p class="num" style="font-size: var(--fs-num)"><bdi dir="ltr">975</bdi> · قرابة <bdi dir="ltr">900</bdi> · <bdi dir="ltr">10–20 EGP</bdi></p>
+      <p style="font-family: var(--font-head); font-weight: 700; font-size: 21px">خطِّط · اتنقّل · اعرف السعر · مترو القاهرة · الأقصر · أسوان</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="dev-section" lang="ar" dir="rtl">
+  <h2 lang="en" dir="ltr">Arabic body: system (SF Arabic on Apple) vs IBM Plex Sans Arabic (Windows, other phones, Chrome on Mac without SF Arabic)</h2>
+  <div class="spec">
+    <div class="spec__row f-ar-body-system"><p class="spec__name" lang="en" dir="ltr"><b>System (SF Arabic)</b></p><p class="lead body-sample">{{ facts.sentence.ar }}</p><p class="body-sample">{{ devCopy.ar.planLead }}</p></div>
+    <div class="spec__row f-ar-body-plex"><p class="spec__name" lang="en" dir="ltr"><b>IBM Plex Sans Arabic 400 / 700</b></p><p class="lead body-sample">{{ facts.sentence.ar }}</p><p class="body-sample">{{ devCopy.ar.planLead }}</p></div>
+  </div>
+  <p class="dev-note" lang="en" dir="ltr">Arabic sample lines are agent drafts for layout only; the owner writes the Arabic copy (D14).</p>
+</section>
+</div>
+<script>
+  document.querySelector("[data-ua]").textContent = /Safari/.test(navigator.userAgent) && !/Chrome|Chromium|Edg/.test(navigator.userAgent) ? "Safari (row 1 shows SF Pro Rounded)" : "Not Safari (row 1 shows the system font)";
+</script>

@@ -1,0 +1,1675 @@
+{
+  "syncedAt": "2026-11-16",
+  "contentRevision": 5,
+  "count": 78,
+  "atoms": {
+    "scam_unofficial_guides": {
+      "kind": "warning",
+      "en": {
+        "detail": "Book through your hotel or an official tourist office, and ask anyone who approaches you offering a tour for identification. An unofficial guide may overcharge or steer you to shops that pay them a commission.",
+        "title": "Unofficial 'Tour Guides'"
+      },
+      "ar": {
+        "detail": "احجز عبر فندقك أو مكتب سياحي رسمي، واطلب إثبات هوية من أي شخص يعرض عليك جولة. المرشد غير الرسمي قد يبالغ في السعر أو يقودك إلى متاجر تدفع له عمولة.",
+        "title": "مرشدون سياحيون غير رسميين"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "scam_museum_helpers": {
+      "kind": "warning",
+      "en": {
+        "detail": "People offering to take your photo or show you 'secret spots' inside attractions will expect tips. Agree on a price first or politely decline.",
+        "title": "Temple/Museum 'Helpers'"
+      },
+      "ar": {
+        "detail": "الأشخاص الذين يعرضون عليك التقاط صور لك أو إرشادك إلى \"أماكن سرية\" داخل المعالم السياحية يتوقعون إكرامية. اتفق على السعر أولاً أو اعتذر بلطف.",
+        "title": "مساعدو المعبد/المتحف"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "scam_fake_tickets": {
+      "kind": "warning",
+      "en": {
+        "detail": "Buy from the attraction's official ticket office or official online portal. Avoid outside or message-app sellers promising discounted or skip-the-line entry, and make sure the ticket or QR scans before leaving the seller.",
+        "title": "Fake Ticket Sellers"
+      },
+      "ar": {
+        "detail": "اشترِ من شباك التذاكر الرسمي للمعلم أو منصته الإلكترونية الرسمية. تجنب بائعي الخارج أو تطبيقات الرسائل الذين يعدون بخصم أو تجاوز الطابور، وتأكد أن التذكرة أو رمز QR يعمل قبل أن تغادر البائع.",
+        "title": "بائعو التذاكر المزيفة"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "scam_ride_pricing": {
+      "kind": "warning",
+      "en": {
+        "detail": "Always agree on the total price AND duration before any ride. Some operators quote per-minute or demand extra to let you off.",
+        "title": "Camel/Horse Ride Pricing"
+      },
+      "ar": {
+        "detail": "اتفق دائمًا على السعر الإجمالي ومدة الرحلة قبل البدء بها. بعض شركات النقل تُحدد السعر بالدقيقة أو تطلب مبلغًا إضافيًا للسماح لك بالنزول.",
+        "title": "أسعار ركوب الجمال/الخيول"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_camel_ride_short": {
+      "kind": "price",
+      "en": {
+        "note": "Agree total price first",
+        "title": "Short camel ride (15-20 min)"
+      },
+      "ar": {
+        "note": "اتفق على السعر الإجمالي أولاً",
+        "title": "رحلة قصيرة على ظهر الجمل (15-20 دقيقة)"
+      },
+      "min": 180,
+      "max": 450,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": true,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_camel_tour": {
+      "kind": "price",
+      "en": {
+        "note": "Agree duration + price",
+        "title": "Camel tour (1-2 hours)"
+      },
+      "ar": {
+        "note": "الاتفاق على المدة والسعر",
+        "title": "جولة على ظهر الجمال (1-2 ساعة)"
+      },
+      "min": 540,
+      "max": 1080,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": true,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_horse_carriage": {
+      "kind": "price",
+      "en": {
+        "note": "Popular in Luxor",
+        "title": "Horse carriage ride"
+      },
+      "ar": {
+        "note": "مشهور في الأقصر",
+        "title": "جولة بعربة تجرها الخيول"
+      },
+      "min": 180,
+      "max": 450,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": true,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_felucca_hour": {
+      "kind": "price",
+      "en": {
+        "note": "Negotiate before boarding",
+        "title": "Felucca ride (Nile)"
+      },
+      "ar": {
+        "note": "التفاوض قبل الركوب",
+        "title": "رحلة بالفلوكة (النيل)"
+      },
+      "min": 180,
+      "max": 540,
+      "currency": "EGP",
+      "unit": "per_hour",
+      "negotiable": true,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_nile_dinner_cruise": {
+      "kind": "price",
+      "en": {
+        "title": "Nile cruise dinner"
+      },
+      "ar": {
+        "title": "عشاء على متن رحلة نيلية مع قارب فاخر"
+      },
+      "min": 900,
+      "max": 2160,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_tour_guide_day": {
+      "kind": "price",
+      "en": {
+        "title": "Tour guide (half day)"
+      },
+      "ar": {
+        "title": "مرشد سياحي (نصف يوم)"
+      },
+      "min": 540,
+      "max": 1080,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": true,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_private_driver_day": {
+      "kind": "price",
+      "en": {
+        "title": "Private driver (full day)"
+      },
+      "ar": {
+        "title": "سائق خاص (يوم كامل)"
+      },
+      "min": 720,
+      "max": 1440,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": true,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_major_sites": {
+      "kind": "price",
+      "en": {
+        "title": "Major sites (Pyramids, Luxor)"
+      },
+      "ar": {
+        "title": "المواقع الرئيسية (الأهرامات، الأقصر)"
+      },
+      "min": 360,
+      "max": 1080,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_museums": {
+      "kind": "price",
+      "en": {
+        "title": "Museums"
+      },
+      "ar": {
+        "title": "المتاحف"
+      },
+      "min": 180,
+      "max": 810,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_temples": {
+      "kind": "price",
+      "en": {
+        "title": "Temples & Historical sites"
+      },
+      "ar": {
+        "title": "المعابد والمواقع التاريخية"
+      },
+      "min": 250,
+      "max": 720,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "process_giza_ticket_scope": {
+      "kind": "process",
+      "en": {
+        "detail": "Giza Plateau area entry does not automatically include the separately listed pyramids, tombs, and interior spaces. Check the site's official page for current options before buying.",
+        "title": "Check what the Giza ticket includes"
+      },
+      "ar": {
+        "detail": "تذكرة دخول منطقة هضبة الجيزة لا تشمل تلقائيًا دخول أهرامات الجيزة أو المقابر والمناطق الداخلية المدرجة بشكل منفصل. راجع صفحة الموقع الرسمية لمعرفة الخيارات الحالية قبل الشراء.",
+        "title": "تحقق مما تشمله تذكرة الجيزة"
+      },
+      "lastVerifiedAt": "2026-08-27",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_mota_giza_plateau_2026_08",
+        "kind": "national_authority",
+        "url": "https://egymonuments.gov.eg/en/archaeological-sites/giza-plateau/"
+      }
+    },
+    "price_giza_plateau_area_entry_foreign_adult": {
+      "kind": "price",
+      "en": {
+        "note": "Applies to one foreign adult for Giza Plateau area entry only; separately listed pyramid interiors, tombs, and other ticketed spaces are not included.",
+        "title": "Giza Plateau area entry — foreign adult"
+      },
+      "ar": {
+        "note": "ينطبق على بالغ أجنبي واحد لدخول منطقة هضبة الجيزة فقط؛ لا يشمل دخول الأهرامات من الداخل ولا المقابر ولا الأماكن الأخرى التي لها تذاكر منفصلة.",
+        "title": "دخول منطقة هضبة الجيزة — أجنبي بالغ"
+      },
+      "min": 700,
+      "max": 700,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-27",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_mota_giza_plateau_2026_08",
+        "kind": "national_authority",
+        "url": "https://egymonuments.gov.eg/en/archaeological-sites/giza-plateau/"
+      }
+    },
+    "scam_sim_markup": {
+      "kind": "warning",
+      "en": {
+        "detail": "Some airport or third-party SIM sellers add fees or push a larger bundle. Ask for the official package name, data allowance, total price, and a receipt before paying.",
+        "title": "Verify the SIM bundle"
+      },
+      "ar": {
+        "detail": "قد يضيف بعض بائعي الشرائح في المطار أو البائعين غير الرسميين رسومًا أو يدفعونك لباقة أكبر. اسأل عن اسم الباقة الرسمية وحجم الإنترنت والسعر الإجمالي والإيصال قبل الدفع.",
+        "title": "تحقق من باقة الشريحة"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "scam_menu_no_prices": {
+      "kind": "warning",
+      "en": {
+        "detail": "If a menu has no prices — or you're quoted verbally — confirm prices before ordering, especially for fish \"by weight\". Surprises arrive with the bill, when it's hardest to argue.",
+        "title": "Menus without prices"
+      },
+      "ar": {
+        "detail": "إذا خلت القائمة من الأسعار أو قيلت لك شفهيًا، فأكد الأسعار قبل الطلب، خصوصًا السمك «بالوزن». المفاجآت تأتي مع الفاتورة حين يصعب الاعتراض.",
+        "title": "قوائم طعام بلا أسعار"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "scam_service_vs_tip": {
+      "kind": "warning",
+      "en": {
+        "detail": "Ask for the itemized bill and check it before paying. Any additional tip is your choice, based on the service — do not let anyone present a second tip as a mandatory fee.",
+        "title": "Check the bill before tipping"
+      },
+      "ar": {
+        "detail": "اطلب الفاتورة المفصّلة وراجعها قبل الدفع. أي إكرامية إضافية هي اختيارك وحسب مستوى الخدمة — ولا تدع أحدًا يقدّم إكرامية ثانية على أنها رسم إلزامي.",
+        "title": "راجع الفاتورة قبل البقشيش"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_street_food": {
+      "kind": "price",
+      "en": {
+        "title": "Street food (Koshari, Foul)"
+      },
+      "ar": {
+        "title": "طعام الشارع (كشري، فول)"
+      },
+      "min": 50,
+      "max": 150,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_local_restaurant": {
+      "kind": "price",
+      "en": {
+        "title": "Local restaurant meal"
+      },
+      "ar": {
+        "title": "وجبة من مطعم محلي"
+      },
+      "min": 90,
+      "max": 270,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_midrange_restaurant": {
+      "kind": "price",
+      "en": {
+        "title": "Mid-range restaurant"
+      },
+      "ar": {
+        "title": "مطعم متوسط ​​المستوى"
+      },
+      "min": 180,
+      "max": 450,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_coffee_tea": {
+      "kind": "price",
+      "en": {
+        "title": "Coffee/Tea at café"
+      },
+      "ar": {
+        "title": "قهوة/شاي في المقهى"
+      },
+      "min": 27,
+      "max": 90,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_hotel_porter": {
+      "kind": "price",
+      "en": {
+        "title": "Hotel porter (per bag)"
+      },
+      "ar": {
+        "title": "عامل نقل الأمتعة في الفندق (لكل حقيبة)"
+      },
+      "min": 20,
+      "max": 50,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_housekeeping_day": {
+      "kind": "price",
+      "en": {
+        "title": "Hotel housekeeping"
+      },
+      "ar": {
+        "title": "خدمة تنظيف غرف الفندق"
+      },
+      "min": 50,
+      "max": 100,
+      "currency": "EGP",
+      "unit": "per_day",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_restaurant_tip": {
+      "kind": "price",
+      "en": {
+        "note": "If not included",
+        "title": "Restaurant tip"
+      },
+      "ar": {
+        "note": "إذا لم تكن مشمولة",
+        "title": "إكرامية المطعم"
+      },
+      "min": 10,
+      "max": 15,
+      "currency": null,
+      "unit": "percent",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_bathroom_attendant": {
+      "kind": "price",
+      "en": {
+        "title": "Bathroom attendant"
+      },
+      "ar": {
+        "title": "عامل نظافة الحمامات"
+      },
+      "min": 10,
+      "max": 10,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_sim_card_tourist": {
+      "kind": "price",
+      "en": {
+        "note": "Official e& Egypt prices — use this checker only for an e& Traveler quote; confirm any SIM or activation fee at the counter",
+        "title": "e& Traveler bundle (7–40 GB)"
+      },
+      "ar": {
+        "note": "أسعار e& مصر الرسمية — استخدم المقارنة فقط لعرض باقة Traveler من e&، وتأكد من رسوم الشريحة أو التفعيل في المنفذ",
+        "title": "باقة e& Traveler ‏(7–40 جيجابايت)"
+      },
+      "min": 200,
+      "max": 600,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-23",
+      "siteUsable": true,
+      "evidence": "operator_published",
+      "estimate": false,
+      "source": {
+        "id": "src_eand_traveler_bundles",
+        "kind": "operator_site",
+        "url": "https://www.eand.com.eg/portal/pages/services/traveling_to_egypt_en.html"
+      }
+    },
+    "price_visa_on_arrival": {
+      "kind": "price",
+      "en": {
+        "note": "Pay USD cash at an official bank counter before passport control; eligibility depends on your passport",
+        "title": "Visa on arrival"
+      },
+      "ar": {
+        "note": "تُدفع نقدًا بالدولار في شباك بنك رسمي قبل الجوازات؛ الأهلية حسب جواز السفر",
+        "title": "تأشيرة عند الوصول"
+      },
+      "min": 30,
+      "max": 30,
+      "currency": "USD",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-22",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_moi_visa_on_arrival",
+        "kind": "national_authority",
+        "url": "https://moi.gov.eg/passports/foreigners/index2/8"
+      }
+    },
+    "process_check_entry_eligibility": {
+      "kind": "process",
+      "en": {
+        "detail": "E-visa or visa-on-arrival eligibility depends on your passport and itinerary. Check the Ministry of Interior rules and the official tourism portal before travel; do not rely on a saved fee or country list.",
+        "title": "Check entry eligibility before travel"
+      },
+      "ar": {
+        "detail": "تعتمد أهلية التأشيرة الإلكترونية أو التأشيرة عند الوصول على جواز سفرك وخط سيرك. تحقق من قواعد وزارة الداخلية وبوابة السياحة الرسمية قبل السفر؛ لا تعتمد على مبلغ أو قائمة دول محفوظة.",
+        "title": "تحقق من أهلية الدخول قبل السفر"
+      },
+      "lastVerifiedAt": "2026-08-22",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_moi_visa_on_arrival",
+        "kind": "national_authority",
+        "url": "https://moi.gov.eg/passports/foreigners/index2/8"
+      }
+    },
+    "warning_accessible_travel_backup": {
+      "kind": "warning",
+      "en": {
+        "detail": "Lift, ramp, or assistance availability can vary by station or operator, and we do not have complete live data. Confirm assistance directly before travel and keep a backup plan plus essential medication or device information.",
+        "title": "Confirm assistance and plan a backup"
+      },
+      "ar": {
+        "detail": "إتاحة المصعد أو المنحدر أو المساعدة قد تختلف حسب المحطة أو المشغّل وقد تتغير دون أن تتوفر لدينا بيانات كاملة. أكّد المساعدة مباشرة قبل السفر، واحتفظ بخطة بديلة ومعلومات أدويتك أو جهازك الأساسية.",
+        "title": "أكد المساعدة وخطط لبديل"
+      },
+      "lastVerifiedAt": "2026-08-22",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "emergency_unified": {
+      "kind": "contact",
+      "en": {
+        "scope": "Nationwide",
+        "subtitle": "Egypt's general emergency number",
+        "title": "General Emergency"
+      },
+      "ar": {
+        "scope": "على مستوى الجمهورية",
+        "subtitle": "رقم الطوارئ العام في مصر",
+        "title": "الطوارئ العامة"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_ntra_important_numbers",
+        "kind": "national_authority",
+        "url": "https://www.tra.gov.eg/ar/atrc-faq/important-telephone-numbers/"
+      }
+    },
+    "emergency_police": {
+      "kind": "contact",
+      "en": {
+        "scope": "Nationwide",
+        "subtitle": "Police emergencies",
+        "title": "Police"
+      },
+      "ar": {
+        "scope": "على مستوى الجمهورية",
+        "subtitle": "بلاغات الشرطة العاجلة",
+        "title": "شرطة"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_moi_emergency_numbers",
+        "kind": "national_authority",
+        "url": "https://moi.gov.eg/home/EmergancyNumber"
+      }
+    },
+    "emergency_ambulance": {
+      "kind": "contact",
+      "en": {
+        "scope": "Nationwide",
+        "subtitle": "Medical emergencies",
+        "title": "Ambulance"
+      },
+      "ar": {
+        "scope": "على مستوى الجمهورية",
+        "subtitle": "حالات الطوارئ الطبية",
+        "title": "سيارة إسعاف"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_ntra_important_numbers",
+        "kind": "national_authority",
+        "url": "https://www.tra.gov.eg/ar/atrc-faq/important-telephone-numbers/"
+      }
+    },
+    "emergency_fire": {
+      "kind": "contact",
+      "en": {
+        "scope": "Nationwide",
+        "subtitle": "Fire emergencies",
+        "title": "Fire Department"
+      },
+      "ar": {
+        "scope": "على مستوى الجمهورية",
+        "subtitle": "حالات الطوارئ المتعلقة بالحرائق",
+        "title": "إدارة الإطفاء"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_moi_emergency_numbers",
+        "kind": "national_authority",
+        "url": "https://moi.gov.eg/home/EmergancyNumber"
+      }
+    },
+    "emergency_tourist_police": {
+      "kind": "contact",
+      "en": {
+        "scope": "Nationwide",
+        "subtitle": "For tourist-related incidents",
+        "title": "Tourist Police"
+      },
+      "ar": {
+        "scope": "على مستوى الجمهورية",
+        "subtitle": "فيما يتعلق بالحوادث المتعلقة بالسياح",
+        "title": "شرطة السياحة"
+      },
+      "lastVerifiedAt": "2026-08-22",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_experience_egypt_faq_2026_08",
+        "kind": "national_authority",
+        "url": "https://www.experienceegypt.eg/en/home/faq"
+      }
+    },
+    "emergency_gas": {
+      "kind": "contact",
+      "en": {
+        "scope": "Nationwide",
+        "subtitle": "Gas leaks and emergencies",
+        "title": "Natural Gas Emergency"
+      },
+      "ar": {
+        "scope": "على مستوى الجمهورية",
+        "subtitle": "تسربات الغاز وحالات الطوارئ",
+        "title": "حالة طوارئ تتعلق بالغاز الطبيعي"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_experience_egypt_useful_info",
+        "kind": "national_authority",
+        "url": "https://www.experienceegypt.eg/en/UsefulInfo"
+      }
+    },
+    "emergency_traffic": {
+      "kind": "contact",
+      "en": {
+        "scope": "Nationwide",
+        "subtitle": "Traffic incidents and accidents",
+        "title": "Traffic Police"
+      },
+      "ar": {
+        "scope": "على مستوى الجمهورية",
+        "subtitle": "حوادث المرور",
+        "title": "شرطة المرور"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_kfs_governorate_directory",
+        "kind": "national_authority",
+        "url": "https://kfs.gov.eg/index.php/directory"
+      }
+    },
+    "emergency_electricity": {
+      "kind": "contact",
+      "en": {
+        "scope": "Nationwide",
+        "subtitle": "Power outages and electrical issues",
+        "title": "Electricity Emergency"
+      },
+      "ar": {
+        "scope": "على مستوى الجمهورية",
+        "subtitle": "انقطاع التيار الكهربائي ومشاكل الكهرباء",
+        "title": "حالة طوارئ كهربائية"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_kfs_governorate_directory",
+        "kind": "national_authority",
+        "url": "https://kfs.gov.eg/index.php/directory"
+      }
+    },
+    "contact_tourism_hotline": {
+      "kind": "contact",
+      "en": {
+        "scope": "Nationwide",
+        "subtitle": "For visitor inquiries and complaints during published service hours",
+        "title": "Tourism & Antiquities Hotline"
+      },
+      "ar": {
+        "scope": "على مستوى الجمهورية",
+        "subtitle": "لاستفسارات وشكاوى الزوار خلال ساعات الخدمة المنشورة",
+        "title": "خط السياحة والآثار"
+      },
+      "lastVerifiedAt": "2026-08-22",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_mota_hotline_19654",
+        "kind": "national_authority",
+        "url": "https://egymonuments.gov.eg/en/news/hot-line-service-19654"
+      }
+    },
+    "scam_metro_helper": {
+      "kind": "warning",
+      "en": {
+        "detail": "Use a staffed booth or official machine. You do not need to hand cash or your phone to an unofficial helper; if you need help, ask uniformed metro staff.",
+        "title": "Ticket-machine \"helpers\""
+      },
+      "ar": {
+        "detail": "استخدم شباكًا أو ماكينة رسمية. لا حاجة لتسليم نقودك أو هاتفك لمساعد غير رسمي؛ وإذا احتجت مساعدة فاسأل موظف مترو بالزي الرسمي.",
+        "title": "«مساعدو» ماكينات التذاكر"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "scam_metro_ticket": {
+      "kind": "warning",
+      "en": {
+        "detail": "The fare depends on how many stations you travel. Tell the booth your destination or count the stations first, then keep the ticket until you exit — you need it at the final gate.",
+        "title": "Buy the right metro ticket"
+      },
+      "ar": {
+        "detail": "السعر يعتمد على عدد المحطات. أخبر الشباك بوجهتك أو احسب المحطات أولًا، واحتفظ بالتذكرة حتى الخروج لأنك ستحتاجها عند البوابة الأخيرة.",
+        "title": "اشترِ تذكرة المترو الصحيحة"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_sis_metro_fares_2026_03",
+        "kind": "national_authority",
+        "url": "https://sis.gov.eg/en/media-center/news/railway-metro-ticket-prices-to-change-starting-friday/"
+      }
+    },
+    "scam_metro_route": {
+      "kind": "warning",
+      "en": {
+        "detail": "Before boarding, check the line number or color, the direction shown by the terminal station, and where you change lines. If you have luggage, avoid rush hour when possible.",
+        "title": "Check line, direction, interchange"
+      },
+      "ar": {
+        "detail": "قبل الركوب، راجع رقم الخط أو لونه، والاتجاه باسم المحطة النهائية، ومحطة تبديل الخط. وإذا معك حقائب فتجنب ساعة الذروة متى أمكن.",
+        "title": "راجع الخط والاتجاه والتبديل"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_transit_metro": {
+      "kind": "price",
+      "en": {
+        "title": "Metro"
+      },
+      "ar": {
+        "title": "مترو"
+      },
+      "min": 10,
+      "max": 20,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-03-27",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_sis_metro_fares_2026_03",
+        "kind": "national_authority",
+        "url": "https://sis.gov.eg/en/media-center/news/railway-metro-ticket-prices-to-change-starting-friday/"
+      }
+    },
+    "price_transit_lrt": {
+      "kind": "price",
+      "en": {
+        "title": "LRT"
+      },
+      "ar": {
+        "title": "القطار الكهربائي الخفيف"
+      },
+      "min": null,
+      "max": null,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-22",
+      "siteUsable": false,
+      "evidence": "operator_published",
+      "estimate": false,
+      "source": {
+        "id": "src_mobility_cairo_lrt_tickets_2026_08",
+        "kind": "operator_site",
+        "url": "https://www.mobilitycairo.com/en/tickets/choose-your-ticket"
+      }
+    },
+    "price_transit_brt": {
+      "kind": "price",
+      "en": {
+        "title": "BRT"
+      },
+      "ar": {
+        "title": "الاوتوبيس الترددي السريع"
+      },
+      "min": null,
+      "max": null,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": false,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_egyptindependent_brt_fares_2025_05",
+        "kind": "press",
+        "url": "https://www.egyptindependent.com/ticket-prices-for-the-bus-rapid-transit-system-in-egypt-starting-from-le5/"
+      }
+    },
+    "price_transit_monorail": {
+      "kind": "price",
+      "en": {
+        "title": "Monorail"
+      },
+      "ar": {
+        "title": "المونوريل"
+      },
+      "min": null,
+      "max": null,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": false,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_ahram_monorail_fares_2026_05",
+        "kind": "press",
+        "url": "https://english.ahram.org.eg/NewsContent/1/1235/567546/Egypt/Urban--Transport/Egypt-sets-monorail-fares-as-first-phase-opens-to-.aspx"
+      }
+    },
+    "price_transit_tram": {
+      "kind": "price",
+      "en": {
+        "title": "Tram"
+      },
+      "ar": {
+        "title": "ترام"
+      },
+      "min": null,
+      "max": null,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": false,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_transit_bus": {
+      "kind": "price",
+      "en": {
+        "title": "Public Bus"
+      },
+      "ar": {
+        "title": "أتوبيس عام"
+      },
+      "min": null,
+      "max": null,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": false,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "rule_fare_metro": {
+      "kind": "rule",
+      "en": {
+        "detail": "1-9 stops: 10 EGP, 10-16 stops: 12 EGP, 17-23 stops: 15 EGP, 24+ stops: 20 EGP"
+      },
+      "ar": {
+        "detail": "1-9 محطات: 10 جنيه، 10-16 محطة: 12 جنيه، 17-23 محطة: 15 جنيه، +24 محطة: 20 جنيه"
+      },
+      "lastVerifiedAt": null,
+      "siteUsable": false,
+      "evidence": null,
+      "estimate": false,
+      "source": null
+    },
+    "rule_fare_lrt": {
+      "kind": "rule",
+      "en": {
+        "detail": "1-3 stops: 10 EGP, 4-7 stops: 15 EGP, 8+ stops: 20 EGP"
+      },
+      "ar": {
+        "detail": "1-3 محطات: 10 جنيه، 4-7 محطات: 15 جنيه، +8 محطات: 20 جنيه"
+      },
+      "lastVerifiedAt": null,
+      "siteUsable": false,
+      "evidence": null,
+      "estimate": false,
+      "source": null
+    },
+    "rule_fare_brt": {
+      "kind": "rule",
+      "en": {
+        "detail": "1-4 stops: 5 EGP, 5-9 stops: 10 EGP, 10+ stops: 15 EGP"
+      },
+      "ar": {
+        "detail": "1-4 محطات: 5 جنيه، 5-9 محطات: 10 جنيه، +10 محطات: 15 جنيه"
+      },
+      "lastVerifiedAt": null,
+      "siteUsable": false,
+      "evidence": null,
+      "estimate": false,
+      "source": null
+    },
+    "rule_fare_monorail": {
+      "kind": "rule",
+      "en": {
+        "detail": "1-5 stops: 20 EGP, 6-10 stops: 40 EGP, 11-15 stops: 55 EGP, 16+ stops: 80 EGP"
+      },
+      "ar": {
+        "detail": "1-5 محطات: 20 جنيه، 6-10 محطات: 40 جنيه، 11-15 محطة: 55 جنيه، +16 محطة: 80 جنيه"
+      },
+      "lastVerifiedAt": null,
+      "siteUsable": false,
+      "evidence": null,
+      "estimate": false,
+      "source": null
+    },
+    "rule_fare_tram": {
+      "kind": "rule",
+      "en": {
+        "detail": "Flat fare"
+      },
+      "ar": {
+        "detail": "أجرة ثابتة"
+      },
+      "lastVerifiedAt": null,
+      "siteUsable": false,
+      "evidence": null,
+      "estimate": false,
+      "source": null
+    },
+    "price_metro_single_journey": {
+      "kind": "price",
+      "en": {
+        "note": "1–9 stations: 10 · 10–16: 12 · 17–23: 15 · 24–39: 20 EGP; keep the ticket until exit",
+        "title": "Cairo Metro single journey"
+      },
+      "ar": {
+        "note": "1–9 محطات: 10 · 10–16: 12 · 17–23: 15 · 24–39: 20 جنيهًا؛ احتفظ بالتذكرة حتى الخروج",
+        "title": "رحلة واحدة بمترو القاهرة"
+      },
+      "min": 10,
+      "max": 20,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-03-27",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_sis_metro_fares_2026_03",
+        "kind": "national_authority",
+        "url": "https://sis.gov.eg/en/media-center/news/railway-metro-ticket-prices-to-change-starting-friday/"
+      }
+    },
+    "process_metro_access_fares": {
+      "kind": "process",
+      "en": {
+        "detail": "Cairo Governorate publishes reduced-fare categories, subscription requirements, and issuing offices. Check your eligibility, required documents, and the right office on the official page before going; do not rely on a saved price.",
+        "title": "Check Metro subscription eligibility"
+      },
+      "ar": {
+        "detail": "تنشر محافظة القاهرة فئات التخفيض ومتطلبات الاشتراك ومكاتب الإصدار. تحقق من أهليتك والمستندات المطلوبة والمكتب المناسب في الصفحة الرسمية قبل الذهاب؛ لا تعتمد على سعر محفوظ.",
+        "title": "تحقق من أهلية اشتراك المترو"
+      },
+      "lastVerifiedAt": "2026-08-22",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_cairo_metro_tickets_2026_06",
+        "kind": "national_authority",
+        "url": "https://cairo.gov.eg/en/governorate-services/transportation-services/metro/metro-tickets/"
+      }
+    },
+    "scam_currency_mixup": {
+      "kind": "warning",
+      "en": {
+        "detail": "Count your change before you leave. Egyptian coins and small notes look alike in a hurry, and a note handed back quickly is easy to misread — check the figure on each one.",
+        "title": "Currency Mix-up"
+      },
+      "ar": {
+        "detail": "عُدّ الباقي قبل أن تغادر. العملات المعدنية والأوراق الصغيرة في مصر تتشابه عند الاستعجال، ومن السهل أن تخطئ في قراءة ورقة تُعاد إليك بسرعة — تحقق من الرقم على كل واحدة.",
+        "title": "خلط العملات"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "scam_free_gift": {
+      "kind": "warning",
+      "en": {
+        "detail": "If someone puts a 'free' bracelet, perfume sample, or papyrus in your hand, expect to be asked for payment afterwards. Politely decline and keep walking.",
+        "title": "The 'Free Gift' Trap"
+      },
+      "ar": {
+        "detail": "إذا وضع أحدهم في يدك سوارًا أو عينة عطر أو ورق بردي «مجانًا»، فتوقّع أن يُطلب منك الدفع بعدها. اعتذر بأدب وواصل السير.",
+        "title": "فخ \"الهدية المجانية\""
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "scam_atm_dcc": {
+      "kind": "warning",
+      "en": {
+        "detail": "If an ATM or card terminal offers your home currency, it must show you the exchange rate and any added markup, and let you decline. Choose EGP unless you have compared the final totals, and let your card issuer handle the conversion.",
+        "title": "Pay in EGP, not your currency"
+      },
+      "ar": {
+        "detail": "إذا عرض عليك جهاز الصراف أو نقطة البيع الدفع بعملتك، فعليه أن يعرض سعر الصرف وأي هامش مضاف وأن يتيح لك الرفض. اختر الجنيه المصري ما لم تكن قد قارنت الإجمالي النهائي، ودع بنك بطاقتك يتولى التحويل.",
+        "title": "ادفع بالجنيه لا بعملتك"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_visa_dcc_guidance",
+        "kind": "operator_site",
+        "url": "https://www.visa.com/en-us/personal/travel/dynamic-currency-conversion"
+      }
+    },
+    "scam_no_price_anchor": {
+      "kind": "warning",
+      "en": {
+        "detail": "There is no reliable one-third rule. Compare more than one shop, decide what the item is worth to you, bargain in EGP, and confirm the final total before it is wrapped. Walking away is normal.",
+        "title": "Set your walk-away price"
+      },
+      "ar": {
+        "detail": "لا توجد قاعدة موثوقة تقول إن السعر العادل ثلث السعر الأول. قارن أكثر من متجر، وحدد قيمة القطعة بالنسبة لك، وفاصل بالجنيه، وأكد الإجمالي قبل التغليف. الانصراف أمر طبيعي.",
+        "title": "حدد سعر الانصراف"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_bottled_water": {
+      "kind": "price",
+      "en": {
+        "title": "Bottled water (500ml)"
+      },
+      "ar": {
+        "title": "مياه معبأة (500 مل)"
+      },
+      "min": 10,
+      "max": 30,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "scam_airport_taxi": {
+      "kind": "warning",
+      "en": {
+        "detail": "At arrivals, ignore unsolicited rides inside the terminal. Use a signed taxi rank or an in-app pickup, match the car and plate, keep the app trip active, and confirm the meter or app fare before moving.",
+        "title": "Airport taxi touts"
+      },
+      "ar": {
+        "detail": "عند الوصول، تجاهل عروض الركوب غير المطلوبة داخل الصالة. استخدم موقفًا واضح العلامات أو نقطة الاستلام داخل التطبيق، وطابق السيارة واللوحة، وأبقِ الرحلة فعالة في التطبيق، وتأكد من العداد أو سعر التطبيق قبل التحرك.",
+        "title": "سماسرة تاكسي المطار"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "scam_different_destination": {
+      "kind": "warning",
+      "en": {
+        "detail": "Some taxi drivers may try to take you to a different hotel or shop. Firmly say \"No, take me to [your destination] directly.\" Show the address on your phone.",
+        "title": "The 'Different Destination' Trick"
+      },
+      "ar": {
+        "detail": "قد يحاول بعض سائقي سيارات الأجرة اصطحابك إلى فندق أو متجر آخر. قل بحزم: \"لا، أريد الذهاب إلى [وجهتك] مباشرةً\". أظهر لهم العنوان على هاتفك.",
+        "title": "خدعة \"الوجهة المختلفة\""
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "scam_closed_road": {
+      "kind": "warning",
+      "en": {
+        "detail": "Around the Pyramids, people may stop your taxi and say the road is closed so you must take a horse or camel. Do not take a stranger's word for it — carry on to the official gate and check with staff there.",
+        "title": "The 'Closed Road' Scam"
+      },
+      "ar": {
+        "detail": "قرب الأهرامات قد يوقف أشخاص سيارتك ويقولون إن الطريق مغلق وعليك ركوب حصان أو جمل. لا تأخذ بكلام شخص غريب — تابع إلى البوابة الرسمية واسأل الموظفين هناك.",
+        "title": "عملية احتيال \"الطريق المغلق\""
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "scam_ridehail_pickup": {
+      "kind": "warning",
+      "en": {
+        "detail": "A driver who calls asking you to cancel the trip and pay cash is asking you to give up the trip record and the fare you already agreed. Decline, keep the trip in the app, and match the plate before getting in.",
+        "title": "Ride-hail pickup games"
+      },
+      "ar": {
+        "detail": "السائق الذي يتصل بك طالبًا إلغاء الرحلة والدفع نقدًا يطلب منك التخلي عن سجل الرحلة والأجرة التي اتفقت عليها. ارفض، وأبقِ الرحلة داخل التطبيق، وتأكّد من رقم اللوحة قبل الركوب.",
+        "title": "حيل سائقي تطبيقات المشاوير"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_airport_taxi": {
+      "kind": "price",
+      "en": {
+        "note": "Ride-hailing or official rank; agree the price before boarding",
+        "title": "Airport taxi (to city center)"
+      },
+      "ar": {
+        "note": "تطبيقات التوصيل أو الموقف الرسمي؛ اتفق على السعر قبل الركوب",
+        "title": "تاكسي المطار (إلى وسط المدينة)"
+      },
+      "min": 250,
+      "max": 500,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": true,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_city_taxi_metered": {
+      "kind": "price",
+      "en": {
+        "note": "Insist on meter",
+        "title": "Taxi (metered)"
+      },
+      "ar": {
+        "note": "أصرّ على استخدام العداد",
+        "title": "سيارة أجرة (مزودة بعداد)"
+      },
+      "min": 45,
+      "max": 110,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": true,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_microbus": {
+      "kind": "price",
+      "en": {
+        "note": "Urban transit, varies by route",
+        "title": "Microbus (shared)"
+      },
+      "ar": {
+        "note": "مواصلات داخل المدينة، يختلف حسب المسار",
+        "title": "حافلة صغيرة (مشتركة)"
+      },
+      "min": 5,
+      "max": 30,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": true,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "warning_airport_taxi_meter": {
+      "kind": "warning",
+      "en": {
+        "detail": "Cairo Airport lists different pricing methods. White taxis use meters, while other airport transfer services may use negotiated or fixed destination/category pricing. Confirm the service and pricing method before moving. InEgypt has no verified universal trip-total range.",
+        "title": "Confirm the Cairo Airport pricing method"
+      },
+      "ar": {
+        "detail": "يعرض مطار القاهرة طرق تسعير مختلفة: تستخدم سيارات التاكسي البيضاء العداد، بينما قد تعتمد خدمات نقل أخرى على سعر متفاوض عليه أو سعر ثابت حسب الوجهة والفئة. تأكد من نوع الخدمة وطريقة التسعير قبل التحرك. لا يملك InEgypt نطاقًا موثقًا لسعر إجمالي موحد للرحلة.",
+        "title": "تأكد من طريقة تسعير النقل من مطار القاهرة"
+      },
+      "lastVerifiedAt": "2026-08-23",
+      "siteUsable": true,
+      "evidence": "operator_published",
+      "estimate": false,
+      "source": {
+        "id": "src_cairo_airport_taxi_guide_2026_08",
+        "kind": "operator_site",
+        "url": "https://www.cairo-airport.com/en-us/Services/Passenger-Guide/Move-From-To-Airport"
+      }
+    },
+    "contact_cairo_transport_complaints": {
+      "kind": "contact",
+      "en": {
+        "scope": "Cairo Governorate",
+        "subtitle": "Complaints about violations of announced transport tariffs; not an emergency service",
+        "title": "Cairo transport fare complaints"
+      },
+      "ar": {
+        "scope": "محافظة القاهرة",
+        "subtitle": "شكاوى مخالفة تعريفة النقل المعلنة؛ ليست خدمة طوارئ",
+        "title": "شكاوى تعريفة نقل القاهرة"
+      },
+      "lastVerifiedAt": "2026-08-23",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_cairo_governorate_contact_15496",
+        "kind": "national_authority",
+        "url": "https://cairo.gov.eg/ar/panorama/contact-us/"
+      }
+    },
+    "process_cairo_transport_fare_complaint": {
+      "kind": "process",
+      "en": {
+        "detail": "Cairo Governorate requires the announced tariff to be displayed on vehicles and at stands. Check the posted fare for your route and do not pay more; use the linked complaint contact to report a violation.",
+        "title": "Check Cairo's posted fare and report overcharging"
+      },
+      "ar": {
+        "detail": "تُلزم محافظة القاهرة بعرض التعريفة المعلنة على المركبات وفي المواقف. تحقق من تعريفة خطك المعلنة ولا تدفع أكثر منها؛ واستخدم جهة الشكاوى المرتبطة للإبلاغ عن المخالفة.",
+        "title": "تحقق من التعريفة المعلنة وبلّغ عن الزيادة"
+      },
+      "lastVerifiedAt": "2026-08-23",
+      "siteUsable": true,
+      "evidence": "official",
+      "estimate": false,
+      "source": {
+        "id": "src_cairo_transport_tariff_complaints_2026_03",
+        "kind": "national_authority",
+        "url": "https://www.cairo.gov.eg/ar/governor-tours/2026/mar/d8ae84e4a0e149eaaba0864f38c8ad2a"
+      }
+    },
+    "scam_station_tout": {
+      "kind": "warning",
+      "en": {
+        "detail": "Check the station office or departure board yourself. Buy only from an ENR ticket office, the official ENR site/app, or an authorized agent; verify the date, train, stations, carriage, and seat before paying.",
+        "title": "\"The ticket office is closed\""
+      },
+      "ar": {
+        "detail": "تحقق بنفسك من الشباك أو لوحة المغادرة. اشترِ فقط من شباك سكك حديد مصر أو الموقع/التطبيق الرسمي أو وكيل معتمد، وراجع التاريخ والقطار والمحطتين والعربة والمقعد قبل الدفع.",
+        "title": "«شباك التذاكر مغلق»"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "operator_published",
+      "estimate": false,
+      "source": {
+        "id": "src_enr_official_channels",
+        "kind": "operator_site",
+        "url": "https://www.enr.gov.eg/Ar/NewsDetails.aspx?NewsID=1929"
+      }
+    },
+    "scam_porter_grab": {
+      "kind": "warning",
+      "en": {
+        "detail": "If someone grabs your bag at a station or terminal, a fee is coming. A firm \"la, shukran\" (no, thanks) works. If you do want help, agree the price per bag before handing anything over.",
+        "title": "Uninvited porters"
+      },
+      "ar": {
+        "detail": "من يمسك حقيبتك في المحطة دون أن تطلب سيطلب أجرًا بعدها. «لا شكرًا» بحزم تكفي. وإن أردت المساعدة فعلًا فاتفق على الأجر لكل حقيبة قبل تسليمها.",
+        "title": "حمّالون دون طلب"
+      },
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "editorial_guidance",
+      "estimate": false,
+      "source": {
+        "id": "src_inegypt_safety_guidance",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_station_porter": {
+      "kind": "price",
+      "en": {
+        "note": "Agree before handing over the bag",
+        "title": "Station porter, per bag"
+      },
+      "ar": {
+        "note": "اتفق على الأجر قبل تسليم الحقيبة",
+        "title": "حمّال المحطة، لكل حقيبة"
+      },
+      "min": 20,
+      "max": 50,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": true,
+      "lastVerifiedAt": "2026-08-21",
+      "siteUsable": true,
+      "evidence": "uncorroborated_estimate",
+      "estimate": true,
+      "source": {
+        "id": "src_inegypt_estimate",
+        "kind": "editorial",
+        "url": null
+      }
+    },
+    "price_transit_train": {
+      "kind": "price",
+      "en": {
+        "title": "Train"
+      },
+      "ar": {
+        "title": "قطار"
+      },
+      "min": null,
+      "max": null,
+      "currency": "EGP",
+      "unit": "per_item",
+      "negotiable": false,
+      "lastVerifiedAt": null,
+      "siteUsable": false,
+      "evidence": null,
+      "estimate": false,
+      "source": null
+    },
+    "rule_fare_train": {
+      "kind": "rule",
+      "en": {
+        "detail": "Depends on class and distance"
+      },
+      "ar": {
+        "detail": "يعتمد ذلك على الفئة والمسافة"
+      },
+      "lastVerifiedAt": null,
+      "siteUsable": false,
+      "evidence": null,
+      "estimate": false,
+      "source": null
+    },
+    "process_enr_official_booking": {
+      "kind": "process",
+      "en": {
+        "detail": "Egyptian National Railways lists station ticket windows, its booking website, and the Egyptian National Railways app as official channels. Check any eligibility restriction shown by the channel itself before paying.",
+        "title": "Book an ENR train through an official channel"
+      },
+      "ar": {
+        "detail": "تعلن هيئة سكك حديد مصر أن القنوات الرسمية تشمل شبابيك المحطات وموقع الحجز وتطبيق Egyptian National Railways. تحقق من قيود الأهلية الظاهرة في القناة نفسها قبل الدفع.",
+        "title": "احجز قطار ENR عبر قناة رسمية"
+      },
+      "lastVerifiedAt": "2026-08-22",
+      "siteUsable": true,
+      "evidence": "operator_published",
+      "estimate": false,
+      "source": {
+        "id": "src_enr_official_channels",
+        "kind": "operator_site",
+        "url": "https://www.enr.gov.eg/Ar/NewsDetails.aspx?NewsID=1929"
+      }
+    },
+    "warning_train_keep_ticket": {
+      "kind": "warning",
+      "en": {
+        "detail": "Egyptian National Railways has instructed passengers to retain the ticket through the end of the journey and departure from the destination station. Keep your paper or digital ticket available for inspection.",
+        "title": "Keep your train ticket until you exit"
+      },
+      "ar": {
+        "detail": "أفادت هيئة سكك حديد مصر بوجوب الاحتفاظ بتذكرة السفر حتى نهاية الرحلة والخروج من محطة الوصول. احتفظ بالتذكرة الورقية أو الرقمية متاحة للفحص.",
+        "title": "احتفظ بتذكرة القطار حتى الخروج"
+      },
+      "lastVerifiedAt": "2026-08-22",
+      "siteUsable": true,
+      "evidence": "operator_published",
+      "estimate": false,
+      "source": {
+        "id": "src_cairo_enr_keep_ticket_2024_06",
+        "kind": "press",
+        "url": "https://www.cairo.gov.eg/ar/news/2024/bd49fb70b100464198f09172567a6bcf"
+      }
+    }
+  }
+}

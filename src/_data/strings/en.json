@@ -1,0 +1,19 @@
+{
+  "_note": "UI strings for the page frame. Page copy lives in each page (Plan 47 §4/§5, Plan 46 §4.3).",
+  "skip": "Skip to content",
+  "nav": { "features": "Features", "guides": "Guides", "freePaid": "Free & paid", "about": "About", "get": "Get the app", "getShort": "Get", "menu": "Menu", "langOther": "عربي", "langOtherCode": "ar" },
+  "badgeAlt": "Download InEgypt on the App Store",
+  "qrCaption": "Scan with your iPhone",
+  "footer": {
+    "app": "App", "features": "Features", "whatsNew": "What's new", "freePaid": "Free & paid",
+    "guides": "Guides", "allGuides": "All guides",
+    "about": "About", "aboutPage": "About InEgypt", "press": "Press", "contact": "Contact",
+    "legal": "Legal", "privacy": "Privacy", "terms": "Terms", "support": "Support",
+    "tagline": "A free iPhone app for visiting and getting around Egypt.",
+    "made": "Made in Egypt by one developer. No account, no tracking on this site."
+  },
+  "share": { "copy": "Copy link", "copied": "Link copied", "share": "Share" },
+  "checked": "Checked",
+  "estimate": "InEgypt estimate",
+  "official": "Official fare"
+}

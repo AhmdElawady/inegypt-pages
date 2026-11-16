@@ -1,0 +1,416 @@
+{
+  "photos/P01": {
+    "src": "P01-9VwA0ZwYYho.jpg",
+    "width": 6240,
+    "height": 4160,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P01"
+  },
+  "photos/P04": {
+    "src": "P04-uVftFKxJjh8.jpg",
+    "width": 3250,
+    "height": 4875,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P04"
+  },
+  "photos/P05": {
+    "src": "P05-SkHkM4rcvpo.jpg",
+    "width": 4091,
+    "height": 6136,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P05"
+  },
+  "photos/P06": {
+    "src": "P06-cD4Ix4i1HZ8.jpg",
+    "width": 4032,
+    "height": 3024,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P06"
+  },
+  "photos/P07": {
+    "src": "P07-ZH1jmEnnQM0.jpg",
+    "width": 4160,
+    "height": 6240,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P07"
+  },
+  "photos/P09": {
+    "src": "P09-GNdp2Q4VZjw.jpg",
+    "width": 5616,
+    "height": 3744,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P09"
+  },
+  "photos/P12": {
+    "src": "P12-1-9YBUOhxYg.jpg",
+    "width": 4562,
+    "height": 3164,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P12"
+  },
+  "screens/s01-home-trip-upcoming-framed-demo": {
+    "src": "framed/s01-home-trip-upcoming-framed.demo.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s01-home-trip-upcoming-framed-demo",
+    "framed": true,
+    "demo": true
+  },
+  "screens/s02-planner-input-framed-demo": {
+    "src": "framed/s02-planner-input-framed.demo.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s02-planner-input-framed-demo",
+    "framed": true,
+    "demo": true
+  },
+  "screens/s03-trip-day-demo": {
+    "src": "raw/s03-trip-day.demo.png",
+    "width": 1320,
+    "height": 2868,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s03-trip-day-demo",
+    "framed": false,
+    "demo": true
+  },
+  "screens/s03-trip-day-framed-demo": {
+    "src": "framed/s03-trip-day-framed.demo.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s03-trip-day-framed-demo",
+    "framed": true,
+    "demo": true
+  },
+  "screens/s04-about-plan-demo": {
+    "src": "raw/s04-about-plan.demo.png",
+    "width": 1320,
+    "height": 2868,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s04-about-plan-demo",
+    "framed": false,
+    "demo": true
+  },
+  "screens/s06-route-result-demo": {
+    "src": "raw/s06-route-result.demo.png",
+    "width": 1320,
+    "height": 2868,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s06-route-result-demo",
+    "framed": false,
+    "demo": true
+  },
+  "screens/s06b-route-intercity-framed-demo": {
+    "src": "framed/s06b-route-intercity-framed.demo.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s06b-route-intercity-framed-demo",
+    "framed": true,
+    "demo": true
+  },
+  "screens/s07-route-steps-framed-demo": {
+    "src": "framed/s07-route-steps-framed.demo.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s07-route-steps-framed-demo",
+    "framed": true,
+    "demo": true
+  },
+  "screens/s08-search-demo": {
+    "src": "raw/s08-search.demo.png",
+    "width": 1320,
+    "height": 2868,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s08-search-demo",
+    "framed": false,
+    "demo": true
+  },
+  "screens/s09-prices-framed-demo": {
+    "src": "framed/s09-prices-framed.demo.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s09-prices-framed-demo",
+    "framed": true,
+    "demo": true
+  },
+  "screens/s10-tips-demo": {
+    "src": "raw/s10-tips.demo.png",
+    "width": 1320,
+    "height": 2868,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s10-tips-demo",
+    "framed": false,
+    "demo": true
+  },
+  "screens/s10-tips-framed-demo": {
+    "src": "framed/s10-tips-framed.demo.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s10-tips-framed-demo",
+    "framed": true,
+    "demo": true
+  },
+  "screens/s12-discover-framed-demo": {
+    "src": "framed/s12-discover-framed.demo.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s12-discover-framed-demo",
+    "framed": true,
+    "demo": true
+  },
+  "screens/x-expenses-framed": {
+    "src": "framed/x-expenses-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "x-expenses-framed",
+    "framed": true,
+    "demo": false
+  },
+  "screens/x-siri-shortcuts-framed": {
+    "src": "framed/x-siri-shortcuts-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "x-siri-shortcuts-framed",
+    "framed": true,
+    "demo": false
+  },
+  "screens/x-transit-lines-framed": {
+    "src": "framed/x-transit-lines-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "x-transit-lines-framed",
+    "framed": true,
+    "demo": false
+  }
+}

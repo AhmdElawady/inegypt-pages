@@ -1,0 +1,38 @@
+# Build the Eleventy site and publish it to GitHub Pages (Plan 47 D8).
+# MANUAL ONLY until the relaunch (phase 8): there is no push trigger, and the repo's Pages source must first be
+# switched from "Deploy from a branch" to "GitHub Actions" by the owner. Until then the live site is still the
+# hand-written files at the repo root.
+name: Build and publish site
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run check
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

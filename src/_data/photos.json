@@ -1,0 +1,61 @@
+{
+  "_note": "Photo sources (materials/photos/CREDITS.md). Unsplash Licence: no attribution required; credited on /about/ anyway.",
+  "photos": [
+    {
+      "slot": "P01",
+      "use": "Home hero, Giza at dusk",
+      "file": "P01-9VwA0ZwYYho.jpg",
+      "page": "https://unsplash.com/photos/9VwA0ZwYYho",
+      "photographer": "Andreea Munteanu",
+      "licence": "Unsplash Licence"
+    },
+    {
+      "slot": "P04",
+      "use": "Ribbon, Luxor",
+      "file": "P04-uVftFKxJjh8.jpg",
+      "page": "https://unsplash.com/photos/uVftFKxJjh8",
+      "photographer": "Filip Crantz",
+      "licence": "Unsplash Licence"
+    },
+    {
+      "slot": "P05",
+      "use": "Ribbon, Aswan",
+      "file": "P05-SkHkM4rcvpo.jpg",
+      "page": "https://unsplash.com/photos/SkHkM4rcvpo",
+      "photographer": "Noha Badawi",
+      "licence": "Unsplash Licence"
+    },
+    {
+      "slot": "P06",
+      "use": "Ribbon, Alexandria (Qaitbay)",
+      "file": "P06-cD4Ix4i1HZ8.jpg",
+      "page": "https://unsplash.com/photos/cD4Ix4i1HZ8",
+      "photographer": "abdullah ali",
+      "licence": "Unsplash Licence"
+    },
+    {
+      "slot": "P07",
+      "use": "Ribbon, Islamic Cairo (Ibn Tulun)",
+      "file": "P07-ZH1jmEnnQM0.jpg",
+      "page": "https://unsplash.com/photos/ZH1jmEnnQM0",
+      "photographer": "Fatih Beki",
+      "licence": "Unsplash Licence"
+    },
+    {
+      "slot": "P09",
+      "use": "Ribbon, Abu Simbel",
+      "file": "P09-GNdp2Q4VZjw.jpg",
+      "page": "https://unsplash.com/photos/GNdp2Q4VZjw",
+      "photographer": "AussieActive",
+      "licence": "Unsplash Licence"
+    },
+    {
+      "slot": "P12",
+      "use": "Final call, the Nile in Cairo at dusk",
+      "file": "P12-1-9YBUOhxYg.jpg",
+      "page": "https://unsplash.com/photos/1-9YBUOhxYg",
+      "photographer": "Own Enezat",
+      "licence": "Unsplash Licence"
+    }
+  ]
+}

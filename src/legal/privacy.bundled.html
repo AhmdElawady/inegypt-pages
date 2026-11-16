@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InEgypt - Privacy Policy</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+            --accent: #2563eb;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f0f0f;
+                --text: #f0f0f0;
+                --muted: #9ca3af;
+                --border: #2a2a2a;
+                --accent: #60a5fa;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 24px 20px 60px;
+            max-width: 680px;
+            margin: 0 auto;
+            -webkit-text-size-adjust: 100%;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .effective {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+        p, li {
+            font-size: 16px;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        li { margin-bottom: 6px; }
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 32px 0;
+        }
+        .highlight {
+            background: color-mix(in srgb, var(--accent) 8%, transparent);
+            border-left: 3px solid var(--accent);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        .highlight p { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="effective">Effective Date: November 15, 2026</p>
+
+<p>InEgypt is developed by Ahmed Elawady, an independent developer based in Egypt. This policy explains how the InEgypt iOS application handles your information.</p>
+
+<div class="highlight">
+    <p><strong>The short version:</strong> InEgypt does not require an account or collect your name or email. Pseudonymous product analytics and crash reports help us improve the app and can be disabled in Settings &mdash; switching them off also deletes anything recorded but not yet sent. Transit routes are unlimited and free. InEgypt shows no ads, does not track you across other companies' apps or websites, and never asks for Apple's App Tracking Transparency permission.</p>
+</div>
+
+<hr class="divider">
+
+<h2>1. Information We Collect</h2>
+<p>InEgypt collects minimal information needed to provide its features and understand app reliability:</p>
+<ul>
+    <li><strong>Location Data</strong> — When you grant permission, the app accesses your location <em>while the app is in use</em> to find nearby transit stops and calculate routes from your current position. Your location and the coordinates or names of the places you search between are not sent to analytics or crash reporting.</li>
+    <li><strong>Device Information (Support Only)</strong> — If you choose to contact support via the in-app email feature, your device model, iOS version, and app version are included in the email to help us assist you. This only happens when you explicitly send a support email.</li>
+    <li><strong>Language Preference</strong> — Your selected app language is stored locally on your device.</li>
+    <li><strong>Optional Advisor Photo</strong> — If you explicitly choose a camera or library image for the travel advisor, InEgypt processes that selected image on your device to help explain a taxi meter, menu, bill, or ticket. The image is not sent to InEgypt, analytics, or an external AI service.</li>
+    <li><strong>Product Analytics &amp; Diagnostics</strong> — When "Help improve InEgypt" is enabled, PostHog receives feature-interaction events, basic app/device context, route-search diagnostics (such as the kind of start and end point and why a search found no route), and an app-generated identifier not linked by InEgypt to your identity. Sentry receives crash, hang, and diagnostic data. InEgypt does not send your name or email to either service.</li>
+    <li><strong>Install Source</strong> — During the first few launches, InEgypt asks Apple's AdServices framework whether the app was installed from an Apple Ads campaign. Apple answers with "organic" or a campaign identifier; no advertising identifier (IDFA) is used. When "Help improve InEgypt" is enabled, that answer is included with product analytics.</li>
+    <li><strong>Trips &amp; Planning Content</strong> — Trips, plans, notes, expenses, favorites and saved places you create stay on your device. They are not uploaded to any server we operate.</li>
+    <li><strong>Trip Pass Coverage</strong> — When you buy a Trip Pass for a trip, the purchase's transaction identifier and the trip's end date are saved in your own iCloud key-value storage, so the pass covers the same dates after a reinstall or on your other devices. This storage is private to your Apple Account; we cannot read it.</li>
+    <li><strong>Reports You Send</strong> — If you report a problem or suggest a correction for a stop, line, or route, InEgypt stores what you write, the stop, line or route it concerns, your app language and the app version in InEgypt's public iCloud (CloudKit) database so we can review it. Apple links the record to an anonymous iCloud user identifier; we do not receive your name or email. Sending a report requires being signed in to iCloud.</li>
+    <li><strong>Queries Sent to Other Services</strong> — When you search Unsplash for a trip background photo, open a partner tour page, or load currency rates, the query needed for that request is sent directly to that service. When the app loads weather for a trip, the city's approximate coordinates (not yours) are sent to Apple WeatherKit.</li>
+</ul>
+
+<h2>2. Information We Do Not Collect</h2>
+<p>We want to be clear about what we do <strong>not</strong> do:</p>
+<ul>
+    <li>We do not require account creation or registration</li>
+    <li>We do not collect your name, email address, or contact list</li>
+    <li>We do not collect background location data</li>
+    <li>We do not browse your photo library or access your microphone or contacts; only an image you explicitly choose can be used by the advisor</li>
+    <li>We do not send advisor images or Grounded Ask question text to analytics or external AI services</li>
+    <li>We do not sell your personal data</li>
+    <li>We do not show ads, use the advertising identifier (IDFA), or track you across other companies' apps and websites</li>
+</ul>
+
+<h2>3. How We Use Information</h2>
+<p>The limited information described above is used exclusively for:</p>
+<ul>
+    <li>Calculating transit routes from your current location</li>
+    <li>Displaying nearby transit stops and attractions</li>
+    <li>Analyzing an advisor image on-device when you explicitly choose one</li>
+    <li>Answering Grounded Ask from reviewed offline entries, with supported devices optionally ranking matching canonical records on-device</li>
+    <li>Providing proximity alerts for nearby points of interest (when enabled)</li>
+    <li>Managing local cache on your device</li>
+    <li>Understanding feature usage and diagnosing app crashes or hangs</li>
+    <li>Knowing whether an install came from an Apple Ads campaign (see Install Source)</li>
+    <li>Keeping a Trip Pass's dates the same across your devices</li>
+    <li>Reviewing problem reports you send and correcting transit data</li>
+</ul>
+
+<h2>4. Data Storage</h2>
+<p>The app stores certain data on your device to provide its features:</p>
+<ul>
+    <li><strong>Favorites &amp; Preferences</strong> — Stored in your device's local storage</li>
+    <li><strong>Cached Images</strong> — Temporarily stored on your device; can be cleared from Settings</li>
+    <li><strong>App Content</strong> — Transit and attraction data is included within the app to support its core functionality. Access to certain features and data may require an active internet connection depending on your plan.</li>
+    <li><strong>Trips</strong> — Your saved trips, notes, expenses, the trip a Trip Pass covers, readiness checklist progress, and the reminders scheduled for a trip are stored on your device. The Trip Pass end date is also kept in your private iCloud key-value storage (see section 1).</li>
+    <li><strong>Reports</strong> — Problem reports you choose to send are stored in InEgypt's public CloudKit database (see section 1).</li>
+    <li><strong>Knowledge Features</strong> — A small revision, locale, and reviewed-subject count may be shared with the InEgypt widget extension. Searchable reviewed guidance may be copied into Apple's private on-device Spotlight index. Advisor images and Grounded Ask questions are not stored.</li>
+</ul>
+<p>We do not operate our own servers for personal data storage. When enabled, product analytics and diagnostic data are transmitted to PostHog and Sentry. Each service processes data under its own privacy policy.</p>
+
+<h2>5. Analytics</h2>
+<p><strong>Product analytics and diagnostics:</strong> PostHog records pseudonymous feature interactions, app context, and route-search diagnostics (the kind of start and end point and why a search found no route, never coordinates or place names) to help us investigate searches that return no routes. Grounded Ask telemetry is limited to outcome, reviewed-item count, and whether the on-device model ranked records. It contains no image, question, model-ranked identifiers, or reviewed fact text. Sentry records crashes, hangs, and technical diagnostics. This telemetry is controlled by <em>Settings → Help improve InEgypt</em>. InEgypt does not send support-message text, your name, or your email to either service.</p>
+<p><strong>What happens when you turn it off:</strong> the app stops recording immediately, cancels any transmission already in progress, and <strong>deletes everything it had recorded but not yet sent</strong>. Analytics data is queued on your device (so that a poor connection does not lose it) and that queue is erased, not held. The one exception we cannot control: if a batch had already left your device at the moment you switched the setting off, it cannot be recalled. Turning the setting back on starts fresh collection &mdash; anything deleted when you turned it off is gone and is never re-sent.</p>
+<p><strong>No advertising or tracking:</strong> InEgypt contains no advertising SDK, shows no ads, and does not ask for Apple's App Tracking Transparency permission. Purchases are not shared with any advertising network. The only install measurement is Apple's own AdServices answer described under <em>Install Source</em>, which does not identify you.</p>
+
+<h2>6. Third-Party Services</h2>
+<p>InEgypt uses the following third-party services:</p>
+<ul>
+    <li><strong>PostHog</strong> — For pseudonymous product analytics when "Help improve InEgypt" is enabled. Subject to <a href="https://posthog.com/privacy">PostHog's Privacy Policy</a>.</li>
+    <li><strong>Sentry</strong> — For crash, hang, and diagnostic reporting when "Help improve InEgypt" is enabled. Subject to <a href="https://sentry.io/privacy/">Sentry's Privacy Policy</a>.</li>
+    <li><strong>Apple MapKit</strong> — For map display and place search. Subject to <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</li>
+    <li><strong>Apple StoreKit</strong> — For processing in-app purchases. All payment information is handled entirely by Apple. We never see or store your payment details.</li>
+    <li><strong>Apple CloudKit</strong> — For loading attraction images and content. Subject to Apple's Privacy Policy.</li>
+    <li><strong>Apple WeatherKit</strong> — For weather information. Subject to Apple's Privacy Policy.</li>
+    <li><strong>Apple AdServices</strong> — Tells the app whether it was installed from an Apple Ads campaign, without identifying you. Subject to Apple's Privacy Policy.</li>
+    <li><strong>GetYourGuide (Partner)</strong> — Tour listings and links marked <em>Partner</em> load from GetYourGuide when you open them. GetYourGuide may process your IP address and what you do on its pages under its own privacy policy. When "Help improve InEgypt" is enabled, InEgypt records only that a partner link was opened and from which screen.</li>
+    <li><strong>Apple iCloud key-value storage</strong> — Keeps the Trip Pass end date in your own iCloud account (see section 1).</li>
+    <li><strong>Apple UserNotifications, Live Activities &amp; Spotlight</strong> — Trip reminders, proximity alerts and Live Activities are scheduled on your device. Places and guidance may be indexed in Apple's private on-device Spotlight index.</li>
+    <li><strong>ExchangeRate-API</strong> (<a href="https://www.exchangerate-api.com/">exchangerate-api.com</a>) — For currency rates used by the converter and expense tracker. Only the base currency is requested; no personal data is sent. Subject to <a href="https://www.exchangerate-api.com/privacy-policy">ExchangeRate-API's Privacy Policy</a>.</li>
+    <li><strong>Unsplash</strong> (<a href="https://unsplash.com/">unsplash.com</a>) — For the optional trip background photo picker. The words you search for are sent to Unsplash, along with standard request information such as your IP address. Subject to <a href="https://unsplash.com/privacy">Unsplash's Privacy Policy</a>.</li>
+    <li><strong>Nuke (Open Source)</strong> — An image loading library that caches images locally on your device. It does not collect or transmit any data.</li>
+</ul>
+
+<h2>7. In-App Purchases</h2>
+<p>Depending on App Store availability and the app's current configuration, InEgypt can offer auto-renewing monthly or yearly subscriptions, a one-time Lifetime Access purchase, and non-renewing 7-day or 14-day Trip Passes. Older Plus purchases remain recognized. Full purchase terms, including how long a Trip Pass lasts, are in our <a href="terms.html">Terms of Use</a>. All transactions are processed by Apple through the App Store. We do not have access to your payment information, credit card details, or Apple ID. Purchase records are managed by Apple and can be viewed in your App Store account.</p>
+
+<h2>8. Children's Privacy</h2>
+<p>InEgypt is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information through our app, please contact us and we will take appropriate steps.</p>
+
+<h2>9. Location Permission</h2>
+<p>InEgypt requests location access only with the <strong>"While Using the App"</strong> permission level. The app never requests "Always" location access and does not track your location in the background. You can revoke location permission at any time in your device's Settings, and the app will continue to function — you will simply need to enter locations manually.</p>
+
+<h2>10. Notifications Permission</h2>
+<p>InEgypt may ask for notification permission. Notifications are optional and scheduled on your device: trip reminders (for example a travel-day or arrival note), proximity alerts for places you saved, and departure alerts you set. We do not operate a push server. You can change this at any time in <em>iOS Settings &rarr; Notifications &rarr; InEgypt</em>.</p>
+
+<h2>11. Your Rights</h2>
+<p>Depending on your location, you may have rights under applicable laws (such as GDPR in the EU or CCPA in California) to access, correct, or delete personal data held about you. Requests about third-party data should be directed to the applicable service using the policies linked above. For InEgypt data stored on your device (such as favorites and cached content), you can clear it from the app's Settings or by deleting the app. To ask us to delete analytics data or a report you sent, email us at the address below.</p>
+
+<h2>12. International Transfers</h2>
+<p>InEgypt uses services based in the United States and other countries (Apple, PostHog, Sentry, GetYourGuide, Unsplash, ExchangeRate-API), so the data described above may be processed outside your country. Each service is responsible for its own transfer safeguards, as described in the policies linked above.</p>
+
+<h2>13. Data Security</h2>
+<p>Transit data files are encrypted and stored within the app bundle. All network communication uses industry-standard encryption (HTTPS/TLS). Data sent to PostHog or Sentry is secured in transit.</p>
+
+<h2>14. Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. Changes will be reflected on this page with an updated effective date. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
+
+<h2>15. Contact Us</h2>
+<p>If you have questions about this Privacy Policy, please contact us at:</p>
+<p><a href="mailto:inegyptapp@gmail.com">inegyptapp@gmail.com</a></p>
+
+</body>
+</html>

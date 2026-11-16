@@ -1,0 +1,35 @@
+{#- Install calls (§8.5, P1 M1/M2, §9.6). Every App Store link goes through the appLink filter. -#}
+{% macro badgeLink(ct, lang="en", small=false) -%}
+{#- Apple's official black badges, unaltered (§7.4): English and Arabic artwork, picked by page language. -#}
+<a class="badge{% if small %} badge--small{% endif %}" href="{{ ct | appLink }}">
+  <img src="{{ ('/assets/badges/app-store-' + ('ar' if lang == 'ar' else 'en') + '.svg') | url }}" alt="{{ strings[lang].badgeAlt }}" width="120" height="40">
+</a>
+{%- endmacro %}
+
+{% macro qrBlock(ct, lang="en") -%}
+{%- if qr[ct] -%}
+<div class="qr">{{ qr[ct] | safe }}<span class="qr__caption">{{ strings[lang].qrCaption }}</span></div>
+{%- endif -%}
+{%- endmacro %}
+
+{#- Badge + optional QR + the line under it, e.g. "Free · No account · 9 languages · iPhone and iPad" -#}
+{% macro cta(ct, note="", lang="en", qrCt="") -%}
+<div class="cta">
+  {{ badgeLink(ct, lang) }}
+  {%- if qrCt %}{{ qrBlock(qrCt, lang) }}{% endif %}
+</div>
+{%- if note %}<p class="cta__note">{{ note }}</p>{% endif %}
+{%- endmacro %}
+
+{% macro inlineCall(ct, text, lang="en") -%}
+<div class="inline-call"><p>{{ text }}</p>{{ badgeLink(ct, lang, true) }}</div>
+{%- endmacro %}
+
+{#- Share row (P1 M7): a real link that works without JS; the script adds Web Share / clipboard. -#}
+{% macro shareRow(url, lang="en") -%}
+{%- set s = strings[lang].share -%}
+<div class="share" data-share data-copied="{{ s.copied }}">
+  <a class="btn btn--quiet" href="{{ url }}" data-share-url="{{ url }}">{% icon "copy" %}<span>{{ s.copy }}</span></a>
+  <span class="share__status" role="status" aria-live="polite"></span>
+</div>
+{%- endmacro %}

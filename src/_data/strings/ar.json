@@ -1,0 +1,19 @@
+{
+  "_note": "AGENT DRAFT. The owner writes or approves every Arabic string (Plan 47 D14, phase 5).",
+  "skip": "انتقل إلى المحتوى",
+  "nav": { "features": "المزايا", "guides": "الأدلة", "freePaid": "مجاني ومدفوع", "about": "عن التطبيق", "get": "حمّل التطبيق", "getShort": "حمّل", "menu": "القائمة", "langOther": "English", "langOtherCode": "en" },
+  "badgeAlt": "حمّل InEgypt من App Store",
+  "qrCaption": "امسح الرمز بالآيفون",
+  "footer": {
+    "app": "التطبيق", "features": "المزايا", "whatsNew": "الجديد", "freePaid": "مجاني ومدفوع",
+    "guides": "الأدلة", "allGuides": "كل الأدلة",
+    "about": "عن InEgypt", "aboutPage": "عن InEgypt", "press": "للصحافة", "contact": "تواصل معنا",
+    "legal": "قانوني", "privacy": "الخصوصية", "terms": "الشروط", "support": "الدعم",
+    "tagline": "تطبيق مجاني للآيفون للسفر والتنقل في مصر.",
+    "made": "صُنع في مصر على يد مطوّر واحد. بلا حساب، وبلا تتبّع في هذا الموقع."
+  },
+  "share": { "copy": "انسخ الرابط", "copied": "تم نسخ الرابط", "share": "مشاركة" },
+  "checked": "آخر مراجعة",
+  "estimate": "تقدير InEgypt",
+  "official": "سعر رسمي"
+}
