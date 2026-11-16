@@ -3,7 +3,9 @@
   "private": true,
   "description": "InEgypt website (Plan 47). Eleventy source in src/, output in _site/.",
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "sync": "sh scripts/sync-legal.sh && node scripts/sync-atoms.mjs",
     "icons": "node scripts/build-icons.mjs",
@@ -12,7 +14,8 @@
     "build": "npm run icons && npm run fonts && eleventy",
     "serve": "npm run icons && npm run fonts && eleventy --serve",
     "check": "node scripts/check-contrast.mjs && node scripts/check-claims.mjs && node scripts/check-legal.mjs && node scripts/check-css-logical.mjs",
-    "all": "npm run sync && npm run build && npm run check"
+    "all": "npm run sync && npm run build && npm run check",
+    "share": "node scripts/build-share-cards.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "3.1.7",

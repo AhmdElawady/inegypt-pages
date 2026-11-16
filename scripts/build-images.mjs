@@ -13,6 +13,10 @@ const OUT = "src/assets/img";
 const manifestPath = "src/_data/images.json";
 const manifest = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, "utf8")) : {};
 
+// Per-photo crops (fractions of the auto-rotated original), applied before resizing.
+// P13: cut the top 36 % to remove the roadside billboards (photo-shortlist note); trains and tracks stay.
+const CROPS = { P13: { left: 0, top: 0.36, width: 1, height: 0.64 } };
+
 const fresh = (src, out) => fs.existsSync(out) && fs.statSync(out).mtimeMs >= fs.statSync(src).mtimeMs;
 
 // One grade for every photo (G2): warm (+yellow), saturation −8 %, blacks lifted to #14110D,
@@ -38,13 +42,17 @@ async function photos() {
     const slot = f.split("-")[0];                         // P01
     const src = path.join(dir, f);
     const meta = await sharp(src).rotate().metadata();
-    const w0 = meta.autoOrient?.width ?? meta.width, h0 = meta.autoOrient?.height ?? meta.height;
+    let w0 = meta.autoOrient?.width ?? meta.width, h0 = meta.autoOrient?.height ?? meta.height;
+    const c = CROPS[slot];
+    const region = c ? { left: Math.round(c.left * w0), top: Math.round(c.top * h0), width: Math.round(c.width * w0), height: Math.round(c.height * h0) } : null;
+    if (region) { w0 = region.width; h0 = region.height; }
+    const base = () => (region ? sharp(src).rotate().extract(region) : sharp(src).rotate());
     const widths = [640, 1024, 1600, 2400].filter((w) => w <= w0);
     for (const w of widths) {
       for (const [fmt, opts] of [["avif", { quality: 50, effort: 4 }], ["webp", { quality: 72 }], ["jpg", { quality: 78, mozjpeg: true }]]) {
         const out = `${OUT}/photos/${slot}-${w}.${fmt}`;
         if (fresh(src, out)) continue;
-        let img = grade(sharp(src).rotate().resize({ width: w }));
+        let img = grade(base().resize({ width: w }));
         img = fmt === "jpg" ? img.jpeg(opts) : img[fmt](opts);
         await img.toFile(out);
       }

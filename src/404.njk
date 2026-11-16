@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+permalink: /404.html
+title: Page not found · InEgypt
+description: This page does not exist. Go to the InEgypt home page.
+noindex: true
+lang: en
+---
+<section class="section">
+  <div class="container stack-lg" style="max-inline-size: 720px">
+    {%- from "components/signs.njk" import sign -%}
+    {{ sign("End of the line", "نهاية الخط", "route") }}
+    <h1 style="font-size: var(--fs-h2)">This page is not on the map.</h1>
+    <p class="lead">The address may be old or mistyped.</p>
+    <p class="cta"><a class="btn" href="{{ '/' | url }}">InEgypt home</a> <a class="btn btn--quiet" href="{{ '/privacy.html' | url }}">Privacy</a> <a class="btn btn--quiet" href="{{ '/terms.html' | url }}">Terms</a></p>
+    <div lang="ar" dir="rtl" class="stack" style="border-block-start: 1px solid var(--hairline); padding-block-start: var(--s6)">
+      <h2 style="font-size: var(--fs-h3)">الصفحة دي مش موجودة.</h2>
+      <p><a href="{{ '/ar/' | url }}">الصفحة الرئيسية بالعربي</a></p>
+    </div>
+  </div>
+</section>

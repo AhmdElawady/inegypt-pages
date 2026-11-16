@@ -58,6 +58,16 @@
     });
   });
 
+  // Nav over the hero: solid after 80 px of scroll (§4 section 0).
+  const nav = document.querySelector(".nav");
+  if (nav && document.body.classList.contains("has-hero")) {
+    const onScroll = () => nav.classList.toggle("is-solid", scrollY > 80);
+    addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  }
+
+  // FAQ: always open on desktop (§4 section 18); native <details> on phones.
+  if (matchMedia("(min-width: 1024px)").matches) document.querySelectorAll(".faq--cols details").forEach((d) => { d.open = true; });
+
   // Mobile menu: close with Escape or a click outside.
   const menu = document.querySelector(".nav__menu");
   if (menu) {

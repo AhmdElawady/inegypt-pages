@@ -23,6 +23,16 @@
 </figure>
 {%- endmacro %}
 
+{#- A screen or photo that is not captured yet: a visible gap on dev builds, never a mock-up (§7.1). -#}
+{% macro missing(id, label, width=260, kind="screen") -%}
+<div class="missing missing--{{ kind }}" style="--w: {{ width }}px" data-missing="{{ id }}"><span><b>{{ id }}</b>{{ label }}<br>to capture</span></div>
+{%- endmacro %}
+
+{#- Either a device or the missing box, from a { key, alt } or { missing, label } item. -#}
+{% macro screen(item, width=260) -%}
+{%- if item.missing %}{{ missing(item.missing, item.label, width) }}{% else %}{{ device(item.key, item.alt, width) }}{% endif -%}
+{%- endmacro %}
+
 {% macro floatCard(icon, kicker, main, meta="", line="") -%}
 <div class="float-card{% if line %} line-{{ line }}{% endif %}" data-reveal>
   <div class="float-card__kicker">{% icon icon %}<span>{{ kicker }}</span></div>

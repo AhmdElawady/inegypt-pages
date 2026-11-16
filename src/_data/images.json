@@ -17,6 +17,42 @@
     "dir": "photos",
     "base": "P01"
   },
+  "photos/P02": {
+    "src": "P02-2bgirUct1MU.jpg",
+    "width": 6240,
+    "height": 4160,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P02"
+  },
+  "photos/P03": {
+    "src": "P03-hXgz-Onq_p4.jpg",
+    "width": 2562,
+    "height": 4555,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P03"
+  },
   "photos/P04": {
     "src": "P04-uVftFKxJjh8.jpg",
     "width": 3250,
@@ -107,6 +143,42 @@
     "dir": "photos",
     "base": "P09"
   },
+  "photos/P10": {
+    "src": "P10-ibVv-7G9RFs.jpg",
+    "width": 6016,
+    "height": 4016,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P10"
+  },
+  "photos/P11": {
+    "src": "P11-MXVSR17BiOA.jpg",
+    "width": 5141,
+    "height": 3744,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P11"
+  },
   "photos/P12": {
     "src": "P12-1-9YBUOhxYg.jpg",
     "width": 4562,
@@ -124,6 +196,24 @@
     ],
     "dir": "photos",
     "base": "P12"
+  },
+  "photos/P13": {
+    "src": "P13-quXdpYhf-qg.jpg",
+    "width": 6240,
+    "height": 2662,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P13"
   },
   "screens/s01-home-trip-upcoming-framed-demo": {
     "src": "framed/s01-home-trip-upcoming-framed.demo.png",

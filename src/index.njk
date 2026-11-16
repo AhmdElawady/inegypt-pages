@@ -1,0 +1,12 @@
+---
+layout: layouts/base.njk
+permalink: /index.html
+lang: en
+bodyClass: has-hero
+altUrls: { en: "/", ar: "/ar/" }
+shareImage: /assets/share/home.png
+eleventyComputed:
+  title: "{{ home.en.title }}"
+  description: "{{ home.en.description }}"
+---
+{% include "pages/home.njk" %}

@@ -3,7 +3,8 @@
 <header class="nav">
   <div class="container container--wide nav__bar">
     <a class="nav__logo" href="{{ home | url }}" aria-label="InEgypt{{ ' — الرئيسية' if lang == 'ar' else ', home' }}">
-      <img src="{{ '/assets/logo/mark-on-light.svg' | url }}" alt="" width="32" height="32">
+      <img class="logo-light" src="{{ '/assets/logo/mark-on-light.svg' | url }}" alt="" width="32" height="32">
+      <img class="logo-dark" src="{{ '/assets/logo/mark-on-dark.svg' | url }}" alt="" width="32" height="32">
       <span>InEgypt</span>
     </a>
     <nav class="nav__links" aria-label="{{ t.nav.menu }}">

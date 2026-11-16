@@ -7,7 +7,7 @@ const SITE = "_site";
 const EXCLUDE = new Set(["privacy.html", "terms.html"]);
 
 // Allowed sentences are removed before the banned list is applied.
-const ALLOWED = [/no live tracking/gi, /no android version/gi, /not on android/gi, /no android/gi, /there is no android/gi];
+const ALLOWED = [/is there an android version\?/gi, /no live tracking/gi, /no android version/gi, /not on android/gi, /no android/gi, /there is no android/gi];
 const BANNED = [
   [/free trial/i, "free trial"], [/7[\s-]days? free/i, "7 days free"], [/real[\s-]?time/i, "real-time"],
   [/live tracking/i, "live tracking"], [/\blive (bus|train|metro) /i, "live vehicles"], [/100\s?% offline/i, "100% offline"],

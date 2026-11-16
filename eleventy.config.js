@@ -25,6 +25,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/badges": "assets/badges" });
   eleventyConfig.addPassthroughCopy({ "src/assets/logo": "assets/logo" });
   eleventyConfig.addPassthroughCopy({ "src/assets/icons": "assets/icons" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/share": "assets/share" });
 
   // Bundled legal copies are data, not templates.
   eleventyConfig.ignores.add("src/legal/**");
@@ -36,6 +37,13 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("appLink", appLink);
   eleventyConfig.addFilter("absUrl", (path) => SITE_URL + PATH_PREFIX.replace(/\/$/, "") + path);
   eleventyConfig.addFilter("json", (v) => JSON.stringify(v));
+  // "{cities}" style tokens in copy are filled from facts.json, so no count is typed into a page.
+  eleventyConfig.addFilter("fillFacts", (text) => String(text)
+    .replace(/\{cities\}/g, facts.coverage.cities.display)
+    .replace(/\{attractions\}/g, facts.coverage.attractions.display)
+    .replace(/\{routes\}/g, facts.coverage.routes.value)
+    .replace(/\{stops\}/g, facts.coverage.stops.display)
+    .replace(/\{modes\}/g, facts.coverage.transitModes.value));
   // Free/paid table rows from the fact sheet: free items are in both columns, paid items only in Pro.
   eleventyConfig.addFilter("plansRows", (f) => [
     ...f.free.value.map((label) => ({ label, free: true, pro: true })),

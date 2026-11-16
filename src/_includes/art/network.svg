@@ -1,0 +1,19 @@
+<svg class="network" viewBox="0 0 1200 420" role="img" aria-labelledby="network-title" data-placeholder="agent-drawn schematic; owner checks it as a rider (Plan 47 §7.3 brief 2)">
+  <title id="network-title">{{ label }}</title>
+  <g fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path id="net-enr" d="M420 0 V96 L486 162 V262 L420 328 V420" stroke="#C62128" pathLength="1"/>
+    <path id="net-m3" d="M180 296 H300 L396 200 H780 L876 296 H996" stroke="#325F3B" pathLength="1"/>
+    <path id="net-m2" d="M588 20 V306 L522 372 V410" stroke="#A63457" pathLength="1"/>
+    <path id="net-m1" d="M872 20 L744 148 H612 V330 L692 410" stroke="#2E4A78" pathLength="1"/>
+    <path id="net-mono" d="M876 246 H1020 L1080 306 H1200" stroke="#8BC34A" pathLength="1"/>
+    <path id="net-lrt" d="M996 296 L1080 380 H1200" stroke="#C62828" pathLength="1"/>
+  </g>
+  <g fill="#FFFFFF" stroke="#17130E" stroke-width="3">
+    <rect x="580" y="136" width="40" height="22" rx="11"/>
+    <rect x="580" y="189" width="40" height="22" rx="11"/>
+    <rect x="580" y="250" width="40" height="22" rx="11"/>
+    <circle cx="996" cy="296" r="10"/>
+    <circle cx="876" cy="246" r="10"/>
+    <circle cx="486" cy="200" r="10"/>
+  </g>
+</svg>
