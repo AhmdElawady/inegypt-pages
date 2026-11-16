@@ -248,7 +248,21 @@
 
 {#- 17 · Guides teaser: hidden until three guides are live -#}
 {%- if guideLive >= 3 %}
-<section class="section section--sand" id="guides" aria-labelledby="guides-h2"><div class="container"><h2 id="guides-h2">{{ h.guides.h2 }}</h2></div></section>
+<section class="section section--sand" id="guides" aria-labelledby="guides-h2">
+  <div class="container stack-lg">
+    <h2 id="guides-h2">{{ h.guides.h2 }}</h2>
+    <div class="guide-cards">
+      {%- for g in guides.live | guideCards(guideIndex, atoms.atoms, priceGuideGroups, priceGuideExclude) %}
+      <a class="guide-card" href="{{ g.href | url }}">
+        {{ picture(g.thumb, "", "(max-width: 1023px) 100vw, 340px", false, "photo") }}
+        <span class="guide-card__title">{{ g.title }}</span>
+        <span class="muted">{{ g.first }}</span>
+        <span class="related__meta">Last checked {{ g.checked | monthYear }}</span>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
 {%- endif %}
 
 {#- 18 · FAQ -#}

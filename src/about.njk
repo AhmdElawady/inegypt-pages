@@ -1,0 +1,76 @@
+---
+layout: layouts/base.njk
+permalink: /about/index.html
+title: About InEgypt · the app, the maker and the facts
+description: What InEgypt is, who makes it, where its data comes from, what it does not do, and how it handles your data. One page of facts.
+lang: en
+navCt: web_about
+---
+{%- from "components/media.njk" import missing with context -%}
+{%- from "components/content.njk" import appbox with context -%}
+{%- set f = facts -%}
+{%- set kinds = atoms.atoms | atomKinds -%}
+<section class="section">
+  <div class="container guide__body">
+    <header class="stack">
+      <h1 style="font-size: var(--fs-h2)">About InEgypt</h1>
+      <p class="lead">{{ f.sentence.en }}</p>
+    </header>
+
+    <h2 id="facts">The facts</h2>
+    <div class="table-wrap"><table class="facts-table">
+      <caption>InEgypt in one table (counted from the app's data, {{ f.coverage.countedAt.value }})</caption>
+      <tbody>
+        <tr><th scope="row">Name</th><td>{{ f.app.name.value }} (formerly “{{ f.app.formerName.value }}”)</td></tr>
+        <tr><th scope="row">Made by</th><td>{{ f.app.maker.value }}</td></tr>
+        <tr><th scope="row">On the App Store since</th><td>{{ f.app.onAppStoreSince.value }}</td></tr>
+        <tr><th scope="row">Runs on</th><td>{{ f.app.platforms.value }}. No Android version.</td></tr>
+        <tr><th scope="row">Price</th><td>Free. Optional InEgypt Pro: <bdi>{{ f.prices.proMonthly.value }}</bdi> a month or <bdi>{{ f.prices.proYearly.value }}</bdi> a year (US prices).</td></tr>
+        <tr><th scope="row">Account</th><td>None needed</td></tr>
+        <tr><th scope="row">Languages</th><td>{{ f.app.languages.value | join(", ") }}</td></tr>
+        <tr><th scope="row">Transport</th><td>{{ f.coverage.transitModes.value }} modes: {{ f.coverage.transitModes.list | join(", ") }}</td></tr>
+        <tr><th scope="row">Network</th><td><bdi>{{ f.coverage.routes.value }}</bdi> lines and services, {{ f.coverage.stops.display }} stops and stations</td></tr>
+        <tr><th scope="row">Places</th><td><bdi>{{ f.coverage.attractions.display }}</bdi> places to visit in <bdi>{{ f.coverage.cities.display }}</bdi> cities</td></tr>
+        <tr><th scope="row">Prices and tips</th><td><bdi>{{ atoms.count }}</bdi> published facts, each with a source and the date it was checked</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2 id="story">The story</h2>
+    <div class="maker" style="grid-template-columns: 1fr">
+      <div class="stack" id="maker">
+        {{ missing("P14", "Maker portrait", 0, "photo") }}
+        <p>I'm Ahmed Elawady. I live in Egypt and I have built InEgypt on my own since 2020. It started as a guide to places, became the app for metro and train routes, and is now a trip planner that knows how Egypt really works: what a taxi should cost, when a day is too full, which train to take.</p>
+        <p>The app was called “Egypt Trains &amp; Cairo Metro” until it grew beyond transit. The routes are still at its heart, and they stay free with no daily limit, because getting around should not depend on a subscription. What InEgypt adds is everything around the route: the order of your days, the fair price before you pay, and the tricks people run at airports, stations and sights.</p>
+        <p>I answer the support mail myself. If a fare, a route or a price is wrong, write to me and I will check it.</p>
+        <p><span class="draft-flag">Draft · owner rewrites in his own voice (Plan 47 §6.2)</span></p>
+      </div>
+    </div>
+
+    <h2 id="sources">Where the data comes from</h2>
+    <p>Transit lines, stops and timetables come from the operators' published information, put into one timetable pack inside the app. Times are published timetables, not live positions.</p>
+    <p>Prices, common scams, rules and emergency numbers come from the app's reviewed knowledge list: <bdi>{{ atoms.count }}</bdi> published facts ({{ kinds.price }} prices, {{ kinds.warning }} warnings, {{ kinds.contact }} contacts, and rules and steps). Each has a source and the date it was last checked. Official prices link to the operator or ministry; the others are marked as InEgypt estimates.</p>
+    <p>InEgypt is independent and not affiliated with any transport operator or ministry. Found a wrong fare or route? Mail <a href="mailto:{{ f.site.contactEmail.value }}">{{ f.site.contactEmail.value }}</a>.</p>
+
+    <h2 id="dont">What InEgypt does not do</h2>
+    <ul>{% for x in f.whatWeDontDo.value %}<li>{{ x }}</li>{% endfor %}</ul>
+
+    <h2 id="privacy">Privacy</h2>
+    <ul>
+      <li>No account: InEgypt never asks for your name or email.</li>
+      <li>{{ f.privacy.adSdk.display }}. InEgypt does not track you across other companies' apps or websites.</li>
+      <li>Pseudonymous product analytics and crash reports help improve the app; turn them off in Settings → Help improve InEgypt.</li>
+      <li>Your trips, notes, expenses and saved places stay on your device.</li>
+      <li>This website uses no cookies and no tracking scripts.</li>
+    </ul>
+    <p>The full text: <a href="{{ '/privacy.html' | url }}">Privacy Policy</a> and <a href="{{ '/terms.html' | url }}">Terms of Use</a>.</p>
+
+    <h2 id="credits">Photo credits</h2>
+    <p class="small muted">Photos are used under the Unsplash Licence.</p>
+    <ul class="small">{% for p in photos.photos %}<li>{{ p.use }}: <a href="{{ p.page }}" rel="noopener">{{ p.photographer }}</a></li>{% endfor %}</ul>
+
+    <h2 id="contact">Contact</h2>
+    <p><a href="mailto:{{ f.site.contactEmail.value }}">{{ f.site.contactEmail.value }}</a> · <a href="{{ '/support.html' | url }}">Support</a> · <a href="{{ '/press/' | url }}">Press</a></p>
+
+    {{ appbox("Get InEgypt", ["A day-by-day plan for your Egypt trip", "Metro, train and bus routes, free with no daily limit", "Fair prices and common scams, with dates"], "web_about", "web_home_final_qr") }}
+  </div>
+</section>

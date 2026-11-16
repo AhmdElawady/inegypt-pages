@@ -1,6 +1,42 @@
 {
   "_note": "Every guide page that exists in src/guides/ (built, not necessarily live). guides.json → live lists the published ones.",
-  "cairo-airport-to-city": { "title": "How do I get from Cairo Airport to the city?", "short": "Taxi, ride-hailing or bus and metro, and what to pay", "ct": "web_guide_airport" },
-  "cairo-metro": { "title": "How does the Cairo Metro work, and what does a ticket cost?", "short": "Lines, fares by stations, and how to ride", "ct": "web_guide_metro" },
-  "egypt-prices": { "title": "What do things cost in Egypt?", "short": "Fair price ranges for transport, food, tips and sights", "ct": "web_guide_prices" }
+  "cairo-airport-to-city": {
+    "title": "How do I get from Cairo Airport to the city?",
+    "short": "Taxi, ride-hailing or bus and metro, and what to pay",
+    "ct": "web_guide_airport",
+    "thumb": "photos/P10",
+    "thumbAlt": "",
+    "atoms": [
+      "price_airport_taxi",
+      "scam_airport_taxi",
+      "warning_airport_taxi_meter",
+      "scam_ridehail_pickup",
+      "scam_different_destination"
+    ],
+    "first": "A taxi or ride-hailing car from Cairo International Airport to the city centre should cost about {price_airport_taxi}."
+  },
+  "cairo-metro": {
+    "title": "How does the Cairo Metro work, and what does a ticket cost?",
+    "short": "Lines, fares by stations, and how to ride",
+    "ct": "web_guide_metro",
+    "thumb": "photos/P03",
+    "thumbAlt": "",
+    "atoms": [
+      "price_metro_single_journey",
+      "scam_metro_ticket",
+      "scam_metro_route",
+      "scam_metro_helper",
+      "process_metro_access_fares"
+    ],
+    "first": "A single Cairo Metro ticket costs {price_metro_single_journey}, depending on how many stations you ride."
+  },
+  "egypt-prices": {
+    "title": "What do things cost in Egypt?",
+    "short": "Fair price ranges for transport, food, tips and sights",
+    "ct": "web_guide_prices",
+    "thumb": "photos/P11",
+    "thumbAlt": "",
+    "atoms": "prices",
+    "first": "Fair price ranges in Egyptian pounds for transport, food, tips and sights, each with the month it was checked."
+  }
 }

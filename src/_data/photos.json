@@ -10,6 +10,22 @@
       "licence": "Unsplash Licence"
     },
     {
+      "slot": "P02",
+      "use": "Door \"Visiting Egypt?\", Karnak columns",
+      "file": "P02-2bgirUct1MU.jpg",
+      "page": "https://unsplash.com/photos/2bgirUct1MU",
+      "photographer": "Fatih Beki",
+      "licence": "Unsplash Licence"
+    },
+    {
+      "slot": "P03",
+      "use": "Door \"Living in Egypt?\", Cairo metro platform",
+      "file": "P03-hXgz-Onq_p4.jpg",
+      "page": "https://unsplash.com/photos/hXgz-Onq_p4",
+      "photographer": "Fady Ashraf",
+      "licence": "Unsplash Licence"
+    },
+    {
       "slot": "P04",
       "use": "Ribbon, Luxor",
       "file": "P04-uVftFKxJjh8.jpg",
@@ -50,11 +66,35 @@
       "licence": "Unsplash Licence"
     },
     {
+      "slot": "P10",
+      "use": "Guide thumb, airport to the city",
+      "file": "P10-ibVv-7G9RFs.jpg",
+      "page": "https://unsplash.com/photos/ibVv-7G9RFs",
+      "photographer": "waa towaw",
+      "licence": "Unsplash Licence"
+    },
+    {
+      "slot": "P11",
+      "use": "Guide thumb, prices",
+      "file": "P11-MXVSR17BiOA.jpg",
+      "page": "https://unsplash.com/photos/MXVSR17BiOA",
+      "photographer": "Mohamed Marey",
+      "licence": "Unsplash Licence"
+    },
+    {
       "slot": "P12",
       "use": "Final call, the Nile in Cairo at dusk",
       "file": "P12-1-9YBUOhxYg.jpg",
       "page": "https://unsplash.com/photos/1-9YBUOhxYg",
       "photographer": "Own Enezat",
+      "licence": "Unsplash Licence"
+    },
+    {
+      "slot": "P13",
+      "use": "Routes inset, ENR train",
+      "file": "P13-quXdpYhf-qg.jpg",
+      "page": "https://unsplash.com/photos/quXdpYhf-qg",
+      "photographer": "Abdelrahman Ismail",
       "licence": "Unsplash Licence"
     }
   ]

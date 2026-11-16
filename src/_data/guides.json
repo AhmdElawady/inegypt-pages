@@ -1,1 +1,9 @@
-{ "_note": "Live guide pages (phase 7). Home section 17 and the guide links on home stay hidden until a guide is listed here.", "live": [] }
+{
+  "_note": "Live guide pages (phase 7). Home section 17 and the guide links on home stay hidden until a guide is listed here.",
+  "live": [
+    "cairo-airport-to-city",
+    "cairo-metro",
+    "egypt-prices"
+  ],
+  "_approved": "Owner approved batch 1 on 2026-11-16 (\"approved go next\")."
+}

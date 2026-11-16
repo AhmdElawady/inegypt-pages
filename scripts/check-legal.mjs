@@ -8,12 +8,17 @@ let fail = 0;
 for (const doc of ["privacy", "terms"]) {
   const built = fs.readFileSync(`_site/${doc}.html`);
   const bundled = fs.readFileSync(`src/legal/${doc}.bundled.html`);
-  const s = built.toString("utf8");
-  const a = s.indexOf("<!-- site-footer:start -->"), b = s.indexOf("<!-- site-footer:end -->\n");
-  if (a < 0 || b < 0) { console.log(`FAIL ${doc}: footer markers missing`); fail++; continue; }
-  const stripped = Buffer.from(s.slice(0, a) + s.slice(b + "<!-- site-footer:end -->\n".length), "utf8");
+  let s = built.toString("utf8");
+  let missing = false;
+  for (const part of ["site-box", "site-footer"]) {   // site parts between markers are removed before comparing
+    const a = s.indexOf(`<!-- ${part}:start -->`), end = `<!-- ${part}:end -->\n`, b = s.indexOf(end);
+    if (a < 0 || b < 0) { console.log(`FAIL ${doc}: ${part} markers missing`); fail++; missing = true; break; }
+    s = s.slice(0, a) + s.slice(b + end.length);
+  }
+  if (missing) continue;
+  const stripped = Buffer.from(s, "utf8");
   const same = Buffer.compare(stripped, bundled) === 0;
-  console.log(`${same ? "ok  " : "FAIL"} ${doc}.html equals src/legal/${doc}.bundled.html outside the footer (${bundled.length} bytes)`);
+  console.log(`${same ? "ok  " : "FAIL"} ${doc}.html equals src/legal/${doc}.bundled.html outside the site box and footer (${bundled.length} bytes)`);
   if (!same) fail++;
   const appFile = path.join(APP, `InEgypt/Resources/${doc}.html`);
   if (fs.existsSync(appFile)) {

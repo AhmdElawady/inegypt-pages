@@ -57,6 +57,17 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("relatedGuides", (slugs, index) => slugs.map((s) => ({ href: `/guides/${s}/`, title: index[s].title, meta: index[s].short })));
   eleventyConfig.addFilter("priceIds", (groups) => groups.flatMap((g) => g.rows.map((r) => r.id)));
   eleventyConfig.addFilter("guideList", (index) => Object.entries(index).filter(([k]) => !k.startsWith("_")).map(([s, g]) => ({ href: `/guides/${s}/`, title: g.title, meta: g.short })));
+  // Home section 17 cards: thumb, the guide's first answer sentence (price tokens filled from atoms), last checked.
+  eleventyConfig.addFilter("guideCards", (live, index, atoms, groups, exclude) => live.map((slug) => {
+    const g = index[slug];
+    const ids = g.atoms === "prices"
+      ? Object.entries(atoms).filter(([id, a]) => a.kind === "price" && a.siteUsable && !exclude.includes(id) && groups.some((x) => x.topic === a.topic)).map(([id]) => id)
+      : g.atoms;
+    const checked = ids.map((id) => atoms[id]?.lastVerifiedAt).filter(Boolean).sort().pop();
+    const first = g.first.replace(/\{(\w+)\}/g, (_, id) => { const a = atoms[id]; return a.min === a.max ? `${a.min} ${a.currency}` : `${a.min}–${a.max} ${a.currency}`; });
+    return { slug, href: `/guides/${slug}/`, title: g.title, first, checked, thumb: g.thumb };
+  }));
+  eleventyConfig.addFilter("atomKinds", (atoms) => Object.values(atoms).reduce((c, a) => ((c[a.kind] = (c[a.kind] || 0) + 1), c), {}));
   eleventyConfig.addFilter("maxDate", (ids, atoms) => ids.map((id) => atoms[id]?.lastVerifiedAt).filter(Boolean).sort().pop());
   // "{cities}" style tokens in copy are filled from facts.json, so no count is typed into a page.
   eleventyConfig.addFilter("fillFacts", (text) => String(text)

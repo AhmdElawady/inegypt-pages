@@ -1,0 +1,33 @@
+{
+  "title": "Support · InEgypt",
+  "description": "Help with InEgypt: contact, reporting a wrong fare or route, restoring a purchase, and answers to common questions.",
+  "h1": "Support",
+  "lead": "Questions, a bug, or a wrong fare or route? Write to us; one person reads and answers every mail.",
+  "report": {
+    "h2": "Report a wrong fare, route or stop",
+    "text": "Mail us the stop, line or route, the time you searched and what was wrong. We check it against the operator's information and fix the data in a later update.",
+    "bug": [
+      "Your iPhone or iPad model and iOS version",
+      "What you did and what happened",
+      "A screenshot, if you can"
+    ]
+  },
+  "extra": [
+    {
+      "q": "How do I restore my purchase?",
+      "a": "In the app, go to Settings → Your Plan → Restore Purchases. Use the same Apple ID you bought with."
+    },
+    {
+      "q": "How do I cancel InEgypt Pro?",
+      "a": "In iOS Settings → your name → Subscriptions → InEgypt. Pro stays on until the end of the period you paid for."
+    },
+    {
+      "q": "How do I change the app language?",
+      "a": "In the app, go to Settings → Language."
+    },
+    {
+      "q": "How do I turn off analytics?",
+      "a": "In the app, go to Settings → Help improve InEgypt. Turning it off also deletes anything recorded but not yet sent."
+    }
+  ]
+}

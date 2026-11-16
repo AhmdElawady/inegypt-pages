@@ -1,0 +1,42 @@
+---
+layout: layouts/base.njk
+permalink: /features/index.html
+lang: en
+navCt: web_features
+eleventyComputed:
+  title: "{{ features.en.title }}"
+  description: "{{ features.en.description }}"
+---
+{%- from "components/media.njk" import device, missing with context -%}
+{%- from "components/calls.njk" import inlineCall with context -%}
+{%- set fx = features.en -%}
+<section class="section" style="padding-block-end: 0">
+  <div class="container stack" style="max-inline-size: 860px">
+    <h1 style="font-size: var(--fs-h2)">{{ fx.h1 }}</h1>
+    <p class="lead">{{ fx.lead }}</p>
+    <ul class="modes" aria-label="Sections">{% for g in fx.groups %}<li><span class="dot" style="--c: var(--{{ g.line }})" aria-hidden="true"></span><a href="#{{ g.line }}" style="color: inherit; text-decoration: none">{{ g.title }}</a></li>{% endfor %}</ul>
+  </div>
+</section>
+{%- for g in fx.groups %}
+<section class="section has-line line-{{ g.line }}" id="{{ g.line }}" style="--line: var(--{{ g.line }})" aria-labelledby="h-{{ g.line }}">
+  <div class="container stack-lg">
+    <h2 id="h-{{ g.line }}">{{ g.title }}</h2>
+    {%- for it in g.items %}
+    <article class="feature-row" id="{{ it.id | lower }}">
+      <div class="stack">
+        <p><span class="chip {{ 'chip--free' if it.tag == 'Free' else 'chip--pro' }}">{{ "Free" if it.tag == "Free" else ("InEgypt Pro" if it.tag == "Pro" else "Free + Pro") }}</span></p>
+        <h3>{{ it.name }}</h3>
+        <p class="lead" style="color: var(--ink)">{{ it.benefit }}</p>
+        <p>{{ it.detail | fillFacts }}</p>
+        {%- if it.phrases %}<ul class="small">{% for p in facts.iphoneFeatures.siriPhrases.value %}<li>“{{ p }}”</li>{% endfor %}</ul>{% endif %}
+        {%- if it.limit %}<p class="small muted"><b>Limit:</b> {{ it.limit }}</p>{% endif %}
+      </div>
+      <div class="feature-row__media">
+        {%- if it.screen %}{{ device(it.screen, it.name + " in InEgypt", 210) }}{% elif it.missing %}{{ missing(it.missing, it.name, 210) }}{% endif %}
+      </div>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+{%- endfor %}
+<div class="container">{{ inlineCall("web_features", "Get InEgypt — free on the App Store") }}</div>

@@ -1,0 +1,57 @@
+---
+layout: layouts/base.njk
+permalink: /press/index.html
+title: InEgypt press kit · descriptions, facts, logo
+description: Ready-to-use descriptions of InEgypt in one sentence, 100 and 300 words, the fact table, logo files and contact for press and bloggers.
+lang: en
+navCt: web_press
+---
+{%- set f = facts -%}
+<section class="section">
+  <div class="container guide__body">
+    <header class="stack">
+      <h1 style="font-size: var(--fs-h2)">Press kit</h1>
+      <p class="lead">Use any of the text below as it is. Every number comes from the app's own data ({{ f.coverage.countedAt.value }}). For anything else, write to <a href="mailto:{{ f.site.contactEmail.value }}">{{ f.site.contactEmail.value }}</a>.</p>
+    </header>
+
+    <h2>In one sentence</h2>
+    <p class="copyblock">{{ f.sentence.en }}</p>
+
+    <h2>In 100 words</h2>
+    <div class="copyblock stack">
+      <p>InEgypt is a free iPhone and iPad app for visiting and getting around Egypt, made by Ahmed Elawady, an independent developer in Egypt. It plans a trip day by day, or checks a plan you paste from ChatGPT or a blog, with real travel time between stops. It finds routes on the Cairo Metro, monorail, LRT, BRT, Alexandria tram, national trains and intercity coaches, with fares, free and with no daily limit. It shows fair prices and common scams with the date each was checked. It works in {{ f.app.languages.value | length }} languages and needs no account.</p>
+    </div>
+
+    <h2>In 300 words</h2>
+    <div class="copyblock stack">
+      <p>InEgypt is a free iPhone and iPad app for visiting and getting around Egypt. It is made by Ahmed Elawady, an independent developer in Egypt, and has been on the App Store since {{ f.app.onAppStoreSince.value }}, first as “{{ f.app.formerName.value }}”.</p>
+      <p>For visitors, InEgypt plans the trip. Choose when you travel, how long and what you like, and it builds each day in a sensible order with real travel time between stops, and says when a day does not fit. Visitors who already have a plan, from ChatGPT, a blog or their own notes, can paste it: InEgypt finds the places, orders the days and keeps anything it does not know as written.</p>
+      <p>For getting around, InEgypt searches Egypt's public transport in one place: Cairo Metro, monorail, LRT, BRT, the Alexandria tram, national trains, intercity coaches and domestic flights, with local buses in Cairo and Alexandria as a less complete fallback. Each route shows time, changes and fare. Route search is free and has no daily limit. It covers {{ f.coverage.routes.value }} lines and services and {{ f.coverage.stops.display }} stops.</p>
+      <p>To avoid paying too much, InEgypt lists fair price ranges for taxis, food, tips and tickets and the common scams at airports, stations and sights, each with its source and the date it was checked. An emergency page opens offline.</p>
+      <p>Discover covers {{ f.coverage.attractions.display }} places to visit in {{ f.coverage.cities.display }} cities. The app is in {{ f.app.languages.value | length }} languages, including full right-to-left Arabic, and needs no account.</p>
+      <p>InEgypt is free. InEgypt Pro ({{ f.prices.proMonthly.value }} a month or {{ f.prices.proYearly.value }} a year) adds offline route search, offline Discover, more automatic plans, trip weather and expenses. InEgypt does not sell tickets, has no live tracking and has no Android version.</p>
+    </div>
+
+    <h2>Facts</h2>
+    <ul>
+      <li>Maker: {{ f.app.maker.value }}</li>
+      <li>On the App Store since {{ f.app.onAppStoreSince.value }}; {{ f.app.platforms.value }}</li>
+      <li>App Store: <a href="{{ 'web_press' | appLink }}">{{ f.app.appStoreUrl.value }}</a></li>
+      <li>The full fact table: <a href="{{ '/about/#facts' | url }}">About InEgypt</a></li>
+    </ul>
+
+    <h2>Logo</h2>
+    <p class="small muted">The orange two-triangle mark. Please do not recolour or redraw it.</p>
+    <div class="logo-row">
+      <a href="{{ '/assets/logo/mark-on-light.svg' | url }}" download><img src="{{ '/assets/logo/mark-on-light.svg' | url }}" alt="">On light (SVG)</a>
+      <a class="on-dark" href="{{ '/assets/logo/mark-on-dark.svg' | url }}" download><img src="{{ '/assets/logo/mark-on-dark.svg' | url }}" alt="">On dark (SVG)</a>
+      <a href="{{ '/assets/logo/icon-512.png' | url }}" download><img src="{{ '/assets/logo/icon-512.png' | url }}" alt="">App icon (PNG, 512 px)</a>
+    </div>
+
+    <h2>Screenshots</h2>
+    <p>A zip of six screenshots (trip day, Bring your plan, route result, route steps, prices and a place page) comes with the final captures. Until then, write and we will send them.</p>
+
+    <h2>Contact</h2>
+    <p><a href="mailto:{{ f.site.contactEmail.value }}">{{ f.site.contactEmail.value }}</a>. Ahmed answers press mail himself.</p>
+  </div>
+</section>
