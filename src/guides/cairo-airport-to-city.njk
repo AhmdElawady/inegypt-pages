@@ -1,0 +1,57 @@
+---
+layout: layouts/guide.njk
+permalink: /guides/cairo-airport-to-city/index.html
+title: How do I get from Cairo Airport to the city?
+description: Taxi, ride-hailing car or bus and metro from Cairo International Airport, what a fair taxi fare is, and the tricks to avoid at arrivals.
+lang: en
+navCt: web_guide_airport
+atomIds: [price_airport_taxi, scam_airport_taxi, warning_airport_taxi_meter, scam_ridehail_pickup, scam_different_destination]
+related: [cairo-metro, egypt-prices]
+---
+{%- from "components/content.njk" import answer, appbox with context -%}
+{%- from "components/guide.njk" import source, watch with context -%}
+{%- set taxi = atoms.atoms.price_airport_taxi -%}
+{%- set meter = atoms.atoms.warning_airport_taxi_meter -%}
+<div class="answer">
+  <p class="lead" style="color: var(--ink)">A taxi or ride-hailing car from Cairo International Airport to the city centre should cost about <bdi>{{ taxi | priceText }}</bdi> (InEgypt estimate, checked {{ taxi.lastVerifiedAt | monthYear }}). Use the official taxi rank or a car booked in a ride-hailing app, agree the price or pricing method before you get in, and ignore anyone who offers a ride inside the terminal.</p>
+</div>
+<p>InEgypt is a free iPhone app for visiting and getting around Egypt. It plans your trip day by day, finds routes by metro, train, bus and other public transport, and shows fair prices and common scams before you pay. This guide is for <b>Cairo International Airport</b> only.</p>
+
+<h2>Your options from the airport</h2>
+<div class="table-wrap"><table class="facts-table">
+  <caption>Ways from Cairo International Airport to the city</caption>
+  <thead><tr><th scope="col">Option</th><th scope="col">What to expect</th><th scope="col">Fair price</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Ride-hailing car</th><td>Booked in the app; the fare is shown before you confirm, and the trip is recorded.</td><td class="num-cell" rowspan="2"><bdi>{{ taxi | priceText }}</bdi><div class="meta">{{ source(taxi) }}</div></td></tr>
+    <tr><th scope="row">Taxi from the official rank</th><td>White taxis use meters; agree that the meter is on before you leave.</td></tr>
+    <tr><th scope="row">Airport transfer services</th><td>Negotiated or fixed prices by destination or car category. Confirm the service and how it is priced first.</td><td class="meta">{{ source(meter) }}</td></tr>
+    <tr><th scope="row">Bus to the metro, then the metro</th><td>Usually the cheapest way, and slower, with a change or two. Easier with light luggage and outside rush hour.</td><td class="meta">InEgypt shows the fare in each route result</td></tr>
+  </tbody>
+</table></div>
+
+{{ appbox("InEgypt shows the options from your terminal to your hotel and the fair price for each.", [], "web_guide_airport", "", true) }}
+
+<h2>Step by step at arrivals</h2>
+<ol>
+  <li><b>Before you land,</b> save your hotel's address, ideally in Arabic too, so you can show it to the driver.</li>
+  <li><b>Walk past offers inside the terminal.</b> People who approach you with a ride are not the official rank.</li>
+  <li><b>Choose the official taxi rank or a ride-hailing app.</b> If you use an app, wait at the pickup point it shows.</li>
+  <li><b>Confirm how the fare is worked out</b> before the car moves: the meter, the app fare, or the fixed price of a transfer service.</li>
+  <li><b>Match the car and the plate</b> to the app, and keep the trip active in the app until you arrive.</li>
+  <li><b>Show the address</b> and ask to go there directly, without stops at other hotels or shops.</li>
+</ol>
+
+<h2>Watch out for</h2>
+{{ watch(["scam_airport_taxi", "warning_airport_taxi_meter", "scam_ridehail_pickup", "scam_different_destination"]) }}
+
+<h2>What InEgypt does and does not do here</h2>
+<p>InEgypt does not book taxis or rides, and it has no live tracking of buses or cars. It shows the ways to get from the airport to your address, with time, changes and the fare for public transport, and the fair price for a taxi, so you know the number before anyone names one. The emergency page opens offline, for free.</p>
+
+<h2>Sources</h2>
+<ul class="sources">
+  <li>Cairo Airport, "Move from/to the airport": <a href="{{ meter.source.url }}" rel="noopener">cairo-airport.com</a>, checked {{ meter.lastVerifiedAt | monthYear }}.</li>
+  <li>Fair taxi price: InEgypt's price list, an estimate from editorial checks, {{ taxi.lastVerifiedAt | monthYear }}.</li>
+  <li>Arrival tips: InEgypt safety guidance, {{ atoms.atoms.scam_airport_taxi.lastVerifiedAt | monthYear }}.</li>
+</ul>
+
+{{ appbox("Get the airport trip right on the day", ["Every way from the airport to your hotel, with time, changes and fare", "The fair taxi price, with the month it was checked", "Emergency numbers that open offline, for free"], "web_guide_airport", "web_guide_airport_qr") }}

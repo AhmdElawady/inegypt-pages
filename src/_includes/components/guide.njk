@@ -1,0 +1,12 @@
+{#- Guide helpers: a fact's source line and a "watch out for" item, both from an atom. -#}
+{% macro source(a) -%}
+{%- if a.source and a.source.url -%}<a href="{{ a.source.url }}" rel="noopener">{{ "Official source" if a.source.kind in ["national_authority", "operator_site"] else "Source" }}</a>
+{%- elif a.estimate -%}InEgypt estimate
+{%- else -%}InEgypt guidance{%- endif %}, checked <time datetime="{{ a.lastVerifiedAt }}">{{ a.lastVerifiedAt | monthYear }}</time>
+{%- endmacro %}
+
+{% macro watch(ids) -%}
+<ul class="watch">{% for id in ids %}{% set a = atoms.atoms[id] %}{% if a and a.siteUsable %}
+  <li><b>{{ a.en.title }}</b>{{ a.en.detail or a.en.note }} <span class="meta">({{ source(a) }})</span></li>{% endif %}{% endfor %}
+</ul>
+{%- endmacro %}

@@ -1,0 +1,63 @@
+---
+layout: layouts/guide.njk
+permalink: /guides/cairo-metro/index.html
+title: How does the Cairo Metro work, and what does a ticket cost?
+description: Cairo Metro fares by number of stations, the three lines and where they meet, how to buy a ticket and ride, and the tricks to avoid.
+lang: en
+navCt: web_guide_metro
+atomIds: [price_metro_single_journey, scam_metro_ticket, scam_metro_route, scam_metro_helper, process_metro_access_fares]
+related: [cairo-airport-to-city, egypt-prices]
+---
+{%- from "components/content.njk" import appbox with context -%}
+{%- from "components/guide.njk" import source, watch with context -%}
+{%- set fare = atoms.atoms.price_metro_single_journey -%}
+{%- set bands = fare.en.note | fareBands -%}
+{%- set access = atoms.atoms.process_metro_access_fares -%}
+<div class="answer">
+  <p class="lead" style="color: var(--ink)">A single Cairo Metro ticket costs <bdi>{{ fare | priceText }}</bdi>, depending on how many stations you ride (official fares, checked {{ fare.lastVerifiedAt | monthYear }}). There are {{ metro.lines | length }} lines with {{ metro.stations }} stations and {{ metro.interchanges | length }} interchange stations. Buy the ticket for your number of stations and keep it until you exit: you need it at the final gate.</p>
+</div>
+<p>InEgypt is a free iPhone app for visiting and getting around Egypt. It plans your trip day by day, finds routes by metro, train, bus and other public transport, and shows fair prices and common scams before you pay. Route search is free and has no daily limit.</p>
+
+<h2>Ticket prices</h2>
+<p>The fare depends on how many stations you travel, counted from where you enter to where you leave, including changes between lines.</p>
+<div class="table-wrap"><table class="facts-table">
+  <caption>Cairo Metro single-journey fares ({{ source(fare) }})</caption>
+  <thead><tr><th scope="col">Stations travelled</th><th scope="col">Fare</th></tr></thead>
+  <tbody>{% for b in bands %}<tr><td><bdi>{{ b.from }}–{{ b.to }}</bdi></td><td class="num-cell"><bdi>{{ b.fare }} {{ fare.currency }}</bdi></td></tr>{% endfor %}</tbody>
+</table></div>
+<p>Reduced fares and subscriptions exist for some groups. {{ access.en.detail or access.en.note }} <span class="meta">({{ source(access) }})</span></p>
+
+{{ appbox("Search any two places; InEgypt gives the line, direction, change and fare.", [], "web_guide_metro", "", true) }}
+
+<h2>The three lines</h2>
+<div class="table-wrap"><table class="facts-table">
+  <caption>Lines and stations in InEgypt's transit data (counted {{ metro.countedAt }})</caption>
+  <thead><tr><th scope="col">Line</th><th scope="col">Runs between</th><th scope="col">Stations</th></tr></thead>
+  <tbody>{% for l in metro.lines %}<tr><th scope="row"><span class="line-chip" style="--c: {{ l.color }}">{{ l.id }}</span></th><td>{{ l.ends }}</td><td class="num-cell">{{ l.stations }}</td></tr>{% endfor %}</tbody>
+</table></div>
+<p>Line 3 has two western branches that share the eastern part to Adly Mansour. You can change lines at these stations:</p>
+<ul>{% for i in metro.interchanges %}<li><b>{{ i.name }}</b>: {% for l in i.lines %}<span class="line-chip" style="--c: {{ metro.colors[l] }}">{{ l }}</span>{% if not loop.last %} and {% endif %}{% endfor %}</li>{% endfor %}</ul>
+
+<h2>How to ride, step by step</h2>
+<ol>
+  <li><b>Find your route first.</b> Know the line, the direction (named after the last station of the line) and where you change.</li>
+  <li><b>Count the stations</b> from your station to your destination, or tell the booth where you are going.</li>
+  <li><b>Buy the ticket</b> at a staffed booth or an official machine. Keep small notes ready.</li>
+  <li><b>Pass the gate</b> and follow the signs for your line and direction.</li>
+  <li><b>Keep the ticket</b> for the whole trip; you need it at the exit gate.</li>
+</ol>
+
+<h2>Watch out for</h2>
+{{ watch(["scam_metro_ticket", "scam_metro_route", "scam_metro_helper"]) }}
+
+<h2>What InEgypt does and does not do here</h2>
+<p>InEgypt does not sell metro tickets, and it does not show where trains are right now or when the next one arrives; it uses published timetables and the official fare table. It does plan the whole trip: the walk to the station, the line and direction, where to change, the fare, and how to continue by bus, monorail, LRT or train.</p>
+
+<h2>Sources</h2>
+<ul class="sources">
+  <li>Fares: State Information Service, <a href="{{ fare.source.url }}" rel="noopener">metro ticket prices</a>, checked {{ fare.lastVerifiedAt | monthYear }}.</li>
+  <li>Reduced fares and subscriptions: Cairo Governorate, <a href="{{ access.source.url }}" rel="noopener">metro tickets</a>, checked {{ access.lastVerifiedAt | monthYear }}.</li>
+  <li>Lines and stations: InEgypt's transit data (the timetable pack in the app), counted {{ metro.countedAt }}.</li>
+</ul>
+
+{{ appbox("Ride the metro without counting stations", ["The line, direction and changes for any two places", "The fare for your exact trip", "Monorail, LRT, BRT, trains and coaches in the same search"], "web_guide_metro", "web_guide_metro_qr") }}

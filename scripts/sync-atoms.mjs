@@ -38,6 +38,8 @@ for (const f of fs.readdirSync(path.join(K, "topics")).filter((f) => f.endsWith(
     }
     out[a.id] = {
       kind: a.kind,
+      topic: a.topics?.[0]?.topic ?? null,
+      rank: a.topics?.[0]?.rank ?? null,
       en: a.content.en,
       ar: a.content.ar,
       ...(a.kind === "price" ? { min, max, currency: p.currency ?? null, unit: p.unit ?? null, negotiable: !!p.negotiable } : {}),

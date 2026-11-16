@@ -1,0 +1,67 @@
+{
+  "_source": "GTFS pack 2026.08.13-national-transit-candidate-4 (bundled in the app), agency NAT; unique stop_ids served by trips; M3A and M3B counted as one line M3. Counted 2026-11-16 by the website agent.",
+  "countedAt": "November 2026",
+  "lines": [
+    {
+      "id": "M1",
+      "ends": "Helwan – New El-Marg",
+      "stations": 35,
+      "color": "#2E4A78"
+    },
+    {
+      "id": "M2",
+      "ends": "Shobra El Kheima – El Mounib",
+      "stations": 20,
+      "color": "#A63457"
+    },
+    {
+      "id": "M3",
+      "ends": "Rod El Farag or Cairo University – Adly Mansour",
+      "stations": 34,
+      "color": "#325F3B"
+    }
+  ],
+  "stations": 84,
+  "interchanges": [
+    {
+      "name": "Al Shohadaa",
+      "lines": [
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "name": "Attaba",
+      "lines": [
+        "M2",
+        "M3"
+      ]
+    },
+    {
+      "name": "Cairo University",
+      "lines": [
+        "M2",
+        "M3"
+      ]
+    },
+    {
+      "name": "Nasser",
+      "lines": [
+        "M1",
+        "M3"
+      ]
+    },
+    {
+      "name": "Sadat",
+      "lines": [
+        "M1",
+        "M2"
+      ]
+    }
+  ],
+  "colors": {
+    "M1": "#2E4A78",
+    "M2": "#A63457",
+    "M3": "#325F3B"
+  }
+}

@@ -373,3 +373,24 @@ a.strip__item:hover { color: var(--link); }
 
 /* FAQ in two columns on desktop */
 @media (min-width: 1024px) { .faq--cols { grid-template-columns: 1fr 1fr; align-items: start; } }
+
+/* ---------- Guides (Plan 46 §4.1, §4.4) ---------- */
+.guide__body { max-inline-size: 820px; display: grid; gap: var(--s6); }
+.guide__body h2 { font-size: clamp(24px, 1.6vw + 16px, 32px); margin-block-start: var(--s5); }
+.guide__body p, .guide__body li { max-inline-size: 70ch; }
+.guide__body ol, .guide__body ul { padding-inline-start: 1.3em; display: grid; gap: var(--s3); margin: 0; }
+.facts-table { inline-size: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: var(--r-card); overflow: hidden; box-shadow: 0 0 0 1px var(--hairline); font-size: 15px; }
+.facts-table caption { text-align: start; color: var(--ink-2); font-size: var(--fs-small); padding-block-end: var(--s3); }
+.facts-table th, .facts-table td { padding: 12px var(--s4); text-align: start; border-block-end: 1px solid var(--hairline); vertical-align: top; }
+.facts-table thead th { background: var(--sand); font-family: var(--font-head); font-size: 15px; }
+.facts-table tr:last-child > * { border-block-end: 0; }
+.facts-table .num-cell { white-space: nowrap; font-family: var(--font-head); font-weight: 700; font-variant-numeric: tabular-nums; }
+.facts-table .meta { color: var(--ink-2); font-size: 13px; }
+.table-wrap { overflow-x: auto; }
+.watch { display: grid; gap: var(--s3); list-style: none; padding: 0; }
+.watch li { background: var(--surface); border-radius: 16px; padding: var(--s4) var(--s5); box-shadow: 0 0 0 1px var(--hairline); border-inline-start: 4px solid var(--safe); }
+.watch b { display: block; font-family: var(--font-head); margin-block-end: 2px; }
+.sources { font-size: 14px; color: var(--ink-2); }
+.line-chip { display: inline-block; padding: 1px 8px; border-radius: 6px; color: #fff; font: 700 13px/1.5 var(--font-head); background: var(--c); }
+.plans caption, .facts-table caption { padding-inline: 6px; } /* the rounded table clips overflow; keep the first glyph visible */
+.facts-table th .meta { font-weight: 400; }

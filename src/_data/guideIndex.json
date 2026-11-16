@@ -1,0 +1,6 @@
+{
+  "_note": "Every guide page that exists in src/guides/ (built, not necessarily live). guides.json → live lists the published ones.",
+  "cairo-airport-to-city": { "title": "How do I get from Cairo Airport to the city?", "short": "Taxi, ride-hailing or bus and metro, and what to pay", "ct": "web_guide_airport" },
+  "cairo-metro": { "title": "How does the Cairo Metro work, and what does a ticket cost?", "short": "Lines, fares by stations, and how to ride", "ct": "web_guide_metro" },
+  "egypt-prices": { "title": "What do things cost in Egypt?", "short": "Fair price ranges for transport, food, tips and sights", "ct": "web_guide_prices" }
+}

@@ -5,6 +5,8 @@
   "atoms": {
     "scam_unofficial_guides": {
       "kind": "warning",
+      "topic": "attractions",
+      "rank": 20,
       "en": {
         "detail": "Book through your hotel or an official tourist office, and ask anyone who approaches you offering a tour for identification. An unofficial guide may overcharge or steer you to shops that pay them a commission.",
         "title": "Unofficial 'Tour Guides'"
@@ -25,6 +27,8 @@
     },
     "scam_museum_helpers": {
       "kind": "warning",
+      "topic": "attractions",
+      "rank": 30,
       "en": {
         "detail": "People offering to take your photo or show you 'secret spots' inside attractions will expect tips. Agree on a price first or politely decline.",
         "title": "Temple/Museum 'Helpers'"
@@ -45,6 +49,8 @@
     },
     "scam_fake_tickets": {
       "kind": "warning",
+      "topic": "attractions",
+      "rank": 10,
       "en": {
         "detail": "Buy from the attraction's official ticket office or official online portal. Avoid outside or message-app sellers promising discounted or skip-the-line entry, and make sure the ticket or QR scans before leaving the seller.",
         "title": "Fake Ticket Sellers"
@@ -65,6 +71,8 @@
     },
     "scam_ride_pricing": {
       "kind": "warning",
+      "topic": "attractions",
+      "rank": 40,
       "en": {
         "detail": "Always agree on the total price AND duration before any ride. Some operators quote per-minute or demand extra to let you off.",
         "title": "Camel/Horse Ride Pricing"
@@ -85,6 +93,8 @@
     },
     "price_camel_ride_short": {
       "kind": "price",
+      "topic": "attractions",
+      "rank": 40,
       "en": {
         "note": "Agree total price first",
         "title": "Short camel ride (15-20 min)"
@@ -110,6 +120,8 @@
     },
     "price_camel_tour": {
       "kind": "price",
+      "topic": "attractions",
+      "rank": 50,
       "en": {
         "note": "Agree duration + price",
         "title": "Camel tour (1-2 hours)"
@@ -135,6 +147,8 @@
     },
     "price_horse_carriage": {
       "kind": "price",
+      "topic": "attractions",
+      "rank": 60,
       "en": {
         "note": "Popular in Luxor",
         "title": "Horse carriage ride"
@@ -160,6 +174,8 @@
     },
     "price_felucca_hour": {
       "kind": "price",
+      "topic": "attractions",
+      "rank": 70,
       "en": {
         "note": "Negotiate before boarding",
         "title": "Felucca ride (Nile)"
@@ -185,6 +201,8 @@
     },
     "price_nile_dinner_cruise": {
       "kind": "price",
+      "topic": "attractions",
+      "rank": 80,
       "en": {
         "title": "Nile cruise dinner"
       },
@@ -208,6 +226,8 @@
     },
     "price_tour_guide_day": {
       "kind": "price",
+      "topic": "attractions",
+      "rank": 90,
       "en": {
         "title": "Tour guide (half day)"
       },
@@ -231,6 +251,8 @@
     },
     "price_private_driver_day": {
       "kind": "price",
+      "topic": "attractions",
+      "rank": 100,
       "en": {
         "title": "Private driver (full day)"
       },
@@ -254,6 +276,8 @@
     },
     "price_major_sites": {
       "kind": "price",
+      "topic": "attractions",
+      "rank": 10,
       "en": {
         "title": "Major sites (Pyramids, Luxor)"
       },
@@ -277,6 +301,8 @@
     },
     "price_museums": {
       "kind": "price",
+      "topic": "attractions",
+      "rank": 20,
       "en": {
         "title": "Museums"
       },
@@ -300,6 +326,8 @@
     },
     "price_temples": {
       "kind": "price",
+      "topic": "attractions",
+      "rank": 30,
       "en": {
         "title": "Temples & Historical sites"
       },
@@ -323,6 +351,8 @@
     },
     "process_giza_ticket_scope": {
       "kind": "process",
+      "topic": "attractions",
+      "rank": 5,
       "en": {
         "detail": "Giza Plateau area entry does not automatically include the separately listed pyramids, tombs, and interior spaces. Check the site's official page for current options before buying.",
         "title": "Check what the Giza ticket includes"
@@ -343,6 +373,8 @@
     },
     "price_giza_plateau_area_entry_foreign_adult": {
       "kind": "price",
+      "topic": "attractions",
+      "rank": 4,
       "en": {
         "note": "Applies to one foreign adult for Giza Plateau area entry only; separately listed pyramid interiors, tombs, and other ticketed spaces are not included.",
         "title": "Giza Plateau area entry — foreign adult"
@@ -368,6 +400,8 @@
     },
     "scam_sim_markup": {
       "kind": "warning",
+      "topic": "money",
+      "rank": 30,
       "en": {
         "detail": "Some airport or third-party SIM sellers add fees or push a larger bundle. Ask for the official package name, data allowance, total price, and a receipt before paying.",
         "title": "Verify the SIM bundle"
@@ -388,6 +422,8 @@
     },
     "scam_menu_no_prices": {
       "kind": "warning",
+      "topic": "food",
+      "rank": 10,
       "en": {
         "detail": "If a menu has no prices — or you're quoted verbally — confirm prices before ordering, especially for fish \"by weight\". Surprises arrive with the bill, when it's hardest to argue.",
         "title": "Menus without prices"
@@ -408,6 +444,8 @@
     },
     "scam_service_vs_tip": {
       "kind": "warning",
+      "topic": "food",
+      "rank": 20,
       "en": {
         "detail": "Ask for the itemized bill and check it before paying. Any additional tip is your choice, based on the service — do not let anyone present a second tip as a mandatory fee.",
         "title": "Check the bill before tipping"
@@ -428,6 +466,8 @@
     },
     "price_street_food": {
       "kind": "price",
+      "topic": "food",
+      "rank": 10,
       "en": {
         "title": "Street food (Koshari, Foul)"
       },
@@ -451,6 +491,8 @@
     },
     "price_local_restaurant": {
       "kind": "price",
+      "topic": "food",
+      "rank": 20,
       "en": {
         "title": "Local restaurant meal"
       },
@@ -474,6 +516,8 @@
     },
     "price_midrange_restaurant": {
       "kind": "price",
+      "topic": "food",
+      "rank": 30,
       "en": {
         "title": "Mid-range restaurant"
       },
@@ -497,6 +541,8 @@
     },
     "price_coffee_tea": {
       "kind": "price",
+      "topic": "food",
+      "rank": 40,
       "en": {
         "title": "Coffee/Tea at café"
       },
@@ -520,6 +566,8 @@
     },
     "price_hotel_porter": {
       "kind": "price",
+      "topic": "money",
+      "rank": 30,
       "en": {
         "title": "Hotel porter (per bag)"
       },
@@ -543,6 +591,8 @@
     },
     "price_housekeeping_day": {
       "kind": "price",
+      "topic": "money",
+      "rank": 40,
       "en": {
         "title": "Hotel housekeeping"
       },
@@ -566,6 +616,8 @@
     },
     "price_restaurant_tip": {
       "kind": "price",
+      "topic": "food",
+      "rank": 60,
       "en": {
         "note": "If not included",
         "title": "Restaurant tip"
@@ -591,6 +643,8 @@
     },
     "price_bathroom_attendant": {
       "kind": "price",
+      "topic": "money",
+      "rank": 50,
       "en": {
         "title": "Bathroom attendant"
       },
@@ -614,6 +668,8 @@
     },
     "price_sim_card_tourist": {
       "kind": "price",
+      "topic": "money",
+      "rank": 10,
       "en": {
         "note": "Official e& Egypt prices — use this checker only for an e& Traveler quote; confirm any SIM or activation fee at the counter",
         "title": "e& Traveler bundle (7–40 GB)"
@@ -639,6 +695,8 @@
     },
     "price_visa_on_arrival": {
       "kind": "price",
+      "topic": "money",
+      "rank": 100,
       "en": {
         "note": "Pay USD cash at an official bank counter before passport control; eligibility depends on your passport",
         "title": "Visa on arrival"
@@ -664,6 +722,8 @@
     },
     "process_check_entry_eligibility": {
       "kind": "process",
+      "topic": "money",
+      "rank": 5,
       "en": {
         "detail": "E-visa or visa-on-arrival eligibility depends on your passport and itinerary. Check the Ministry of Interior rules and the official tourism portal before travel; do not rely on a saved fee or country list.",
         "title": "Check entry eligibility before travel"
@@ -684,6 +744,8 @@
     },
     "warning_accessible_travel_backup": {
       "kind": "warning",
+      "topic": "transport",
+      "rank": 95,
       "en": {
         "detail": "Lift, ramp, or assistance availability can vary by station or operator, and we do not have complete live data. Confirm assistance directly before travel and keep a backup plan plus essential medication or device information.",
         "title": "Confirm assistance and plan a backup"
@@ -704,6 +766,8 @@
     },
     "emergency_unified": {
       "kind": "contact",
+      "topic": "emergency",
+      "rank": 10,
       "en": {
         "scope": "Nationwide",
         "subtitle": "Egypt's general emergency number",
@@ -726,6 +790,8 @@
     },
     "emergency_police": {
       "kind": "contact",
+      "topic": "emergency",
+      "rank": 20,
       "en": {
         "scope": "Nationwide",
         "subtitle": "Police emergencies",
@@ -748,6 +814,8 @@
     },
     "emergency_ambulance": {
       "kind": "contact",
+      "topic": "emergency",
+      "rank": 30,
       "en": {
         "scope": "Nationwide",
         "subtitle": "Medical emergencies",
@@ -770,6 +838,8 @@
     },
     "emergency_fire": {
       "kind": "contact",
+      "topic": "emergency",
+      "rank": 40,
       "en": {
         "scope": "Nationwide",
         "subtitle": "Fire emergencies",
@@ -792,6 +862,8 @@
     },
     "emergency_tourist_police": {
       "kind": "contact",
+      "topic": "emergency",
+      "rank": 50,
       "en": {
         "scope": "Nationwide",
         "subtitle": "For tourist-related incidents",
@@ -814,6 +886,8 @@
     },
     "emergency_gas": {
       "kind": "contact",
+      "topic": "emergency",
+      "rank": 60,
       "en": {
         "scope": "Nationwide",
         "subtitle": "Gas leaks and emergencies",
@@ -836,6 +910,8 @@
     },
     "emergency_traffic": {
       "kind": "contact",
+      "topic": "emergency",
+      "rank": 70,
       "en": {
         "scope": "Nationwide",
         "subtitle": "Traffic incidents and accidents",
@@ -858,6 +934,8 @@
     },
     "emergency_electricity": {
       "kind": "contact",
+      "topic": "emergency",
+      "rank": 80,
       "en": {
         "scope": "Nationwide",
         "subtitle": "Power outages and electrical issues",
@@ -880,6 +958,8 @@
     },
     "contact_tourism_hotline": {
       "kind": "contact",
+      "topic": "emergency",
+      "rank": 55,
       "en": {
         "scope": "Nationwide",
         "subtitle": "For visitor inquiries and complaints during published service hours",
@@ -902,6 +982,8 @@
     },
     "scam_metro_helper": {
       "kind": "warning",
+      "topic": "transport",
+      "rank": 90,
       "en": {
         "detail": "Use a staffed booth or official machine. You do not need to hand cash or your phone to an unofficial helper; if you need help, ask uniformed metro staff.",
         "title": "Ticket-machine \"helpers\""
@@ -922,6 +1004,8 @@
     },
     "scam_metro_ticket": {
       "kind": "warning",
+      "topic": "transport",
+      "rank": 70,
       "en": {
         "detail": "The fare depends on how many stations you travel. Tell the booth your destination or count the stations first, then keep the ticket until you exit — you need it at the final gate.",
         "title": "Buy the right metro ticket"
@@ -942,6 +1026,8 @@
     },
     "scam_metro_route": {
       "kind": "warning",
+      "topic": "transport",
+      "rank": 80,
       "en": {
         "detail": "Before boarding, check the line number or color, the direction shown by the terminal station, and where you change lines. If you have luggage, avoid rush hour when possible.",
         "title": "Check line, direction, interchange"
@@ -962,6 +1048,8 @@
     },
     "price_transit_metro": {
       "kind": "price",
+      "topic": "transport",
+      "rank": 10,
       "en": {
         "title": "Metro"
       },
@@ -985,6 +1073,8 @@
     },
     "price_transit_lrt": {
       "kind": "price",
+      "topic": "transport",
+      "rank": 30,
       "en": {
         "title": "LRT"
       },
@@ -1008,6 +1098,8 @@
     },
     "price_transit_brt": {
       "kind": "price",
+      "topic": "transport",
+      "rank": 20,
       "en": {
         "title": "BRT"
       },
@@ -1031,6 +1123,8 @@
     },
     "price_transit_monorail": {
       "kind": "price",
+      "topic": "transport",
+      "rank": 40,
       "en": {
         "title": "Monorail"
       },
@@ -1054,6 +1148,8 @@
     },
     "price_transit_tram": {
       "kind": "price",
+      "topic": "transport",
+      "rank": 50,
       "en": {
         "title": "Tram"
       },
@@ -1077,6 +1173,8 @@
     },
     "price_transit_bus": {
       "kind": "price",
+      "topic": "transport",
+      "rank": 60,
       "en": {
         "title": "Public Bus"
       },
@@ -1100,6 +1198,8 @@
     },
     "rule_fare_metro": {
       "kind": "rule",
+      "topic": "transport",
+      "rank": 100,
       "en": {
         "detail": "1-9 stops: 10 EGP, 10-16 stops: 12 EGP, 17-23 stops: 15 EGP, 24+ stops: 20 EGP"
       },
@@ -1114,6 +1214,8 @@
     },
     "rule_fare_lrt": {
       "kind": "rule",
+      "topic": "transport",
+      "rank": 100,
       "en": {
         "detail": "1-3 stops: 10 EGP, 4-7 stops: 15 EGP, 8+ stops: 20 EGP"
       },
@@ -1128,6 +1230,8 @@
     },
     "rule_fare_brt": {
       "kind": "rule",
+      "topic": "transport",
+      "rank": 100,
       "en": {
         "detail": "1-4 stops: 5 EGP, 5-9 stops: 10 EGP, 10+ stops: 15 EGP"
       },
@@ -1142,6 +1246,8 @@
     },
     "rule_fare_monorail": {
       "kind": "rule",
+      "topic": "transport",
+      "rank": 100,
       "en": {
         "detail": "1-5 stops: 20 EGP, 6-10 stops: 40 EGP, 11-15 stops: 55 EGP, 16+ stops: 80 EGP"
       },
@@ -1156,6 +1262,8 @@
     },
     "rule_fare_tram": {
       "kind": "rule",
+      "topic": "transport",
+      "rank": 100,
       "en": {
         "detail": "Flat fare"
       },
@@ -1170,6 +1278,8 @@
     },
     "price_metro_single_journey": {
       "kind": "price",
+      "topic": "transport",
+      "rank": 110,
       "en": {
         "note": "1–9 stations: 10 · 10–16: 12 · 17–23: 15 · 24–39: 20 EGP; keep the ticket until exit",
         "title": "Cairo Metro single journey"
@@ -1195,6 +1305,8 @@
     },
     "process_metro_access_fares": {
       "kind": "process",
+      "topic": "transport",
+      "rank": 35,
       "en": {
         "detail": "Cairo Governorate publishes reduced-fare categories, subscription requirements, and issuing offices. Check your eligibility, required documents, and the right office on the official page before going; do not rely on a saved price.",
         "title": "Check Metro subscription eligibility"
@@ -1215,6 +1327,8 @@
     },
     "scam_currency_mixup": {
       "kind": "warning",
+      "topic": "money",
+      "rank": 10,
       "en": {
         "detail": "Count your change before you leave. Egyptian coins and small notes look alike in a hurry, and a note handed back quickly is easy to misread — check the figure on each one.",
         "title": "Currency Mix-up"
@@ -1235,6 +1349,8 @@
     },
     "scam_free_gift": {
       "kind": "warning",
+      "topic": "shopping",
+      "rank": 20,
       "en": {
         "detail": "If someone puts a 'free' bracelet, perfume sample, or papyrus in your hand, expect to be asked for payment afterwards. Politely decline and keep walking.",
         "title": "The 'Free Gift' Trap"
@@ -1255,6 +1371,8 @@
     },
     "scam_atm_dcc": {
       "kind": "warning",
+      "topic": "money",
+      "rank": 20,
       "en": {
         "detail": "If an ATM or card terminal offers your home currency, it must show you the exchange rate and any added markup, and let you decline. Choose EGP unless you have compared the final totals, and let your card issuer handle the conversion.",
         "title": "Pay in EGP, not your currency"
@@ -1275,6 +1393,8 @@
     },
     "scam_no_price_anchor": {
       "kind": "warning",
+      "topic": "shopping",
+      "rank": 10,
       "en": {
         "detail": "There is no reliable one-third rule. Compare more than one shop, decide what the item is worth to you, bargain in EGP, and confirm the final total before it is wrapped. Walking away is normal.",
         "title": "Set your walk-away price"
@@ -1295,6 +1415,8 @@
     },
     "price_bottled_water": {
       "kind": "price",
+      "topic": "food",
+      "rank": 50,
       "en": {
         "title": "Bottled water (500ml)"
       },
@@ -1318,6 +1440,8 @@
     },
     "scam_airport_taxi": {
       "kind": "warning",
+      "topic": "transport",
+      "rank": 10,
       "en": {
         "detail": "At arrivals, ignore unsolicited rides inside the terminal. Use a signed taxi rank or an in-app pickup, match the car and plate, keep the app trip active, and confirm the meter or app fare before moving.",
         "title": "Airport taxi touts"
@@ -1338,6 +1462,8 @@
     },
     "scam_different_destination": {
       "kind": "warning",
+      "topic": "transport",
+      "rank": 20,
       "en": {
         "detail": "Some taxi drivers may try to take you to a different hotel or shop. Firmly say \"No, take me to [your destination] directly.\" Show the address on your phone.",
         "title": "The 'Different Destination' Trick"
@@ -1358,6 +1484,8 @@
     },
     "scam_closed_road": {
       "kind": "warning",
+      "topic": "transport",
+      "rank": 30,
       "en": {
         "detail": "Around the Pyramids, people may stop your taxi and say the road is closed so you must take a horse or camel. Do not take a stranger's word for it — carry on to the official gate and check with staff there.",
         "title": "The 'Closed Road' Scam"
@@ -1378,6 +1506,8 @@
     },
     "scam_ridehail_pickup": {
       "kind": "warning",
+      "topic": "transport",
+      "rank": 40,
       "en": {
         "detail": "A driver who calls asking you to cancel the trip and pay cash is asking you to give up the trip record and the fare you already agreed. Decline, keep the trip in the app, and match the plate before getting in.",
         "title": "Ride-hail pickup games"
@@ -1398,6 +1528,8 @@
     },
     "price_airport_taxi": {
       "kind": "price",
+      "topic": "transport",
+      "rank": 80,
       "en": {
         "note": "Ride-hailing or official rank; agree the price before boarding",
         "title": "Airport taxi (to city center)"
@@ -1423,6 +1555,8 @@
     },
     "price_city_taxi_metered": {
       "kind": "price",
+      "topic": "transport",
+      "rank": 90,
       "en": {
         "note": "Insist on meter",
         "title": "Taxi (metered)"
@@ -1448,6 +1582,8 @@
     },
     "price_microbus": {
       "kind": "price",
+      "topic": "transport",
+      "rank": 100,
       "en": {
         "note": "Urban transit, varies by route",
         "title": "Microbus (shared)"
@@ -1473,6 +1609,8 @@
     },
     "warning_airport_taxi_meter": {
       "kind": "warning",
+      "topic": "transport",
+      "rank": 15,
       "en": {
         "detail": "Cairo Airport lists different pricing methods. White taxis use meters, while other airport transfer services may use negotiated or fixed destination/category pricing. Confirm the service and pricing method before moving. InEgypt has no verified universal trip-total range.",
         "title": "Confirm the Cairo Airport pricing method"
@@ -1493,6 +1631,8 @@
     },
     "contact_cairo_transport_complaints": {
       "kind": "contact",
+      "topic": "transport",
+      "rank": 13,
       "en": {
         "scope": "Cairo Governorate",
         "subtitle": "Complaints about violations of announced transport tariffs; not an emergency service",
@@ -1515,6 +1655,8 @@
     },
     "process_cairo_transport_fare_complaint": {
       "kind": "process",
+      "topic": "transport",
+      "rank": 12,
       "en": {
         "detail": "Cairo Governorate requires the announced tariff to be displayed on vehicles and at stands. Check the posted fare for your route and do not pay more; use the linked complaint contact to report a violation.",
         "title": "Check Cairo's posted fare and report overcharging"
@@ -1535,6 +1677,8 @@
     },
     "scam_station_tout": {
       "kind": "warning",
+      "topic": "transport",
+      "rank": 50,
       "en": {
         "detail": "Check the station office or departure board yourself. Buy only from an ENR ticket office, the official ENR site/app, or an authorized agent; verify the date, train, stations, carriage, and seat before paying.",
         "title": "\"The ticket office is closed\""
@@ -1555,6 +1699,8 @@
     },
     "scam_porter_grab": {
       "kind": "warning",
+      "topic": "transport",
+      "rank": 60,
       "en": {
         "detail": "If someone grabs your bag at a station or terminal, a fee is coming. A firm \"la, shukran\" (no, thanks) works. If you do want help, agree the price per bag before handing anything over.",
         "title": "Uninvited porters"
@@ -1575,6 +1721,8 @@
     },
     "price_station_porter": {
       "kind": "price",
+      "topic": "transport",
+      "rank": 110,
       "en": {
         "note": "Agree before handing over the bag",
         "title": "Station porter, per bag"
@@ -1600,6 +1748,8 @@
     },
     "price_transit_train": {
       "kind": "price",
+      "topic": "transport",
+      "rank": 70,
       "en": {
         "title": "Train"
       },
@@ -1619,6 +1769,8 @@
     },
     "rule_fare_train": {
       "kind": "rule",
+      "topic": "transport",
+      "rank": 100,
       "en": {
         "detail": "Depends on class and distance"
       },
@@ -1633,6 +1785,8 @@
     },
     "process_enr_official_booking": {
       "kind": "process",
+      "topic": "transport",
+      "rank": 5,
       "en": {
         "detail": "Egyptian National Railways lists station ticket windows, its booking website, and the Egyptian National Railways app as official channels. Check any eligibility restriction shown by the channel itself before paying.",
         "title": "Book an ENR train through an official channel"
@@ -1653,6 +1807,8 @@
     },
     "warning_train_keep_ticket": {
       "kind": "warning",
+      "topic": "transport",
+      "rank": 8,
       "en": {
         "detail": "Egyptian National Railways has instructed passengers to retain the ticket through the end of the journey and departure from the destination station. Keep your paper or digital ticket available for inspection.",
         "title": "Keep your train ticket until you exit"

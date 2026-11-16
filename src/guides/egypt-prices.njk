@@ -1,0 +1,43 @@
+---
+layout: layouts/guide.njk
+permalink: /guides/egypt-prices/index.html
+title: What do things cost in Egypt?
+description: Fair price ranges in Egyptian pounds for taxis, the metro, food, tips, SIM cards and sights, each with the month it was checked and its source.
+lang: en
+navCt: web_guide_prices
+related: [cairo-airport-to-city, cairo-metro]
+atomIdsFrom: prices
+---
+{%- from "components/content.njk" import appbox with context -%}
+{%- from "components/guide.njk" import source with context -%}
+{%- set groups = atoms.atoms | priceGroups(priceGuideGroups, priceGuideExclude) -%}
+<div class="answer">
+  <p class="lead" style="color: var(--ink)">Most everyday things in Egypt cost tens to a few hundred Egyptian pounds: a metro ride is <bdi>{{ atoms.atoms.price_metro_single_journey | priceText }}</bdi>, a local restaurant meal <bdi>{{ atoms.atoms.price_local_restaurant | priceText }}</bdi> and a taxi from Cairo Airport to the centre <bdi>{{ atoms.atoms.price_airport_taxi | priceText }}</bdi>. The tables below give a fair range for each item, the month it was checked, and whether it is an official price or an InEgypt estimate.</p>
+</div>
+<p>InEgypt is a free iPhone app for visiting and getting around Egypt. It plans your trip day by day, finds routes by metro, train, bus and other public transport, and shows fair prices and common scams before you pay. These are the same prices the app shows, next to the place you are at.</p>
+<p><b>How to read the tables.</b> Where a row says you can haggle, agree the price before the ride, tour or service starts. Official prices come with a link to the operator or the ministry; InEgypt estimates come from our own checks.</p>
+
+{%- for g in groups %}
+<h2>{{ g.title }}</h2>
+<div class="table-wrap"><table class="facts-table">
+  <caption>{{ g.title }}: fair price ranges</caption>
+  <thead><tr><th scope="col">Item</th><th scope="col">Fair range</th><th scope="col">Haggle?</th><th scope="col">Checked and source</th></tr></thead>
+  <tbody>{% for a in g.rows %}
+    <tr><th scope="row">{{ a.en.title }}{% if a.en.note %}<div class="meta">{{ a.en.note }}</div>{% endif %}</th>
+      <td class="num-cell"><bdi>{{ a | priceText }}</bdi>{% if a.unit | unitText %}<div class="meta">{{ a.unit | unitText }}</div>{% endif %}</td>
+      <td>{{ "Yes" if a.negotiable else "No" }}</td>
+      <td class="meta">{{ source(a) }}</td></tr>{% endfor %}
+  </tbody>
+</table></div>
+{%- if loop.first %}
+{{ appbox("The same list is in the app, updated, next to the place you are at.", [], "web_guide_prices", "", true) }}
+{%- endif %}
+{%- endfor %}
+
+<h2>What InEgypt does and does not do here</h2>
+<p>InEgypt does not sell tickets. It shows these ranges in the app next to the place or route you are looking at, with the common tricks for that kind of place, and it keeps the dates visible so you can tell how fresh a number is.</p>
+
+<h2>Sources</h2>
+<p class="sources">Each row names its source and the month it was checked. Official prices link to the operator or the ministry; everything else is an InEgypt estimate from editorial checks. Prices change: if a number looks out of date, write to <a href="mailto:{{ facts.site.contactEmail.value }}">{{ facts.site.contactEmail.value }}</a>.</p>
+
+{{ appbox("Know the price before you pay", ["Fair ranges for taxis, food, tips and sights, with the month they were checked", "The common scams for each kind of place", "Emergency numbers that open offline, for free"], "web_guide_prices", "web_guide_prices_qr") }}

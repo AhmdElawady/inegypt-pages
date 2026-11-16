@@ -1,0 +1,15 @@
+---
+layout: layouts/base.njk
+permalink: /guides/index.html
+title: Egypt travel guides · InEgypt
+description: Answers to the questions travellers ask about Egypt, with dated prices and official sources.
+lang: en
+---
+{%- from "components/content.njk" import related with context -%}
+<section class="section">
+  <div class="container stack-lg" style="max-inline-size: 820px">
+    <h1 style="font-size: var(--fs-h2)">Questions travellers ask about Egypt, answered with dates.</h1>
+    <p class="lead">Each guide answers one question in full, with prices from InEgypt's list and links to the official sources.</p>
+    {{ related(guideIndex | guideList) }}
+  </div>
+</section>

@@ -37,6 +37,27 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("appLink", appLink);
   eleventyConfig.addFilter("absUrl", (path) => SITE_URL + PATH_PREFIX.replace(/\/$/, "") + path);
   eleventyConfig.addFilter("json", (v) => JSON.stringify(v));
+  // Price text from an atom: "250–500 EGP", "700 EGP", "10–15 %" (never typed by hand, Plan 46 §4.1 rule 3).
+  eleventyConfig.addFilter("priceText", (a) => {
+    if (!a || a.min == null) return "";
+    const range = a.min === a.max ? `${a.min}` : `${a.min}–${a.max}`;
+    return a.unit === "percent" ? `${range} %` : `${range} ${a.currency || ""}`.trim();
+  });
+  eleventyConfig.addFilter("unitText", (u) => ({ per_hour: "per hour", per_day: "per day", percent: "of the bill" }[u] || ""));
+  // Metro fare bands parsed from the published atom's own note ("1–9 stations: 10 · 10–16: 12 · …").
+  eleventyConfig.addFilter("fareBands", (note) => [...String(note).matchAll(/(\d+)–(\d+)(?: stations)?: (\d+)/g)].map((m) => ({ from: m[1], to: m[2], fare: m[3] })));
+  // Price atoms for the price guide, grouped by topic, without the ones kept off the site (facts.knowledge.notForTheSite).
+  eleventyConfig.addFilter("priceGroups", (atoms, groups, exclude = []) => {
+    const off = new Set(exclude);
+    return groups.map((g) => ({ ...g, rows: Object.entries(atoms)
+      .filter(([id, a]) => a.kind === "price" && a.topic === g.topic && a.siteUsable && !off.has(id))
+      .sort((x, y) => (x[1].rank ?? 999) - (y[1].rank ?? 999))
+      .map(([id, a]) => ({ id, ...a })) })).filter((g) => g.rows.length);
+  });
+  eleventyConfig.addFilter("relatedGuides", (slugs, index) => slugs.map((s) => ({ href: `/guides/${s}/`, title: index[s].title, meta: index[s].short })));
+  eleventyConfig.addFilter("priceIds", (groups) => groups.flatMap((g) => g.rows.map((r) => r.id)));
+  eleventyConfig.addFilter("guideList", (index) => Object.entries(index).filter(([k]) => !k.startsWith("_")).map(([s, g]) => ({ href: `/guides/${s}/`, title: g.title, meta: g.short })));
+  eleventyConfig.addFilter("maxDate", (ids, atoms) => ids.map((id) => atoms[id]?.lastVerifiedAt).filter(Boolean).sort().pop());
   // "{cities}" style tokens in copy are filled from facts.json, so no count is typed into a page.
   eleventyConfig.addFilter("fillFacts", (text) => String(text)
     .replace(/\{cities\}/g, facts.coverage.cities.display)
