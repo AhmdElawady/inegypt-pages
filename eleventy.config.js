@@ -75,7 +75,9 @@ export default function (eleventyConfig) {
     .replace(/\{attractions\}/g, facts.coverage.attractions.display)
     .replace(/\{routes\}/g, facts.coverage.routes.value)
     .replace(/\{stops\}/g, facts.coverage.stops.display)
-    .replace(/\{modes\}/g, facts.coverage.transitModes.value));
+    .replace(/\{modes\}/g, facts.coverage.transitModes.value)
+    .replace(/\{monthly\}/g, facts.prices.proMonthly.value)
+    .replace(/\{yearly\}/g, facts.prices.proYearly.value));
   // Free/paid table rows from the fact sheet: free items are in both columns, paid items only in Pro.
   eleventyConfig.addFilter("plansRows", (f) => [
     ...f.free.value.map((label) => ({ label, free: true, pro: true })),

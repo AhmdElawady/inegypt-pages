@@ -6,7 +6,8 @@
 {%- from "components/calls.njk" import cta, inlineCall with context -%}
 {%- set h = home[lang] -%}
 {%- set price = atoms.atoms[h.hero.cards.price.atom] -%}
-{%- set guideLive = guides.live | length -%}
+{%- set guideLive = (guides.live | length) if lang == "en" else 0 -%}   {#- guides are English only for now -#}
+{%- set ctp = "web_ar_home_" if lang == "ar" else "web_home_" -%}
 
 {#- 1 · Hero (G7) -#}
 <div class="hero">
@@ -17,13 +18,13 @@
         {{ tiles(56) }}
         <h1 id="hero-h1">{{ h.hero.h1 }}</h1>
         <p class="lead" style="color: var(--ink)">{{ facts.sentence[lang] }}</p>
-        {{ cta("web_home_hero", h.hero.underBadge, lang, "web_home_hero_qr") }}
+        {{ cta(ctp + "hero", h.hero.underBadge, lang, ctp + "hero_qr") }}
       </div>
     </div>
   </section>
   <div class="hero__phone">
     {{ device("screens/s01-home-trip-upcoming-framed-demo", h.hero.phoneAlt, 300, false, false, true) }}
-    {{ floatCard("path", h.hero.cards.route.kicker, '<bdi dir="ltr">' + h.hero.cards.route.main + '</bdi>', h.hero.cards.route.meta, "route") }}
+    {{ floatCard("path", h.hero.cards.route.kicker, '<bdi>' + h.hero.cards.route.main + '</bdi>', h.hero.cards.route.meta, "route") }}
     {{ floatCard("tag", h.hero.cards.price.kicker, price[lang].title, '<bdi dir="ltr">' + price.min + "–" + price.max + " " + price.currency + "</bdi> · " + h.hero.cards.price.checked + " " + (price.lastVerifiedAt | monthYear(lang))) }}
     {{ floatCard("map-pin", h.hero.cards.next.kicker, h.hero.cards.next.main, h.hero.cards.next.meta) }}
   </div>
@@ -44,6 +45,7 @@
   </div>
 </section>
 
+{%- set planBlock %}
 {#- 4 · PLAN -#}
 <section class="section has-line line-plan" id="plan" style="--line: var(--plan)" aria-labelledby="plan-h2">
   <div class="container stack-lg">
@@ -84,10 +86,12 @@
       <span class="note-arrow flip-rtl" aria-hidden="true">{% icon "arrow-right" %}</span>
       <div>{{ screen(h.bring.screen, 250) }}</div>
     </div>
-    {{ inlineCall("web_home_plan", h.bring.inline, lang) }}
+    {{ inlineCall(ctp + "plan", h.bring.inline, lang) }}
   </div>
 </section>
 
+{%- endset %}
+{%- set routesBlock %}
 {#- 6 · Routes + 7 · Search -#}
 <section class="section has-line line-route" id="routes" style="--line: var(--route)" aria-labelledby="routes-h2">
   <div class="container stack-lg">
@@ -116,6 +120,10 @@
   </div>
 </section>
 
+{%- endset %}
+{#- Arabic home: routes before the planner (R4, residents first) -#}
+{% if lang == "ar" %}{{ routesBlock | safe }}{{ planBlock | safe }}{% else %}{{ planBlock | safe }}{{ routesBlock | safe }}{% endif %}
+
 {#- 8 · Fair prices and safety -#}
 <section class="section section--sand has-line line-price-safe" id="prices" aria-labelledby="prices-h2">
   <div class="container stack-lg">
@@ -131,7 +139,7 @@
     <div class="phones">
       {%- for s in h.prices.screens %}<figure>{{ screen(s, 240) }}<figcaption>{{ s.caption }}</figcaption></figure>{% endfor %}
     </div>
-    {{ inlineCall("web_home_prices", h.prices.inline, lang) }}
+    {{ inlineCall(ctp + "prices", h.prices.inline, lang) }}
   </div>
 </section>
 
@@ -188,7 +196,7 @@
         <ul class="langs">{% for l in facts.app.languages.value %}<li>{{ l }}</li>{% endfor %}</ul>
       </div>
     </div>
-    {{ inlineCall("web_home_iphone", h.iphone.inline, lang) }}
+    {{ inlineCall(ctp + "iphone", h.iphone.inline, lang) }}
   </div>
 </section>
 
@@ -198,7 +206,7 @@
     {{ numbers([
       { value: facts.coverage.transitModes.value, label: h.numbers.modes },
       { value: facts.coverage.routes.value, label: h.numbers.routes },
-      { prefix: "nearly", value: facts.coverage.stops.display | replace("nearly ", ""), label: h.numbers.stops },
+      { prefix: h.numbers.nearly, value: facts.coverage.stops.display | replace("nearly ", ""), label: h.numbers.stops },
       { value: facts.coverage.attractions.display, label: h.numbers.attractions },
       { value: facts.coverage.cities.display, label: h.numbers.cities }
     ]) }}
@@ -227,8 +235,9 @@
       </div>
       <div class="stack">
         <h3 class="visually-hidden">{{ h.maker.reviewsLabel }}</h3>
-        <div class="reviews">{% for r in h.maker.reviews %}{{ review(r.title, r.text, r.who, r.date, r.store + " · App Store") }}{% endfor %}</div>
-        <p><a href="{{ 'web_home_reviews' | appLink }}">{{ h.maker.allReviews }} <span class="flip-rtl">→</span></a></p>
+        <div class="reviews"{% if lang != "en" %} lang="en" dir="ltr"{% endif %}>{% for r in h.maker.reviews %}{{ review(r.title, r.text, r.who, r.date, r.store + " · App Store") }}{% endfor %}</div>
+        {%- if h.maker.reviewsNote %}<p class="small muted">{{ h.maker.reviewsNote }}</p>{% endif %}
+        <p><a href="{{ (ctp + 'reviews') | appLink }}">{{ h.maker.allReviews }} <span class="flip-rtl">→</span></a></p>
       </div>
     </div>
   </div>
@@ -240,7 +249,7 @@
     <h2 id="plans-h2">{{ h.plans.h2 }}</h2>
     {{ plansTable(h.plans.caption, facts | plansRows, h.plans.free, h.plans.pro, h.plans.yes, h.plans.no) }}
     <div class="stack">
-      <p>{{ h.plans.proLine }} (<bdi>{{ facts.prices.proMonthly.value }}</bdi> a month or <bdi>{{ facts.prices.proYearly.value }}</bdi> a year).</p>
+      <p>{{ h.plans.proLine | fillFacts }}</p>
       <p class="small muted">{{ h.plans.currency }}</p>
     </div>
   </div>
@@ -291,7 +300,7 @@
       </svg>
       {{ sign(h.final.sign[0], h.final.sign[1], "price", lang) }}
       <h2 id="final-h2">{{ h.final.h2 }}</h2>
-      {{ cta("web_home_final", h.hero.underBadge, lang, "web_home_final_qr") }}
+      {{ cta(ctp + "final", h.hero.underBadge, lang, ctp + "final_qr") }}
     </div>
   </div>
 </section>
