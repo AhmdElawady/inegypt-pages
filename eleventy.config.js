@@ -1,7 +1,7 @@
 // InEgypt website (Plan 47 §10.1). Source in src/, output in _site/.
 // The site address lives in one place: src/_data/facts.json → site.url + site.pathPrefix (§9.5).
+import crypto from "node:crypto";
 import fs from "node:fs";
-import QRCode from "qrcode";
 
 const facts = JSON.parse(fs.readFileSync("src/_data/facts.json", "utf8"));
 const SITE_URL = facts.site.url.value;            // https://ahmdelawady.github.io
@@ -34,6 +34,35 @@ export default function (eleventyConfig) {
   eleventyConfig.addGlobalData("siteUrl", SITE_URL);
   eleventyConfig.addGlobalData("pathPrefix", PATH_PREFIX);
 
+  // Cache busting: ?v=<hash of the sources> on site.css and site.js, so a long browser cache never serves an old file.
+  const hashOf = (files) => crypto.createHash("sha256").update(files.map((f) => fs.readFileSync(f)).join("")).digest("hex").slice(0, 10);
+  const CSS_DIR = "src/_includes/css/";
+  eleventyConfig.addGlobalData("assetVersion", () => ({
+    css: hashOf(fs.readdirSync(CSS_DIR).filter((f) => f.endsWith(".css")).sort().map((f) => CSS_DIR + f)),
+    js: hashOf(["src/assets/js/site.js"]),
+  }));
+
+  // Minify the one stylesheet: drop comments and collapse whitespace. Conservative on purpose: spaces around ":" are kept,
+  // because ".a :is(.b)" and ".a:is(.b)" are different selectors.
+  eleventyConfig.addTransform("minify-css", function (content) {
+    if (!this.page.outputPath || !this.page.outputPath.endsWith(".css")) return content;
+    return content.replace(/\/\*[\s\S]*?\*\//g, "").replace(/\s+/g, " ").replace(/\s*([{};,>])\s*/g, "$1").replace(/;}/g, "}").trim();
+  });
+
+  // Language pairs, read from each page's front matter (altUrls: { en, ar }), the same data that makes the hreflang links.
+  // localUrl("/features/", "ar") → "/ar/features/" when an Arabic copy exists, else the English URL unchanged.
+  const enToAr = new Map();
+  eleventyConfig.addCollection("i18nPairs", (api) => {
+    enToAr.clear();
+    for (const item of api.getAll()) if (item.data.altUrls) enToAr.set(item.data.altUrls.en, item.data.altUrls.ar);
+    return [];
+  });
+  eleventyConfig.addFilter("localUrl", (path, lang) => {
+    if (lang !== "ar") return path;
+    const [base, hash] = String(path).split("#");
+    return enToAr.has(base) ? enToAr.get(base) + (hash ? "#" + hash : "") : path;
+  });
+
   eleventyConfig.addFilter("appLink", appLink);
   eleventyConfig.addFilter("absUrl", (path) => SITE_URL + PATH_PREFIX.replace(/\/$/, "") + path);
   eleventyConfig.addFilter("json", (v) => JSON.stringify(v));
@@ -43,7 +72,9 @@ export default function (eleventyConfig) {
     const range = a.min === a.max ? `${a.min}` : `${a.min}–${a.max}`;
     return a.unit === "percent" ? `${range} %` : `${range} ${a.currency || ""}`.trim();
   });
-  eleventyConfig.addFilter("unitText", (u) => ({ per_hour: "per hour", per_day: "per day", percent: "of the bill" }[u] || ""));
+  eleventyConfig.addFilter("unitText", (u, lang = "en") => ({
+    en: { per_hour: "per hour", per_day: "per day", percent: "of the bill" },
+    ar: { per_hour: "في الساعة", per_day: "في اليوم", percent: "من الحساب" } }[lang] || {})[u] || "");
   // Metro fare bands parsed from the published atom's own note ("1–9 stations: 10 · 10–16: 12 · …").
   eleventyConfig.addFilter("fareBands", (note) => [...String(note).matchAll(/(\d+)–(\d+)(?: stations)?: (\d+)/g)].map((m) => ({ from: m[1], to: m[2], fare: m[3] })));
   // Price atoms for the price guide, grouped by topic, without the ones kept off the site (facts.knowledge.notForTheSite).
@@ -54,19 +85,14 @@ export default function (eleventyConfig) {
       .sort((x, y) => (x[1].rank ?? 999) - (y[1].rank ?? 999))
       .map(([id, a]) => ({ id, ...a })) })).filter((g) => g.rows.length);
   });
-  eleventyConfig.addFilter("relatedGuides", (slugs, index) => slugs.map((s) => ({ href: `/guides/${s}/`, title: index[s].title, meta: index[s].short })));
+  // Guide cards. Arabic pages link to the Arabic guide when index[slug].ar exists, otherwise to the English one, marked as such.
+  const guideCard = (s, g, lang) => (lang === "ar" && g.ar
+    ? { href: `/ar/guides/${s}/`, title: g.ar.title, meta: g.ar.short }
+    : { href: `/guides/${s}/`, title: g.title, meta: lang === "ar" ? `${g.short} · بالإنجليزية` : g.short, lang: lang === "ar" ? "en" : "" });
+  eleventyConfig.addFilter("relatedGuides", (slugs, index, lang = "en") => slugs.map((s) => guideCard(s, index[s], lang)));
   eleventyConfig.addFilter("priceIds", (groups) => groups.flatMap((g) => g.rows.map((r) => r.id)));
-  eleventyConfig.addFilter("guideList", (index) => Object.entries(index).filter(([k]) => !k.startsWith("_")).map(([s, g]) => ({ href: `/guides/${s}/`, title: g.title, meta: g.short })));
-  // Home section 17 cards: thumb, the guide's first answer sentence (price tokens filled from atoms), last checked.
-  eleventyConfig.addFilter("guideCards", (live, index, atoms, groups, exclude) => live.map((slug) => {
-    const g = index[slug];
-    const ids = g.atoms === "prices"
-      ? Object.entries(atoms).filter(([id, a]) => a.kind === "price" && a.siteUsable && !exclude.includes(id) && groups.some((x) => x.topic === a.topic)).map(([id]) => id)
-      : g.atoms;
-    const checked = ids.map((id) => atoms[id]?.lastVerifiedAt).filter(Boolean).sort().pop();
-    const first = g.first.replace(/\{(\w+)\}/g, (_, id) => { const a = atoms[id]; return a.min === a.max ? `${a.min} ${a.currency}` : `${a.min}–${a.max} ${a.currency}`; });
-    return { slug, href: `/guides/${slug}/`, title: g.title, first, checked, thumb: g.thumb };
-  }));
+  eleventyConfig.addFilter("guideList", (index, lang = "en") => Object.entries(index).filter(([k]) => !k.startsWith("_"))
+    .map(([s, g]) => guideCard(s, g, lang)).sort((a, b) => (a.lang ? 1 : 0) - (b.lang ? 1 : 0)));
   eleventyConfig.addFilter("atomKinds", (atoms) => Object.values(atoms).reduce((c, a) => ((c[a.kind] = (c[a.kind] || 0) + 1), c), {}));
   eleventyConfig.addFilter("maxDate", (ids, atoms) => ids.map((id) => atoms[id]?.lastVerifiedAt).filter(Boolean).sort().pop());
   // "{cities}" style tokens in copy are filled from facts.json, so no count is typed into a page.
@@ -78,11 +104,6 @@ export default function (eleventyConfig) {
     .replace(/\{modes\}/g, facts.coverage.transitModes.value)
     .replace(/\{monthly\}/g, facts.prices.proMonthly.value)
     .replace(/\{yearly\}/g, facts.prices.proYearly.value));
-  // Free/paid table rows from the fact sheet: free items are in both columns, paid items only in Pro.
-  eleventyConfig.addFilter("plansRows", (f) => [
-    ...f.free.value.map((label) => ({ label, free: true, pro: true })),
-    ...f.paid.value.map((label) => ({ label, free: false, pro: true })),
-  ]);
   // "2026-08-21" → "Aug 2026" (en) / "أغسطس 2026" with Western digits (ar)
   const fmt = {
     en: new Intl.DateTimeFormat("en-GB", { month: "short", year: "numeric", timeZone: "UTC" }),
@@ -94,12 +115,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addShortcode("icon", (name, label = "") => {
     const a11y = label ? `role="img" aria-label="${label}"` : `aria-hidden="true" focusable="false"`;
     return `<svg class="icon" ${a11y}><use href="${PATH_PREFIX}assets/icons/sprite.svg#i-${name}"></use></svg>`;
-  });
-
-  // Static QR code (P1 M1), built at build time; no script, no third-party request.
-  eleventyConfig.addAsyncShortcode("qr", async (url, label = "Scan with your iPhone") => {
-    const svg = await QRCode.toString(url, { type: "svg", margin: 0, errorCorrectionLevel: "M", color: { dark: "#17130E", light: "#0000" } });
-    return svg.replace("<svg ", `<svg role="img" aria-label="${label}" class="qr__code" `);
   });
 
   return {

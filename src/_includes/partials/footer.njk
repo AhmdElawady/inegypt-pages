@@ -1,24 +1,26 @@
+{#- Links go to the page in the reader's language when it exists (localUrl). Privacy and Terms are the app's English text. -#}
+{%- set legalLang = ' hreflang="en"' if lang == "ar" else "" -%}
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
       <div class="stack">
-        <a class="nav__logo" href="{{ ('/ar/' if lang == 'ar' else '/') | url }}"><img src="{{ '/assets/logo/mark-on-light.svg' | url }}" alt="" width="32" height="32"><span>InEgypt</span></a>
+        <a class="nav__logo" href="{{ '/' | localUrl(lang) | url }}"><img src="{{ '/assets/logo/mark-orange.svg' | url }}" alt="" width="32" height="32"><span>InEgypt</span></a>
         <p class="muted">{{ t.footer.tagline }}</p>
       </div>
       <div><h2>{{ t.footer.app }}</h2><ul>
-        <li><a href="{{ '/features/' | url }}">{{ t.footer.features }}</a></li>
-        <li><a href="{{ '/whats-new/' | url }}">{{ t.footer.whatsNew }}</a></li>
-        <li><a href="{{ '/#free-paid' | url }}">{{ t.footer.freePaid }}</a></li></ul></div>
+        <li><a href="{{ '/features/' | localUrl(lang) | url }}">{{ t.footer.features }}</a></li>
+        <li><a href="{{ '/whats-new/' | localUrl(lang) | url }}">{{ t.footer.whatsNew }}</a></li>
+        <li><a href="{{ '/#free-paid' | localUrl(lang) | url }}">{{ t.footer.freePaid }}</a></li></ul></div>
       <div><h2>{{ t.footer.guides }}</h2><ul>
-        <li><a href="{{ '/guides/' | url }}">{{ t.footer.allGuides }}</a></li></ul></div>
+        <li><a href="{{ '/guides/' | localUrl(lang) | url }}">{{ t.footer.allGuides }}</a></li></ul></div>
       <div><h2>{{ t.footer.about }}</h2><ul>
-        <li><a href="{{ '/about/' | url }}">{{ t.footer.aboutPage }}</a></li>
-        <li><a href="{{ '/press/' | url }}">{{ t.footer.press }}</a></li>
+        <li><a href="{{ '/about/' | localUrl(lang) | url }}">{{ t.footer.aboutPage }}</a></li>
+        <li><a href="{{ '/press/' | localUrl(lang) | url }}">{{ t.footer.press }}</a></li>
         <li><a href="mailto:{{ facts.site.contactEmail.value }}">{{ t.footer.contact }}</a></li></ul></div>
       <div><h2>{{ t.footer.legal }}</h2><ul>
-        <li><a href="{{ '/privacy.html' | url }}">{{ t.footer.privacy }}</a></li>
-        <li><a href="{{ '/terms.html' | url }}">{{ t.footer.terms }}</a></li>
-        <li><a href="{{ '/support.html' | url }}">{{ t.footer.support }}</a></li></ul></div>
+        <li><a href="{{ '/privacy.html' | url }}"{{ legalLang | safe }}>{{ t.footer.privacy }}</a></li>
+        <li><a href="{{ '/terms.html' | url }}"{{ legalLang | safe }}>{{ t.footer.terms }}</a></li>
+        <li><a href="{{ '/support.html' | localUrl(lang) | url }}">{{ t.footer.support }}</a></li></ul></div>
     </div>
     <div class="footer__base">
       <span>{{ t.footer.made }}</span>

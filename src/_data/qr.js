@@ -1,7 +1,14 @@
 // Static QR codes for desktop install (P1 M1), made at build time from the campaign link (§9.6).
 import QRCode from "qrcode";
 import { appLink } from "../../eleventy.config.js";
-const CAMPAIGNS = ["web_home_hero_qr", "web_home_final_qr", "web_ar_home_hero_qr", "web_ar_home_final_qr", "web_guide_airport_qr", "web_guide_metro_qr", "web_guide_prices_qr"];
+// Every "web_…_qr" campaign named in a template gets a code, so a new page cannot ship without its QR.
+import fs from "node:fs";
+const SRC = new URL("../", import.meta.url);
+const CAMPAIGNS = [...new Set(fs.readdirSync(SRC, { recursive: true })
+  .filter((f) => f.endsWith(".njk") && !f.startsWith("_data"))
+  .flatMap((f) => fs.readFileSync(new URL(f, SRC), "utf8").match(/\bweb_[a-z_]+_qr\b/g) || [])
+  // home.njk builds these from a per-language prefix (ct + "hero_qr"), so the scan cannot see them
+  .concat(["web_home_hero_qr", "web_ar_home_hero_qr"]))].sort();
 export default async function () {
   const out = {};
   for (const ct of CAMPAIGNS) {

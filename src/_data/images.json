@@ -215,6 +215,129 @@
     "dir": "photos",
     "base": "P13"
   },
+  "photos/P14": {
+    "src": "P14-commons-Ramses-Station.jpg",
+    "width": 1920,
+    "height": 1086,
+    "widths": [
+      640,
+      1024,
+      1600
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P14"
+  },
+  "photos/P15": {
+    "src": "P15-fdQnYlPic-E.jpg",
+    "width": 2400,
+    "height": 3201,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P15"
+  },
+  "photos/P16": {
+    "src": "P16-XxXuTMokJdE.jpg",
+    "width": 2400,
+    "height": 3847,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P16"
+  },
+  "photos/P17": {
+    "src": "P17-commons-Qitar-al-Umr.jpg",
+    "width": 1920,
+    "height": 2877,
+    "widths": [
+      640,
+      1024,
+      1600
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P17"
+  },
+  "photos/P18": {
+    "src": "P18-commons-Train-Station-1.jpg",
+    "width": 1920,
+    "height": 1282,
+    "widths": [
+      640,
+      1024,
+      1600
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P18"
+  },
+  "photos/P19": {
+    "src": "P19-EAVwlrs7Rr8.jpg",
+    "width": 2400,
+    "height": 1600,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "formats": [
+      "avif",
+      "webp",
+      "jpg"
+    ],
+    "dir": "photos",
+    "base": "P19"
+  },
+  "screens/s01-home-light-framed": {
+    "src": "framed/s01-home-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s01-home-light-framed",
+    "framed": true,
+    "demo": false
+  },
   "screens/s01-home-trip-upcoming-framed-demo": {
     "src": "framed/s01-home-trip-upcoming-framed.demo.png",
     "width": 1470,
@@ -250,6 +373,24 @@
     "base": "s02-planner-input-framed-demo",
     "framed": true,
     "demo": true
+  },
+  "screens/s02-planner-input-light-framed": {
+    "src": "framed/s02-planner-input-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s02-planner-input-light-framed",
+    "framed": true,
+    "demo": false
   },
   "screens/s03-trip-day-demo": {
     "src": "raw/s03-trip-day.demo.png",
@@ -287,6 +428,60 @@
     "framed": true,
     "demo": true
   },
+  "screens/s03-trip-day-light-framed": {
+    "src": "framed/s03-trip-day-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s03-trip-day-light-framed",
+    "framed": true,
+    "demo": false
+  },
+  "screens/s03b-itinerary-light-framed": {
+    "src": "framed/s03b-itinerary-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s03b-itinerary-light-framed",
+    "framed": true,
+    "demo": false
+  },
+  "screens/s03c-trip-map-light-framed": {
+    "src": "framed/s03c-trip-map-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s03c-trip-map-light-framed",
+    "framed": true,
+    "demo": false
+  },
   "screens/s04-about-plan-demo": {
     "src": "raw/s04-about-plan.demo.png",
     "width": 1320,
@@ -304,6 +499,42 @@
     "base": "s04-about-plan-demo",
     "framed": false,
     "demo": true
+  },
+  "screens/s04-trip-overview-light-framed": {
+    "src": "framed/s04-trip-overview-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s04-trip-overview-light-framed",
+    "framed": true,
+    "demo": false
+  },
+  "screens/s06-route-options-light-framed": {
+    "src": "framed/s06-route-options-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s06-route-options-light-framed",
+    "framed": true,
+    "demo": false
   },
   "screens/s06-route-result-demo": {
     "src": "raw/s06-route-result.demo.png",
@@ -341,6 +572,42 @@
     "framed": true,
     "demo": true
   },
+  "screens/s06b-route-intercity-light-framed": {
+    "src": "framed/s06b-route-intercity-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s06b-route-intercity-light-framed",
+    "framed": true,
+    "demo": false
+  },
+  "screens/s07-route-details-light-framed": {
+    "src": "framed/s07-route-details-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s07-route-details-light-framed",
+    "framed": true,
+    "demo": false
+  },
   "screens/s07-route-steps-framed-demo": {
     "src": "framed/s07-route-steps-framed.demo.png",
     "width": 1470,
@@ -377,6 +644,24 @@
     "framed": false,
     "demo": true
   },
+  "screens/s08-search-light-framed": {
+    "src": "framed/s08-search-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s08-search-light-framed",
+    "framed": true,
+    "demo": false
+  },
   "screens/s09-prices-framed-demo": {
     "src": "framed/s09-prices-framed.demo.png",
     "width": 1470,
@@ -394,6 +679,24 @@
     "base": "s09-prices-framed-demo",
     "framed": true,
     "demo": true
+  },
+  "screens/s09-prices-light-framed": {
+    "src": "framed/s09-prices-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s09-prices-light-framed",
+    "framed": true,
+    "demo": false
   },
   "screens/s10-tips-demo": {
     "src": "raw/s10-tips.demo.png",
@@ -431,6 +734,60 @@
     "framed": true,
     "demo": true
   },
+  "screens/s10-tips-light-framed": {
+    "src": "framed/s10-tips-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s10-tips-light-framed",
+    "framed": true,
+    "demo": false
+  },
+  "screens/s11-emergency-light-framed": {
+    "src": "framed/s11-emergency-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s11-emergency-light-framed",
+    "framed": true,
+    "demo": false
+  },
+  "screens/s12-categories-light-framed": {
+    "src": "framed/s12-categories-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "s12-categories-light-framed",
+    "framed": true,
+    "demo": false
+  },
   "screens/s12-discover-framed-demo": {
     "src": "framed/s12-discover-framed.demo.png",
     "width": 1470,
@@ -467,6 +824,24 @@
     "framed": true,
     "demo": false
   },
+  "screens/x-expenses-light-framed": {
+    "src": "framed/x-expenses-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "x-expenses-light-framed",
+    "framed": true,
+    "demo": false
+  },
   "screens/x-siri-shortcuts-framed": {
     "src": "framed/x-siri-shortcuts-framed.png",
     "width": 1470,
@@ -500,6 +875,42 @@
     ],
     "dir": "screens",
     "base": "x-transit-lines-framed",
+    "framed": true,
+    "demo": false
+  },
+  "screens/x-transit-lines-light-framed": {
+    "src": "framed/x-transit-lines-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "x-transit-lines-light-framed",
+    "framed": true,
+    "demo": false
+  },
+  "screens/x-your-trips-light-framed": {
+    "src": "framed/x-your-trips-light-framed.png",
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      360,
+      540,
+      720
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "dir": "screens",
+    "base": "x-your-trips-light-framed",
     "framed": true,
     "demo": false
   }

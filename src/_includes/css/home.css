@@ -1,0 +1,299 @@
+/* Home page (English and Arabic). Colours are tokens from tokens.css; gradients over photos stay literal.
+   A station photograph opens the journey. The image and the photographed phone
+   have independent crops so the traveller and the route can both stay in view. */
+.journey-home .nav__bar { max-inline-size: 1280px; }
+.platform { position: relative; isolation: isolate; overflow: hidden; color: #fff; background: var(--night); }
+.platform__scene, .platform__scene::after { position: absolute; inset: 0; }
+.platform__scene { z-index: -1; }
+.platform__scene picture { inline-size: 86%; block-size: 100%; }
+.platform__scene img { inline-size: 100%; block-size: 100%; object-fit: cover; object-position: 55% 60%; }
+.platform__scene::after { content: ""; background: linear-gradient(90deg, #08171eef 0%, #0b1920b8 29%, transparent 62%, var(--night) 91%), linear-gradient(0deg, #06131bc9, transparent 50%); }
+:dir(rtl) .platform__scene picture { margin-inline-start: auto; }
+:dir(rtl) .platform__scene::after { background: linear-gradient(270deg, #08171ef5, #0b1920ce 28%, transparent 57%, var(--night) 96%), linear-gradient(0deg, #06131bbf, transparent 50%); }
+.platform__inner { inline-size: min(100% - 2 * var(--gutter), 1240px); margin-inline: auto; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 32px; }
+.platform__copy { padding-block: clamp(68px, 8vw, 120px) clamp(48px, 6vw, 86px); }
+.platform h1 { margin-block: 20px 14px; max-inline-size: 13ch; font-size: clamp(41px, 4.7vw, 68px); line-height: 1.04; letter-spacing: -.035em; font-weight: 600; }
+:lang(ar) .platform h1 { letter-spacing: normal; line-height: 1.22; max-inline-size: 12em; }
+.platform__lead { max-inline-size: 37ch; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.5; }
+.platform .cta { margin-block: 24px 10px; }
+.platform .cta__note, .platform .qr__caption { color: #edf3f4; }
+.platform .qr__code, .journey-install .qr__code { inline-size: 78px; block-size: 78px; }
+.platform__screen { inline-size: clamp(230px, 23vw, 308px); max-block-size: 472px; overflow: hidden; padding-block-start: 8px; }
+.platform__screen img { inline-size: 100%; }
+:dir(rtl) .platform__screen img { margin-block-start: -42%; }
+.journey-grid { inline-size: min(100% - 2 * var(--gutter), 1120px); margin-inline: auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: clamp(40px, 7vw, 112px); align-items: center; }
+.journey-step, .journey-maker, .journey-install { padding-block: clamp(52px, 6vw, 88px); }
+.journey-text { display: grid; justify-items: start; gap: 16px; }
+.journey-text h2 { color: var(--teal-ink); font-size: clamp(29px, 2.8vw, 41px); line-height: 1.14; max-inline-size: 20ch; }
+.journey-text p { margin: 0; color: var(--teal-muted); max-inline-size: 49ch; }
+.journey-link { display: inline-flex; align-items: center; gap: 8px; min-block-size: 44px; font-weight: 600; font-size: 15px; color: var(--teal-link); }
+:dir(rtl) .journey-link span { transform: scaleX(-1); }
+.journey-step--arrival { background: var(--teal-tint); }
+.arrival-ticket { max-inline-size: 430px; inline-size: 100%; margin-inline: auto; }
+.arrival-ticket .ticket { padding: clamp(22px, 3vw, 38px); box-shadow: 0 12px 28px #193d4610; border: 1px solid var(--teal-border); border-radius: 8px; border-block-start: 5px solid var(--teal); }
+.arrival-ticket .ticket__value { font-size: clamp(38px, 4vw, 56px); color: var(--teal-ink); }
+.arrival-ticket .ticket__meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.journey-step--rail .journey-text { grid-column: 2; grid-row: 1; }
+.journey-step--rail .rail-photo { grid-column: 1; grid-row: 1; }
+.rail-photo, .day-photo { position: relative; isolation: isolate; overflow: hidden; margin: 0; border-radius: 16px; background: #192c34; }
+.rail-photo { min-block-size: 290px; display: grid; align-items: end; justify-items: end; padding: 32px 24px 0; }
+.rail-photo > picture, .day-photo > picture { position: absolute; z-index: -1; inset: 0; }
+.rail-photo > picture img, .day-photo > picture img { inline-size: 100%; block-size: 100%; object-fit: cover; }
+.rail-table { inline-size: min(82%, 318px); border-radius: 16px 16px 0 0; box-shadow: 0 6px 26px #06121b70; }
+.day-photo { block-size: clamp(320px, 28vw, 400px); }
+.day-photo > picture img { object-position: 50% 42%; }
+.day-photo figcaption { position: absolute; inset-inline-start: 14px; inset-block-start: 14px; padding: 4px 10px; border-radius: 5px; color: white; background: #111e24df; font-size: 13px; }
+.day-photo__screen { position: absolute; inset-block-start: 22%; inset-inline-end: 5%; inline-size: min(65%, 290px); }
+:dir(rtl) .day-photo__screen { inset-block-start: auto; inset-block-end: -4%; border-radius: 12px; overflow: hidden; }
+.journey-maker { border-block-start: 1px solid var(--teal-line); }
+.journey-text .maker-signature { color: var(--teal-ink); font-weight: 600; }
+.traveller-review { padding-inline-start: clamp(20px, 3vw, 42px); border-inline-start: 2px solid #8caeac; }
+.traveller-review figure, .traveller-review blockquote { margin: 0; }
+.traveller-review blockquote { color: var(--teal-ink); font: 400 clamp(21px, 2vw, 28px)/1.4 var(--font-head); }
+.traveller-review figcaption { color: var(--teal-muted); font-size: 13px; margin-block: 12px 4px; }
+.journey-install { background: var(--deep); color: #fff; }
+.journey-install .journey-text h2, .journey-install .journey-link, .journey-install h3 { color: white; }
+.journey-install .journey-text p, .journey-install .qr__caption { color: var(--deep-ink); }
+.install-pro { border-inline-start: 1px solid var(--deep-rule); padding-inline-start: clamp(20px, 4vw, 58px); }
+
+@media (max-width: 700px) {
+  .platform__inner { display: block; }
+  .platform__scene { inset-block-end: auto; block-size: 420px; }
+  .platform__scene picture { inline-size: 100%; }
+  .platform__scene img { object-position: 72% 40%; }
+  :dir(rtl) .platform__scene img { object-position: 49% 35%; }
+  .platform__scene::after, :dir(rtl) .platform__scene::after { background: linear-gradient(0deg, var(--night), #0c1b22ef 25%, #0b1b23a8 61%, #0919202e); }
+  .platform__copy { padding-block: 100px 20px; }
+  .platform h1 { font-size: clamp(34px, 8.4vw, 45px); max-inline-size: 16ch; margin-block: 10px; }
+  .platform__lead { max-inline-size: 44ch; }
+  .platform .cta { margin-block: 16px 6px; }
+  .platform__screen { inline-size: min(78vw, 288px); max-block-size: 286px; margin-inline: auto; }
+  :dir(rtl) .platform__screen img { margin-block-start: -91%; }
+  .journey-grid { grid-template-columns: minmax(0, 1fr); gap: 25px; }
+  .journey-step--rail .journey-text, .journey-step--rail .rail-photo { grid-column: auto; grid-row: auto; }
+  .journey-text { gap: 10px; }
+  .rail-photo { min-block-size: 246px; padding-block-start: 24px; }
+  .rail-table { inline-size: min(81%, 290px); }
+  .day-photo { block-size: 290px; }
+  .install-pro { border-inline: none; border-block-start: 1px solid var(--deep-rule); padding-inline: 0; padding-block-start: 24px; }
+}
+
+/* ---------- Review pass 2026-11-17: station signs, proof bar, more prices, discover, safety, plans, visible FAQ ---------- */
+.journey-wide { inline-size: min(100% - 2 * var(--gutter), 1120px); margin-inline: auto; display: grid; gap: clamp(24px, 3vw, 36px); }
+.journey-note { font-size: 14px; line-height: 1.5; color: var(--teal-muted); }
+.journey-text .journey-note { font-size: 14px; }
+
+/* Station sign on the dark hero */
+.platform .sign { --paper: transparent; }
+.platform .sign__first { color: #fff; }
+.platform .sign__second { color: var(--on-photo-2); }
+.platform h1 { max-inline-size: 15ch; font-size: clamp(40px, 4.3vw, 62px); }
+
+/* Proof bar under the hero */
+.proof { border-block-end: 1px solid var(--teal-line); }
+.proof__list { inline-size: min(100% - 2 * var(--gutter), 1120px); margin: 0 auto; padding-block: 22px; display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+.proof__list > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 4px; }
+.proof__list > div + div { border-inline-start: 1px solid var(--teal-line); padding-inline-start: 16px; }
+.proof dd { margin: 0; font-size: clamp(26px, 2.4vw, 34px); line-height: 1; color: var(--teal-ink); }
+.proof dt { font-size: 14px; color: var(--teal-muted); }
+.proof__prefix { font: 600 14px/1 var(--font-body); color: var(--teal-muted); letter-spacing: 0; }
+
+/* More prices under the airport ticket */
+.arrival-ticket { display: grid; gap: 14px; }
+.price-rows { background: var(--surface); border: 1px solid var(--teal-border); border-radius: 8px; padding: 18px clamp(18px, 2.4vw, 26px) 6px; }
+.price-rows__label { font-size: 13px; color: var(--teal-muted); margin-block-end: 6px; }
+.price-rows ul { list-style: none; margin: 0; padding: 0; }
+.price-rows li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; padding-block: 10px; border-block-end: 1px dashed #d5e0de; }
+.price-rows li:last-child { border-block-end: 0; }
+.price-rows li > span:first-child { font-weight: 600; color: var(--teal-ink); }
+.price-rows__value { font-size: 19px; color: var(--teal-ink); }
+.price-rows__value small { font: 600 12px/1 var(--font-body); color: var(--teal-muted); }
+.price-rows__date { grid-column: 1 / -1; font-size: 12px; color: var(--teal-muted); }
+.price-rows .journey-link { font-size: 14px; }
+
+/* Ways to travel, under the train question */
+.journey-text .modes li { font-size: 14px; padding: 4px 10px; }
+
+/* "Already have a plan?" */
+.paste-note { display: flex; gap: 14px; align-items: flex-start; margin-block-start: 8px; padding: 16px 18px; border-radius: 12px;
+  background: var(--plan-tint); border: 1px solid var(--plan-line); max-inline-size: 46ch; }
+.paste-note__icon { display: grid; place-items: center; inline-size: 38px; block-size: 38px; border-radius: 10px; background: var(--plan); color: #fff; flex: none; }
+.paste-note__icon .icon { inline-size: 20px; block-size: 20px; }
+.paste-note p { margin: 0; color: var(--teal-muted); font-size: 15px; line-height: 1.5; }
+.journey-text .paste-note .paste-note__title { color: var(--teal-ink); font-weight: 600; font-size: 16px; }
+
+/* Discover: cities as station signs */
+.journey-discover { background: var(--sand); padding-block: clamp(52px, 6vw, 88px); }
+.journey-text--wide h2 { max-inline-size: 24ch; }
+.journey-text--wide p { max-inline-size: 60ch; }
+.journey-discover .ribbon__card .photo { border-radius: 14px; }
+
+/* Safety: two phones */
+.journey-step--safe { border-block-end: 1px solid var(--teal-line); }
+.safe-phones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 2vw, 28px); max-inline-size: 540px; margin-inline: auto;
+  padding: clamp(24px, 3vw, 40px) clamp(20px, 3vw, 40px) 0; border-radius: 20px; overflow: hidden; max-block-size: 520px;
+  background: linear-gradient(165deg, color-mix(in srgb, var(--safe) 16%, #fff), color-mix(in srgb, var(--safe) 4%, var(--sand)) 75%); }
+.safe-phones picture:last-child { margin-block-start: 48px; }
+.safe-phones img { filter: drop-shadow(0 18px 26px rgba(17, 19, 24, .18)); }
+.journey-maker { border-block-start: 0; }
+
+/* Free and Pro */
+.journey-plans { background: var(--sand); padding-block: clamp(52px, 6vw, 88px); }
+.journey-plans h2 { color: var(--teal-ink); font-size: clamp(29px, 2.8vw, 41px); }
+.plan-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
+.plan-card { background: var(--surface); border-radius: 16px; padding: clamp(22px, 3vw, 34px); box-shadow: 0 0 0 1px var(--hairline); display: grid; gap: 12px; }
+.plan-card--pro { box-shadow: 0 0 0 1px rgba(242, 92, 0, .30), 0 12px 30px rgba(242, 92, 0, .08); }
+.plan-card h3 { font-size: 22px; color: var(--teal-ink); }
+.plan-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.plan-card li { display: flex; gap: 10px; align-items: flex-start; color: var(--teal-ink); }
+.plan-card li .icon { color: var(--plan); margin-block-start: 3px; }
+.plan-card--pro li .icon { color: var(--action-deep); }
+.plan-card__price { font: 600 19px/1.35 var(--font-head); color: var(--teal-ink); }
+.plan-card__lead { color: var(--teal-muted); font-size: 15px; }
+
+/* Install band: iPhone list instead of the Pro column (Pro has its own section now) */
+.install-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.install-list li { display: flex; gap: 12px; align-items: flex-start; color: var(--deep-ink); }
+.install-list .icon { color: var(--deep-accent); margin-block-start: 3px; }
+
+/* FAQ: visible questions, two columns on wide screens */
+.journey-faq { padding-block: clamp(52px, 6vw, 88px); }
+.journey-faq h2 { color: var(--teal-ink); font-size: clamp(29px, 2.8vw, 41px); }
+.faq--cols { align-items: start; }
+@media (min-width: 900px) { .faq--cols { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 20px; } }
+.journey-faq .faq summary h3 { font-size: 17px; color: var(--teal-ink); }
+.journey-faq .faq details > p { color: var(--teal-muted); }
+
+@media (max-width: 700px) {
+  .proof__list { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 18px; padding-block: 18px; }
+  .proof__list > div:nth-child(4) { border-inline-start: 0; padding-inline-start: 0; }
+  .plan-cards { grid-template-columns: minmax(0, 1fr); }
+  .safe-phones { max-block-size: 400px; }
+  .safe-phones picture:last-child { margin-block-start: 28px; }
+}
+.more-reviews { list-style: none; margin: 22px 0 6px; padding: 0; display: grid; gap: 16px; }
+.more-reviews figure, .more-reviews blockquote { margin: 0; }
+.more-reviews blockquote { color: var(--teal-ink); font: 400 17px/1.5 var(--font-head); }
+.more-reviews figcaption { color: var(--teal-muted); font-size: 13px; margin-block-start: 4px; }
+.journey-discover .ribbon__card picture, .journey-discover .ribbon__card img { inline-size: 100%; }
+.journey-wide { grid-template-columns: minmax(0, 1fr); }
+
+/* ---------- Planner first (owner, 2026-11-17): Giza hero with a trip on the phone, PLAN right after the numbers ---------- */
+.platform--trip .platform__scene img { object-position: 50% 62%; }
+.platform--trip .platform__scene picture { inline-size: 100%; }
+.platform--trip .platform__scene::after { background: linear-gradient(90deg, #0b0e13f0 0%, #0b0e13b3 32%, #0b0e1326 62%, #0b0e1340 100%), linear-gradient(0deg, #0b0e13cc, transparent 45%); }
+:dir(rtl) .platform--trip .platform__scene::after { background: linear-gradient(270deg, #0b0e13f0 0%, #0b0e13b3 32%, #0b0e1326 62%, #0b0e1340 100%), linear-gradient(0deg, #0b0e13cc, transparent 45%); }
+.platform--trip .platform__screen { max-block-size: 500px; }
+:dir(rtl) .platform__screen img.platform__sheet { margin-block-start: 0; }
+.platform__sheet { border-radius: 26px; box-shadow: 0 24px 50px #0008; margin-block-end: 40px; }
+
+.journey-plan { padding-block: clamp(52px, 6vw, 88px); }
+.plan-more { margin-block-start: clamp(36px, 5vw, 64px); gap: clamp(28px, 4vw, 48px); }
+.plan-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; counter-reset: step; }
+.plan-steps li { position: relative; display: grid; gap: 8px; align-content: start; padding: 22px 22px 24px; border-radius: 16px; background: var(--surface);
+  box-shadow: 0 0 0 1px var(--hairline), 0 8px 24px rgba(17, 19, 24, .05); counter-increment: step; }
+.plan-steps li::after { content: counter(step); position: absolute; inset-block-start: 18px; inset-inline-end: 20px; font: 600 15px/1 var(--font-head); color: #a6b3b1; }
+.plan-steps__icon { display: grid; place-items: center; inline-size: 40px; block-size: 40px; border-radius: 11px; color: var(--plan);
+  background: color-mix(in srgb, var(--plan) 13%, #fff); margin-block-end: 4px; }
+.plan-steps__icon .icon { inline-size: 22px; block-size: 22px; }
+.plan-steps h3 { font-size: 18px; color: var(--teal-ink); }
+.plan-steps p { margin: 0; color: var(--teal-muted); font-size: 15px; line-height: 1.5; }
+.journey-plan .strip-line { margin-block-start: 0; }
+.journey-plan .strip-line__caption { margin-inline: auto; color: var(--teal-muted); }
+.journey-plan .paste-note { max-inline-size: 640px; margin: 0 auto; }
+.day-photo--plain { block-size: clamp(320px, 30vw, 420px); }
+
+@media (max-width: 700px) {
+  .platform--trip .platform__scene img { object-position: 58% 88%; }
+  .platform--trip .platform__scene::after, :dir(rtl) .platform--trip .platform__scene::after { background: linear-gradient(0deg, #0b0e13, #0b0e13ef 25%, #0b0e13a8 61%, #0b0e132e); }
+  :dir(rtl) .platform__screen img.platform__sheet { margin-block-start: 0; }
+  .platform--trip .platform__screen { max-block-size: 320px; }
+  .plan-steps { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+}
+
+/* ---------- Calm pass: home page only ----------
+   1. One accent: every station-sign dot, step icon and the city strip use the action orange; text is neutral ink, not teal.
+   2. No outlines: cards are soft grey fills (or a warm tint for Pro) with large corners; no rules between sections.
+   3. Motion: blocks fade and rise as they scroll in, cards one after another (--i); off with reduced motion (base.css). */
+.journey-home {
+  --r-soft: 28px;
+  --teal-ink: var(--ink); --teal-muted: var(--ink-2); --teal-link: var(--link);
+  --plan: var(--action-deep);
+  --deep: var(--deep-neutral); --deep-rule: #3A3F48;
+}
+.journey-home .sign { --line: var(--action); }
+.journey-home .platform .sign { --line: var(--action); }
+
+/* 1 + 2: white sections; grey lives inside the cards */
+.journey-home .proof, .journey-home .journey-step--safe { border: 0; }
+.journey-home .proof__list > div + div { border: 0; }
+.journey-home .journey-discover, .journey-home .journey-step--arrival, .journey-home .journey-plans { background: var(--paper); }
+.journey-home .plan-steps li { background: var(--soft); box-shadow: none; border-radius: var(--r-soft); padding: 26px 26px 28px; }
+.journey-home .plan-steps li::after { color: #B5BAC2; }
+.journey-home .plan-steps__icon { background: var(--paper); color: var(--action-deep); }
+.journey-home .paste-note { background: var(--warm); border: 0; border-radius: 20px; }
+.journey-home .paste-note__icon { background: var(--action-deep); }
+.journey-home .arrival-ticket .ticket { background: var(--soft); border: 0; border-radius: var(--r-soft); box-shadow: none; }
+.journey-home .arrival-ticket .ticket__tear { border-color: #D9DCE1; }
+.journey-home .price-rows { background: var(--soft); border: 0; border-radius: var(--r-soft); padding-block-start: 22px; }
+.journey-home .price-rows li { border-block-end-color: #DFE2E6; }
+.journey-home .rail-photo, .journey-home .day-photo { border-radius: var(--r-soft); }
+.journey-home .safe-phones { background: var(--soft); border-radius: var(--r-soft); }
+.journey-home .traveller-review { border: 0; background: var(--soft); border-radius: var(--r-soft); padding: clamp(24px, 3vw, 40px); }
+.journey-home .plan-card { background: var(--soft); box-shadow: none; border-radius: var(--r-soft); }
+.journey-home .plan-card--pro { background: var(--warm); box-shadow: none; }
+.journey-home .plan-card li .icon { color: var(--ink-2); }
+.journey-home .plan-card--pro li .icon { color: var(--action-deep); }
+.journey-home .faq details { background: var(--soft); box-shadow: none; border-radius: 20px; }
+.journey-home .modes li { background: var(--soft); box-shadow: none; }
+.journey-home .ribbon__nav button { background: var(--soft); box-shadow: none; }
+.journey-home .journey-link { color: var(--link); }
+
+/* 3: motion. Content stays visible without the script (base.css only hides it under .js-reveal). */
+.js-reveal .journey-home [data-reveal] { transform: translateY(28px); transition-duration: 700ms, 700ms; transition-timing-function: cubic-bezier(.16, 1, .3, 1);
+  transition-delay: calc(var(--i, 0) * 90ms); }
+.js-reveal .journey-home [data-reveal].is-in { transform: none; }
+
+/* ---------- Calm pass, round 2 (owner, 2026-11-17) ---------- */
+/* Less orange: neutral line art and step icons; orange stays on station-sign dots, links, Pro and the hero cards' accents */
+.journey-home .strip-line { --line: #D5D9DF; }
+.journey-home .strip-line__stop .art { color: #8A919C; }
+.journey-home .plan-steps__icon { color: var(--ink); }
+.journey-home .paste-note { background: var(--soft); }
+.journey-home .paste-note__icon { background: var(--ink); }
+
+/* More room between sections */
+.journey-home .journey-step, .journey-home .journey-maker, .journey-home .journey-plan, .journey-home .journey-discover,
+.journey-home .journey-plans, .journey-home .journey-faq { padding-block: clamp(72px, 9vw, 136px); }
+.journey-home .journey-install { padding-block: clamp(64px, 8vw, 112px); }
+.journey-home .plan-more { margin-block-start: clamp(56px, 7vw, 96px); }
+
+/* Centred headings for the wide sections (Discover, Free and Pro, FAQ) */
+.journey-home .journey-text--wide { justify-items: center; text-align: center; }
+.journey-home .journey-text--wide h2, .journey-home .journey-text--wide p { margin-inline: auto; }
+.journey-home .journey-plans h2, .journey-home .journey-faq h2 { text-align: center; }
+.journey-home .journey-plans .journey-link { justify-self: center; }
+
+/* Hero collage: floating cards around the phone, wide screens only */
+.hero-stage { position: relative; }
+.hero-cards { display: none; }
+@media (min-width: 1024px) {
+  .hero-cards { display: block; position: absolute; inset: 0; pointer-events: none; }
+  .hero-card { position: absolute; display: grid; gap: 4px; padding: 14px 16px; border-radius: 18px; background: rgba(255, 255, 255, .94);
+    color: var(--ink); box-shadow: 0 20px 44px rgba(0, 0, 0, .32), 0 2px 6px rgba(0, 0, 0, .12); backdrop-filter: blur(14px) saturate(1.2); }
+  .hero-card__label { font: 600 13px/1.25 var(--font-head); color: var(--ink-2); }
+  .hero-card__value { font: 600 26px/1 var(--font-head); letter-spacing: -.01em; }
+  .hero-card__value small { font: 600 12px/1 var(--font-body); color: var(--ink-2); }
+  .hero-card__meta { font-size: 12px; color: var(--ink-2); }
+  .hero-card--price { inset-block-start: 18%; inset-inline-start: -150px; inline-size: 210px; }
+  .hero-card--routes { inset-block-start: 46%; inset-inline-end: -12px; inline-size: 168px; }
+  .hero-card--place { inset-block-end: 14%; inset-inline-start: -118px; grid-template-columns: auto auto; align-items: center; gap: 12px; padding-block: 10px; padding-inline: 10px 16px; }
+  .hero-card__dots { display: flex; gap: 5px; margin-block-start: 6px; }
+  .hero-card__dots .dot { inline-size: 10px; block-size: 10px; border-radius: 50%; background: var(--c); }
+  .hero-card__thumb { display: block; inline-size: 52px; block-size: 52px; border-radius: 12px; overflow: hidden; }
+  .hero-card__thumb img { inline-size: 100%; block-size: 100%; object-fit: cover; }
+  .hero-card .sign { --line: var(--action); }
+  .hero-card .sign__first { color: var(--ink); }
+  .hero-card .sign__second { color: var(--ink-2); }
+}

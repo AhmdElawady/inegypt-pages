@@ -1,6 +1,8 @@
 {% from "components/signs.njk" import sign %}
-{#- Media components: picture, device frame, floating card, screen gallery, photo ribbon, photo band (§8.5). -#}
-{% macro picture(key, alt, sizes="100vw", eager=false, cls="", fallbackWidth=null) -%}
+{#- Media components: responsive picture, framed device, photo ribbon. -#}
+
+{#- load: "lazy" (default, below the fold), "eager" (above the fold) or "high" (the one LCP image per page). -#}
+{% macro picture(key, alt, sizes="100vw", load="lazy", cls="", fallbackWidth=null) -%}
 {%- set im = images[key] -%}
 {%- if not im -%}<!-- missing image {{ key }} -->{%- else -%}
 {%- set fw = fallbackWidth or (im.widths[1] if im.widths.length > 1 else im.widths[0]) -%}
@@ -9,59 +11,26 @@
 {%- for fmt in im.formats %}{% if fmt != "jpg" %}
   <source type="image/{{ fmt }}" sizes="{{ sizes }}" srcset="{% for w in im.widths %}{{ ('/assets/img/' + im.dir + '/' + im.base + '-' + w + '.' + fmt) | url }} {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}">
 {%- endif %}{% endfor %}
-  <img src="{{ ('/assets/img/' + im.dir + '/' + im.base + '-' + fw + '.' + ffmt) | url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ alt }}"{% if eager %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async">
+  <img src="{{ ('/assets/img/' + im.dir + '/' + im.base + '-' + fw + '.' + ffmt) | url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ alt }}"{% if load == "high" %} fetchpriority="high"{% elif load != "eager" %} loading="lazy"{% endif %} decoding="async">
 </picture>
 {%- endif -%}
 {%- endmacro %}
 
 {#- Device: the owner's framed export (D17) or, for a raw capture, the CSS fallback frame. -#}
-{% macro device(key, alt, width=300, crop=false, tilt=false, eager=false) -%}
+{% macro device(key, alt, width=300) -%}
 {%- set im = images[key] -%}
-{%- set kind = "framed" if (im and im.framed) else "css" -%}
-<figure class="device device--{{ kind }}{% if crop %} device--crop{% endif %}{% if tilt %} device--tilt{% endif %}" style="--w: {{ width }}px"{% if im and im.demo %} data-demo="true"{% endif %}>
-  {{ picture(key, alt, "(max-width: 639px) 78vw, " + width + "px", eager) }}
+<figure class="device device--{{ 'framed' if (im and im.framed) else 'css' }}" style="--w: {{ width }}px">
+  {{ picture(key, alt, "(max-width: 639px) 78vw, " + width + "px") }}
 </figure>
 {%- endmacro %}
 
-{#- A screen or photo that is not captured yet: a visible gap on dev builds, never a mock-up (§7.1). -#}
-{% macro missing(id, label, width=260, kind="screen") -%}
-<div class="missing missing--{{ kind }}" style="--w: {{ width }}px" data-missing="{{ id }}"><span><b>{{ id }}</b>{{ label }}<br>to capture</span></div>
-{%- endmacro %}
-
-{#- Either a device or the missing box, from a { key, alt } or { missing, label } item. -#}
-{% macro screen(item, width=260) -%}
-{%- if item.missing %}{{ missing(item.missing, item.label, width) }}{% else %}{{ device(item.key, item.alt, width) }}{% endif -%}
-{%- endmacro %}
-
-{% macro floatCard(icon, kicker, main, meta="", line="") -%}
-<div class="float-card{% if line %} line-{{ line }}{% endif %}" data-reveal>
-  <div class="float-card__kicker">{% icon icon %}<span>{{ kicker }}</span></div>
-  <div class="float-card__main">{{ main | safe }}</div>
-  {%- if meta %}<div class="float-card__meta">{{ meta | safe }}</div>{% endif %}
-</div>
-{%- endmacro %}
-
-{#- items: [{ id, tab, key, alt, caption }] -#}
-{% macro gallery(id, label, items) -%}
-<div class="gallery" data-gallery>
-  <nav class="gallery__tabs" aria-label="{{ label }}">
-    {%- for it in items %}<a href="#{{ id }}-{{ it.id }}"{% if loop.first %} aria-current="true"{% endif %}>{{ it.tab }}</a>{% endfor %}
-  </nav>
-  <div class="snap" tabindex="0" aria-label="{{ label }}">
-    {%- for it in items %}
-    <figure id="{{ id }}-{{ it.id }}">{{ device(it.key, it.alt, 280) }}<figcaption class="snap__caption">{{ it.caption }}</figcaption></figure>
-    {%- endfor %}
-  </div>
-</div>
-{%- endmacro %}
-
-{#- items: [{ key, alt, en, ar, line }] -#}
+{#- Swipeable row of photos with station-sign captions. items: [{ key, alt, en, ar, line }] -#}
 {% macro ribbon(id, label, items, lang="en") -%}
 <div class="ribbon" data-ribbon>
   <div class="ribbon__track" id="{{ id }}" tabindex="0" role="region" aria-label="{{ label }}">
     {%- for it in items %}
     <figure class="ribbon__card">
-      {{ picture(it.key, it.alt, "(max-width: 639px) 72vw, 280px", false, "photo") }}
+      {{ picture(it.key, it.alt, "(max-width: 639px) 72vw, 280px", "lazy", "photo") }}
       <figcaption>{{ sign(it.en, it.ar, it.line or "nile", lang) }}</figcaption>
     </figure>
     {%- endfor %}
@@ -71,12 +40,4 @@
     <button type="button" data-dir="1" aria-controls="{{ id }}" aria-label="{{ 'التالي' if lang == 'ar' else 'Next' }}">{% icon "arrow-right" %}</button>
   </div>
 </div>
-{%- endmacro %}
-
-{#- Photo band: full-width photo with an ink field on the leading side (G7); caller() is the text. -#}
-{% macro band(key, alt, eager=false) -%}
-<section class="band theme-dark">
-  <div class="band__img">{{ picture(key, alt, "100vw", eager) }}</div>
-  <div class="container container--wide"><div class="band__body">{{ caller() }}</div></div>
-</section>
 {%- endmacro %}

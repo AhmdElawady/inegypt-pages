@@ -1,12 +1,14 @@
-{#- Guide helpers: a fact's source line and a "watch out for" item, both from an atom. -#}
+{#- Guide helpers: a fact's source line and a "watch out for" item, both from an atom. Imported "with context": they read lang. -#}
 {% macro source(a) -%}
-{%- if a.source and a.source.url -%}<a href="{{ a.source.url }}" rel="noopener">{{ "Official source" if a.source.kind in ["national_authority", "operator_site"] else "Source" }}</a>
-{%- elif a.estimate -%}InEgypt estimate
-{%- else -%}InEgypt guidance{%- endif %}, checked <time datetime="{{ a.lastVerifiedAt }}">{{ a.lastVerifiedAt | monthYear }}</time>
+{%- set g = strings[lang or "en"].guide -%}
+{%- if a.source and a.source.url -%}<a href="{{ a.source.url }}" rel="noopener">{{ g.officialSource if a.source.kind in ["national_authority", "operator_site"] else g.source }}</a>
+{%- elif a.estimate -%}{{ g.estimate }}
+{%- else -%}{{ g.guidance }}{%- endif %}{{ "، " if lang == "ar" else ", " }}{{ g.checked }} <time datetime="{{ a.lastVerifiedAt }}">{{ a.lastVerifiedAt | monthYear(lang or "en") }}</time>
 {%- endmacro %}
 
 {% macro watch(ids) -%}
+{%- set L = lang or "en" -%}
 <ul class="watch">{% for id in ids %}{% set a = atoms.atoms[id] %}{% if a and a.siteUsable %}
-  <li><b>{{ a.en.title }}</b>{{ a.en.detail or a.en.note }} <span class="meta">({{ source(a) }})</span></li>{% endif %}{% endfor %}
+  <li><b>{{ a[L].title }}</b>{{ " " if L == "ar" }}{{ a[L].detail or a[L].note }} <span class="meta">({{ source(a) }})</span></li>{% endif %}{% endfor %}
 </ul>
 {%- endmacro %}

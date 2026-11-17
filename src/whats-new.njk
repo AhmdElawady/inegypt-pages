@@ -5,23 +5,6 @@ title: What's new in InEgypt
 description: Dated release notes for InEgypt, newest first, in the same words as the App Store.
 lang: en
 navCt: web_whatsnew
+altUrls: { en: "/whats-new/", ar: "/ar/whats-new/" }
 ---
-<section class="section">
-  <div class="container guide__body">
-    <header class="stack">
-      <h1 style="font-size: var(--fs-h2)">What's new</h1>
-      <p class="lead">Release notes, newest first, in the same words as the App Store.</p>
-    </header>
-    {%- if releases.items.length %}
-    {%- for r in releases.items %}
-    <article class="stack" id="v{{ r.version }}">
-      <h2>Version {{ r.version }} <span class="small muted" style="font-family: var(--font-body); font-weight: 400">· <time datetime="{{ r.date }}">{{ r.date | monthYear }}</time></span></h2>
-      {%- for p in r.notes %}<p>{{ p }}</p>{% endfor %}
-    </article>
-    {%- endfor %}
-    {%- else %}
-    <div class="missing" style="border-radius: var(--r-card)" data-missing="release-notes"><span><b>Release notes</b>to paste from App Store Connect, word for word (src/_data/releases.json)</span></div>
-    {%- endif %}
-    <p><a href="{{ 'web_whatsnew' | appLink }}">InEgypt on the App Store <span class="flip-rtl">→</span></a></p>
-  </div>
-</section>
+{% include "pages/whats-new.njk" %}

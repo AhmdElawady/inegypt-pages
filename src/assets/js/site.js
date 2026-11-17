@@ -18,27 +18,10 @@
     const track = r.querySelector(".ribbon__track");
     r.querySelectorAll("button[data-dir]").forEach((b) => b.addEventListener("click", () => {
       const card = track.firstElementChild;
-      const step = card ? card.getBoundingClientRect().width + 24 : 300;
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      const step = card ? card.getBoundingClientRect().width + gap : 300;
       const rtl = getComputedStyle(track).direction === "rtl";
       track.scrollBy({ left: Number(b.dataset.dir) * step * (rtl ? -1 : 1), behavior: reduce ? "auto" : "smooth" });
-    }));
-  });
-
-  // Gallery tabs: mark the tab whose screen is in view.
-  document.querySelectorAll("[data-gallery]").forEach((g) => {
-    const tabs = [...g.querySelectorAll(".gallery__tabs a")];
-    if (!("IntersectionObserver" in window)) return;
-    const io = new IntersectionObserver((entries) => {
-      for (const e of entries) if (e.isIntersecting) {
-        tabs.forEach((t) => t.setAttribute("aria-current", t.hash === "#" + e.target.id ? "true" : "false"));
-      }
-    }, { root: g.querySelector(".snap"), threshold: 0.6 });
-    g.querySelectorAll(".snap > figure").forEach((f) => io.observe(f));
-    tabs.forEach((t) => t.addEventListener("click", (ev) => {
-      const target = g.querySelector(t.hash);
-      if (!target) return;
-      ev.preventDefault();
-      target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest", inline: "start" });
     }));
   });
 
@@ -57,13 +40,6 @@
       } catch { /* user cancelled */ }
     });
   });
-
-  // Nav over the hero: solid after 80 px of scroll (§4 section 0).
-  const nav = document.querySelector(".nav");
-  if (nav && document.body.classList.contains("has-hero")) {
-    const onScroll = () => nav.classList.toggle("is-solid", scrollY > 80);
-    addEventListener("scroll", onScroll, { passive: true }); onScroll();
-  }
 
   // FAQ: always open on desktop (§4 section 18); native <details> on phones.
   if (matchMedia("(min-width: 1024px)").matches) document.querySelectorAll(".faq--cols details").forEach((d) => { d.open = true; });

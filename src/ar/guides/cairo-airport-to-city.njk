@@ -1,0 +1,59 @@
+---
+layout: layouts/guide.njk
+permalink: /ar/guides/cairo-airport-to-city/index.html
+title: كيف أصل من مطار القاهرة إلى المدينة؟
+description: التاكسي أو سيارات التطبيقات أو الأتوبيس والمترو من مطار القاهرة الدولي، والأجرة المناسبة للتاكسي، والحيل التي تتجنبها عند الوصول.
+lang: ar
+navCt: web_ar_guide_airport
+altUrls: { en: "/guides/cairo-airport-to-city/", ar: "/ar/guides/cairo-airport-to-city/" }
+atomIds: [price_airport_taxi, scam_airport_taxi, warning_airport_taxi_meter, scam_ridehail_pickup, scam_different_destination]
+related: [egypt-prices, cairo-metro]
+---
+{#- Arabic of src/guides/cairo-airport-to-city.njk: same facts, same sources. Keep the two in step. -#}
+{%- from "components/content.njk" import appbox with context -%}
+{%- from "components/guide.njk" import source, watch with context -%}
+{%- set taxi = atoms.atoms.price_airport_taxi -%}
+{%- set meter = atoms.atoms.warning_airport_taxi_meter -%}
+<div class="answer">
+  <p class="lead" style="color: var(--ink)">التاكسي أو سيارة تطبيقات التوصيل من مطار القاهرة الدولي إلى وسط المدينة يكلّف عادةً <bdi dir="ltr">{{ taxi | priceText }}</bdi> (تقدير InEgypt، روجع في {{ taxi.lastVerifiedAt | monthYear("ar") }}). استخدم موقف التاكسي الرسمي أو سيارة تحجزها من تطبيق، واتفق على السعر أو طريقة حسابه قبل أن تركب، وتجاهل أي شخص يعرض عليك توصيلة داخل صالة الوصول.</p>
+</div>
+<p>InEgypt تطبيق مجاني على iPhone لزيارة مصر والتنقل فيها. يخطط رحلتك يومًا بيوم، ويجد المسارات بالمترو والقطار والأتوبيس وغيرها من المواصلات العامة، ويعرض الأسعار المناسبة والحيل الشائعة قبل أن تدفع. هذا الدليل خاص بـ<b>مطار القاهرة الدولي</b> فقط.</p>
+
+<h2>طرق الخروج من المطار</h2>
+<div class="table-wrap"><table class="facts-table">
+  <caption>طرق الوصول من مطار القاهرة الدولي إلى المدينة</caption>
+  <thead><tr><th scope="col">الطريقة</th><th scope="col">ما الذي تتوقعه</th><th scope="col">السعر المناسب</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">سيارة من تطبيق توصيل</th><td>تحجزها من التطبيق؛ تظهر الأجرة قبل التأكيد، وتُسجَّل الرحلة.</td><td class="num-cell" rowspan="2"><bdi dir="ltr">{{ taxi | priceText }}</bdi><div class="meta">{{ source(taxi) }}</div></td></tr>
+    <tr><th scope="row">تاكسي من الموقف الرسمي</th><td>التاكسي الأبيض يعمل بالعداد؛ اتفق على تشغيل العداد قبل التحرك.</td></tr>
+    <tr><th scope="row">خدمات النقل من المطار</th><td>أسعار متفاوض عليها أو ثابتة حسب الوجهة أو فئة السيارة. تأكد من الخدمة وطريقة التسعير أولًا.</td><td class="meta">{{ source(meter) }}</td></tr>
+    <tr><th scope="row">أتوبيس إلى المترو، ثم المترو</th><td>غالبًا الطريقة الأرخص، وهي أبطأ وفيها تبديل أو اثنان. أسهل مع حقائب خفيفة وخارج ساعات الذروة.</td><td class="meta">يعرض InEgypt الأجرة في كل نتيجة مسار</td></tr>
+  </tbody>
+</table></div>
+
+{{ appbox("يعرض InEgypt الطرق من صالة وصولك إلى فندقك، والسعر المناسب لكل طريقة.", [], "web_ar_guide_airport", "", true, "ar") }}
+
+<h2>خطوة بخطوة عند الوصول</h2>
+<ol>
+  <li><b>قبل الهبوط،</b> احفظ عنوان فندقك، ويُفضَّل بالعربية أيضًا، لتريه للسائق.</li>
+  <li><b>تجاهل العروض داخل الصالة.</b> من يقترب منك ليعرض توصيلة ليس الموقف الرسمي.</li>
+  <li><b>اختر موقف التاكسي الرسمي أو تطبيق توصيل.</b> إذا استخدمت تطبيقًا، فانتظر عند نقطة الاستلام التي يحددها.</li>
+  <li><b>تأكد من طريقة حساب الأجرة</b> قبل أن تتحرك السيارة: العداد، أو أجرة التطبيق، أو السعر الثابت لخدمة النقل.</li>
+  <li><b>طابق السيارة ورقم اللوحة</b> مع التطبيق، وأبقِ الرحلة فعّالة في التطبيق حتى تصل.</li>
+  <li><b>أرِ السائق العنوان</b> واطلب الذهاب إليه مباشرة، دون التوقف عند فنادق أو محلات أخرى.</li>
+</ol>
+
+<h2>انتبه إلى</h2>
+{{ watch(["scam_airport_taxi", "warning_airport_taxi_meter", "scam_ridehail_pickup", "scam_different_destination"]) }}
+
+<h2>ما يفعله InEgypt هنا وما لا يفعله</h2>
+<p>لا يحجز InEgypt سيارات التاكسي أو التوصيل، ولا يعرض مواقع الأتوبيسات أو السيارات لحظة بلحظة. يعرض طرق الوصول من المطار إلى عنوانك، مع المدة وعدد مرات التبديل والأجرة في المواصلات العامة، والسعر المناسب للتاكسي، لتعرف الرقم قبل أن يذكره لك أحد. وصفحة الطوارئ تفتح دون اتصال، مجانًا.</p>
+
+<h2>المصادر</h2>
+<ul class="sources">
+  <li>مطار القاهرة، «الانتقال من/إلى المطار»: <a href="{{ meter.source.url }}" rel="noopener">cairo-airport.com</a>، روجع في {{ meter.lastVerifiedAt | monthYear("ar") }}.</li>
+  <li>السعر المناسب للتاكسي: قائمة أسعار InEgypt، تقدير من مراجعات تحريرية، {{ taxi.lastVerifiedAt | monthYear("ar") }}.</li>
+  <li>نصائح الوصول: إرشادات الأمان في InEgypt، {{ atoms.atoms.scam_airport_taxi.lastVerifiedAt | monthYear("ar") }}.</li>
+</ul>
+
+{{ appbox("رحلة المطار صحيحة من أول يوم", ["كل طرق الوصول من المطار إلى فندقك، مع المدة والتبديل والأجرة", "السعر المناسب للتاكسي، مع شهر مراجعته", "أرقام الطوارئ تفتح دون اتصال، مجانًا"], "web_ar_guide_airport", "web_ar_guide_airport_qr", false, "ar") }}

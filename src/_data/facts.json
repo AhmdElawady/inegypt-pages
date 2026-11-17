@@ -270,7 +270,14 @@
       "state": "code",
       "source": "InEgypt/Core/AppIntents/Provider/InEgyptShortcutsProvider.swift (English phrases)",
       "note": "Registered in code; the owner's Shortcuts-app screenshot of 2026-11-16 shows the App Shortcuts installed. The Plan 47 phrase 'Prepare an Egypt trip' is not registered",
-      "onSite": true
+      "onSite": true,
+      "valueAr": [
+        "خطط رحلة في InEgypt",
+        "ما هي محطتي التالية في InEgypt",
+        "اسأل InEgypt عن الاتجاهات",
+        "ما هي خطة رحلتي في InEgypt"
+      ],
+      "sourceAr": "InEgypt 3.14 archive, ar.lproj/AppShortcuts.strings (the shipped Arabic App Shortcut phrases). No Arabic phrase for 'fair price' in that build, so it is left out."
     },
     "controlCenter": {
       "value": "Control Center buttons",

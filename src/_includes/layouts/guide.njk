@@ -1,30 +1,31 @@
 ---
 layout: layouts/base.njk
 ---
-{#- Guide page (Plan 46 §4.1, §4.4; Plan 47 §8.5 / P1 M6). Front matter: title (the question), description, ct, atomIds,
-    related ([slug]), breadcrumb. "Last checked" = the newest checked date of the facts used = dateModified. -#}
+{#- Guide page (Plan 46 §4.1, §4.4; Plan 47 §8.5 / P1 M6), English or Arabic. Front matter: title (the question), description, ct,
+    atomIds, related ([slug]), lang. "Last checked" = the newest checked date of the facts used = dateModified. -#}
 {%- from "components/content.njk" import appbox, related as relatedCards with context -%}
 {%- from "components/calls.njk" import shareRow with context -%}
+{%- set g = strings[lang].guide -%}
 {%- set ids = (atoms.atoms | priceGroups(priceGuideGroups, priceGuideExclude) | priceIds) if atomIdsFrom == "prices" else atomIds -%}
 {%- set checked = ids | maxDate(atoms.atoms) -%}
 {%- set ld = { "@context": "https://schema.org", "@graph": [
   { "@type": "Article", "headline": title, "description": description, "inLanguage": lang, "datePublished": checked, "dateModified": checked,
     "author": { "@type": "Person", "name": "Ahmed Elawady" }, "publisher": { "@type": "Organization", "name": "InEgypt" }, "mainEntityOfPage": page.url | absUrl },
   { "@type": "BreadcrumbList", "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "InEgypt", "item": "/" | absUrl },
-    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "/guides/" | absUrl },
+    { "@type": "ListItem", "position": 1, "name": "InEgypt", "item": "/" | localUrl(lang) | absUrl },
+    { "@type": "ListItem", "position": 2, "name": g.crumbGuides, "item": "/guides/" | localUrl(lang) | absUrl },
     { "@type": "ListItem", "position": 3, "name": title, "item": page.url | absUrl } ] } ] } -%}
 <script type="application/ld+json">{{ ld | json | safe }}</script>
 <article class="section guide" style="padding-block-start: var(--s8)">
   <div class="container guide__body">
-    <nav class="small muted" aria-label="Breadcrumb"><a href="{{ '/' | url }}">InEgypt</a> › <a href="{{ '/guides/' | url }}">Guides</a></nav>
+    <nav class="small muted" aria-label="{{ 'مسار التنقل' if lang == 'ar' else 'Breadcrumb' }}"><a href="{{ '/' | localUrl(lang) | url }}">{{ g.crumbHome }}</a> {{ "‹" if lang == "ar" else "›" }} <a href="{{ '/guides/' | localUrl(lang) | url }}">{{ g.crumbGuides }}</a></nav>
     <header class="stack">
       <h1>{{ title }}</h1>
-      <p class="answer__checked">{% icon "check-circle" %}<span>Last checked <time datetime="{{ checked }}">{{ checked | monthYear }}</time> · every fact below shows its own date and source</span></p>
+      <p class="answer__checked">{% icon "check-circle" %}<span>{{ g.lastChecked }} <time datetime="{{ checked }}">{{ checked | monthYear(lang) }}</time> · {{ g.everyFact }}</span></p>
     </header>
     {{ content | safe }}
-    <h2>Related guides</h2>
-    {{ relatedCards(related | relatedGuides(guideIndex)) }}
-    {{ shareRow(page.url | url, "en") }}
+    <h2>{{ g.related }}</h2>
+    {{ relatedCards(related | relatedGuides(guideIndex, lang)) }}
+    {{ shareRow(page.url | url, lang) }}
   </div>
 </article>

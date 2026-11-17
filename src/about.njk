@@ -5,16 +5,18 @@ title: About InEgypt · the app, the maker and the facts
 description: What InEgypt is, who makes it, where its data comes from, what it does not do, and how it handles your data. One page of facts.
 lang: en
 navCt: web_about
+altUrls: { en: "/about/", ar: "/ar/about/" }
 ---
-{%- from "components/media.njk" import missing with context -%}
 {%- from "components/content.njk" import appbox with context -%}
 {%- set f = facts -%}
 {%- set kinds = atoms.atoms | atomKinds -%}
 <section class="section">
   <div class="container guide__body">
-    <header class="stack">
-      <h1 style="font-size: var(--fs-h2)">About InEgypt</h1>
-      <p class="lead">{{ f.sentence.en }}</p>
+    <header class="stack" id="story">
+      <h1>Made in Egypt, by Ahmed Elawady.</h1>
+      <p class="lead" id="maker">I live in Egypt and build InEgypt here. It began as a guide to places, then became Egypt Trains &amp; Cairo Metro. Those routes are still at the heart of the app.</p>
+      <p>Today you can plan a day around the places you want to see, find the train between cities, and check a taxi fare before you ride. Searching routes online is free, with no daily limit.</p>
+      <p>I answer the support mail myself. If a route or price looks wrong, <a href="mailto:{{ f.site.contactEmail.value }}">write to me</a> and I’ll check it.</p>
     </header>
 
     <h2 id="facts">The facts</h2>
@@ -35,17 +37,6 @@ navCt: web_about
       </tbody>
     </table></div>
 
-    <h2 id="story">The story</h2>
-    <div class="maker" style="grid-template-columns: 1fr">
-      <div class="stack" id="maker">
-        {{ missing("P14", "Maker portrait", 0, "photo") }}
-        <p>I'm Ahmed Elawady. I live in Egypt and I have built InEgypt on my own since 2020. It started as a guide to places, became the app for metro and train routes, and is now a trip planner that knows how Egypt really works: what a taxi should cost, when a day is too full, which train to take.</p>
-        <p>The app was called “Egypt Trains &amp; Cairo Metro” until it grew beyond transit. The routes are still at its heart, and they stay free with no daily limit, because getting around should not depend on a subscription. What InEgypt adds is everything around the route: the order of your days, the fair price before you pay, and the tricks people run at airports, stations and sights.</p>
-        <p>I answer the support mail myself. If a fare, a route or a price is wrong, write to me and I will check it.</p>
-        <p><span class="draft-flag">Draft · owner rewrites in his own voice (Plan 47 §6.2)</span></p>
-      </div>
-    </div>
-
     <h2 id="sources">Where the data comes from</h2>
     <p>Transit lines, stops and timetables come from the operators' published information, put into one timetable pack inside the app. Times are published timetables, not live positions.</p>
     <p>Prices, common scams, rules and emergency numbers come from the app's reviewed knowledge list: <bdi>{{ atoms.count }}</bdi> published facts ({{ kinds.price }} prices, {{ kinds.warning }} warnings, {{ kinds.contact }} contacts, and rules and steps). Each has a source and the date it was last checked. Official prices link to the operator or ministry; the others are marked as InEgypt estimates.</p>
@@ -65,8 +56,8 @@ navCt: web_about
     <p>The full text: <a href="{{ '/privacy.html' | url }}">Privacy Policy</a> and <a href="{{ '/terms.html' | url }}">Terms of Use</a>.</p>
 
     <h2 id="credits">Photo credits</h2>
-    <p class="small muted">Photos are used under the Unsplash Licence.</p>
-    <ul class="small">{% for p in photos.photos %}<li>{{ p.use }}: <a href="{{ p.page }}" rel="noopener">{{ p.photographer }}</a></li>{% endfor %}</ul>
+    <p class="small muted">Photography from Unsplash and Wikimedia Commons. Credits and licences are listed below.</p>
+    <ul class="small">{% for p in photos.photos %}<li>{{ p.use }}: <a href="{{ p.page }}" rel="noopener">{{ p.photographer }}</a>{% if p.licence == "CC BY-SA 4.0" %} (<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a>, cropped and colour-adjusted){% endif %}</li>{% endfor %}</ul>
 
     <h2 id="contact">Contact</h2>
     <p><a href="mailto:{{ f.site.contactEmail.value }}">{{ f.site.contactEmail.value }}</a> · <a href="{{ '/support.html' | url }}">Support</a> · <a href="{{ '/press/' | url }}">Press</a></p>

@@ -29,17 +29,16 @@
   {%- endif %}
   {%- endif %}
   <meta name="apple-itunes-app" content="app-id={{ facts.app.appStoreId.value }}, app-argument={{ page.url | absUrl }}">
-  <meta name="theme-color" content="#F7F2E8">
-  <link rel="icon" href="{{ '/assets/logo/favicon.svg' | url }}" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="{{ '/assets/logo/apple-touch-icon.png' | url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}">
-  {%- for css in extraCss %}
-  <link rel="stylesheet" href="{{ css | url }}">
-  {%- endfor %}
+  <meta name="theme-color" content="#FFFFFF">
+  {#- PNG first for Safari (it ignores SVG tab icons); browsers that take SVG use the second. ?v= drops cached old icons. #}
+  <link rel="icon" href="{{ '/assets/logo/favicon-32.png' | url }}?v=2" type="image/png" sizes="32x32">
+  <link rel="icon" href="{{ '/assets/logo/favicon.svg' | url }}?v=2" type="image/svg+xml" sizes="any">
+  <link rel="apple-touch-icon" href="{{ '/assets/logo/apple-touch-icon.png' | url }}?v=2">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}?v={{ assetVersion.css }}">
   {%- if jsonld %}
   <script type="application/ld+json">{{ jsonld | json | safe }}</script>
   {%- endif %}
-  <script src="{{ '/assets/js/site.js' | url }}" defer></script>
+  <script src="{{ '/assets/js/site.js' | url }}?v={{ assetVersion.js }}" defer></script>
 </head>
 <body class="{{ bodyClass }}">
   <a class="skip-link" href="#main">{{ t.skip }}</a>

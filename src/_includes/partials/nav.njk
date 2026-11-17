@@ -1,28 +1,23 @@
 {%- from "components/calls.njk" import badgeLink -%}
-{%- set home = "/ar/" if lang == "ar" else "/" -%}
+{#- Links go to the page in the reader's language when it exists (localUrl reads each page's altUrls). -#}
+{%- set links = [["/features/", t.nav.features], ["/guides/", t.nav.guides], ["/#free-paid", t.nav.freePaid], ["/about/", t.nav.about]] -%}
+{%- set otherUrl = langSwitchUrl or (altUrls[t.nav.langOtherCode] if altUrls else ("/" if lang == "ar" else "/ar/")) -%}
 <header class="nav">
   <div class="container container--wide nav__bar">
-    <a class="nav__logo" href="{{ home | url }}" aria-label="InEgypt{{ ' — الرئيسية' if lang == 'ar' else ', home' }}">
-      <img class="logo-light" src="{{ '/assets/logo/mark-on-light.svg' | url }}" alt="" width="32" height="32">
-      <img class="logo-dark" src="{{ '/assets/logo/mark-on-dark.svg' | url }}" alt="" width="32" height="32">
+    <a class="nav__logo" href="{{ '/' | localUrl(lang) | url }}" aria-label="InEgypt{{ ' — الرئيسية' if lang == 'ar' else ', home' }}">
+      <img src="{{ '/assets/logo/mark-orange.svg' | url }}" alt="" width="32" height="32">
       <span>InEgypt</span>
     </a>
     <nav class="nav__links" aria-label="{{ t.nav.menu }}">
-      <a href="{{ '/features/' | url }}">{{ t.nav.features }}</a>
-      <a href="{{ '/guides/' | url }}">{{ t.nav.guides }}</a>
-      <a href="{{ (home + '#free-paid') | url }}">{{ t.nav.freePaid }}</a>
-      <a href="{{ '/about/' | url }}">{{ t.nav.about }}</a>
+      {%- for l in links %}<a href="{{ l[0] | localUrl(lang) | url }}">{{ l[1] }}</a>{% endfor %}
     </nav>
     <div class="nav__end">
-      <a class="nav__lang" href="{{ (langSwitchUrl or ('/' if lang == 'ar' else '/ar/')) | url }}" lang="{{ t.nav.langOtherCode }}" hreflang="{{ t.nav.langOtherCode }}">{{ t.nav.langOther }}</a>
+      <a class="nav__lang" href="{{ otherUrl | url }}" lang="{{ t.nav.langOtherCode }}" hreflang="{{ t.nav.langOtherCode }}">{{ t.nav.langOther }}</a>
       <a class="btn nav__get" href="{{ (navCt or 'web_home_nav') | appLink }}"><span class="nav__get-long">{{ t.nav.get }}</span><span class="nav__get-short">{{ t.nav.getShort }}</span></a>
       <details class="nav__menu">
         <summary aria-label="{{ t.nav.menu }}">{% icon "list" %}</summary>
         <nav class="nav__panel" aria-label="{{ t.nav.menu }}">
-          <a href="{{ '/features/' | url }}">{{ t.nav.features }}</a>
-          <a href="{{ '/guides/' | url }}">{{ t.nav.guides }}</a>
-          <a href="{{ (home + '#free-paid') | url }}">{{ t.nav.freePaid }}</a>
-          <a href="{{ '/about/' | url }}">{{ t.nav.about }}</a>
+          {%- for l in links %}<a href="{{ l[0] | localUrl(lang) | url }}">{{ l[1] }}</a>{% endfor %}
         </nav>
       </details>
     </div>

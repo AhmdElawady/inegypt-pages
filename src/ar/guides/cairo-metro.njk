@@ -1,0 +1,66 @@
+---
+layout: layouts/guide.njk
+permalink: /ar/guides/cairo-metro/index.html
+title: كيف يعمل مترو القاهرة، وكم سعر التذكرة؟
+description: أسعار تذاكر مترو القاهرة حسب عدد المحطات، والخطوط الثلاثة وأماكن التقائها، وطريقة شراء التذكرة والركوب، والحيل التي تتجنبها.
+lang: ar
+navCt: web_ar_guide_metro
+altUrls: { en: "/guides/cairo-metro/", ar: "/ar/guides/cairo-metro/" }
+atomIds: [price_metro_single_journey, scam_metro_ticket, scam_metro_route, scam_metro_helper, process_metro_access_fares]
+related: [cairo-airport-to-city, egypt-prices]
+---
+{#- Arabic of src/guides/cairo-metro.njk: same facts (atoms.json, metro.json), same sources. Keep the two in step. -#}
+{%- from "components/content.njk" import appbox with context -%}
+{%- from "components/guide.njk" import source, watch with context -%}
+{%- set fare = atoms.atoms.price_metro_single_journey -%}
+{%- set bands = fare.en.note | fareBands -%}
+{%- set access = atoms.atoms.process_metro_access_fares -%}
+{%- set counted = factsAr[metro.countedAt] or metro.countedAt -%}
+<div class="answer">
+  <p class="lead" style="color: var(--ink)">سعر تذكرة مترو القاهرة للرحلة الواحدة <bdi dir="ltr">{{ fare | priceText }}</bdi> حسب عدد المحطات التي تركبها (أسعار رسمية، روجعت في {{ fare.lastVerifiedAt | monthYear("ar") }}). هناك <bdi>{{ metro.lines | length }}</bdi> خطوط فيها <bdi>{{ metro.stations }}</bdi> محطة، منها <bdi>{{ metro.interchanges | length }}</bdi> محطات تبديل. اشترِ التذكرة المناسبة لعدد محطاتك واحتفظ بها حتى تخرج، لأنك ستحتاجها عند بوابة الخروج.</p>
+</div>
+<p>InEgypt تطبيق مجاني على iPhone لزيارة مصر والتنقل فيها. يخطط رحلتك يومًا بيوم، ويجد المسارات بالمترو والقطار والأتوبيس وغيرها من المواصلات العامة، ويعرض الأسعار المناسبة والحيل الشائعة قبل أن تدفع. البحث عن المسارات مجاني وبلا حد يومي.</p>
+
+<h2>أسعار التذاكر</h2>
+<p>يعتمد السعر على عدد المحطات التي تقطعها، من محطة الدخول إلى محطة الخروج، بما في ذلك التبديل بين الخطوط.</p>
+<div class="table-wrap"><table class="facts-table">
+  <caption>أسعار تذكرة مترو القاهرة للرحلة الواحدة ({{ source(fare) }})</caption>
+  <thead><tr><th scope="col">عدد المحطات</th><th scope="col">السعر</th></tr></thead>
+  <tbody>{% for b in bands %}<tr><td><bdi dir="ltr">{{ b.from }}–{{ b.to }}</bdi></td><td class="num-cell"><bdi dir="ltr">{{ b.fare }} {{ fare.currency }}</bdi></td></tr>{% endfor %}</tbody>
+</table></div>
+<p>توجد أسعار مخفّضة واشتراكات لبعض الفئات. {{ access.ar.detail or access.ar.note }} <span class="meta">({{ source(access) }})</span></p>
+
+{{ appbox("ابحث بين أي مكانين، ويعطيك InEgypt الخط والاتجاه والتبديل والأجرة.", [], "web_ar_guide_metro", "", true, "ar") }}
+
+<h2>الخطوط الثلاثة</h2>
+<div class="table-wrap"><table class="facts-table">
+  <caption>الخطوط والمحطات في بيانات النقل في InEgypt (محسوبة في {{ counted }})</caption>
+  <thead><tr><th scope="col">الخط</th><th scope="col">من وإلى</th><th scope="col">المحطات</th></tr></thead>
+  <tbody>{% for l in metro.lines %}<tr><th scope="row"><span class="line-chip" style="--c: {{ l.color }}">{{ l.id }}</span></th><td>{{ l.endsAr or l.ends }}</td><td class="num-cell">{{ l.stations }}</td></tr>{% endfor %}</tbody>
+</table></div>
+<p>للخط الثالث فرعان في الغرب يلتقيان في الجزء الشرقي حتى عدلي منصور. يمكنك التبديل بين الخطوط في هذه المحطات:</p>
+<ul>{% for i in metro.interchanges %}<li><b>{{ i.nameAr or i.name }}</b>: {% for l in i.lines %}<span class="line-chip" style="--c: {{ metro.colors[l] }}">{{ l }}</span>{% if not loop.last %} و{% endif %}{% endfor %}</li>{% endfor %}</ul>
+
+<h2>طريقة الركوب خطوة بخطوة</h2>
+<ol>
+  <li><b>اعرف مسارك أولًا.</b> الخط، والاتجاه (يُسمّى باسم المحطة الأخيرة في الخط)، ومكان التبديل.</li>
+  <li><b>احسب المحطات</b> من محطتك إلى وجهتك، أو أخبر موظف الشباك بوجهتك.</li>
+  <li><b>اشترِ التذكرة</b> من شباك فيه موظف أو من ماكينة رسمية. جهّز فكّة.</li>
+  <li><b>ادخل من البوابة</b> واتبع اللافتات إلى خطك واتجاهك.</li>
+  <li><b>احتفظ بالتذكرة</b> طوال الرحلة؛ ستحتاجها عند بوابة الخروج.</li>
+</ol>
+
+<h2>انتبه إلى</h2>
+{{ watch(["scam_metro_ticket", "scam_metro_route", "scam_metro_helper"]) }}
+
+<h2>ما يفعله InEgypt هنا وما لا يفعله</h2>
+<p>لا يبيع InEgypt تذاكر المترو، ولا يعرض أين القطارات الآن أو متى يصل القطار التالي؛ فهو يعتمد على الجداول المنشورة وجدول الأسعار الرسمي. لكنه يخطط الرحلة كلها: المشي إلى المحطة، والخط والاتجاه، ومكان التبديل، والأجرة، وكيف تكمل بالأتوبيس أو المونوريل أو القطار الكهربائي الخفيف أو القطار.</p>
+
+<h2>المصادر</h2>
+<ul class="sources">
+  <li>الأسعار: الهيئة العامة للاستعلامات، <a href="{{ fare.source.url }}" rel="noopener" hreflang="en">أسعار تذاكر المترو</a> (بالإنجليزية)، روجعت في {{ fare.lastVerifiedAt | monthYear("ar") }}.</li>
+  <li>الأسعار المخفّضة والاشتراكات: محافظة القاهرة، <a href="{{ access.source.url }}" rel="noopener" hreflang="en">تذاكر المترو</a> (بالإنجليزية)، روجعت في {{ access.lastVerifiedAt | monthYear("ar") }}.</li>
+  <li>الخطوط والمحطات: بيانات النقل في InEgypt (حزمة المواعيد داخل التطبيق)، محسوبة في {{ counted }}.</li>
+</ul>
+
+{{ appbox("اركب المترو دون أن تحسب المحطات", ["الخط والاتجاه والتبديل بين أي مكانين", "الأجرة لرحلتك بالضبط", "المونوريل وLRT وBRT والقطارات وأتوبيسات السفر في البحث نفسه"], "web_ar_guide_metro", "web_ar_guide_metro_qr", false, "ar") }}

@@ -1,16 +1,16 @@
-/* Plan 47 §8.1–§8.3, direction B "Limestone & Line". Light at launch (D19); .theme-dark is used for the
-   three deliberate dark bands (hero, "On your iPhone", final call). Contrast pairs: scripts/check-contrast.mjs. */
+/* Design tokens. Plan 47 §8.1–§8.3, direction B revised 2026-11-16 (owner: no beige): neutral white/cool grey, type sized like the app.
+   Light only. Every text/background pair is checked by scripts/check-contrast.mjs. */
 :root {
   color-scheme: light;
-  --paper: #F7F2E8;
+  --paper: #FFFFFF;
   --surface: #FFFFFF;
-  --sand: #EDE4D3;
-  --ink: #17130E;
-  --ink-2: #5C5346;
-  --hairline: rgba(23, 19, 14, .10);
+  --sand: #F3F5F8;
+  --ink: #111318;
+  --ink-2: #555D69;
+  --hairline: rgba(17, 19, 24, .10);
   --action: #F25C00;
   --action-deep: #CC4600;
-  --on-action: #17130E;
+  --on-action: #111318;
   --focus-ring: #CC4600; /* #F25C00 is 2.98:1 on paper: below 3:1 for a focus indicator */
   --link: #B34100;
   --plan: #4E7A28;
@@ -19,6 +19,25 @@
   --safe: #0A5FC2;
   --nile: #0E6B66;
   --dusk: #2E2A5E;
+  /* home page palette: deep teal ink on white and soft teal tints; one dark band (install) */
+  --teal-ink: #122C33;      /* headings */
+  --teal-muted: #40585E;    /* reading text */
+  --teal-link: #194E50;
+  --teal: #236662;          /* accent rules */
+  --teal-tint: #ECF3F2;     /* tinted section */
+  --teal-line: #DCE4E3;     /* hairlines */
+  --teal-border: #CCDBD9;   /* card borders */
+  --deep: #102B32;          /* dark band */
+  --deep-ink: #DCE8E8;      /* text on the dark band */
+  --deep-rule: #627C7F;
+  --deep-accent: #FF9F5A;   /* icons on the dark band */
+  --night: #101C23;         /* behind the hero photo */
+  --on-photo-2: #D3DDE0;    /* secondary text on the hero photo */
+  --plan-tint: #F2F7EE; --plan-line: #D6E5CA;
+  /* calm pass (2026-11-17): soft grey and warm card fills, neutral dark band */
+  --soft: #F5F5F7;
+  --warm: #FFF4EC;
+  --deep-neutral: #15171C;
   /* mode dots: decoration only, never text */
   --mode-metro: #2E4A78;
   --mode-monorail: #8BC34A;
@@ -29,21 +48,21 @@
   --mode-bus: #9E9E9E;
 
   --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-head: ui-rounded, "SF Pro Rounded", "Rubik", "Rubik Fallback", var(--font-body); /* D20: Rubik, picked on the specimen 2026-11-16 */
+  --font-head: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Rubik", "Rubik Fallback", var(--font-body); /* D20: Rubik, picked on the specimen 2026-11-16 */
   --font-body-ar: -apple-system, "SF Arabic", "IBM Plex Sans Arabic", "Noto Sans Arabic", "Segoe UI", Tahoma, sans-serif;
-  --font-head-ar: ui-rounded, "SF Arabic Rounded", "Rubik", "Rubik Fallback", var(--font-body-ar);
+  --font-head-ar: -apple-system, "SF Arabic", "Rubik", "Rubik Fallback", var(--font-body-ar);
 
   /* type scale §8.2 */
-  --fs-h1: clamp(40px, 5.6vw + 18px, 72px);
-  --fs-h2: clamp(30px, 3.4vw + 16px, 48px);
-  --fs-h3: clamp(21px, .9vw + 17px, 26px);
-  --fs-lead: clamp(18px, .5vw + 16px, 21px);
+  --fs-h1: clamp(34px, 3.2vw + 20px, 56px);
+  --fs-h2: clamp(26px, 2vw + 18px, 40px);
+  --fs-h3: clamp(19px, .5vw + 17px, 22px);
+  --fs-lead: clamp(17px, .3vw + 16px, 19px);
   --fs-body: 17px;
   --fs-small: 14px;
-  --fs-num: clamp(34px, 2.4vw + 24px, 48px);
+  --fs-num: clamp(30px, 1.6vw + 22px, 40px);
   --fs-sign: 13px;
   --lh-h1: 1.05; --lh-h2: 1.1; --lh-h3: 1.2; --lh-lead: 1.5; --lh-body: 1.6; --lh-small: 1.45;
-  --track-head: -0.02em;
+  --track-head: -0.012em;
 
   /* space §8.3 */
   --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px; --s10: 128px;
@@ -54,45 +73,23 @@
 
   --r-chip: 8px; --r-btn: 14px; --r-card: 22px; --r-device: 44px;
   --cut: 28px;
-  --e1: 0 1px 2px rgba(23, 19, 14, .05);
-  --e2: 0 12px 32px rgba(23, 19, 14, .08);
-  --e3: 0 30px 60px rgba(23, 19, 14, .16);
+  --e1: 0 1px 2px rgba(17, 19, 24, .05);
+  --e2: 0 12px 32px rgba(17, 19, 24, .08);
+  --e3: 0 30px 60px rgba(17, 19, 24, .16);
 
   --ease: cubic-bezier(.2, .8, .2, 1);
   --t-hover: 150ms; --t-reveal: 400ms; --t-line: 900ms;
   --focus: 0 0 0 2px var(--paper), 0 0 0 5px var(--focus-ring);
 }
 
-.theme-dark {
-  color-scheme: dark;
-  --paper: #14110D;
-  --surface: #1E1A15;
-  --sand: #191510;
-  --ink: #F1EADC;
-  --ink-2: #A89E8E;
-  --hairline: rgba(241, 234, 220, .10);
-  --on-action: #14110D;
-  --focus-ring: #F25C00;
-  --link: #FF7A2E;
-  --plan: #9CCB62;
-  --route: #FF6B6B;
-  --price: #FF9F0A;
-  --safe: #3D9BFF;
-  --nile: #4FC3B8;
-  --dusk: #A9A4F0;
-  --e1: 0 0 0 1px var(--hairline);
-  --e2: 0 0 0 1px var(--hairline);
-  --e3: 0 0 0 1px var(--hairline);
-  --focus: 0 0 0 2px var(--paper), 0 0 0 5px var(--focus-ring);
-}
 
 [lang|="ar"] {
   --font-body: var(--font-body-ar);
   --font-head: var(--font-head-ar);
   --track-head: 0;
   /* G8: Arabic headings one step smaller, one step looser */
-  --fs-h1: clamp(34px, 4.8vw + 16px, 62px);
-  --fs-h2: clamp(27px, 3vw + 14px, 42px);
+  --fs-h1: clamp(30px, 2.8vw + 18px, 50px);
+  --fs-h2: clamp(24px, 1.8vw + 16px, 36px);
   --lh-h1: 1.25; --lh-h2: 1.3; --lh-h3: 1.4; --lh-lead: 1.65; --lh-body: 1.75;
   --fs-sign: 15px;
 }

@@ -9,18 +9,3 @@
   </span>
 </span>
 {%- endmacro %}
-
-{#- The four-tile mark: plan, routes, price, safety (§2.2). -#}
-{% macro tiles(size=64, flat=false) -%}
-<div class="tiles{% if flat %} tiles--flat{% endif %}" style="--tile: {{ size }}px" aria-hidden="true">
-  <span class="tile tile--plan">{% icon "map-trifold-fill" %}</span>
-  <span class="tile tile--route">{% icon "path-fill" %}</span>
-  <span class="tile tile--price">{% icon "tag-fill" %}</span>
-  <span class="tile tile--safe">{% icon "shield-check-fill" %}</span>
-</div>
-{%- endmacro %}
-
-{% macro tile(kind, size=64) -%}
-{%- set glyph = { plan: "map-trifold-fill", route: "path-fill", price: "tag-fill", safe: "shield-check-fill" } -%}
-<span class="tile tile--{{ kind }}" style="--tile: {{ size }}px" aria-hidden="true">{% icon glyph[kind] %}</span>
-{%- endmacro %}

@@ -1,6 +1,7 @@
 // No physical-direction CSS in components (Plan 47 §8.7). Gradient directions and :dir(rtl) overrides are allowed.
 import fs from "node:fs";
-const FILES = ["src/_includes/css/base.css", "src/_includes/css/components.css"];
+const DIR = "src/_includes/css/";
+const FILES = fs.readdirSync(DIR).filter((f) => f.endsWith(".css") && !f.startsWith("font-faces")).map((f) => DIR + f);
 const RULES = [
   /\b(margin|padding|border)-(left|right)\b/, /(^|[\s;{])(left|right)\s*:/, /text-align\s*:\s*(left|right)/,
   /float\s*:\s*(left|right)/, /clear\s*:\s*(left|right)/, /border-(top|bottom)-(left|right)-radius/,

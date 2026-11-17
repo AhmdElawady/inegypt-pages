@@ -1,9 +1,9 @@
 {
-  "_note": "Photo sources (materials/photos/CREDITS.md). Unsplash Licence: no attribution required; credited on /about/ anyway.",
+  "_note": "Photo sources (materials/photos/CREDITS.md). Unsplash Licence: no attribution required; credited on /about/ anyway. P14, P17, P18 are Wikimedia Commons files under CC BY-SA 4.0: the credit and licence link on /about/ are required.",
   "photos": [
     {
       "slot": "P01",
-      "use": "Home hero, Giza at dusk",
+      "use": "Giza at dusk",
       "file": "P01-9VwA0ZwYYho.jpg",
       "page": "https://unsplash.com/photos/9VwA0ZwYYho",
       "photographer": "Andreea Munteanu",
@@ -11,7 +11,7 @@
     },
     {
       "slot": "P02",
-      "use": "Door \"Visiting Egypt?\", Karnak columns",
+      "use": "Karnak columns, Luxor",
       "file": "P02-2bgirUct1MU.jpg",
       "page": "https://unsplash.com/photos/2bgirUct1MU",
       "photographer": "Fatih Beki",
@@ -43,7 +43,7 @@
     },
     {
       "slot": "P06",
-      "use": "Ribbon, Alexandria (Qaitbay)",
+      "use": "Qaitbay Citadel, Alexandria",
       "file": "P06-cD4Ix4i1HZ8.jpg",
       "page": "https://unsplash.com/photos/cD4Ix4i1HZ8",
       "photographer": "abdullah ali",
@@ -95,6 +95,54 @@
       "file": "P13-quXdpYhf-qg.jpg",
       "page": "https://unsplash.com/photos/quXdpYhf-qg",
       "photographer": "Abdelrahman Ismail",
+      "licence": "Unsplash Licence"
+    },
+    {
+      "slot": "P14",
+      "use": "Ramses Station, Cairo",
+      "file": "P14-commons-Ramses-Station.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Ramses-Station.jpg",
+      "photographer": "Osama Khalil",
+      "licence": "CC BY-SA 4.0"
+    },
+    {
+      "slot": "P15",
+      "use": "Routes, metro train at a platform",
+      "file": "P15-fdQnYlPic-E.jpg",
+      "page": "https://unsplash.com/photos/fdQnYlPic-E",
+      "photographer": "Omar Adel",
+      "licence": "Unsplash Licence"
+    },
+    {
+      "slot": "P16",
+      "use": "Routes, tram",
+      "file": "P16-XxXuTMokJdE.jpg",
+      "page": "https://unsplash.com/photos/XxXuTMokJdE",
+      "photographer": "Mostafa Mfnctn",
+      "licence": "Unsplash Licence"
+    },
+    {
+      "slot": "P17",
+      "use": "Train inside Misr Station",
+      "file": "P17-commons-Qitar-al-Umr.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:قطار_العمر.jpg",
+      "photographer": "Amal Aglan",
+      "licence": "CC BY-SA 4.0"
+    },
+    {
+      "slot": "P18",
+      "use": "Misr Station platform, Alexandria",
+      "file": "P18-commons-Train-Station-1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Train_Station_1.jpg",
+      "photographer": "Mona Hassan Abo-Abda",
+      "licence": "CC BY-SA 4.0"
+    },
+    {
+      "slot": "P19",
+      "use": "Home hero, Giza under a red sky",
+      "file": "P19-EAVwlrs7Rr8.jpg",
+      "page": "https://unsplash.com/photos/EAVwlrs7Rr8",
+      "photographer": "Andreea Munteanu",
       "licence": "Unsplash Licence"
     }
   ]

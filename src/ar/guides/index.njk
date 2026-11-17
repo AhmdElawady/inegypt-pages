@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+permalink: /ar/guides/index.html
+title: أدلة السفر في مصر · InEgypt
+description: إجابات عن الأسئلة التي يطرحها المسافرون عن مصر، مع أسعار مؤرخة ومصادر رسمية.
+lang: ar
+altUrls: { en: "/guides/", ar: "/ar/guides/" }
+---
+{%- from "components/content.njk" import related with context -%}
+<section class="section">
+  <div class="container stack-lg" style="max-inline-size: 820px">
+    <h1 style="font-size: var(--fs-h2)">أسئلة يطرحها المسافرون عن مصر، بإجابات مؤرخة.</h1>
+    <p class="lead">كل دليل يجيب عن سؤال واحد بالكامل، بأسعار من قائمة InEgypt وروابط للمصادر الرسمية. الأدلة التي لم تُترجم بعد تظهر بالإنجليزية.</p>
+    {{ related(guideIndex | guideList("ar")) }}
+  </div>
+</section>

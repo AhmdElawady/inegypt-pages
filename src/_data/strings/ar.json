@@ -38,5 +38,19 @@
   },
   "checked": "آخر مراجعة",
   "estimate": "تقدير InEgypt",
-  "official": "تعريفة رسمية"
+  "official": "تعريفة رسمية",
+  "guide": {
+    "crumbHome": "InEgypt",
+    "crumbGuides": "الأدلة",
+    "lastChecked": "آخر مراجعة",
+    "everyFact": "كل معلومة أدناه تعرض تاريخها ومصدرها",
+    "related": "أدلة ذات صلة",
+    "officialSource": "مصدر رسمي",
+    "source": "المصدر",
+    "estimate": "تقدير InEgypt",
+    "guidance": "إرشادات InEgypt",
+    "checked": "روجعت في",
+    "yes": "نعم",
+    "no": "لا"
+  }
 }

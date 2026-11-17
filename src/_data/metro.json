@@ -1,24 +1,27 @@
 {
-  "_source": "GTFS pack 2026.08.13-national-transit-candidate-4 (bundled in the app), agency NAT; unique stop_ids served by trips; M3A and M3B counted as one line M3. Counted 2026-11-16 by the website agent.",
+  "_source": "GTFS pack 2026.08.13-national-transit-candidate-4 (bundled in the app), agency NAT; unique stop_ids served by trips; M3A and M3B counted as one line M3. Counted 2026-11-16 by the website agent. Arabic station names (endsAr, nameAr) added 2026-11-17 for the Arabic guide.",
   "countedAt": "November 2026",
   "lines": [
     {
       "id": "M1",
       "ends": "Helwan – New El-Marg",
       "stations": 35,
-      "color": "#2E4A78"
+      "color": "#2E4A78",
+      "endsAr": "حلوان – المرج الجديدة"
     },
     {
       "id": "M2",
       "ends": "Shobra El Kheima – El Mounib",
       "stations": 20,
-      "color": "#A63457"
+      "color": "#A63457",
+      "endsAr": "شبرا الخيمة – المنيب"
     },
     {
       "id": "M3",
       "ends": "Rod El Farag or Cairo University – Adly Mansour",
       "stations": 34,
-      "color": "#325F3B"
+      "color": "#325F3B",
+      "endsAr": "روض الفرج أو جامعة القاهرة – عدلي منصور"
     }
   ],
   "stations": 84,
@@ -28,35 +31,40 @@
       "lines": [
         "M1",
         "M2"
-      ]
+      ],
+      "nameAr": "الشهداء"
     },
     {
       "name": "Attaba",
       "lines": [
         "M2",
         "M3"
-      ]
+      ],
+      "nameAr": "العتبة"
     },
     {
       "name": "Cairo University",
       "lines": [
         "M2",
         "M3"
-      ]
+      ],
+      "nameAr": "جامعة القاهرة"
     },
     {
       "name": "Nasser",
       "lines": [
         "M1",
         "M3"
-      ]
+      ],
+      "nameAr": "جمال عبد الناصر"
     },
     {
       "name": "Sadat",
       "lines": [
         "M1",
         "M2"
-      ]
+      ],
+      "nameAr": "السادات"
     }
   ],
   "colors": {

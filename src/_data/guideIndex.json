@@ -1,5 +1,5 @@
 {
-  "_note": "Every guide page that exists in src/guides/ (built, not necessarily live). guides.json → live lists the published ones.",
+  "_note": "Every guide page that exists in src/guides/ (built, not necessarily live). guides.json → live lists the published ones. An \"ar\" block means the guide also exists at /ar/guides/<slug>/.",
   "cairo-airport-to-city": {
     "title": "How do I get from Cairo Airport to the city?",
     "short": "Taxi, ride-hailing or bus and metro, and what to pay",
@@ -13,7 +13,11 @@
       "scam_ridehail_pickup",
       "scam_different_destination"
     ],
-    "first": "A taxi or ride-hailing car from Cairo International Airport to the city centre should cost about {price_airport_taxi}."
+    "first": "A taxi or ride-hailing car from Cairo International Airport to the city centre should cost about {price_airport_taxi}.",
+    "ar": {
+      "title": "كيف أصل من مطار القاهرة إلى المدينة؟",
+      "short": "التاكسي أو تطبيقات التوصيل أو الأتوبيس والمترو، وكم تدفع"
+    }
   },
   "cairo-metro": {
     "title": "How does the Cairo Metro work, and what does a ticket cost?",
@@ -28,7 +32,11 @@
       "scam_metro_helper",
       "process_metro_access_fares"
     ],
-    "first": "A single Cairo Metro ticket costs {price_metro_single_journey}, depending on how many stations you ride."
+    "first": "A single Cairo Metro ticket costs {price_metro_single_journey}, depending on how many stations you ride.",
+    "ar": {
+      "title": "كيف يعمل مترو القاهرة، وكم سعر التذكرة؟",
+      "short": "الخطوط، والأسعار حسب عدد المحطات، وطريقة الركوب"
+    }
   },
   "egypt-prices": {
     "title": "What do things cost in Egypt?",
@@ -37,6 +45,10 @@
     "thumb": "photos/P11",
     "thumbAlt": "",
     "atoms": "prices",
-    "first": "Fair price ranges in Egyptian pounds for transport, food, tips and sights, each with the month it was checked."
+    "first": "Fair price ranges in Egyptian pounds for transport, food, tips and sights, each with the month it was checked.",
+    "ar": {
+      "title": "كم تكلّف الأشياء في مصر؟",
+      "short": "نطاقات أسعار مناسبة للمواصلات والطعام والبقشيش والمزارات"
+    }
   }
 }

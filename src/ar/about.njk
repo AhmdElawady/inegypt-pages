@@ -1,0 +1,69 @@
+---
+layout: layouts/base.njk
+permalink: /ar/about/index.html
+title: عن InEgypt · التطبيق وصانعه والحقائق
+description: ما هو InEgypt، ومن يصنعه، ومن أين تأتي بياناته، وما لا يفعله، وكيف يتعامل مع بياناتك. صفحة واحدة من الحقائق.
+lang: ar
+navCt: web_ar_about
+altUrls: { en: "/about/", ar: "/ar/about/" }
+---
+{#- Arabic of src/about.njk: same sections and ids, same facts. Values from facts.json are shown through factsAr. -#}
+{%- from "components/content.njk" import appbox with context -%}
+{%- set f = facts -%}
+{%- set A = factsAr -%}
+{%- set kinds = atoms.atoms | atomKinds -%}
+<section class="section">
+  <div class="container guide__body">
+    <header class="stack" id="story">
+      <h1>من مصر، بيد أحمد العوضي.</h1>
+      <p class="lead" id="maker">أعيش في مصر وأطوّر InEgypt هنا. بدأ دليلًا للأماكن، ثم أصبح تطبيق «<bdi>{{ f.app.formerName.value }}</bdi>». وما زالت تلك المسارات في قلب التطبيق.</p>
+      <p>واليوم يمكنك أن تخطط يومك حول الأماكن التي تريد زيارتها، وتجد القطار بين المدن، وتعرف أجرة التاكسي قبل أن تركب. البحث عن المسارات مجاني عند الاتصال، وبلا حد يومي.</p>
+      <p>أردّ على رسائل الدعم بنفسي. إذا بدا لك مسار أو سعر غير صحيح، <a href="mailto:{{ f.site.contactEmail.value }}">راسلني</a> وسأراجعه.</p>
+    </header>
+
+    <h2 id="facts">الحقائق</h2>
+    <div class="table-wrap"><table class="facts-table">
+      <caption>InEgypt في جدول واحد (محسوبة من بيانات التطبيق، {{ A[f.coverage.countedAt.value] or f.coverage.countedAt.value }})</caption>
+      <tbody>
+        <tr><th scope="row">الاسم</th><td>{{ f.app.name.value }} (سابقًا «<bdi>{{ f.app.formerName.value }}</bdi>»)</td></tr>
+        <tr><th scope="row">من صنع</th><td>{{ A[f.app.maker.value] or f.app.maker.value }}</td></tr>
+        <tr><th scope="row">على App Store منذ</th><td>{{ A[f.app.onAppStoreSince.value] or f.app.onAppStoreSince.value }}</td></tr>
+        <tr><th scope="row">يعمل على</th><td>{{ A[f.app.platforms.value] or f.app.platforms.value }}. {{ A["No Android version"] }}.</td></tr>
+        <tr><th scope="row">السعر</th><td>مجاني. واختياريًا InEgypt Pro: <bdi>{{ f.prices.proMonthly.value }}</bdi> شهريًا أو <bdi>{{ f.prices.proYearly.value }}</bdi> سنويًا (أسعار المتجر الأمريكي).</td></tr>
+        <tr><th scope="row">الحساب</th><td>لا تحتاج إلى حساب</td></tr>
+        <tr><th scope="row">اللغات</th><td>{% for l in f.app.languages.value %}{{ A[l] or l }}{{ "، " if not loop.last }}{% endfor %}</td></tr>
+        <tr><th scope="row">المواصلات</th><td><bdi>{{ f.coverage.transitModes.value }}</bdi> وسائل نقل: {% for m in f.coverage.transitModes.list %}{{ A[m] or m }}{{ "، " if not loop.last }}{% endfor %}</td></tr>
+        <tr><th scope="row">الشبكة</th><td><bdi>{{ f.coverage.routes.value }}</bdi> خطًا وخدمة، وقرابة <bdi>{{ f.coverage.stops.display | replace("nearly ", "") }}</bdi> محطة وموقف</td></tr>
+        <tr><th scope="row">الأماكن</th><td><bdi dir="ltr">{{ f.coverage.attractions.display }}</bdi> مكانًا للزيارة في <bdi>{{ f.coverage.cities.display }}</bdi> مدينة</td></tr>
+        <tr><th scope="row">الأسعار والنصائح</th><td><bdi>{{ atoms.count }}</bdi> معلومة منشورة، لكل منها مصدر وتاريخ آخر مراجعة</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2 id="sources">من أين تأتي البيانات</h2>
+    <p>خطوط النقل ومحطاتها ومواعيدها مأخوذة من المعلومات المنشورة للمشغّلين، ومجمّعة في حزمة مواعيد واحدة داخل التطبيق. المواعيد من الجداول المنشورة، ولا تعرض مواقع المركبات.</p>
+    <p>الأسعار والحيل الشائعة والقواعد وأرقام الطوارئ مأخوذة من قائمة معلومات مراجَعة داخل التطبيق: <bdi>{{ atoms.count }}</bdi> معلومة منشورة (<bdi>{{ kinds.price }}</bdi> سعرًا، و<bdi>{{ kinds.warning }}</bdi> تنبيهًا، و<bdi>{{ kinds.contact }}</bdi> جهة اتصال، إضافةً إلى قواعد وخطوات). لكل معلومة مصدر وتاريخ آخر مراجعة. الأسعار الرسمية مرتبطة بالمشغّل أو الوزارة، والباقي موسوم بأنه تقدير من InEgypt.</p>
+    <p>InEgypt تطبيق مستقل، ولا يتبع أي مشغّل نقل أو وزارة. وجدت أجرة أو مسارًا غير صحيح؟ راسلنا على <a href="mailto:{{ f.site.contactEmail.value }}">{{ f.site.contactEmail.value }}</a>.</p>
+
+    <h2 id="dont">ما لا يفعله InEgypt</h2>
+    <ul>{% for x in f.whatWeDontDo.value %}<li>{{ A[x] or x }}</li>{% endfor %}</ul>
+
+    <h2 id="privacy">الخصوصية</h2>
+    <ul>
+      <li>بلا حساب: لا يطلب InEgypt اسمك ولا بريدك الإلكتروني أبدًا.</li>
+      <li>{% if f.privacy.adSdk.display %}{{ A[f.privacy.adSdk.display] or f.privacy.adSdk.display }}. {% endif %}لا يتتبّعك InEgypt عبر تطبيقات أو مواقع الشركات الأخرى.</li>
+      <li>تساعد إحصاءات الاستخدام المجهولة الهوية وتقارير الأعطال على تحسين التطبيق، ويمكنك إيقافها من الإعدادات ← ساعدنا في تحسين InEgypt.</li>
+      <li>رحلاتك وملاحظاتك ومصروفاتك وأماكنك المحفوظة تبقى على جهازك.</li>
+      <li>هذا الموقع لا يستخدم ملفات تعريف الارتباط (cookies) ولا أي نصوص تتبّع.</li>
+    </ul>
+    <p>النص الكامل (بالإنجليزية): <a href="{{ '/privacy.html' | url }}" hreflang="en">سياسة الخصوصية</a> و<a href="{{ '/terms.html' | url }}" hreflang="en">شروط الاستخدام</a>.</p>
+
+    <h2 id="credits">حقوق الصور</h2>
+    <p class="small muted">الصور من Unsplash وWikimedia Commons. أصحابها وتراخيصها أدناه.</p>
+    <ul class="small">{% for p in photos.photos %}<li>تصوير <a href="{{ p.page }}" rel="noopener"><bdi>{{ p.photographer }}</bdi></a>{% if p.licence == "CC BY-SA 4.0" %} (<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a>، مع قص الصورة وتعديل ألوانها){% else %} · <bdi>{{ p.licence }}</bdi>{% endif %}</li>{% endfor %}</ul>
+
+    <h2 id="contact">تواصل</h2>
+    <p><a href="mailto:{{ f.site.contactEmail.value }}">{{ f.site.contactEmail.value }}</a> · <a href="{{ '/ar/support/' | url }}">الدعم</a> · <a href="{{ '/ar/press/' | url }}">للصحافة</a></p>
+
+    {{ appbox("حمّل InEgypt", ["خطة يومًا بيوم لرحلتك في مصر", "مسارات المترو والقطار والأتوبيس، مجانًا وبلا حد يومي", "الأسعار المناسبة والحيل الشائعة، مع تاريخ المراجعة"], "web_ar_about", "web_ar_home_final_qr", false, "ar") }}
+  </div>
+</section>

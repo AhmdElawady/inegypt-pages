@@ -2,7 +2,7 @@
 // web sizes to src/assets/img/, plus src/_data/images.json (sizes for width/height attributes).
 //   photos  materials/photos/originals/P01-*.jpg → graded AVIF + WebP + JPEG at 640/1024/1600/2400
 //   screens materials/screens/{framed,raw}/*.png → AVIF + WebP at 360/540/720 (PNG never shipped)
-//   icons   src/assets/logo/favicon.svg → favicon-32.png, apple-touch-icon.png (180), icon-512.png
+//   icons   favicon.svg → favicon-32.png; Icon Composer export (materials/logo/source-png) → apple-touch-icon (180), icon-512, icon-1024
 // Run: npm run images [-- --only=photos|screens|icons]. Skips outputs newer than their source.
 import fs from "node:fs";
 import path from "node:path";
@@ -19,19 +19,13 @@ const CROPS = { P13: { left: 0, top: 0.36, width: 1, height: 0.64 } };
 
 const fresh = (src, out) => fs.existsSync(out) && fs.statSync(out).mtimeMs >= fs.statSync(src).mtimeMs;
 
-// One grade for every photo (G2): warm (+yellow), saturation −8 %, blacks lifted to #14110D,
-// highlights rolled off, and a 6 % limestone (#F7F2E8) multiply folded into the channel gains.
+// One grade for every photo (revised 2026-11-16, owner: no beige): natural colour, a little more
+// saturation so sky and Nile read blue/green, blacks lifted slightly to the dark-band colour.
 function grade(img) {
-  const lime = [247, 242, 232].map((c) => 0.94 + 0.06 * (c / 255));
-  const warm = [1.02, 1.0, 0.94];
-  const gain = warm.map((w, i) => w * lime[i]);
-  const black = [20, 17, 13];               // #14110D
-  const white = 248;                        // highlight roll-off
+  const black = [11, 14, 19];               // #0B0E13
+  const white = 252;
   const a = black.map((b) => (white - b) / 255);
-  return img
-    .modulate({ saturation: 0.92 })
-    .recomb([[gain[0], 0, 0], [0, gain[1], 0], [0, 0, gain[2]]])
-    .linear(a, black);
+  return img.modulate({ saturation: 1.08 }).linear(a, black);
 }
 
 async function photos() {
@@ -85,12 +79,20 @@ async function screens() {
   }
 }
 
+// The app icon's source is Icon Composer (InEgyptUI/InEgypt/AppIcon.icon); its Liquid Glass look only exists as
+// the exported PNG. Flat SVGs (favicon, marks) are hand-kept to the same shapes and gradient (#FF832B → #EC4400).
 async function icons() {
-  const svg = "src/assets/logo/favicon.svg";
-  for (const [name, size] of [["favicon-32.png", 32], ["apple-touch-icon.png", 180], ["icon-512.png", 512]]) {
-    await sharp(svg, { density: 300 }).resize(size, size).png().toFile(`src/assets/logo/${name}`);
-  }
-  console.log("icons: favicon-32, apple-touch-icon (180), icon-512");
+  const LOGO = "src/assets/logo";
+  const glass = "materials/logo/source-png/AppIcon-iOS-Default-1024x1024@1x.png"; // Icon Composer export, rounded, transparent corners
+  await sharp(`${LOGO}/favicon.svg`, { density: 300 }).resize(32, 32).png().toFile(`${LOGO}/favicon-32.png`);
+  // apple-touch-icon: iOS applies its own rounded mask and paints transparent corners black, so fill the square first
+  const square = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024"><defs><linearGradient id="g" x2="0" y2="1"><stop offset="0" stop-color="#EF8A42"/><stop offset="1" stop-color="#DA5224"/></linearGradient></defs><rect width="1024" height="1024" fill="url(#g)"/></svg>');
+  const filled = await sharp(square).composite([{ input: glass }]).png().toBuffer();
+  await sharp(filled).resize(180, 180).png().toFile(`${LOGO}/apple-touch-icon.png`);
+  // Press kit: the glossy icon as exported, transparent corners kept
+  await sharp(glass).resize(512, 512).png().toFile(`${LOGO}/icon-512.png`);
+  await sharp(glass).png({ compressionLevel: 9 }).toFile(`${LOGO}/icon-1024.png`);
+  console.log("icons: favicon-32, apple-touch-icon (180), icon-512, icon-1024");
 }
 
 if (!ONLY || ONLY === "icons") await icons();

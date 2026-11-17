@@ -1,141 +1,43 @@
 {
-  "_sources": "Plan 46 §4.3 (approved copy), Plan 47 §4 [Proposal] lines approved as working copy (D14), app strings (Localizable.strings), facts.json, atoms.json. Numbers are never typed here: templates read facts.json and atoms.json.",
   "title": "InEgypt: Egypt Trip Planner, Metro & Train Routes for iPhone",
   "description": "Free iPhone app for visiting Egypt: a day-by-day trip plan, routes by metro, train and bus, and fair prices and scams to know before you pay.",
   "hero": {
     "h1": "Plan your Egypt trip. Get around with confidence.",
-    "underBadge": "Free · No account · 9 languages · iPhone and iPad",
-    "photoAlt": "The Giza pyramids at dusk",
-    "phoneAlt": "InEgypt showing a trip to Luxor and Aswan, with what to get ready before it starts",
-    "cards": {
-      "route": {
-        "kicker": "Route",
-        "main": "1h 22m · ~32 EGP",
-        "meta": "Airport → Giza · Bus › M3 › M2"
-      },
-      "price": {
-        "kicker": "Fair price",
-        "atom": "price_metro_single_journey",
-        "checked": "checked"
-      },
-      "next": {
-        "kicker": "Next stop",
-        "main": "Karnak Temple Complex",
-        "meta": "9:00 · about 2 hours"
-      }
-    }
-  },
-  "factStrip": [
-    {
-      "icon": "calendar-blank",
-      "text": "On the App Store since 2020",
-      "href": "/about/#story"
-    },
-    {
-      "icon": "user",
-      "text": "Made in Egypt by one developer",
-      "href": "/about/#maker"
-    },
-    {
-      "icon": "lock-simple",
-      "text": "No account, no sign-up",
-      "href": "/about/#privacy"
-    },
-    {
-      "icon": "check-circle",
-      "text": "Prices and tips checked and dated",
-      "href": "/about/#sources"
-    }
-  ],
-  "doors": {
-    "h2": "One app for the trip and for every day.",
-    "visiting": {
-      "title": "Visiting Egypt?",
-      "text": "Build your days, see how to get between places, know what things should cost.",
-      "more": "The trip planner",
-      "href": "#plan",
-      "photo": "photos/P02",
-      "alt": "The columns of the Great Hypostyle Hall at Karnak"
-    },
-    "living": {
-      "title": "Living in Egypt?",
-      "text": "Metro, train, monorail, LRT, BRT and bus routes in one search.",
-      "more": "Routes",
-      "href": "#routes",
-      "photo": "photos/P03",
-      "alt": "A man waiting on a Cairo metro platform as a train passes"
-    }
-  },
-  "plan": {
+    "lead": "Build a day-by-day plan, find the train or metro between your stops, and check what things cost before you pay.",
+    "underBadge": "Free on iPhone and iPad · No account needed · 9 languages",
+    "photoAlt": "The Giza pyramids under a red evening sky.",
+    "screenAlt": "An InEgypt trip from Luxor to Aswan on the map, with the day's visits and the travel time between them.",
     "sign": [
-      "Plan",
-      "خطِّط"
-    ],
-    "h2": "A trip plan that works on the ground.",
-    "lead": "Pick your dates and cities, or paste a plan you already made, even one from ChatGPT. InEgypt puts the days in a sensible order, adds real travel time between stops, and tells you when a day does not fit.",
-    "steps": [
-      "Choose when, how long and what you like.",
-      "Days in a sensible order, with travel time between stops.",
-      "Each plan says why, and warns when a day does not fit."
-    ],
-    "screens": [
-      {
-        "key": "screens/s02-planner-input-framed-demo",
-        "alt": "The trip planner: when, how long and what you like"
-      },
-      {
-        "key": "screens/s03-trip-day-framed-demo",
-        "alt": "A day in Luxor: Karnak, lunch and the walk between, on the map"
-      },
-      {
-        "missing": "S04",
-        "label": "About this plan: why this order, and a day-fit warning"
-      }
-    ],
-    "strip": {
-      "stops": [
-        [
-          "Cairo",
-          "القاهرة",
-          "pyramids"
-        ],
-        [
-          "Luxor",
-          "الأقصر",
-          "karnakColumn"
-        ],
-        [
-          "Aswan",
-          "أسوان",
-          "felucca"
-        ]
-      ],
-      "caption": "Combined trips are joined by real transport: for example the sleeper train to Luxor."
-    },
-    "small": "The first automatic plans are free. More are part of InEgypt Pro."
+      "Cairo · Luxor · Aswan",
+      "القاهرة · الأقصر · أسوان"
+    ]
   },
-  "bring": {
-    "h2": "Already have a plan? Paste it.",
-    "lead": "Paste an itinerary from ChatGPT, a blog or your notes. InEgypt finds the places, orders the days and shows the travel time between stops. Places it does not know are kept as you wrote them. This is free.",
-    "note": [
-      "Day 1 – Cairo",
-      "Egyptian Museum 9am",
-      "Khan el-Khalili in the evening"
-    ],
-    "noteLabel": "Your plan, as you wrote it",
-    "screen": {
-      "missing": "S05",
-      "label": "Bring your plan: Found, To check and Your own"
-    },
-    "inline": "Get InEgypt — free on the App Store"
-  },
-  "routes": {
+  "price": {
+    "title": "What should the ride into Cairo cost?",
+    "body": "Before you agree on a fare, check the range for a taxi into the city. InEgypt also explains common airport scams and keeps emergency numbers close at hand.",
+    "link": "Read the airport arrival guide",
+    "href": "/guides/cairo-airport-to-city/",
     "sign": [
-      "Get around",
-      "تنقَّل"
+      "Cairo Airport",
+      "مطار القاهرة"
     ],
-    "h2": "Every way to get there, in one search.",
-    "lead": "Cairo Metro, monorail, LRT, BRT, Alexandria tram, national trains and intercity coaches, with fare, time and changes shown before you leave. Route search is free and has no daily limit.",
+    "others": "More fair prices, each with the date it was checked",
+    "fullList": {
+      "text": "The full price list",
+      "href": "/guides/egypt-prices/",
+      "guide": "egypt-prices"
+    }
+  },
+  "train": {
+    "title": "How do I get from Cairo to Luxor?",
+    "body": "Your plan includes the ride between cities. Compare departures, journey times and stops in the published timetable. For the rest of the trip, the same search covers the metro, tram, monorail, LRT, BRT, coaches and domestic flights.",
+    "alt": "The Cairo to Luxor timetable in InEgypt, showing departure and arrival times for two trains.",
+    "link": "Explore transport in InEgypt",
+    "href": "/features/#route",
+    "sign": [
+      "Cairo to Luxor",
+      "من القاهرة إلى الأقصر"
+    ],
     "modes": [
       [
         "Metro",
@@ -164,250 +66,63 @@
       [
         "Coaches",
         "mode-coach"
+      ],
+      [
+        "Flights",
+        "safe"
       ]
     ],
-    "checks": [
-      "The fare before you leave",
-      "Time and changes for each option",
-      "Free, with no daily limit"
-    ],
-    "honest": "Local buses in Cairo and Alexandria are a fallback and less complete. No live tracking.",
-    "screens": [
-      {
-        "key": "screens/s06b-route-intercity-framed-demo",
-        "alt": "Route options from Giza to Luxor: metro line 2, then the train"
-      },
-      {
-        "key": "screens/s07-route-steps-framed-demo",
-        "alt": "Route details: duration, transfers, walking, and each step"
-      }
-    ],
-    "trainPhoto": {
-      "key": "photos/P13",
-      "alt": "National railway carriages on the tracks into Cairo"
-    },
-    "networkLabel": "A simplified drawing of Cairo's metro, monorail and LRT lines, and the national railway leaving the city to the north and south"
-  },
-  "search": {
-    "h3": "One search for places, stations and lines.",
-    "text": "Type a museum, a metro station, a train line or a city. The same search works from the route picker and from Siri.",
-    "screen": {
-      "missing": "S08",
-      "label": "Search: a place, a station and a line in one list"
-    }
-  },
-  "prices": {
-    "sign": [
-      "Know the price",
-      "اعرف السعر"
-    ],
-    "h2": "Know the fair price before you pay.",
-    "lead": "Dated price ranges for taxis, tips, food and tickets, the common scams at each kind of place, and emergency numbers. Each fact shows when it was last checked.",
-    "screens": [
-      {
-        "key": "screens/s09-prices-framed-demo",
-        "alt": "Metro and first rides: what to watch for, and fair prices with their checked date",
-        "caption": "What things cost"
-      },
-      {
-        "key": "screens/s10-tips-framed-demo",
-        "alt": "Safety tips for getting around, from airport taxi touts to uninvited porters",
-        "caption": "Situations & tips"
-      },
-      {
-        "missing": "S11",
-        "label": "Emergency numbers",
-        "caption": "Emergency"
-      }
-    ],
-    "fullList": {
-      "text": "The full price list",
-      "href": "/guides/egypt-prices/",
-      "guide": "egypt-prices"
-    },
-    "inline": "Get InEgypt — free on the App Store"
-  },
-  "discover": {
-    "sign": [
-      "Discover",
-      "اكتشف"
-    ],
-    "h2a": "places in",
-    "h2b": "cities, each one step from your plan.",
-    "lead": "Browse cities, places and things to do. Every place page has opening notes, what to know before you go and a button to add it to your trip. Where an official ticket seller exists, InEgypt links to it.",
-    "ribbonLabel": "Egypt, city by city",
-    "ribbon": [
-      {
-        "key": "photos/P04",
-        "alt": "Hot-air balloon over the West Bank at Luxor",
-        "en": "Luxor",
-        "ar": "الأقصر"
-      },
-      {
-        "key": "photos/P05",
-        "alt": "The Nile at Aswan",
-        "en": "Aswan",
-        "ar": "أسوان"
-      },
-      {
-        "key": "photos/P06",
-        "alt": "The Citadel of Qaitbay in Alexandria",
-        "en": "Alexandria",
-        "ar": "الإسكندرية"
-      },
-      {
-        "key": "photos/P07",
-        "alt": "The Mosque of Ibn Tulun in Islamic Cairo",
-        "en": "Islamic Cairo",
-        "ar": "القاهرة الإسلامية"
-      },
-      {
-        "key": "photos/P09",
-        "alt": "The great temple of Abu Simbel",
-        "en": "Abu Simbel",
-        "ar": "أبو سمبل"
-      }
-    ],
-    "screens": [
-      {
-        "key": "screens/s12-discover-framed-demo",
-        "alt": "Discover in InEgypt"
-      },
-      {
-        "missing": "S13",
-        "label": "A place page: Karnak, with Add to trip"
-      }
-    ],
-    "map": {
-      "h3": "A map that knows the lines.",
-      "text": "Metro, monorail, LRT, BRT, tram and train lines and their stops, drawn on the map, with your route on top.",
-      "screen": {
-        "missing": "S14",
-        "label": "The Cairo map with transit lines"
-      }
-    }
-  },
-  "iphone": {
-    "sign": [
-      "On your iPhone",
-      "على الآيفون"
-    ],
-    "h2": "Where you already look.",
-    "siri": {
-      "title": "Siri and Shortcuts",
-      "text": "Ask for directions, your next stop or a fair price."
-    },
-    "shortcutsAlt": "InEgypt's shortcuts in the Shortcuts app: favourites, fair price, trips, directions, next stop and more",
-    "ipad": {
-      "title": "On iPad too",
-      "text": "The same app and your trips, laid out for the larger screen."
-    },
-    "offline": {
-      "h3": "What works with no signal.",
-      "free": "A saved trip, place pages and the emergency page.",
-      "pro": "Offline route search and offline Discover."
-    },
-    "languages": {
-      "h3": "In your language."
-    },
-    "inline": "Get InEgypt — free on the App Store"
-  },
-  "numbers": {
-    "modes": "transit modes",
-    "routes": "lines and services",
-    "stops": "stops and stations",
-    "attractions": "places to visit",
-    "cities": "cities",
-    "note": "Counted from the app's data,",
-    "nearly": "nearly"
-  },
-  "coverage": {
-    "h2": "What InEgypt knows, and what it does not do.",
-    "lead": "InEgypt plans across metro, train, monorail, BRT, LRT, tram, intercity coaches and domestic flights. Cairo and Alexandria local buses are included as a helpful fallback: useful, but not as complete or current as the rail lines. No live tracking and no ticket sales; where an official seller exists, we link to it.",
-    "cards": [
-      {
-        "mark": "yes",
-        "title": "Lines and timetables",
-        "items": [
-          "Cairo Metro, monorail, LRT and BRT",
-          "Alexandria tram",
-          "National trains and intercity coaches",
-          "Domestic flights"
-        ]
-      },
-      {
-        "mark": "partly",
-        "title": "Covered less completely",
-        "items": [
-          "Local buses in Cairo and Alexandria"
-        ]
-      },
-      {
-        "mark": "no",
-        "title": "Not in the app",
-        "items": [
-          "No live tracking",
-          "No ticket sales",
-          "No hotel, flight or tour booking",
-          "No Android version"
-        ]
-      }
-    ]
+    "modesLabel": "Ways to travel in one search",
+    "honest": "Times come from published timetables. Local buses in Cairo and Alexandria are a fallback and less complete."
   },
   "maker": {
-    "h2": "Made in Egypt, by someone who rides the metro.",
-    "text": "I'm Ahmed Elawady. I live in Egypt and I have built InEgypt on my own since 2020. It started as a guide to places, became the app for metro and train routes, and is now a trip planner that knows how Egypt really works: what a taxi should cost, when a day is too full, which train to take. I answer the support mail myself.",
-    "draft": true,
-    "more": "About InEgypt",
-    "portrait": {
-      "missing": "P14",
-      "label": "Maker portrait"
+    "title": "Made in Egypt, by one developer.",
+    "note": "I started InEgypt as a guide to places. Metro and train routes came next. Today, it brings those routes into the plan for your day. I still answer the support mail myself.",
+    "signature": "Ahmed Elawady",
+    "link": "The story behind InEgypt",
+    "reviewsLink": "Read the App Store reviews",
+    "review": {
+      "text": "It's very helpful and full of information about what to visit in each city, saved me time to plan for my next trip.",
+      "who": "Shelpo91",
+      "date": "Sep 21, 2022",
+      "store": "Egypt"
     },
-    "reviewsLabel": "App Store reviews",
-    "allReviews": "See all reviews on the App Store",
-    "reviews": [
+    "more": [
       {
-        "title": "A Must-Have for Exploring Egypt!",
-        "text": "…It provides accurate location info, detailed descriptions of places, and helpful city and activity guides. The interactive map is super helpful for navigating and planning trips.…",
-        "who": "Noran@1290",
-        "date": "Jul 18, 2025",
-        "store": "Egypt"
-      },
-      {
-        "title": "Awesome app",
         "text": "The best app for traveling in Egypt",
         "who": "Mourad995",
         "date": "Aug 7, 2026",
         "store": "Egypt"
       },
       {
-        "title": "Helpful",
-        "text": "It's very helpful and full of information about what to visit in each city, saved me time to plan for my next trip.",
-        "who": "Shelpo91",
-        "date": "Sep 21, 2022",
-        "store": "Egypt"
-      },
-      {
-        "title": "Very good",
-        "text": "…it's really very good .. well designed and easy to use. As Egyptian.. it adds to me .. so I think it will be very useful to travelers and visitors..",
+        "text": "…well designed and easy to use. As Egyptian.. it adds to me .. so I think it will be very useful to travelers and visitors..",
         "who": "Anas Al-Aqabawy",
         "date": "Sep 29, 2020",
         "store": "Egypt"
       }
-    ]
+    ],
+    "href": "/about/#story"
   },
-  "plans": {
-    "h2": "Most of InEgypt is free.",
-    "caption": "What is free and what InEgypt Pro adds",
-    "free": "Free",
-    "pro": "InEgypt Pro",
-    "yes": "Included",
-    "no": "Not included",
-    "proLine": "Offline routes are part of InEgypt Pro ({monthly} a month or {yearly} a year).",
-    "currency": "Prices in US dollars; your App Store shows your currency."
-  },
-  "guides": {
-    "h2": "Questions travellers ask about Egypt, answered with dates."
+  "install": {
+    "title": "Take InEgypt with you.",
+    "free": "Free to download, with no account. Plan your days, check prices and search routes; your saved trip and emergency numbers open offline.",
+    "iphone": {
+      "title": "Made for iPhone",
+      "items": [
+        [
+          "microphone",
+          "Siri and Shortcuts: “Ask InEgypt for directions”"
+        ],
+        [
+          "device-mobile",
+          "iPhone and iPad, iOS 18 or later"
+        ],
+        [
+          "translate",
+          "9 languages, Arabic and English included"
+        ]
+      ]
+    }
   },
   "faq": {
     "h2": "Questions, answered.",
@@ -458,12 +173,139 @@
       }
     ]
   },
-  "final": {
+  "proof": {
+    "label": "InEgypt in numbers",
+    "modes": "ways to travel",
+    "routes": "lines and services",
+    "stops": "stops and stations",
+    "attractions": "places to visit",
+    "cities": "cities",
+    "nearly": "nearly",
+    "order": [
+      "attractions",
+      "cities",
+      "routes",
+      "stops",
+      "modes"
+    ]
+  },
+  "plan": {
     "sign": [
-      "Terminus",
-      "نهاية الخط"
+      "Plan",
+      "خطِّط"
     ],
-    "h2": "Egypt, planned and in your pocket.",
-    "photoAlt": "The Nile in Cairo at dusk, with minarets on the skyline"
+    "title": "Your whole trip, planned day by day.",
+    "body": "Pick your dates and cities, or paste a plan you already made. InEgypt puts the days in a sensible order, adds real travel time between stops and tells you when a day does not fit.",
+    "link": "See how trip planning works",
+    "href": "/features/#plan",
+    "photoAlt": "Rows of carved columns at Karnak in Luxor.",
+    "screenAlt": "A Luxor itinerary with a visit to the Valley of the Kings, the taxi ride and dinner that follows.",
+    "caption": "Karnak, Luxor",
+    "steps": [
+      [
+        "calendar-blank",
+        "Choose when and where",
+        "Dates, cities and what you enjoy, or let InEgypt suggest how long to stay."
+      ],
+      [
+        "list-checks",
+        "Days in a sensible order",
+        "Visits, meals and the travel time between them, so you see how full each day is."
+      ],
+      [
+        "warning",
+        "A warning when a day does not fit",
+        "Move a visit or add a day while you are still at home."
+      ]
+    ],
+    "stepsLabel": "How a plan comes together",
+    "strip": {
+      "stops": [
+        [
+          "Cairo",
+          "القاهرة",
+          "pyramids"
+        ],
+        [
+          "Luxor",
+          "الأقصر",
+          "karnakColumn"
+        ],
+        [
+          "Aswan",
+          "أسوان",
+          "felucca"
+        ]
+      ],
+      "caption": "Cities in one trip are joined by real transport, for example the sleeper train to Luxor."
+    },
+    "paste": {
+      "title": "Already have a plan?",
+      "text": "Paste one from ChatGPT, a blog or your notes. InEgypt finds the places, orders the days and adds the travel time. Free."
+    }
+  },
+  "discover": {
+    "sign": [
+      "Discover",
+      "اكتشف"
+    ],
+    "h2a": "places in",
+    "h2b": "cities. Where next?",
+    "body": "Every place page has opening notes, what to know before you go and a button to add it to your trip. Where an official ticket seller exists, InEgypt links to it.",
+    "ribbonLabel": "Egypt, city by city",
+    "ribbon": [
+      {
+        "key": "photos/P04",
+        "alt": "Hot-air balloon over the West Bank at Luxor",
+        "en": "Luxor",
+        "ar": "الأقصر"
+      },
+      {
+        "key": "photos/P05",
+        "alt": "The Nile at Aswan",
+        "en": "Aswan",
+        "ar": "أسوان"
+      },
+      {
+        "key": "photos/P06",
+        "alt": "The Citadel of Qaitbay in Alexandria",
+        "en": "Alexandria",
+        "ar": "الإسكندرية"
+      },
+      {
+        "key": "photos/P07",
+        "alt": "The Mosque of Ibn Tulun in Islamic Cairo",
+        "en": "Islamic Cairo",
+        "ar": "القاهرة الإسلامية"
+      },
+      {
+        "key": "photos/P09",
+        "alt": "The great temple of Abu Simbel",
+        "en": "Abu Simbel",
+        "ar": "أبو سمبل"
+      }
+    ]
+  },
+  "safety": {
+    "sign": [
+      "Safety",
+      "الأمان"
+    ],
+    "title": "And if something goes wrong?",
+    "body": "Tourist police, ambulance and the other emergency numbers are one tap away, and the emergency page opens without internet. Next to them: what to do about airport taxi touts, the “ticket office is closed” line and other common tricks.",
+    "emergencyAlt": "The emergency page in InEgypt: general emergency, police, ambulance, fire, tourist police and more, each with a call button.",
+    "tipsAlt": "Safety tips in InEgypt, from airport taxi touts to uninvited porters.",
+    "link": "Prices and safety in InEgypt",
+    "href": "/features/#price"
+  },
+  "plans": {
+    "title": "Most of InEgypt is free.",
+    "free": "Free",
+    "pro": "InEgypt Pro",
+    "proLead": "Everything in Free, plus:",
+    "proLine": "{monthly} a month or {yearly} a year in the US store.",
+    "currency": "Your App Store shows the price in your currency.",
+    "features": "Compare every feature",
+    "featuresHref": "/features/"
   }
 }

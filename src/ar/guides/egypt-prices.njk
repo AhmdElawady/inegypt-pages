@@ -1,0 +1,46 @@
+---
+layout: layouts/guide.njk
+permalink: /ar/guides/egypt-prices/index.html
+title: كم تكلّف الأشياء في مصر؟
+description: نطاقات أسعار مناسبة بالجنيه المصري للتاكسي والمترو والطعام والبقشيش وشرائح الاتصال والمزارات، مع شهر المراجعة والمصدر لكل منها.
+lang: ar
+navCt: web_ar_guide_prices
+altUrls: { en: "/guides/egypt-prices/", ar: "/ar/guides/egypt-prices/" }
+related: [cairo-airport-to-city, cairo-metro]
+atomIdsFrom: prices
+---
+{#- Arabic of src/guides/egypt-prices.njk: the same rows from atoms.json (Arabic titles and notes), same sources. -#}
+{%- from "components/content.njk" import appbox with context -%}
+{%- from "components/guide.njk" import source with context -%}
+{%- set g = strings.ar.guide -%}
+{%- set groups = atoms.atoms | priceGroups(priceGuideGroups, priceGuideExclude) -%}
+<div class="answer">
+  <p class="lead" style="color: var(--ink)">معظم الأشياء اليومية في مصر تكلّف من عشرات إلى بضع مئات من الجنيهات: تذكرة المترو <bdi dir="ltr">{{ atoms.atoms.price_metro_single_journey | priceText }}</bdi>، ووجبة في مطعم محلي <bdi dir="ltr">{{ atoms.atoms.price_local_restaurant | priceText }}</bdi>، والتاكسي من مطار القاهرة إلى وسط المدينة <bdi dir="ltr">{{ atoms.atoms.price_airport_taxi | priceText }}</bdi>. في الجداول أدناه نطاق مناسب لكل بند، وشهر مراجعته، وهل هو سعر رسمي أم تقدير من InEgypt.</p>
+</div>
+<p>InEgypt تطبيق مجاني على iPhone لزيارة مصر والتنقل فيها. يخطط رحلتك يومًا بيوم، ويجد المسارات بالمترو والقطار والأتوبيس وغيرها من المواصلات العامة، ويعرض الأسعار المناسبة والحيل الشائعة قبل أن تدفع. هذه هي الأسعار نفسها التي يعرضها التطبيق، بجوار المكان الذي أنت فيه.</p>
+<p><b>كيف تقرأ الجداول.</b> حين يقول البند إنك تستطيع الفصال، اتفق على السعر قبل أن تبدأ التوصيلة أو الجولة أو الخدمة. الأسعار الرسمية مرتبطة بالمشغّل أو الوزارة، وتقديرات InEgypt من مراجعاتنا.</p>
+
+{%- for grp in groups %}
+<h2>{{ grp.ar or grp.title }}</h2>
+<div class="table-wrap"><table class="facts-table">
+  <caption>{{ grp.ar or grp.title }}: نطاقات الأسعار المناسبة</caption>
+  <thead><tr><th scope="col">البند</th><th scope="col">النطاق المناسب</th><th scope="col">فصال؟</th><th scope="col">المراجعة والمصدر</th></tr></thead>
+  <tbody>{% for a in grp.rows %}
+    <tr><th scope="row">{{ a.ar.title or a.en.title }}{% if a.ar.note or a.en.note %}<div class="meta">{{ a.ar.note or a.en.note }}</div>{% endif %}</th>
+      <td class="num-cell"><bdi dir="ltr">{{ a | priceText }}</bdi>{% if a.unit | unitText("ar") %}<div class="meta">{{ a.unit | unitText("ar") }}</div>{% endif %}</td>
+      <td>{{ g.yes if a.negotiable else g.no }}</td>
+      <td class="meta">{{ source(a) }}</td></tr>{% endfor %}
+  </tbody>
+</table></div>
+{%- if loop.first %}
+{{ appbox("القائمة نفسها في التطبيق، محدّثة، بجوار المكان الذي أنت فيه.", [], "web_ar_guide_prices", "", true, "ar") }}
+{%- endif %}
+{%- endfor %}
+
+<h2>ما يفعله InEgypt هنا وما لا يفعله</h2>
+<p>لا يبيع InEgypt التذاكر. يعرض هذه النطاقات في التطبيق بجوار المكان أو المسار الذي تنظر إليه، مع الحيل الشائعة لهذا النوع من الأماكن، ويُبقي التواريخ ظاهرة لتعرف مدى حداثة كل رقم.</p>
+
+<h2>المصادر</h2>
+<p class="sources">كل صف يذكر مصدره وشهر مراجعته. الأسعار الرسمية مرتبطة بالمشغّل أو الوزارة؛ وكل ما عداها تقدير من InEgypt بناءً على مراجعات تحريرية. الأسعار تتغير: إذا بدا لك رقم قديمًا، راسلنا على <a href="mailto:{{ facts.site.contactEmail.value }}">{{ facts.site.contactEmail.value }}</a>.</p>
+
+{{ appbox("اعرف السعر قبل أن تدفع", ["نطاقات مناسبة للتاكسي والطعام والبقشيش والمزارات، مع شهر مراجعتها", "الحيل الشائعة لكل نوع من الأماكن", "أرقام الطوارئ تفتح دون اتصال، مجانًا"], "web_ar_guide_prices", "web_ar_guide_prices_qr", false, "ar") }}

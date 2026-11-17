@@ -2,33 +2,9 @@
 layout: layouts/base.njk
 permalink: /support.html
 lang: en
+altUrls: { en: "/support.html", ar: "/ar/support/" }
 eleventyComputed:
   title: "{{ support.title }}"
   description: "{{ support.description }}"
 ---
-{%- set su = support -%}
-{%- set mail = facts.site.contactEmail.value -%}
-<section class="section">
-  <div class="container stack-lg" style="max-inline-size: 860px">
-    <div class="stack">
-      <h1 style="font-size: var(--fs-h2)">{{ su.h1 }}</h1>
-      <p class="lead">{{ su.lead }}</p>
-      <p><a class="btn" href="mailto:{{ mail }}">{% icon "envelope-simple" %}<span>{{ mail }}</span></a></p>
-    </div>
-    <div class="stack">
-      <h2 style="font-size: var(--fs-h3)">{{ su.report.h2 }}</h2>
-      <p>{{ su.report.text }}</p>
-      <p class="small muted">When you report a bug, please include:</p>
-      <ul class="small">{% for b in su.report.bug %}<li>{{ b }}</li>{% endfor %}</ul>
-    </div>
-    <div class="stack">
-      <h2 style="font-size: var(--fs-h3)">Questions</h2>
-      <div class="faq">
-        {%- for it in su.extra.concat(home.en.faq.items) %}
-        <details><summary><h3>{{ it.q }}</h3>{% icon "caret-down" %}</summary><p>{{ it.a | fillFacts }}{% if it.link %} <a href="{{ it.link.href | url }}">{{ it.link.text }}</a>{% endif %}</p></details>
-        {%- endfor %}
-      </div>
-    </div>
-    <p class="small muted"><a href="{{ '/privacy.html' | url }}">Privacy Policy</a> · <a href="{{ '/terms.html' | url }}">Terms of Use</a> · <a href="{{ '/about/' | url }}">About InEgypt</a></p>
-  </div>
-</section>
+{% include "pages/support.njk" %}

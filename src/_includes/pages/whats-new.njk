@@ -1,0 +1,24 @@
+{#- What's new, English and Arabic. Notes: _data/releases.json, word for word from App Store Connect.
+    An item may carry "notesAr" (the Arabic App Store text); without it the Arabic page shows the English notes, marked as English. -#}
+{%- set ar = lang == "ar" -%}
+<section class="section">
+  <div class="container guide__body">
+    <header class="stack">
+      <h1 style="font-size: var(--fs-h2)">{{ "الجديد" if ar else "What's new" }}</h1>
+      <p class="lead">{{ "ملاحظات الإصدارات، الأحدث أولًا، بالكلمات نفسها المنشورة على App Store." if ar else "Release notes, newest first, in the same words as the App Store." }}</p>
+    </header>
+    {%- if releases.items.length %}
+    {%- for r in releases.items %}
+    {%- set notes = r.notesAr if (ar and r.notesAr) else r.notes %}
+    <article class="stack" id="v{{ r.version }}">
+      <h2>{{ "الإصدار" if ar else "Version" }} <bdi>{{ r.version }}</bdi> <span class="small muted" style="font-family: var(--font-body); font-weight: 400">· <time datetime="{{ r.date }}">{{ r.date | monthYear(lang) }}</time></span></h2>
+      <div class="stack"{% if ar and not r.notesAr %} lang="en" dir="ltr"{% endif %}>{% for p in notes %}<p>{{ p }}</p>{% endfor %}</div>
+    </article>
+    {%- endfor %}
+    {%- else %}
+    {#- No notes yet: paste them from App Store Connect, word for word, into src/_data/releases.json. -#}
+    <p class="muted">{{ "تظهر ملاحظات كل إصدار هنا قريبًا. حتى ذلك الحين، تجدها في صفحة InEgypt على App Store." if ar else "The notes for each release will appear here soon. Until then, you can read them on InEgypt's App Store page." }}</p>
+    {%- endif %}
+    <p><a href="{{ ('web_ar_whatsnew' if ar else 'web_whatsnew') | appLink }}">{{ "InEgypt على App Store" if ar else "InEgypt on the App Store" }} <span class="flip-rtl">→</span></a></p>
+  </div>
+</section>
