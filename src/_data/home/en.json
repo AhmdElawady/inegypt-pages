@@ -2,15 +2,19 @@
   "title": "InEgypt: Egypt Trip Planner, Metro & Train Routes for iPhone",
   "description": "Free iPhone app for visiting Egypt: a day-by-day trip plan, routes by metro, train and bus, and fair prices and scams to know before you pay.",
   "hero": {
-    "h1": "Plan your Egypt trip. Get around with confidence.",
-    "lead": "Build a day-by-day plan, find the train or metro between your stops, and check what things cost before you pay.",
-    "underBadge": "Free on iPhone and iPad · No account needed · 9 languages",
+    "h1": [
+      "Plan your Egypt trip.",
+      "Get around with confidence."
+    ],
+    "lead": "Plan each day, find your way by metro, train or bus, and check local prices before you pay.",
+    "underBadge": "Free on iPhone and iPad · No account needed",
     "photoAlt": "The Giza pyramids under a red evening sky.",
-    "screenAlt": "An InEgypt trip from Luxor to Aswan on the map, with the day's visits and the travel time between them."
+    "screenAlt": "An InEgypt itinerary with stops in Luxor and Esna on the map and the day’s visits listed below.",
+    "perHour": "/ hr"
   },
   "price": {
-    "title": "What should the ride into Cairo cost?",
-    "body": "Before you agree on a fare, check the range for a taxi into the city.",
+    "title": "What should an airport taxi cost?",
+    "body": "Check the fare range from Cairo airport to the city centre before you agree on a price.",
     "link": "Read the airport arrival guide",
     "href": "/guides/cairo-airport-to-city/",
     "fullList": {
@@ -21,49 +25,14 @@
   },
   "train": {
     "title": "How do I get from Cairo to Luxor?",
-    "body": "Your plan includes the ride between cities. Compare departures, journey times and stops in the published timetable.",
+    "body": "Compare departures, journey times and stops in the published timetable before you choose a train.",
     "alt": "The Cairo to Luxor timetable in InEgypt, showing departure and arrival times for two trains.",
     "link": "Explore transport in InEgypt",
     "href": "/features/#route",
     "sign": [
       "Cairo to Luxor",
       "من القاهرة إلى الأقصر"
-    ],
-    "modes": [
-      [
-        "Metro",
-        "mode-metro"
-      ],
-      [
-        "Monorail",
-        "mode-monorail"
-      ],
-      [
-        "LRT",
-        "mode-lrt"
-      ],
-      [
-        "BRT",
-        "mode-brt"
-      ],
-      [
-        "Tram",
-        "mode-brt"
-      ],
-      [
-        "Trains",
-        "mode-train"
-      ],
-      [
-        "Coaches",
-        "mode-coach"
-      ],
-      [
-        "Flights",
-        "safe"
-      ]
-    ],
-    "modesLabel": "Ways to travel in one search"
+    ]
   },
   "maker": {
     "title": "Made in Egypt, by one developer.",
@@ -91,14 +60,12 @@
         "store": "Egypt"
       }
     ],
-    "href": "/about/#story"
+    "href": "/about/#story",
+    "moreLabel": "More traveller reviews"
   },
   "install": {
     "title": "Take InEgypt with you.",
-    "lines": [
-      "For iPhone and iPad with iOS 18 or later.",
-      "Ask Siri for directions on the way."
-    ]
+    "siri": "Ask Siri for directions on the way."
   },
   "faq": {
     "h2": "Questions, answered.",
@@ -150,18 +117,18 @@
     "steps": [
       [
         "calendar-blank",
-        "Choose when and where",
-        "Add what you enjoy, or let InEgypt suggest how long to stay."
+        "Choose your cities",
+        "Pick what you like and let InEgypt suggest how long to stay."
       ],
       [
         "list-checks",
-        "Days in a sensible order",
-        "Visits, meals and the travel time between them, so you see how full each day is."
+        "See how each day fits together",
+        "Visits, meals and the rides between them share one itinerary."
       ],
       [
         "warning",
-        "A warning when a day does not fit",
-        "Move a visit or add a day while you are still at home."
+        "Adjust a busy day",
+        "If there isn’t enough time, move a visit to another day."
       ]
     ],
     "stepsLabel": "How a plan comes together",
@@ -190,8 +157,7 @@
     }
   },
   "discover": {
-    "body": "Every place page has opening notes, what to know before you go and a button to add it to your trip.",
-    "ribbonLabel": "Egypt, city by city",
+    "body": "Check visiting notes and opening information, then add a place to your trip.",
     "ribbon": [
       {
         "key": "photos/P04",
@@ -227,8 +193,8 @@
     "title": "Where next?"
   },
   "safety": {
-    "title": "And if something goes wrong?",
-    "body": "Tourist police, ambulance and the other emergency numbers are one tap away, and the emergency page opens without internet. Next to them: what to do about airport taxi touts, the “ticket office is closed” line and other common tricks.",
+    "title": "What if I need help?",
+    "body": "Open emergency contacts even when you’re offline. Find advice on taxi touts and what to do if someone says the ticket office is closed.",
     "emergencyAlt": "The emergency page in InEgypt: general emergency, police, ambulance, fire, tourist police and more, each with a call button.",
     "tipsAlt": "Safety tips in InEgypt, from airport taxi touts to uninvited porters.",
     "link": "Prices and safety in InEgypt",
@@ -237,11 +203,22 @@
   "plans": {
     "title": "Most of InEgypt is free.",
     "free": "Free",
-    "pro": "InEgypt Pro",
-    "proLead": "Everything in Free, plus:",
+    "proLead": "Everything in Free, plus",
     "proLine": "From {monthly} a month, or one payment from {pass}.",
     "currency": "Your App Store shows the price in your currency.",
     "features": "See plans and prices",
-    "featuresHref": "/pro/"
+    "featuresHref": "/pro/",
+    "freeItems": [
+      "Build, edit or paste a day-by-day plan",
+      "Find routes online with no daily limit",
+      "Check local prices, safety tips and emergency contacts",
+      "Open your saved trip offline"
+    ],
+    "proItems": [
+      "Search for routes and explore cities offline",
+      "Generate more automatic plans",
+      "Get a 10-day weather forecast",
+      "Keep track of trip expenses"
+    ]
   }
 }
