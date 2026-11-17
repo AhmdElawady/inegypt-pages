@@ -12,12 +12,10 @@
     "langOtherCode": "en"
   },
   "badgeAlt": "حمّل InEgypt من App Store",
-  "qrCaption": "امسح الرمز باستخدام iPhone",
   "footer": {
     "app": "التطبيق",
     "features": "المزايا",
     "whatsNew": "الجديد",
-    "freePaid": "مجاني ومدفوع",
     "guides": "الأدلة",
     "allGuides": "كل الأدلة",
     "about": "عن InEgypt",
@@ -29,7 +27,9 @@
     "terms": "الشروط",
     "support": "الدعم",
     "tagline": "تطبيق مجاني على iPhone لزيارة مصر والتنقل فيها.",
-    "made": "صنعه مطوّر واحد في مصر. بلا حساب، ولا تتبّع على هذا الموقع."
+    "instagram": "InEgypt على إنستغرام",
+    "facebook": "InEgypt على فيسبوك",
+    "android": "InEgypt على Android"
   },
   "share": {
     "copy": "انسخ الرابط",

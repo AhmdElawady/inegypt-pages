@@ -1,0 +1,65 @@
+/* InEgypt Pro page (dark): wordmark, plans behind a Subscriptions / One-time switch, comparison table.
+   The PRO badge itself is a shared component (components.css). */
+
+.page-pro { background: var(--deep-neutral); color: var(--deep-ink); }
+.page-pro .nav .nav__bar { background: var(--paper); }
+.page-pro .footer { border-block-start: 1px solid rgba(255, 255, 255, .1); }
+.pro-hero { inline-size: min(100% - 2 * var(--gutter), 820px); margin-inline: auto; padding-block: clamp(56px, 8vw, 104px) clamp(40px, 5vw, 64px);
+  display: grid; justify-items: center; gap: 18px; text-align: center; }
+.pro-wordmark { margin: 0; display: inline-flex; align-items: center; gap: 10px; color: var(--paper); font: 700 30px/1 ui-rounded, "SF Pro Rounded", var(--font-head); }
+.pro-wordmark .pro-badge { padding: 5px 10px; border-radius: 8px; font-size: 16px; }
+/* On the Pro page itself the badge is a step bigger than in the footer */
+.pro-plan .pro-badge, .pro-table .pro-badge { padding: 4px 9px; border-radius: 7px; font-size: 13px; }
+.pro-hero h1 { margin: 0; color: var(--paper); font-size: clamp(36px, 4.6vw, 60px); line-height: 1.06; letter-spacing: -.03em; max-inline-size: 16ch; }
+:lang(ar) .pro-hero h1 { letter-spacing: normal; line-height: 1.25; }
+.pro-hero__lead { margin: 0; color: var(--deep-muted); font-size: var(--fs-lead); line-height: 1.5; max-inline-size: 50ch; }
+
+.pro-section { inline-size: min(100% - 2 * var(--gutter), 760px); margin-inline: auto; padding-block-end: clamp(48px, 6vw, 80px); }
+.pro-section__title { margin: 0; color: var(--deep-muted); font-size: 22px; }
+.pro-plans__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-block-end: 16px; }
+.pro-switch { display: inline-flex; padding: 4px; border-radius: 999px; background: #1A1A1A; }
+.pro-switch[hidden] { display: none; }
+.pro-switch button { min-block-size: 40px; padding-inline: 18px; border: 0; border-radius: 999px; background: transparent; color: var(--deep-muted);
+  font: 600 15px/1 var(--font-head); cursor: pointer; transition: background-color var(--t-hover) var(--ease), color var(--t-hover) var(--ease); }
+.pro-switch button[aria-selected="true"] { background: #333436; color: var(--paper); }
+.pro-panel + .pro-panel { margin-block-start: 24px; }
+.pro-panel__label { margin-block: 0 12px; color: var(--deep-ink); font-size: 17px; }
+.has-tabs .pro-panel__label { display: none; }
+.has-tabs .pro-panel + .pro-panel { margin-block-start: 0; }
+.pro-panel[hidden] { display: none; }
+.pro-plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.pro-plan { display: grid; align-content: start; gap: 6px; padding: clamp(22px, 3vw, 32px); border-radius: 28px; background: #1A1A1A; /* app SecondarySurface, dark */ }
+.pro-plan--best { box-shadow: inset 0 0 0 1px rgba(242, 92, 0, .55); }
+.pro-plan__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.pro-plan__name { margin: 0; color: var(--deep-accent); font-size: 22px; }
+.pro-plan__flag { margin: 0; color: var(--deep-accent); font-weight: 600; font-size: 15px; }
+.pro-plan__price { margin: 8px 0 0; color: var(--paper); }
+.pro-plan__price .num { font: 700 clamp(38px, 4vw, 48px)/1 var(--font-head); letter-spacing: -.02em; }
+.pro-plan__unit { color: var(--deep-muted); font-size: 16px; }
+.pro-plan__note { margin: 0; color: var(--deep-muted); font-size: 14px; }
+/* One button under the cards (both groups buy in the app) */
+.pro-cta { display: flex; inline-size: fit-content; margin: 24px auto 0; padding-inline: 18px 22px; background: var(--paper); color: var(--ink); }
+.pro-cta:hover { background: #E5E7EB; }
+.pro-note { margin-block-start: 16px; color: var(--deep-muted); font-size: 14px; line-height: 1.5; }
+
+.pro-table { inline-size: 100%; border-collapse: collapse; }
+.pro-table th, .pro-table td { padding-block: 15px; border-block-end: 1px solid rgba(255, 255, 255, .1); text-align: start; vertical-align: middle; font-weight: 400; }
+.pro-table thead th { padding-block: 10px 14px; border-block-end-color: rgba(255, 255, 255, .22); color: var(--paper); font: 600 18px/1.2 var(--font-head); }
+.pro-table__title { font-size: clamp(22px, 2vw, 26px); }
+.pro-table th + th, .pro-table th + td, .pro-table td + td { inline-size: clamp(64px, 14vw, 120px); text-align: center; }
+.pro-table tbody th { color: var(--deep-ink); font-size: 16px; padding-inline-end: 12px; }
+.pro-table__pro th { color: var(--paper); font-weight: 600; }
+.pro-table__pro th, .pro-table__pro td { background: rgba(242, 92, 0, .07); }
+.pro-table__pro th { padding-inline-start: 12px; }
+.pro-table__sub { display: block; margin-block-start: 2px; color: var(--deep-muted); font-size: 13px; font-weight: 400; }
+.pro-tick, .pro-cross { display: flex; justify-content: center; align-items: center; }
+.pro-tick .icon, .pro-cross .icon { inline-size: 22px; block-size: 22px; }
+.pro-tick { color: #8E9196; }
+.pro-tick--pro { color: var(--action); }
+.pro-cross { color: rgba(229, 231, 235, .3); }
+.pro-cross .icon { inline-size: 18px; block-size: 18px; }
+
+@media (max-width: 639px) {
+  .pro-plans { grid-template-columns: minmax(0, 1fr); }
+  .pro-table tbody th { font-size: 15px; }
+}

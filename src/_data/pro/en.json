@@ -1,0 +1,115 @@
+{
+  "_source": "Rows mirror the app's What's Included table (InEgyptUI WhatsIncludedView.swift, en.lproj). Site rules: widgets and the AI price check stay off the site (facts.iphoneFeatures, Plan 47 §5); no Trip Pass, lifetime or trial (facts.prices).",
+  "title": "InEgypt Pro: offline routes, more trip plans, weather and expenses",
+  "description": "What InEgypt Pro adds to the free app: offline route search, more automatic plans, a 10-day forecast and expense tracking. From {monthly} a month, or one payment from {pass} (US prices).",
+  "h1": "Find your way in Egypt, even offline.",
+  "lead": "Pro adds offline route search, more automatic plans, the weather for your trip and expense tracking. Most of InEgypt stays free.",
+  "plansTitle": "Choose a plan",
+  "priceNote": "Prices are for the US App Store; yours shows the price in your currency. Subscriptions renew until you cancel them in your Apple account settings.",
+  "compareTitle": "Compare plans",
+  "free": "Free",
+  "included": "Included",
+  "notIncluded": "Not included",
+  "shared": [
+    [
+      "Unlimited Route Planning"
+    ],
+    [
+      "Full Trip Planner"
+    ],
+    [
+      "Ready-Made Itineraries"
+    ],
+    [
+      "Export & Share Trip"
+    ],
+    [
+      "Explore Attractions & Cities"
+    ],
+    [
+      "Interactive Map"
+    ],
+    [
+      "Multi-Language Support"
+    ],
+    [
+      "Siri & Shortcuts"
+    ],
+    [
+      "Currency Converter"
+    ],
+    [
+      "Trip Notes"
+    ],
+    [
+      "Customize Your Itinerary"
+    ],
+    [
+      "Scam Shield & Fair Prices"
+    ]
+  ],
+  "pro": [
+    [
+      "More automatic plans",
+      "The first automatic plans are free"
+    ],
+    [
+      "Expense Tracking",
+      "Log spending in any currency and track your budget"
+    ],
+    [
+      "10-Day Weather Forecast",
+      "Plan around the weather for every day of your trip"
+    ],
+    [
+      "Offline Access",
+      "Route search, stops, schedules, Discover and city pages"
+    ]
+  ],
+  "offlineNote": "A saved trip, place pages and the emergency page open offline in the free app too.",
+  "groupsLabel": "Ways to pay",
+  "groups": [
+    {
+      "id": "once",
+      "label": "One-time",
+      "plans": [
+        {
+          "id": "pass",
+          "name": "Trip Pass",
+          "price": "{pass}",
+          "unit": "one payment",
+          "note": "Covers your whole trip."
+        },
+        {
+          "id": "lifetime",
+          "name": "Lifetime",
+          "price": "{lifetime}",
+          "unit": "one payment",
+          "note": "All Pro features forever. No subscription."
+        }
+      ]
+    },
+    {
+      "id": "subscription",
+      "label": "Subscriptions",
+      "plans": [
+        {
+          "id": "monthly",
+          "name": "Monthly",
+          "price": "{monthly}",
+          "unit": "a month",
+          "note": "Renews monthly · cancel anytime"
+        },
+        {
+          "id": "yearly",
+          "name": "Yearly",
+          "price": "{yearly}",
+          "unit": "a year",
+          "note": "Renews yearly · cancel anytime",
+          "flag": "Best value"
+        }
+      ]
+    }
+  ],
+  "cta": "Get InEgypt Pro in the app"
+}

@@ -5,12 +5,11 @@
   --paper: #FFFFFF;
   --surface: #FFFFFF;
   --sand: #F3F5F8;
-  --ink: #111318;
+  --ink: #101010;            /* the app's BrandPrimary / TextPrimary (Assets.xcassets) */
   --ink-2: #555D69;
   --hairline: rgba(17, 19, 24, .10);
   --action: #F25C00;
   --action-deep: #CC4600;
-  --on-action: #111318;
   --focus-ring: #CC4600; /* #F25C00 is 2.98:1 on paper: below 3:1 for a focus indicator */
   --link: #B34100;
   --plan: #4E7A28;
@@ -19,25 +18,17 @@
   --safe: #0A5FC2;
   --nile: #0E6B66;
   --dusk: #2E2A5E;
-  /* home page palette: deep teal ink on white and soft teal tints; one dark band (install) */
-  --teal-ink: #122C33;      /* headings */
-  --teal-muted: #40585E;    /* reading text */
-  --teal-link: #194E50;
-  --teal: #236662;          /* accent rules */
-  --teal-tint: #ECF3F2;     /* tinted section */
-  --teal-line: #DCE4E3;     /* hairlines */
-  --teal-border: #CCDBD9;   /* card borders */
-  --deep: #102B32;          /* dark band */
-  --deep-ink: #DCE8E8;      /* text on the dark band */
-  --deep-rule: #627C7F;
-  --deep-accent: #FF9F5A;   /* icons on the dark band */
-  --night: #101C23;         /* behind the hero photo */
-  --on-photo-2: #D3DDE0;    /* secondary text on the hero photo */
-  --plan-tint: #F2F7EE; --plan-line: #D6E5CA;
-  /* calm pass (2026-11-17): soft grey and warm card fills, neutral dark band */
+  /* dark surfaces: the night behind the hero photo, the closing band and footer (the app's dark-mode colours) */
+  --night: #101C23;
+  --deep-neutral: #101010;  /* the app's dark-mode AppBackground */
+  --deep-ink: #E5E7EB;      /* text on dark: the app's dark-mode TextPrimary */
+  --deep-muted: #828385;    /* secondary text on dark: the app's dark-mode TextSecondary */
+  --deep-link: #A6A7AB;     /* footer links at rest; white on hover and for the page you are on */
+  --deep-accent: #FF9F5A;   /* orange that reads on dark */
+  /* card fills on white */
   --soft: #F5F5F7;
   --warm: #FFF4EC;
-  --deep-neutral: #15171C;
+  --nav-h: 84px;            /* floating nav: 12 px + 60 px pill + 12 px */
   /* mode dots: decoration only, never text */
   --mode-metro: #2E4A78;
   --mode-monorail: #8BC34A;
@@ -75,7 +66,6 @@
   --cut: 28px;
   --e1: 0 1px 2px rgba(17, 19, 24, .05);
   --e2: 0 12px 32px rgba(17, 19, 24, .08);
-  --e3: 0 30px 60px rgba(17, 19, 24, .16);
 
   --ease: cubic-bezier(.2, .8, .2, 1);
   --t-hover: 150ms; --t-reveal: 400ms; --t-line: 900ms;

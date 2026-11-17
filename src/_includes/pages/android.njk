@@ -1,0 +1,21 @@
+{#- InEgypt for Android: the honest status, what works on any phone today
+    (the free guides), and a waitlist. The site is static, so joining is one pre-filled email. Copy: _data/android/<lang>.json. -#}
+{%- set a = android[lang] -%}
+<section class="android-hero" aria-labelledby="android-title">
+  <div class="android-hero__icons" aria-hidden="true">
+    <img class="android-hero__app" src="{{ '/assets/logo/icon-512.png' | url }}" width="512" height="512" alt="">
+    <span class="android-hero__droid">{% icon "android-logo-fill" %}</span>
+  </div>
+  <p class="android-hero__eyebrow">{{ a.eyebrow }}</p>
+  <h1 id="android-title">{{ a.h1 }}</h1>
+  <p class="android-hero__lead">{{ a.lead }}</p>
+  <a class="btn android-hero__cta" href="{{ a.ctaHref | localUrl(lang) | url }}">{{ a.cta }} <span aria-hidden="true" class="flip-rtl">→</span></a>
+  <p class="android-hero__note">{{ a.ctaNote }}</p>
+</section>
+
+<section class="android-wait" aria-labelledby="wait-title">
+  <h2 id="wait-title">{{ a.waitTitle }}</h2>
+  <p>{{ a.waitText }}</p>
+  <a class="btn android-wait__btn" href="mailto:{{ facts.site.contactEmail.value }}?subject={{ a.mailSubject | urlencode }}&amp;body={{ a.mailBody | urlencode }}">{% icon "envelope-simple" %}{{ a.waitButton }}</a>
+  <p class="android-wait__note">{{ a.waitNote }}</p>
+</section>

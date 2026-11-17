@@ -1,5 +1,5 @@
 {#- The home page, planner first: the trip plan, then where to go, how to get between cities, what things cost
-    and how to stay safe; then who makes it, what is free, and how to get it. Same order in English and Arabic
+    and how to stay safe; then who makes it, what is free, the questions, and how to get it (a dark closing band into the dark footer). Same order in English and Arabic
     (owner, 2026-11-17: Arab visitors are travellers too). Copy: _data/home/<lang>.json. Numbers: facts.json and atoms.json.
     Station signs (Arabic over English) label each place, as on Egyptian platforms. -#}
 {%- from "components/signs.njk" import sign with context -%}
@@ -22,18 +22,17 @@
   <div class="platform__scene">{{ picture("photos/P19", h.hero.photoAlt, "100vw", "high") }}</div>
   <div class="platform__inner">
     <div class="platform__copy">
-      {{ sign(h.hero.sign[0], h.hero.sign[1], "plan", lang) }}
       <h1 id="home-title">{{ h.hero.h1 }}</h1>
       <p class="platform__lead">{{ h.hero.lead }}</p>
-      {{ cta(ct + "hero", h.hero.underBadge, lang, ct + "hero_qr") }}
+      {{ cta(ct + "hero", h.hero.underBadge, lang) }}
     </div>
     <div class="hero-stage">
     <div class="platform__screen">
       {% if arabic %}<img class="platform__sheet" src="{{ '/assets/img/journey/alexandria-day-ar.webp' | url }}" width="720" height="829" alt="{{ h.hero.screenAlt }}">
       {% else %}{{ picture("screens/s03c-trip-map-light-framed", h.hero.screenAlt, "(max-width: 639px) 280px, 320px", "eager") }}{% endif %}
     </div>
-    {#- Floating cards around the phone (calm pass step 4). Real data only, all repeated further down the page, so hidden from screen readers. -#}
-    {%- set taxi = atoms.atoms.price_airport_taxi %}{% set place = h.discover.ribbon[0] %}
+    {#- Floating cards around the phone (calm pass step 4). Real data only and not repeated lower down; decorative, so hidden from screen readers. -#}
+    {%- set taxi = atoms.atoms.price_felucca_hour %}{% set place = h.discover.ribbon[0] %}
     <div class="hero-cards" aria-hidden="true">
       {%- if taxi and taxi.siteUsable %}
       <div class="hero-card hero-card--price" data-reveal style="--i: 2">
@@ -43,9 +42,8 @@
       </div>
       {%- endif %}
       <div class="hero-card hero-card--routes" data-reveal style="--i: 3">
-        <span class="hero-card__value num"><bdi>{{ cov.routes.value }}</bdi></span>
-        <span class="hero-card__label">{{ h.proof.routes }}</span>
-        <span class="hero-card__dots">{% for m in h.train.modes %}<span class="dot" style="--c: var(--{{ m[1] }})"></span>{% endfor %}</span>
+        <span class="hero-card__icon">{% icon "train" %}</span>
+        {{ sign(h.train.sign[0], h.train.sign[1], "route", lang) }}
       </div>
       <div class="hero-card hero-card--place" data-reveal style="--i: 4">
         {{ picture(place.key, "", "64px", "eager", "hero-card__thumb") }}
@@ -69,14 +67,11 @@
 <section class="journey-plan" id="plan" aria-labelledby="plan-title">
   <div class="journey-grid">
     <div class="journey-text" data-reveal>
-      {{ sign(h.plan.sign[0], h.plan.sign[1], "plan", lang) }}
       <h2 id="plan-title">{{ h.plan.title }}</h2>
-      <p>{{ h.plan.body }}</p>
       <a class="journey-link" href="{{ h.plan.href | url }}">{{ h.plan.link }} <span aria-hidden="true">→</span></a>
     </div>
     <figure class="day-photo{% if arabic %} day-photo--plain{% endif %}" data-reveal style="--i: 1">
       {{ picture("photos/P06" if arabic else "photos/P02", h.plan.photoAlt, "(max-width: 700px) 100vw, 600px") }}
-      <figcaption>{{ h.plan.caption }}</figcaption>
       {%- if not arabic %}
       <div class="day-photo__screen">{{ picture("screens/s03b-itinerary-light-framed", h.plan.screenAlt, "(max-width: 639px) 235px, 290px") }}</div>
       {%- endif %}
@@ -94,7 +89,6 @@
         <div class="strip-line__stop"><span class="art">{{ art[st[2]] | safe }}</span>{{ sign(st[0], st[1], "plan", lang) }}</div>
         {%- endfor %}
       </div>
-      <p class="strip-line__caption">{{ h.plan.strip.caption }}</p>
     </div>
     <aside class="paste-note" data-reveal>
       <span class="paste-note__icon" aria-hidden="true">{% icon "clipboard-text" %}</span>
@@ -106,19 +100,31 @@
 <section class="journey-discover" id="discover" aria-labelledby="discover-title">
   <div class="journey-wide">
     <div class="journey-text journey-text--wide" data-reveal>
-      {{ sign(h.discover.sign[0], h.discover.sign[1], "nile", lang) }}
-      <h2 id="discover-title"><bdi dir="ltr">{{ facts.coverage.attractions.display }}</bdi> {{ h.discover.h2a }} <bdi>{{ facts.coverage.cities.display }}</bdi> {{ h.discover.h2b }}</h2>
+      <h2 id="discover-title">{{ h.discover.title }}</h2>
       <p>{{ h.discover.body }}</p>
     </div>
     <div data-reveal style="--i: 1">{{ ribbon("discover-ribbon", h.discover.ribbonLabel, h.discover.ribbon, lang) }}</div>
   </div>
 </section>
 
-{%- set arrival %}
+<section class="journey-step journey-step--rail" id="routes" aria-labelledby="rail-title">
+  <div class="journey-grid">
+    <div class="journey-text" data-reveal>
+      <h2 id="rail-title">{{ h.train.title }}</h2>
+      <p>{{ h.train.body }}</p>
+      <ul class="modes" aria-label="{{ h.train.modesLabel }}">{% for m in h.train.modes %}<li><span class="dot" style="--c: var(--{{ m[1] }})" aria-hidden="true"></span>{{ m[0] }}</li>{% endfor %}</ul>
+      <a class="journey-link" href="{{ h.train.href | url }}">{{ h.train.link }} <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="rail-photo" data-reveal style="--i: 1">
+      {{ picture("photos/P14", "", "(max-width: 700px) 100vw, 600px") }}
+      <img class="rail-table" src="{{ ('/assets/img/journey/timetable-' + lang + '.webp') | url }}" width="720" height="{{ 716 if arabic else 697 }}" loading="lazy" alt="{{ h.train.alt }}">
+    </div>
+  </div>
+</section>
+
 <section class="journey-step journey-step--arrival" id="prices" aria-labelledby="arrival-title">
   <div class="journey-grid">
     <div class="journey-text" data-reveal>
-      {{ sign(h.price.sign[0], h.price.sign[1], "price", lang) }}
       <h2 id="arrival-title">{{ h.price.title }}</h2>
       <p>{{ h.price.body }}</p>
       <a class="journey-link" href="{{ h.price.href | url }}">{{ h.price.link }} <span aria-hidden="true">→</span></a>
@@ -126,7 +132,6 @@
     <div class="arrival-ticket" data-reveal style="--i: 1">
       {{ ticket("price_airport_taxi", lang) }}
       <div class="price-rows">
-        <p class="price-rows__label">{{ h.price.others }}</p>
         <ul>
           {%- for id in facts.knowledge.priceTicketAtoms.value %}{% set a = atoms.atoms[id] %}
           {%- if id != "price_airport_taxi" and a and a.siteUsable %}
@@ -140,32 +145,10 @@
     </div>
   </div>
 </section>
-{%- endset %}
-{%- set rail %}
-<section class="journey-step journey-step--rail" id="routes" aria-labelledby="rail-title">
-  <div class="journey-grid">
-    <div class="journey-text" data-reveal>
-      {{ sign(h.train.sign[0], h.train.sign[1], "route", lang) }}
-      <h2 id="rail-title">{{ h.train.title }}</h2>
-      <p>{{ h.train.body }}</p>
-      <ul class="modes" aria-label="{{ h.train.modesLabel }}">{% for m in h.train.modes %}<li><span class="dot" style="--c: var(--{{ m[1] }})" aria-hidden="true"></span>{{ m[0] }}</li>{% endfor %}</ul>
-      <p class="journey-note">{{ h.train.honest }}</p>
-      <a class="journey-link" href="{{ h.train.href | url }}">{{ h.train.link }} <span aria-hidden="true">→</span></a>
-    </div>
-    <div class="rail-photo" data-reveal style="--i: 1">
-      {{ picture("photos/P14", "", "(max-width: 700px) 100vw, 600px") }}
-      <img class="rail-table" src="{{ ('/assets/img/journey/timetable-' + lang + '.webp') | url }}" width="720" height="{{ 716 if arabic else 697 }}" loading="lazy" alt="{{ h.train.alt }}">
-    </div>
-  </div>
-</section>
-{%- endset %}
-{{ rail | safe }}
-{{ arrival | safe }}
 
 <section class="journey-step journey-step--safe" id="safety" aria-labelledby="safety-title">
   <div class="journey-grid">
     <div class="journey-text" data-reveal>
-      {{ sign(h.safety.sign[0], h.safety.sign[1], "safe", lang) }}
       <h2 id="safety-title">{{ h.safety.title }}</h2>
       <p>{{ h.safety.body }}</p>
       <a class="journey-link" href="{{ h.safety.href | url }}">{{ h.safety.link }} <span aria-hidden="true">→</span></a>
@@ -221,20 +204,6 @@
   </div>
 </section>
 
-<section class="journey-install" aria-labelledby="install-title">
-  <div class="journey-grid" id="get">
-    <div class="journey-text" data-reveal>
-      <h2 id="install-title">{{ h.install.title }}</h2>
-      <p>{{ h.install.free }}</p>
-      {{ cta(ct + "final", h.hero.underBadge, lang, ct + "final_qr") }}
-    </div>
-    <div class="journey-text install-pro" data-reveal style="--i: 1">
-      <h3>{{ h.install.iphone.title }}</h3>
-      <ul class="install-list">{% for it in h.install.iphone.items %}<li>{% icon it[0] %}<span>{{ it[1] }}</span></li>{% endfor %}</ul>
-    </div>
-  </div>
-</section>
-
 <section class="journey-faq" id="faq" aria-labelledby="faq-title">
   <div class="journey-wide">
     <h2 id="faq-title" data-reveal>{{ h.faq.h2 }}</h2>
@@ -243,5 +212,14 @@
       <details data-reveal style="--i: {{ loop.index0 % 2 }}"><summary><h3>{{ it.q }}</h3>{% icon "caret-down" %}</summary><p>{{ it.a | fillFacts }}{% if it.link %} <a href="{{ it.link.href | url }}">{{ it.link.text }}</a>{% endif %}</p></details>
       {%- endfor %}
     </div>
+  </div>
+</section>
+
+{#- Closing band: one centred call on a dark block that runs into the dark footer. -#}
+<section class="journey-install" aria-labelledby="install-title">
+  <div class="install-close" id="get">
+    <h2 id="install-title" data-reveal>{{ h.install.title }}</h2>
+    <div class="install-close__lines" data-reveal style="--i: 1">{% for l in h.install.lines %}<p>{{ l }}</p>{% endfor %}</div>
+    <div class="install-close__cta" data-reveal style="--i: 2">{{ cta(ct + "final", "", lang) }}</div>
   </div>
 </section>

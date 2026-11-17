@@ -2,6 +2,7 @@
 // The site address lives in one place: src/_data/facts.json → site.url + site.pathPrefix (§9.5).
 import crypto from "node:crypto";
 import fs from "node:fs";
+import { fillFacts, proPrices } from "./src/_lib/facts-text.js";
 
 const facts = JSON.parse(fs.readFileSync("src/_data/facts.json", "utf8"));
 const SITE_URL = facts.site.url.value;            // https://ahmdelawady.github.io
@@ -95,15 +96,9 @@ export default function (eleventyConfig) {
     .map(([s, g]) => guideCard(s, g, lang)).sort((a, b) => (a.lang ? 1 : 0) - (b.lang ? 1 : 0)));
   eleventyConfig.addFilter("atomKinds", (atoms) => Object.values(atoms).reduce((c, a) => ((c[a.kind] = (c[a.kind] || 0) + 1), c), {}));
   eleventyConfig.addFilter("maxDate", (ids, atoms) => ids.map((id) => atoms[id]?.lastVerifiedAt).filter(Boolean).sort().pop());
-  // "{cities}" style tokens in copy are filled from facts.json, so no count is typed into a page.
-  eleventyConfig.addFilter("fillFacts", (text) => String(text)
-    .replace(/\{cities\}/g, facts.coverage.cities.display)
-    .replace(/\{attractions\}/g, facts.coverage.attractions.display)
-    .replace(/\{routes\}/g, facts.coverage.routes.value)
-    .replace(/\{stops\}/g, facts.coverage.stops.display)
-    .replace(/\{modes\}/g, facts.coverage.transitModes.value)
-    .replace(/\{monthly\}/g, facts.prices.proMonthly.value)
-    .replace(/\{yearly\}/g, facts.prices.proYearly.value));
+  // "{cities}" / "{monthly}" style tokens and the Pro price phrase come from src/_lib/facts-text.js (facts.json).
+  eleventyConfig.addFilter("fillFacts", fillFacts);
+  eleventyConfig.addFilter("proPrices", (lang) => proPrices(lang));
   // "2026-08-21" → "Aug 2026" (en) / "أغسطس 2026" with Western digits (ar)
   const fmt = {
     en: new Intl.DateTimeFormat("en-GB", { month: "short", year: "numeric", timeZone: "UTC" }),

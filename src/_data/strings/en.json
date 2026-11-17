@@ -13,12 +13,10 @@
     "langOtherCode": "ar"
   },
   "badgeAlt": "Download InEgypt on the App Store",
-  "qrCaption": "Scan with your iPhone",
   "footer": {
     "app": "App",
     "features": "Features",
     "whatsNew": "What's new",
-    "freePaid": "Free & paid",
     "guides": "Guides",
     "allGuides": "All guides",
     "about": "About",
@@ -30,7 +28,9 @@
     "terms": "Terms",
     "support": "Support",
     "tagline": "A free iPhone app for visiting and getting around Egypt.",
-    "made": "Made in Egypt by one developer. No account, no tracking on this site."
+    "instagram": "InEgypt on Instagram",
+    "facebook": "InEgypt on Facebook",
+    "android": "InEgypt for Android"
   },
   "share": {
     "copy": "Copy link",

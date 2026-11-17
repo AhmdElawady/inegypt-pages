@@ -1,4 +1,5 @@
 {#- Links go to the page in the reader's language when it exists (localUrl). Privacy and Terms are the app's English text. -#}
+{%- from "components/calls.njk" import qrBlock with context -%}
 {%- set legalLang = ' hreflang="en"' if lang == "ar" else "" -%}
 <footer class="footer">
   <div class="container">
@@ -8,23 +9,30 @@
         <p class="muted">{{ t.footer.tagline }}</p>
       </div>
       <div><h2>{{ t.footer.app }}</h2><ul>
-        <li><a href="{{ '/features/' | localUrl(lang) | url }}">{{ t.footer.features }}</a></li>
-        <li><a href="{{ '/whats-new/' | localUrl(lang) | url }}">{{ t.footer.whatsNew }}</a></li>
-        <li><a href="{{ '/#free-paid' | localUrl(lang) | url }}">{{ t.footer.freePaid }}</a></li></ul></div>
+        <li><a href="{{ '/features/' | localUrl(lang) | url }}"{% if page.url == ('/features/' | localUrl(lang)) %} aria-current="page"{% endif %}>{{ t.footer.features }}</a></li>
+        <li><a href="{{ '/whats-new/' | localUrl(lang) | url }}"{% if page.url == ('/whats-new/' | localUrl(lang)) %} aria-current="page"{% endif %}>{{ t.footer.whatsNew }}</a></li>
+        <li><a href="{{ '/pro/' | localUrl(lang) | url }}"{% if page.url == ('/pro/' | localUrl(lang)) %} aria-current="page"{% endif %} dir="ltr">InEgypt <span class="pro-badge">PRO</span></a></li>
+        <li><a href="{{ '/android/' | localUrl(lang) | url }}"{% if page.url == ('/android/' | localUrl(lang)) %} aria-current="page"{% endif %}>{{ t.footer.android }}</a></li></ul></div>
       <div><h2>{{ t.footer.guides }}</h2><ul>
-        <li><a href="{{ '/guides/' | localUrl(lang) | url }}">{{ t.footer.allGuides }}</a></li></ul></div>
+        <li><a href="{{ '/guides/' | localUrl(lang) | url }}"{% if page.url == ('/guides/' | localUrl(lang)) %} aria-current="page"{% endif %}>{{ t.footer.allGuides }}</a></li></ul></div>
       <div><h2>{{ t.footer.about }}</h2><ul>
-        <li><a href="{{ '/about/' | localUrl(lang) | url }}">{{ t.footer.aboutPage }}</a></li>
-        <li><a href="{{ '/press/' | localUrl(lang) | url }}">{{ t.footer.press }}</a></li>
+        <li><a href="{{ '/about/' | localUrl(lang) | url }}"{% if page.url == ('/about/' | localUrl(lang)) %} aria-current="page"{% endif %}>{{ t.footer.aboutPage }}</a></li>
+        <li><a href="{{ '/press/' | localUrl(lang) | url }}"{% if page.url == ('/press/' | localUrl(lang)) %} aria-current="page"{% endif %}>{{ t.footer.press }}</a></li>
         <li><a href="mailto:{{ facts.site.contactEmail.value }}">{{ t.footer.contact }}</a></li></ul></div>
       <div><h2>{{ t.footer.legal }}</h2><ul>
         <li><a href="{{ '/privacy.html' | url }}"{{ legalLang | safe }}>{{ t.footer.privacy }}</a></li>
         <li><a href="{{ '/terms.html' | url }}"{{ legalLang | safe }}>{{ t.footer.terms }}</a></li>
-        <li><a href="{{ '/support.html' | localUrl(lang) | url }}">{{ t.footer.support }}</a></li></ul></div>
+        <li><a href="{{ '/support.html' | localUrl(lang) | url }}"{% if page.url == ('/support.html' | localUrl(lang)) %} aria-current="page"{% endif %}>{{ t.footer.support }}</a></li></ul></div>
+      {%- if footerQr %}{#- the App Store QR, bottom corner; qrCt in front matter keeps a page's own campaign -#}
+      <div class="footer__qr">{{ qrBlock(qrCt or ("web_ar_footer_qr" if lang == "ar" else "web_footer_qr"), lang) }}</div>
+      {%- endif %}
     </div>
     <div class="footer__base">
-      <span>{{ t.footer.made }}</span>
       <span>© <bdi>{{ build.year }}</bdi> InEgypt</span>
+      <ul class="footer__social">
+        <li><a href="{{ facts.site.social.instagram.value }}" rel="noopener" aria-label="{{ t.footer.instagram }}">{% icon "instagram-logo" %}</a></li>
+        <li><a href="{{ facts.site.social.facebook.value }}" rel="noopener" aria-label="{{ t.footer.facebook }}">{% icon "facebook-logo" %}</a></li>
+      </ul>
     </div>
   </div>
 </footer>

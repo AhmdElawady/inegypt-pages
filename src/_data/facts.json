@@ -34,6 +34,18 @@
     "contactEmail": {
       "value": "inegyptapp@gmail.com",
       "state": "plan"
+    },
+    "social": {
+      "instagram": {
+        "value": "https://www.instagram.com/inegyptapp/",
+        "state": "owner",
+        "note": "Owner 2026-11-17"
+      },
+      "facebook": {
+        "value": "https://www.facebook.com/share/1Fm3o8nXmH/",
+        "state": "owner",
+        "note": "Owner 2026-11-17 (share link; the ?mibextid tracking parameter dropped)"
+      }
     }
   },
   "app": {
@@ -195,7 +207,7 @@
       "Offline route search",
       "Offline Discover and city pages",
       "More automatic plans",
-      "Multi-day trip weather",
+      "10-day weather forecast",
       "Trip expenses"
     ],
     "state": "plan",
@@ -205,8 +217,9 @@
   "prices": {
     "currency": "USD",
     "proMonthly": {
-      "value": "$3.99",
-      "state": "plan"
+      "value": "$2.99",
+      "state": "owner",
+      "note": "Owner 2026-11-17: show $2.99 for now (was $3.99)"
     },
     "proYearly": {
       "value": "$19.99",
@@ -214,16 +227,18 @@
     },
     "tripPass7": {
       "value": "$4.99",
-      "state": "plan"
+      "state": "plan",
+      "note": "Superseded on the site by tripPass (owner 2026-11-17)"
     },
     "tripPass14": {
       "value": "$7.99",
-      "state": "plan"
+      "state": "plan",
+      "note": "Superseded on the site by tripPass (owner 2026-11-17)"
     },
     "passesOnSale": {
-      "value": false,
+      "value": true,
       "state": "owner",
-      "note": "Stays false until the owner switches D6; no Trip Pass line on the site before that"
+      "note": "Owner 2026-11-17: the Trip Pass is shown on the Pro page"
     },
     "weeklyProduct": {
       "value": false,
@@ -231,14 +246,24 @@
       "note": "F3 (a): not on sale; not on the site"
     },
     "lifetimeProduct": {
-      "value": false,
+      "value": true,
       "state": "owner",
-      "note": "F3 (a): not on sale; not on the site"
+      "note": "Owner 2026-11-17: Lifetime is shown on the Pro page"
     },
     "familySharing": {
       "value": null,
       "state": "owner",
       "note": "F4 (a): unknown, never mentioned on the site"
+    },
+    "tripPass": {
+      "value": "$3.99",
+      "state": "owner",
+      "note": "Owner 2026-11-17: one Trip Pass at $3.99 on the Pro page; covers the whole trip, one payment (app copy)"
+    },
+    "lifetime": {
+      "value": "$49.99",
+      "state": "owner",
+      "note": "Owner 2026-11-17: Lifetime Access at $49.99 (StoreKit test file says 44.99)"
     }
   },
   "iphoneFeatures": {

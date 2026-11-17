@@ -20,25 +20,20 @@ const pairs = [
   ["ink", "paper", TEXT, "body text"], ["ink", "surface", TEXT, "card text"], ["ink", "sand", TEXT, "band text"],
   ["ink-2", "paper", TEXT, "secondary text"], ["ink-2", "surface", TEXT, "secondary on cards"], ["ink-2", "sand", TEXT, "secondary on sand"],
   ["link", "paper", TEXT, "links"], ["link", "surface", TEXT, "links on cards"], ["link", "sand", TEXT, "links on sand"],
-  ["on-action", "action", TEXT, "button label"],
   ["plan", "paper", TEXT, "plan colour text"], ["route", "paper", TEXT, "route colour text"], ["price", "paper", TEXT, "price colour text"],
   ["safe", "paper", TEXT, "safety colour text"], ["nile", "paper", TEXT, "Nile text"], ["dusk", "paper", TEXT, "dusk text"],
   ["plan", "surface", TEXT, "chip text on cards"], ["route", "surface", TEXT, "x mark on cards"],
   ["focus-ring", "paper", UI, "focus ring"], ["focus-ring", "surface", UI, "focus ring on cards"], ["focus-ring", "sand", UI, "focus ring on sand"],
-  // home page palette
-  ["teal-ink", "paper", TEXT, "home headings"], ["teal-ink", "teal-tint", TEXT, "headings on the tinted section"], ["teal-ink", "sand", TEXT, "headings on sand"],
-  ["teal-muted", "paper", TEXT, "home reading text"], ["teal-muted", "teal-tint", TEXT, "text on the tinted section"], ["teal-muted", "sand", TEXT, "text on sand"],
-  ["teal-muted", "plan-tint", TEXT, "paste note text"], ["teal-link", "paper", TEXT, "home links"], ["teal-link", "teal-tint", TEXT, "links on the tinted section"],
-  ["teal-link", "sand", TEXT, "links on sand"], ["deep-ink", "deep", TEXT, "text on the dark band"], ["paper", "deep", TEXT, "headings on the dark band"],
-  ["deep-accent", "deep", UI, "icons on the dark band"], ["paper", "night", TEXT, "hero text (behind the photo overlay)"],
-  // calm pass: home cards are soft grey or warm; the install band is neutral dark
+  // buttons, cards and dark surfaces (home, Pro page, footer)
+  ["paper", "ink", TEXT, "black button label"], ["paper", "night", TEXT, "hero text (behind the photo overlay)"],
   ["ink", "soft", TEXT, "card text on soft grey"], ["ink-2", "soft", TEXT, "secondary on soft grey"], ["link", "soft", TEXT, "links on soft grey"],
-  ["ink", "warm", TEXT, "card text on warm"], ["ink-2", "warm", TEXT, "secondary on warm"], ["action-deep", "warm", UI, "icons on warm"],
-  ["action-deep", "soft", UI, "icons on soft grey"], ["action-deep", "paper", UI, "step icons on white"],
-  ["deep-ink", "deep-neutral", TEXT, "text on the dark band"], ["paper", "deep-neutral", TEXT, "headings on the dark band"], ["deep-accent", "deep-neutral", UI, "icons on the dark band"],
+  ["ink", "warm", TEXT, "card text on warm"], ["ink-2", "warm", TEXT, "secondary on warm"], ["action-deep", "warm", UI, "Pro icons on warm"],
+  ["paper", "deep-neutral", TEXT, "headings on dark"], ["deep-ink", "deep-neutral", TEXT, "text on dark"],
+  ["deep-muted", "deep-neutral", TEXT, "secondary text on dark"], ["deep-link", "deep-neutral", TEXT, "footer links"], ["deep-accent", "deep-neutral", TEXT, "orange text and link hover on dark"],
 ];
 // Reported, not enforced: #F25C00 is used for fills, the logo and decorative shapes, never alone to convey state (§2.2).
 const INFO = [["action", "paper", "orange fills on paper"], ["action", "surface", "orange fills on cards"],
+  ["ink", "action", "PRO badge text on the light end of its gradient (#CC4600 end is about 4:1; a brand mark)"],
 ];
 let fail = 0;
 for (const [name, t] of [["light", light]]) {

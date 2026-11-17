@@ -1,5 +1,5 @@
 {#- Content components: price ticket, app box, related links. -#}
-{% from "components/calls.njk" import badgeLink, qrBlock with context %}
+{% from "components/calls.njk" import badgeLink with context %}
 
 
 {#- Price ticket from a knowledge atom (Plan 46 §4.4): value, unit, checked date, estimate/official. -#}
@@ -20,10 +20,11 @@
 {%- endmacro %}
 
 {#- App box for guides (P1 M6): what the app does for this task + badge + QR on desktop. -#}
-{% macro appbox(title, points, ct, qrCt="", compact=false, lang="en") -%}
+{#- The App Store badge; the page's QR sits in the footer (bottom corner) on every page that has one. -#}
+{% macro appbox(title, points, ct, compact=false, lang="en") -%}
 <aside class="appbox{% if compact %} appbox--compact{% endif %}">
   <div class="stack"><h3>{{ title }}</h3>{% if points.length %}<ul>{% for p in points %}<li>{{ p }}</li>{% endfor %}</ul>{% endif %}</div>
-  <div class="cta">{{ badgeLink(ct, lang, compact) }}{% if qrCt and not compact %}{{ qrBlock(qrCt, lang) }}{% endif %}</div>
+  <div class="cta">{{ badgeLink(ct, lang, compact) }}</div>
 </aside>
 {%- endmacro %}
 

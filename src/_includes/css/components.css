@@ -81,7 +81,6 @@
 .badge--small { --badge-h: 40px; }
 .qr { display: none; align-items: center; gap: var(--s3); }
 .qr__code { inline-size: 96px; block-size: 96px; padding: 8px; background: #fff; border-radius: 12px; box-shadow: 0 0 0 1px var(--hairline); }
-.qr__caption { font-size: 13px; color: var(--ink-2); max-inline-size: 9em; }
 @media (min-width: 1024px) { .qr { display: inline-flex; } }
 .share { display: flex; flex-wrap: wrap; gap: var(--s3); align-items: center; }
 .share__status { font-size: 13px; color: var(--ink-2); }
@@ -109,11 +108,7 @@
 .strip-line__stop .sign__dot { inline-size: 16px; block-size: 16px; }
 .strip-line__caption { margin-block-start: var(--s5); color: var(--ink-2); font-size: var(--fs-small); text-align: center; max-inline-size: none; }
 
-/* ---------- Home page parts (phase 4) ---------- */
-/* Nav over the hero (§4 section 0): transparent until 80 px of scroll; solid when scripts are off */
-.nav { transition: background-color var(--t-hover) var(--ease), border-color var(--t-hover) var(--ease); }
-
-/* Routes: mode chips, network diagram, train inset */
+/* ---------- Mode chips ---------- */
 .modes { display: flex; flex-wrap: wrap; gap: var(--s2); padding: 0; margin: 0; list-style: none; }
 .modes li { display: inline-flex; align-items: center; gap: var(--s2); padding: 6px 12px; border-radius: 999px; background: var(--surface);
   box-shadow: inset 0 0 0 1px var(--hairline); font-weight: 600; font-size: 15px; }
@@ -154,3 +149,9 @@
 .logo-row img { inline-size: 72px; block-size: 72px; }
 /* A price in running text stays on one line, so "10–20 EGP" never splits with the unit on the next line (matters most in Arabic). */
 .answer bdi, .guide__body p bdi { white-space: nowrap; }
+
+/* ---------- PRO badge (from the app's ProBrandMark / WhatsIncludedView: rounded "PRO" on the action gradient,
+   #CC4600 bottom-trailing → #F25C00 top-leading). The site uses black text (owner, 2026-11-17); the Pro page sizes it up. ---------- */
+.pro-badge { display: inline-block; padding: 3px 6px; border-radius: 6px; color: var(--ink); vertical-align: middle;
+  font: 700 11px/1.1 ui-rounded, "SF Pro Rounded", var(--font-head); letter-spacing: .03em;
+  background: linear-gradient(to top left, #CC4600, #F25C00); }

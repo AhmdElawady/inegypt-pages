@@ -1,23 +1,23 @@
 {%- from "components/calls.njk" import badgeLink -%}
 {#- Links go to the page in the reader's language when it exists (localUrl reads each page's altUrls). -#}
-{%- set links = [["/features/", t.nav.features], ["/guides/", t.nav.guides], ["/#free-paid", t.nav.freePaid], ["/about/", t.nav.about]] -%}
+{%- set links = [["/features/", t.nav.features], ["/guides/", t.nav.guides], ["/pro/", t.nav.freePaid], ["/about/", t.nav.about]] -%}
 {%- set otherUrl = langSwitchUrl or (altUrls[t.nav.langOtherCode] if altUrls else ("/" if lang == "ar" else "/ar/")) -%}
-<header class="nav">
+<header class="nav" data-nav>
   <div class="container container--wide nav__bar">
     <a class="nav__logo" href="{{ '/' | localUrl(lang) | url }}" aria-label="InEgypt{{ ' — الرئيسية' if lang == 'ar' else ', home' }}">
       <img src="{{ '/assets/logo/mark-orange.svg' | url }}" alt="" width="32" height="32">
       <span>InEgypt</span>
     </a>
     <nav class="nav__links" aria-label="{{ t.nav.menu }}">
-      {%- for l in links %}<a href="{{ l[0] | localUrl(lang) | url }}">{{ l[1] }}</a>{% endfor %}
+      {%- for l in links %}{% set href = l[0] | localUrl(lang) %}<a href="{{ href | url }}"{% if page.url.startsWith(href) %} aria-current="page"{% endif %}>{{ l[1] }}</a>{% endfor %}
     </nav>
     <div class="nav__end">
       <a class="nav__lang" href="{{ otherUrl | url }}" lang="{{ t.nav.langOtherCode }}" hreflang="{{ t.nav.langOtherCode }}">{{ t.nav.langOther }}</a>
-      <a class="btn nav__get" href="{{ (navCt or 'web_home_nav') | appLink }}"><span class="nav__get-long">{{ t.nav.get }}</span><span class="nav__get-short">{{ t.nav.getShort }}</span></a>
+      <a class="btn nav__get" href="{{ (navCt or 'web_home_nav') | appLink }}">{% icon "arrow-circle-down-fill" %}<span class="nav__get-long">{{ t.nav.get }}</span><span class="nav__get-short">{{ t.nav.getShort }}</span></a>
       <details class="nav__menu">
         <summary aria-label="{{ t.nav.menu }}">{% icon "list" %}</summary>
         <nav class="nav__panel" aria-label="{{ t.nav.menu }}">
-          {%- for l in links %}<a href="{{ l[0] | localUrl(lang) | url }}">{{ l[1] }}</a>{% endfor %}
+          {%- for l in links %}{% set href = l[0] | localUrl(lang) %}<a href="{{ href | url }}"{% if page.url.startsWith(href) %} aria-current="page"{% endif %}>{{ l[1] }}</a>{% endfor %}
         </nav>
       </details>
     </div>

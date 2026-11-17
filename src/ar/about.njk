@@ -1,4 +1,6 @@
 ---
+footerQr: true
+qrCt: web_ar_home_final_qr
 layout: layouts/base.njk
 permalink: /ar/about/index.html
 title: عن InEgypt · التطبيق وصانعه والحقائق
@@ -29,7 +31,7 @@ altUrls: { en: "/about/", ar: "/ar/about/" }
         <tr><th scope="row">من صنع</th><td>{{ A[f.app.maker.value] or f.app.maker.value }}</td></tr>
         <tr><th scope="row">على App Store منذ</th><td>{{ A[f.app.onAppStoreSince.value] or f.app.onAppStoreSince.value }}</td></tr>
         <tr><th scope="row">يعمل على</th><td>{{ A[f.app.platforms.value] or f.app.platforms.value }}. {{ A["No Android version"] }}.</td></tr>
-        <tr><th scope="row">السعر</th><td>مجاني. واختياريًا InEgypt Pro: <bdi>{{ f.prices.proMonthly.value }}</bdi> شهريًا أو <bdi>{{ f.prices.proYearly.value }}</bdi> سنويًا (أسعار المتجر الأمريكي).</td></tr>
+        <tr><th scope="row">السعر</th><td>مجاني. واختياريًا InEgypt Pro: {{ 'ar' | proPrices | safe }} (أسعار المتجر الأمريكي). <a href="{{ '/ar/pro/' | url }}">قارن الخطط</a></td></tr>
         <tr><th scope="row">الحساب</th><td>لا تحتاج إلى حساب</td></tr>
         <tr><th scope="row">اللغات</th><td>{% for l in f.app.languages.value %}{{ A[l] or l }}{{ "، " if not loop.last }}{% endfor %}</td></tr>
         <tr><th scope="row">المواصلات</th><td><bdi>{{ f.coverage.transitModes.value }}</bdi> وسائل نقل: {% for m in f.coverage.transitModes.list %}{{ A[m] or m }}{{ "، " if not loop.last }}{% endfor %}</td></tr>
@@ -64,6 +66,6 @@ altUrls: { en: "/about/", ar: "/ar/about/" }
     <h2 id="contact">تواصل</h2>
     <p><a href="mailto:{{ f.site.contactEmail.value }}">{{ f.site.contactEmail.value }}</a> · <a href="{{ '/ar/support/' | url }}">الدعم</a> · <a href="{{ '/ar/press/' | url }}">للصحافة</a></p>
 
-    {{ appbox("حمّل InEgypt", ["خطة يومًا بيوم لرحلتك في مصر", "مسارات المترو والقطار والأتوبيس، مجانًا وبلا حد يومي", "الأسعار المناسبة والحيل الشائعة، مع تاريخ المراجعة"], "web_ar_about", "web_ar_home_final_qr", false, "ar") }}
+    {{ appbox("حمّل InEgypt", ["خطة يومًا بيوم لرحلتك في مصر", "مسارات المترو والقطار والأتوبيس، مجانًا وبلا حد يومي", "الأسعار المناسبة والحيل الشائعة، مع تاريخ المراجعة"], "web_ar_about", false, "ar") }}
   </div>
 </section>

@@ -8,7 +8,7 @@
 
 {% macro qrBlock(ct, lang="en") -%}
 {%- if qr[ct] -%}
-<div class="qr">{{ qr[ct] | safe }}<span class="qr__caption">{{ strings[lang].qrCaption }}</span></div>
+<div class="qr">{{ qr[ct] | safe }}</div>
 {%- endif -%}
 {%- endmacro %}
 

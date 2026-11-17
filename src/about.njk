@@ -1,4 +1,6 @@
 ---
+footerQr: true
+qrCt: web_home_final_qr
 layout: layouts/base.njk
 permalink: /about/index.html
 title: About InEgypt · the app, the maker and the facts
@@ -27,7 +29,7 @@ altUrls: { en: "/about/", ar: "/ar/about/" }
         <tr><th scope="row">Made by</th><td>{{ f.app.maker.value }}</td></tr>
         <tr><th scope="row">On the App Store since</th><td>{{ f.app.onAppStoreSince.value }}</td></tr>
         <tr><th scope="row">Runs on</th><td>{{ f.app.platforms.value }}. No Android version.</td></tr>
-        <tr><th scope="row">Price</th><td>Free. Optional InEgypt Pro: <bdi>{{ f.prices.proMonthly.value }}</bdi> a month or <bdi>{{ f.prices.proYearly.value }}</bdi> a year (US prices).</td></tr>
+        <tr><th scope="row">Price</th><td>Free. Optional InEgypt Pro: {{ 'en' | proPrices | safe }} (US prices). <a href="{{ '/pro/' | url }}">Compare plans</a></td></tr>
         <tr><th scope="row">Account</th><td>None needed</td></tr>
         <tr><th scope="row">Languages</th><td>{{ f.app.languages.value | join(", ") }}</td></tr>
         <tr><th scope="row">Transport</th><td>{{ f.coverage.transitModes.value }} modes: {{ f.coverage.transitModes.list | join(", ") }}</td></tr>
@@ -62,6 +64,6 @@ altUrls: { en: "/about/", ar: "/ar/about/" }
     <h2 id="contact">Contact</h2>
     <p><a href="mailto:{{ f.site.contactEmail.value }}">{{ f.site.contactEmail.value }}</a> · <a href="{{ '/support.html' | url }}">Support</a> · <a href="{{ '/press/' | url }}">Press</a></p>
 
-    {{ appbox("Get InEgypt", ["A day-by-day plan for your Egypt trip", "Metro, train and bus routes, free with no daily limit", "Fair prices and common scams, with dates"], "web_about", "web_home_final_qr") }}
+    {{ appbox("Get InEgypt", ["A day-by-day plan for your Egypt trip", "Metro, train and bus routes, free with no daily limit", "Fair prices and common scams, with dates"], "web_about") }}
   </div>
 </section>

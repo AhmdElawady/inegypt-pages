@@ -7,8 +7,7 @@ const SRC = new URL("../", import.meta.url);
 const CAMPAIGNS = [...new Set(fs.readdirSync(SRC, { recursive: true })
   .filter((f) => f.endsWith(".njk") && !f.startsWith("_data"))
   .flatMap((f) => fs.readFileSync(new URL(f, SRC), "utf8").match(/\bweb_[a-z_]+_qr\b/g) || [])
-  // home.njk builds these from a per-language prefix (ct + "hero_qr"), so the scan cannot see them
-  .concat(["web_home_hero_qr", "web_ar_home_hero_qr"]))].sort();
+)].sort();
 export default async function () {
   const out = {};
   for (const ct of CAMPAIGNS) {

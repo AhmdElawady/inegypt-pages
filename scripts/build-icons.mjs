@@ -7,9 +7,9 @@ const REGULAR = ["map-trifold", "path", "tag", "shield-check", "train", "train-s
   "arrow-left", "caret-down", "caret-right", "caret-left", "list", "copy", "share-network", "globe", "calendar-blank",
   "clock", "map-pin", "lightbulb", "warning", "phone", "sparkle", "device-mobile", "check-circle", "x-circle",
   "question", "envelope-simple", "qr-code", "lock-simple", "receipt", "ticket", "taxi", "first-aid", "boat",
-  "storefront", "cloud-sun", "list-checks", "clipboard-text", "user"];
+  "storefront", "cloud-sun", "list-checks", "clipboard-text", "user", "instagram-logo", "facebook-logo"];
 const FILL = ["map-trifold", "path", "tag", "shield-check", "check-circle", "x-circle", "sparkle", "warning",
-  "map-pin", "train", "tram", "bus", "airplane", "device-mobile", "microphone", "wifi-slash", "translate"];
+  "map-pin", "train", "tram", "bus", "airplane", "device-mobile", "microphone", "wifi-slash", "translate", "arrow-circle-down", "android-logo"];
 const inner = (file) => fs.readFileSync(file, "utf8").replace(/^<svg[^>]*>/, "").replace(/<\/svg>\s*$/, "");
 let out = '<svg xmlns="http://www.w3.org/2000/svg">\n';
 for (const n of REGULAR) out += `<symbol id="i-${n}" viewBox="0 0 256 256" fill="currentColor">${inner(`${ROOT}/regular/${n}.svg`)}</symbol>\n`;

@@ -13,6 +13,46 @@
     items.forEach((el) => io.observe(el));
   }
 
+  // Floating nav: tighten while scrolling down, open again on the way up (CSS animates; reduced motion has no transitions).
+  const nav = document.querySelector("[data-nav]");
+  if (nav) {
+    let lastY = scrollY, ticking = false;
+    addEventListener("scroll", () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = scrollY, d = y - lastY;
+        if (y < 80) nav.classList.remove("is-compact");
+        else if (d > 6) nav.classList.add("is-compact");
+        else if (d < -6) nav.classList.remove("is-compact");
+        if (Math.abs(d) > 6 || y < 80) lastY = y;
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
+  // Tabs (Pro page plan switch): shown only when this runs; panels stay visible without it.
+  document.querySelectorAll("[data-tabs]").forEach((list) => {
+    const tabs = [...list.querySelectorAll('[role="tab"]')];
+    const panels = tabs.map((t) => document.getElementById(t.getAttribute("aria-controls")));
+    const select = (i, focus) => tabs.forEach((t, j) => {
+      const on = i === j;
+      t.setAttribute("aria-selected", String(on)); t.tabIndex = on ? 0 : -1; panels[j].hidden = !on;
+      if (on && focus) t.focus();
+    });
+    tabs.forEach((t, i) => {
+      t.addEventListener("click", () => select(i));
+      t.addEventListener("keydown", (e) => {
+        const rtl = getComputedStyle(list).direction === "rtl";
+        const k = { ArrowRight: rtl ? -1 : 1, ArrowLeft: rtl ? 1 : -1 }[e.key];
+        if (k) { e.preventDefault(); select((i + k + tabs.length) % tabs.length, true); }
+        if (e.key === "Home") { e.preventDefault(); select(0, true); }
+        if (e.key === "End") { e.preventDefault(); select(tabs.length - 1, true); }
+      });
+    });
+    list.hidden = false; list.closest("section").classList.add("has-tabs"); select(0);
+  });
+
   // Ribbon arrows: scroll by one card, honouring RTL.
   document.querySelectorAll("[data-ribbon]").forEach((r) => {
     const track = r.querySelector(".ribbon__track");
