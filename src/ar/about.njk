@@ -59,9 +59,10 @@ altUrls: { en: "/about/", ar: "/ar/about/" }
     </ul>
     <p>النص الكامل (بالإنجليزية): <a href="{{ '/privacy.html' | url }}" hreflang="en">سياسة الخصوصية</a> و<a href="{{ '/terms.html' | url }}" hreflang="en">شروط الاستخدام</a>.</p>
 
-    <h2 id="credits">حقوق الصور</h2>
-    <p class="small muted">الصور من Unsplash وWikimedia Commons. أصحابها وتراخيصها أدناه.</p>
-    <ul class="small">{% for p in photos.photos %}<li>تصوير <a href="{{ p.page }}" rel="noopener"><bdi>{{ p.photographer }}</bdi></a>{% if p.licence == "CC BY-SA 4.0" %} (<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a>، مع قص الصورة وتعديل ألوانها){% else %} · <bdi>{{ p.licence }}</bdi>{% endif %}</li>{% endfor %}</ul>
+    <h2 id="credits">الحقوق</h2>
+    <p class="small muted">الصور من Unsplash وWikimedia Commons، ورسم واحد. أصحابها وتراخيصها أدناه.</p>
+    <ul class="small">{% for p in photos.photos %}<li>تصوير <a href="{{ p.page }}" rel="noopener"><bdi>{{ p.photographer }}</bdi></a>{% if p.licence == "CC BY-SA 4.0" %} (<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a>، مع قص الصورة وتعديل ألوانها){% else %} · <bdi>{{ p.licence }}</bdi>{% endif %}</li>{% endfor %}
+      <li>روبوت Android (صفحة <a href="{{ '/ar/android/' | url }}">InEgypt على Android</a>): مأخوذ من عمل أنشأته Google وشاركته، ويُستخدم وفق شروط <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener license" hreflang="en">ترخيص المشاع الإبداعي 3.0 مع النسب</a> (مع تغيير اللون).</li></ul>
 
     <h2 id="contact">تواصل</h2>
     <p><a href="mailto:{{ f.site.contactEmail.value }}">{{ f.site.contactEmail.value }}</a> · <a href="{{ '/ar/support/' | url }}">الدعم</a> · <a href="{{ '/ar/press/' | url }}">للصحافة</a></p>

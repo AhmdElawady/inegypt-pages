@@ -57,9 +57,10 @@ altUrls: { en: "/about/", ar: "/ar/about/" }
     </ul>
     <p>The full text: <a href="{{ '/privacy.html' | url }}">Privacy Policy</a> and <a href="{{ '/terms.html' | url }}">Terms of Use</a>.</p>
 
-    <h2 id="credits">Photo credits</h2>
-    <p class="small muted">Photography from Unsplash and Wikimedia Commons. Credits and licences are listed below.</p>
-    <ul class="small">{% for p in photos.photos %}<li>{{ p.use }}: <a href="{{ p.page }}" rel="noopener">{{ p.photographer }}</a>{% if p.licence == "CC BY-SA 4.0" %} (<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a>, cropped and colour-adjusted){% endif %}</li>{% endfor %}</ul>
+    <h2 id="credits">Credits</h2>
+    <p class="small muted">Photography from Unsplash and Wikimedia Commons, and one illustration. Credits and licences are listed below.</p>
+    <ul class="small">{% for p in photos.photos %}<li>{{ p.use }}: <a href="{{ p.page }}" rel="noopener">{{ p.photographer }}</a>{% if p.licence == "CC BY-SA 4.0" %} (<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener license">CC BY-SA 4.0</a>, cropped and colour-adjusted){% endif %}</li>{% endfor %}
+      <li>Android robot (<a href="{{ '/android/' | url }}">InEgypt for Android</a> page): reproduced from work created and shared by Google and used according to terms described in the <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener license">Creative Commons 3.0 Attribution License</a> (recoloured).</li></ul>
 
     <h2 id="contact">Contact</h2>
     <p><a href="mailto:{{ f.site.contactEmail.value }}">{{ f.site.contactEmail.value }}</a> · <a href="{{ '/support.html' | url }}">Support</a> · <a href="{{ '/press/' | url }}">Press</a></p>

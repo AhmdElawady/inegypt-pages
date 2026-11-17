@@ -4,7 +4,7 @@
 <section class="android-hero" aria-labelledby="android-title">
   <div class="android-hero__icons" aria-hidden="true">
     <img class="android-hero__app" src="{{ '/assets/logo/icon-512.png' | url }}" width="512" height="512" alt="">
-    <span class="android-hero__droid">{% icon "android-logo-fill" %}</span>
+    <span class="android-hero__droid">{{ art.androidRobot | safe }}</span>
   </div>
   <p class="android-hero__eyebrow">{{ a.eyebrow }}</p>
   <h1 id="android-title">{{ a.h1 }}</h1>

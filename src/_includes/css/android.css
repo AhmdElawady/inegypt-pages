@@ -1,11 +1,14 @@
 /* InEgypt for Android page: the app icon over a grey Android tile, the status, the guides, a waitlist. */
 .android-hero { inline-size: min(100% - 2 * var(--gutter), 720px); margin-inline: auto; padding-block: clamp(48px, 7vw, 96px) clamp(40px, 5vw, 64px);
   display: grid; justify-items: center; gap: 14px; text-align: center; }
-.android-hero__icons { display: flex; align-items: center; margin-block-end: 18px; }
-.android-hero__app { position: relative; z-index: 1; inline-size: clamp(112px, 14vw, 150px); block-size: auto; filter: drop-shadow(0 18px 30px rgba(17, 19, 24, .18)); }
-.android-hero__droid { display: grid; place-items: center; inline-size: clamp(104px, 13vw, 138px); aspect-ratio: 1; margin-inline-start: -56px; border-radius: 30%;
-  background: #EEEEF0; color: #BDBFC4; box-shadow: 0 10px 24px rgba(17, 19, 24, .08); }
-.android-hero__droid .icon { inline-size: 56%; block-size: 56%; margin-inline-start: 22%; }
+/* Two tiles of the same size: the app icon in front, the Android tile behind it with a large centred robot,
+   so about half of the robot shows. The grey tile is lighter at the top with a soft shadow below. */
+.android-hero__icons { --tile: clamp(124px, 14vw, 156px); display: flex; align-items: center; margin-block-end: 18px; }
+.android-hero__app { position: relative; z-index: 1; inline-size: var(--tile); block-size: auto; filter: drop-shadow(0 18px 30px rgba(17, 19, 24, .18)); }
+.android-hero__droid { display: grid; place-items: center; inline-size: var(--tile); aspect-ratio: 1; margin-inline-start: calc(var(--tile) * -.46);
+  border-radius: 23%; color: #BDBFC4; background: linear-gradient(180deg, #F8F8F9 0%, #EDEDF0 70%, #E4E4E8 100%);
+  box-shadow: inset 0 0 0 1px rgba(17, 19, 24, .05), 0 16px 26px -12px rgba(17, 19, 24, .28); }
+.android-hero__droid svg { inline-size: 68%; block-size: 68%; }
 .android-hero__eyebrow { margin: 0; color: var(--link); font-weight: 500; font-size: 15px; }
 .android-hero h1 { margin: 0; font-size: clamp(34px, 4.4vw, 56px); line-height: 1.06; letter-spacing: -.03em; max-inline-size: 18ch; }
 :lang(ar) .android-hero h1 { letter-spacing: normal; line-height: 1.25; }
