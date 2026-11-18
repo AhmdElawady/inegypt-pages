@@ -2,7 +2,7 @@
 .journey-home {
   --r-soft: 28px;
   --home-width: min(100% - 2 * var(--gutter), var(--content));
-  --section-gap: clamp(64px, 7vw, 104px);
+  --section-gap: clamp(88px, 10vw, 152px);   /* Apple-like room between sections */
   --home-heading: clamp(32px, 3.15vw, 48px);
 }
 .journey-grid, .journey-wide {
@@ -33,14 +33,11 @@
 .journey-home .sign { --line: var(--action); }
 .journey-home .sign__label { gap: 4px; }
 
-/* A short entrance for the illustrations. Copy and focused controls are immediately readable. */
-@media (prefers-reduced-motion: no-preference) {
-  .js-reveal .journey-home [data-reveal] { opacity: 1; transform: none; transition: none; }
-  .js-reveal .journey-home :is(figure, .rail-photo)[data-reveal] {
-    transform: translateY(10px); transition: transform var(--t-reveal) var(--ease);
-  }
-  .js-reveal .journey-home :is(figure, .rail-photo).is-in { transform: none; }
-}
+/* Motion: marked blocks fade and rise as they scroll in, one after another (--i). Content stays visible without
+   the script, and base.css turns all of it off for reduced motion. */
+.js-reveal .journey-home [data-reveal] { transform: translateY(28px); transition-duration: 700ms, 700ms;
+  transition-timing-function: cubic-bezier(.16, 1, .3, 1); transition-delay: calc(var(--i, 0) * 90ms); }
+.js-reveal .journey-home [data-reveal].is-in { transform: none; }
 
 /* The copy and the device have their own columns. The photo continues behind both on phones. */
 .platform {
@@ -148,7 +145,7 @@
 .paste-note p + p { margin-block-start: 5px; }
 
 /* All five destinations are visible without carousel controls. */
-.discover-intro { display: flex; align-items: end; justify-content: space-between; gap: 32px; }
+.discover-intro { display: grid; justify-items: start; gap: 12px; } /* the title, then its description below */
 .city-gallery {
   display: grid; grid-template-columns: 1.34fr 1fr 1fr; grid-template-rows: repeat(2, clamp(145px, 15vw, 216px)); gap: 12px;
 }
@@ -157,16 +154,18 @@
 .city-gallery picture, .city-gallery img { inline-size: 100%; block-size: 100%; }
 .city-gallery img { object-fit: cover; }
 .city-gallery figure:first-child img { object-position: 50% 34%; }
-.city-gallery figcaption { position: absolute; inset-inline-start: 12px; inset-block-end: 12px; }
-.city-gallery .sign { display: flex; gap: 9px; padding: 9px 13px; border-radius: 12px; background: var(--paper); }
-.city-gallery .sign__dot { inline-size: 8px; block-size: 8px; }
+.city-gallery figure::after { content: ""; position: absolute; inset: 55% 0 0; background: linear-gradient(0deg, rgba(0, 0, 0, .45), transparent); pointer-events: none; }
+/* One name in the page's language, white on a quiet outlined pill over a soft shade */
+.city-label { position: absolute; z-index: 1; inset-inline-start: 12px; inset-block-end: 12px; padding: 6px 12px; border-radius: 999px;
+  color: #fff; font: 600 15px/1.2 var(--font-head); border: 1px solid rgba(255, 255, 255, .55); background: rgba(0, 0, 0, .12);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
 
 /* Transport, followed by two practical guides. */
 .journey-step--rail .journey-text { grid-column: 2; grid-row: 1; }
 .journey-step--rail .rail-photo { grid-column: 1; grid-row: 1; }
 .rail-photo { min-block-size: 350px; display: grid; align-items: end; justify-items: end; padding: 50px 24px 0; }
 .rail-table { inline-size: min(76%, 285px); border-start-start-radius: 14px; border-start-end-radius: 14px; }
-.essentials { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-block-start: clamp(36px, 5vw, 72px); }
+.essentials { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-block-start: var(--section-gap); }
 .essential {
   display: flex; flex-direction: column; gap: 24px; padding: clamp(24px, 3vw, 40px);
   background: var(--soft); border-radius: var(--r-soft); overflow: hidden;
@@ -220,12 +219,12 @@
 .journey-faq .faq summary { padding-inline: 0; }
 .journey-faq .faq details > p { padding-inline: 0; color: var(--ink-2); }
 
-.journey-install { background: var(--deep-neutral); color: var(--paper); padding-block: clamp(66px, 8vw, 116px); text-align: center; }
+.journey-install { background: var(--deep-neutral); color: var(--paper); padding-block: clamp(104px, 12vw, 168px); text-align: center; }
 .install-close { inline-size: var(--home-width); margin-inline: auto; display: grid; justify-items: center; gap: 16px; }
-.install-icon { inline-size: 60px; block-size: 60px; }
+.install-icon { inline-size: 76px; block-size: 76px; margin-block-end: 6px; filter: drop-shadow(0 12px 24px rgba(0, 0, 0, .45)); }
 .journey-home .install-close h2 { font-size: clamp(38px, 4.3vw, 64px); }
 .install-close p { color: var(--deep-ink); }
-.install-close__cta { margin-block-start: 4px; }
+.install-close__cta { margin-block-start: 22px; } /* more room above the badge; the band grows, the bottom padding stays */
 
 @media (max-width: 760px) {
   .journey-grid, .plan-more, .essentials, .plan-cards, .journey-faq .journey-wide { grid-template-columns: minmax(0, 1fr); }
@@ -256,7 +255,6 @@
   .day-photo { block-size: clamp(320px, 76vw, 430px); }
   .plan-more { gap: 20px; }
   .paste-note { padding: 18px 0 0; border-inline-start: 0; border-block-start: 1px solid var(--hairline); }
-  .discover-intro { display: grid; gap: 12px; }
   .journey-step--rail .journey-text, .journey-step--rail .rail-photo { grid-area: auto; }
   .rail-photo { min-block-size: 285px; }
   .safe-phones { block-size: 230px; }
@@ -268,8 +266,8 @@
   .proof dt, .proof__prefix { font-size: 13px; }
   .city-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(3, clamp(128px, 39vw, 208px)); gap: 8px; }
   .city-gallery figure { border-radius: 16px; }
-  .city-gallery figcaption { inset-inline-start: 7px; inset-block-end: 7px; }
-  .city-gallery .sign { gap: 6px; padding: 7px 9px; }
-  .city-gallery .sign__first { font-size: 15px; }
-  .city-gallery .sign__second { font-size: 10px; }
+  .city-label { inset-inline-start: 8px; inset-block-end: 8px; padding: 4px 10px; font-size: 13px; }
 }
+
+/* A full-width hairline between the closing band and the footer (both dark) */
+.journey-home .footer { border-block-start: 1px solid rgba(255, 255, 255, .1); }
