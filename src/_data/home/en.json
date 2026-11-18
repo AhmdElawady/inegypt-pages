@@ -8,9 +8,35 @@
     ],
     "lead": "Plan each day, find your way by metro, train or bus, and check local prices before you pay.",
     "underBadge": "Free on iPhone and iPad · No account needed",
-    "photoAlt": "The Giza pyramids under a red evening sky.",
-    "screenAlt": "An InEgypt itinerary with stops in Luxor and Esna on the map and the day’s visits listed below.",
-    "perHour": "/ hr"
+    "photoAlt": "The Giza pyramids under a red evening sky."
+  },
+  "tripDay": {
+    "title": "Your trip, all in one place.",
+    "body": "Every day’s visits with their times and costs, the train or metro between cities, and your budget as you go.",
+    "screenAlt": "A Luxor itinerary in InEgypt: the Valley of the Kings, a taxi ride, dinner, then the next day’s temples, each with its time and entry price.",
+    "proNote": "Trip budget and expenses are part of InEgypt Pro.",
+    "cards": [
+      {
+        "slot": "trip",
+        "key": "trip-upcoming",
+        "alt": "Trip card: Through the Ages, Luxor and Aswan, Nov 30 – Dec 4, starts in 14 days."
+      },
+      {
+        "slot": "budget",
+        "key": "trip-budget",
+        "alt": "Trip budget of 50,000 EGP, with 43,500 EGP remaining."
+      },
+      {
+        "slot": "route",
+        "key": "train-1902",
+        "alt": "Route from Giza to Luxor: 7 h 57 min on train 1902."
+      },
+      {
+        "slot": "expenses",
+        "key": "expense-sites",
+        "alt": "Spending at archaeological sites: Luxor Temple 1,200 EGP, Temple of Ramesses III 1,000 EGP, Temple of Khnum 800 EGP, Valley of the Kings 400 EGP."
+      }
+    ]
   },
   "price": {
     "title": "What should an airport taxi cost?",
@@ -25,13 +51,19 @@
   },
   "train": {
     "title": "How do I get from Cairo to Luxor?",
-    "body": "Compare departures, journey times and stops in the published timetable before you choose a train.",
-    "alt": "The Cairo to Luxor timetable in InEgypt, showing departure and arrival times for two trains.",
+    "body": "Compare trains, flights and intercity coaches side by side, with journey times and departures from the published timetables.",
     "link": "Explore transport in InEgypt",
     "href": "/features/#route",
-    "sign": [
-      "Cairo to Luxor",
-      "من القاهرة إلى الأقصر"
+    "cardsLabel": "Route results from Cairo to Luxor in InEgypt",
+    "cards": [
+      {
+        "key": "train-926",
+        "alt": "Train 926 from Giza to Luxor: 7 h 57 min, 2:10 AM to 10:07 AM."
+      },
+      {
+        "key": "train-930",
+        "alt": "Train 930 from Giza to Luxor: 8 h 1 min, 2:10 AM to 10:11 AM."
+      }
     ]
   },
   "maker": {
@@ -103,58 +135,16 @@
     "order": [
       "attractions",
       "cities",
-      "routes",
-      "stops",
-      "modes"
+      "routes"
     ]
   },
   "plan": {
     "title": "Your whole trip, planned day by day.",
+    "body": "Pick your cities and InEgypt suggests how long to stay and lays out each day. Already have a plan? Paste it in.",
     "link": "See how trip planning works",
     "href": "/features/#plan",
     "photoAlt": "Rows of carved columns at Karnak in Luxor.",
-    "screenAlt": "A Luxor itinerary with a visit to the Valley of the Kings, the taxi ride and dinner that follows.",
-    "steps": [
-      [
-        "calendar-blank",
-        "Choose your cities",
-        "Pick what you like and let InEgypt suggest how long to stay."
-      ],
-      [
-        "list-checks",
-        "See how each day fits together",
-        "Visits, meals and the rides between them share one itinerary."
-      ],
-      [
-        "warning",
-        "Adjust a busy day",
-        "If there isn’t enough time, move a visit to another day."
-      ]
-    ],
-    "stepsLabel": "How a plan comes together",
-    "strip": {
-      "stops": [
-        [
-          "Cairo",
-          "القاهرة",
-          "pyramids"
-        ],
-        [
-          "Luxor",
-          "الأقصر",
-          "karnakColumn"
-        ],
-        [
-          "Aswan",
-          "أسوان",
-          "felucca"
-        ]
-      ]
-    },
-    "paste": {
-      "title": "Already have a plan?",
-      "text": "Paste one from ChatGPT, a blog or your notes. InEgypt finds the places, orders the days and adds the travel time. Free."
-    }
+    "screenAlt": "An InEgypt itinerary with stops in Luxor and Esna on the map and the day’s visits listed below."
   },
   "discover": {
     "body": "Check visiting notes and opening information, then add a place to your trip.",
@@ -194,7 +184,7 @@
   },
   "safety": {
     "title": "What if I need help?",
-    "body": "Open emergency contacts even when you’re offline. Find advice on taxi touts and what to do if someone says the ticket office is closed.",
+    "body": "Emergency numbers that open offline, and tips for taxi touts and other common tricks.",
     "emergencyAlt": "The emergency page in InEgypt: general emergency, police, ambulance, fire, tourist police and more, each with a call button.",
     "tipsAlt": "Safety tips in InEgypt, from airport taxi touts to uninvited porters.",
     "link": "Prices and safety in InEgypt",

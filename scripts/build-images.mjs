@@ -3,7 +3,8 @@
 //   photos  materials/photos/originals/P01-*.jpg → graded AVIF + WebP + JPEG at 640/1024/1600/2400
 //   screens materials/screens/{framed,raw}/*.png → AVIF + WebP at 360/540/720 (PNG never shipped)
 //   icons   favicon.svg → favicon-32.png; Icon Composer export (materials/logo/source-png) → apple-touch-icon (180), icon-512, icon-1024
-// Run: npm run images [-- --only=photos|screens|icons]. Skips outputs newer than their source.
+//   cards   one whole card cut from a light screen (CARDS below) → transparent-corner AVIF + WebP at 400/640/900
+// Run: npm run images [-- --only=photos|screens|cards|icons]. Skips outputs newer than their source.
 import fs from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
@@ -79,6 +80,39 @@ async function screens() {
   }
 }
 
+// App cards: one whole card lifted out of a light screenshot, cut on its own edge (measured in the 3x capture) with
+// its corners made transparent, so the page can float it with its own shadow. r = the card's corner radius in pixels
+// (16 pt cards measure 50 px, 24 pt list cards 73 px). The card's own shadow in the app stays outside the cut.
+const CARDS = {
+  "trip-upcoming": { src: "framed/s01-home-light-framed.png", left: 123, top: 522, width: 1224, height: 823, r: 50 },
+  "train-926": { src: "framed/s06-route-options-light-framed.png", left: 123, top: 997, width: 1224, height: 501, r: 50 },
+  "train-1902": { src: "framed/s06-route-options-light-framed.png", left: 123, top: 1534, width: 1224, height: 501, r: 50 },
+  "train-930": { src: "framed/s06-route-options-light-framed.png", left: 123, top: 2071, width: 1224, height: 501, r: 50 },
+  "trip-budget": { src: "framed/x-expenses-light-framed.png", left: 135, top: 612, width: 1200, height: 540, r: 73 },
+  "expense-sites": { src: "framed/x-expenses-light-framed.png", left: 135, top: 1263, width: 1200, height: 1056, r: 73 },
+};
+
+async function cards() {
+  fs.mkdirSync(`${OUT}/cards`, { recursive: true });
+  for (const [name, c] of Object.entries(CARDS)) {
+    const src = path.join("materials/screens", c.src);
+    if (!fs.existsSync(src)) continue;
+    const mask = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${c.width}" height="${c.height}"><rect width="${c.width}" height="${c.height}" rx="${c.r}" ry="${c.r}"/></svg>`);
+    const cut = await sharp(src).extract({ left: c.left, top: c.top, width: c.width, height: c.height })
+      .composite([{ input: mask, blend: "dest-in" }]).png().toBuffer();
+    const widths = [400, 640, 900];
+    for (const w of widths) {
+      for (const [fmt, opts] of [["avif", { quality: 60, effort: 4 }], ["webp", { quality: 86, alphaQuality: 100 }]]) {
+        const out = `${OUT}/cards/${name}-${w}.${fmt}`;
+        if (fresh(src, out) && fs.statSync(out).mtimeMs >= fs.statSync("scripts/build-images.mjs").mtimeMs) continue;
+        await sharp(cut).resize({ width: w })[fmt](opts).toFile(out);
+      }
+    }
+    manifest[`cards/${name}`] = { src: c.src, width: c.width, height: c.height, widths, formats: ["avif", "webp"], dir: "cards", base: name, radius: c.r };
+    console.log(`card ${name}: ${c.width}×${c.height}`);
+  }
+}
+
 // The app icon's source is Icon Composer (InEgyptUI/InEgypt/AppIcon.icon); its Liquid Glass look only exists as
 // the exported PNG. Flat SVGs (favicon, marks) are hand-kept to the same shapes and gradient (#FF832B → #EC4400).
 async function icons() {
@@ -97,6 +131,7 @@ async function icons() {
 
 if (!ONLY || ONLY === "icons") await icons();
 if (!ONLY || ONLY === "screens") await screens();
+if (!ONLY || ONLY === "cards") await cards();
 if (!ONLY || ONLY === "photos") await photos();
 fs.writeFileSync(manifestPath, JSON.stringify(Object.fromEntries(Object.entries(manifest).sort()), null, 2) + "\n");
 let total = 0;

@@ -1,5 +1,4 @@
 {# Home copy is localized in _data/home. Coverage, fares and subscription prices come from the signed data. #}
-{%- from "components/signs.njk" import sign with context -%}
 {%- from "components/media.njk" import picture with context -%}
 {%- from "components/content.njk" import ticket with context -%}
 {%- from "components/calls.njk" import cta with context -%}
@@ -27,32 +26,6 @@
       <p class="platform__lead">{{ h.hero.lead }}</p>
       {{ cta(ct + "hero", h.hero.underBadge, lang) }}
     </div>
-    <div class="hero-stage">
-      <div class="platform__screen">
-        {% if arabic %}
-        <img src="{{ '/assets/img/journey/dokki-lotus-ar.webp' | url }}" width="720" height="1472" alt="{{ h.hero.screenAlt }}" decoding="async">
-        {% else %}
-        {{ picture("screens/s03c-trip-map-light-framed", h.hero.screenAlt, "(max-width: 760px) 215px, 300px", "eager") }}
-        {% endif %}
-      </div>
-      {%- set felucca = atoms.atoms.price_felucca_hour %}
-      {%- set place = h.discover.ribbon[0] %}
-      {%- if felucca and felucca.siteUsable %}
-      <div class="hero-card hero-card--price" data-reveal style="--i: 2">
-        <span class="hero-card__label">{{ felucca[lang].title }}</span>
-        <span class="hero-card__value num"><bdi dir="ltr">{{ felucca.min }}–{{ felucca.max }} <small>{{ felucca.currency }}</small></bdi>{% if felucca.unit == "per_hour" %} <small>{{ h.hero.perHour }}</small>{% endif %}</span>
-        <span class="hero-card__meta">{{ strings[lang].estimate if felucca.estimate else strings[lang].checked }} · <bdi>{{ felucca.lastVerifiedAt | monthYear(lang) }}</bdi></span>
-      </div>
-      {%- endif %}
-      <div class="hero-card hero-card--routes" data-reveal style="--i: 3">
-        <span class="hero-card__icon" aria-hidden="true">{% icon "train" %}</span>
-        {{ sign(h.train.sign[0], h.train.sign[1], "route", lang) }}
-      </div>
-      <div class="hero-card hero-card--place" data-reveal style="--i: 4">
-        {{ picture(place.key, "", "48px", "lazy", "hero-card__thumb") }}
-        {{ sign(place.en, place.ar, "nile", lang) }}
-      </div>
-    </div>
   </div>
 </section>
 
@@ -65,157 +38,152 @@
   </dl>
 </section>
 
-{#- PLAN: the heart of the app -#}
+{#- Trip day: the itinerary on a phone, with whole cards from the app floating around it. Cards on the start side tuck
+    behind the phone, cards on the end side sit in front. On phones two cards stay. -#}
+{%- set td = h.tripDay -%}
+<section class="trip-stage" id="trip" aria-labelledby="trip-title">
+  <div class="home-intro" data-reveal>
+    <h2 id="trip-title">{{ td.title }}</h2>
+    <p>{{ td.body }}</p>
+  </div>
+  <div class="trip-stage__scene">
+    <div class="trip-stage__phone" data-reveal>{{ picture("screens/s03b-itinerary-light-framed", td.screenAlt, "(max-width: 760px) 58vw, 310px") }}</div>
+    {%- for c in td.cards %}
+    <div class="trip-card trip-card--{{ c.slot }}" data-reveal style="--i: {{ loop.index }}">{{ picture("cards/" + c.key, c.alt, "(max-width: 760px) 46vw, 300px") }}</div>
+    {%- endfor %}
+  </div>
+  <p class="trip-stage__note journey-note">{{ td.proNote }}</p>
+</section>
+
+{#- Each section below follows one pattern: a centred heading with one line, then one large visual. -#}
 <section class="journey-plan" id="plan" aria-labelledby="plan-title">
-  <div class="journey-grid">
-    <div class="journey-text" data-reveal>
-      <h2 id="plan-title">{{ h.plan.title }}</h2>
-      <ol class="plan-steps" aria-label="{{ h.plan.stepsLabel }}">
-        {%- for st in h.plan.steps %}
-        <li><span class="plan-steps__icon" aria-hidden="true">{% icon st[0] %}</span><div><h3>{{ st[1] }}</h3><p>{{ st[2] }}</p></div></li>
-        {%- endfor %}
-      </ol>
-      {{ textLink(h.plan.href | url, h.plan.link) }}
-    </div>
-    <figure class="day-photo" data-reveal style="--i: 1">
-      {{ picture("photos/P06" if arabic else "photos/P02", h.plan.photoAlt, "(max-width: 760px) 95vw, 580px") }}
-      <div class="day-photo__screen">
-        {% if arabic %}
-        <img src="{{ '/assets/img/journey/alexandria-day-ar.webp' | url }}" width="720" height="829" alt="{{ h.plan.screenAlt }}" loading="lazy" decoding="async">
-        {% else %}
-        {{ picture("screens/s03b-itinerary-light-framed", h.plan.screenAlt, "(max-width: 760px) 52vw, 270px") }}
-        {% endif %}
-      </div>
-    </figure>
+  <div class="home-intro" data-reveal>
+    <h2 id="plan-title">{{ h.plan.title }}</h2>
+    <p>{{ h.plan.body }}</p>
+    {{ textLink(h.plan.href | url, h.plan.link) }}
   </div>
-  <div class="journey-wide plan-more">
-    <div class="strip-line" data-reveal>
-      <div class="strip-line__track">
-        {%- for st in h.plan.strip.stops %}
-        <div class="strip-line__stop"><span class="art" aria-hidden="true">{{ art[st[2]] | safe }}</span>{{ sign(st[0], st[1], "plan", lang) }}</div>
-        {%- endfor %}
-      </div>
+  <figure class="day-photo" data-reveal style="--i: 1">
+    {{ picture("photos/P06" if arabic else "photos/P02", h.plan.photoAlt, "(max-width: 760px) 95vw, 1100px") }}
+    <div class="day-photo__screen">
+      {% if arabic %}
+      <img src="{{ '/assets/img/journey/alexandria-day-ar.webp' | url }}" width="720" height="829" alt="{{ h.plan.screenAlt }}" loading="lazy" decoding="async">
+      {% else %}
+      {{ picture("screens/s03c-trip-map-light-framed", h.plan.screenAlt, "(max-width: 760px) 52vw, 290px") }}
+      {% endif %}
     </div>
-    <aside class="paste-note" data-reveal style="--i: 1">
-      <span class="paste-note__icon" aria-hidden="true">{% icon "clipboard-text" %}</span>
-      <div><p class="paste-note__title">{{ h.plan.paste.title }}</p><p>{{ h.plan.paste.text }}</p></div>
-    </aside>
-  </div>
+  </figure>
 </section>
 
 <section class="journey-discover" id="discover" aria-labelledby="discover-title">
-  <div class="journey-wide">
-    <div class="discover-intro" data-reveal>
-      <h2 id="discover-title">{{ h.discover.title }}</h2>
-      <p>{{ h.discover.body }}</p>
-    </div>
-    <div class="city-gallery">
-      {% for city in h.discover.ribbon %}
-      <figure data-reveal style="--i: {{ loop.index0 }}">
-        {{ picture(city.key, city.alt, "(max-width: 600px) 46vw, 455px" if loop.first else "(max-width: 600px) 46vw, 320px") }}
-        <figcaption class="city-label">{{ city.ar if arabic else city.en }}</figcaption>
-      </figure>
-      {% endfor %}
-    </div>
+  <div class="home-intro" data-reveal>
+    <h2 id="discover-title">{{ h.discover.title }}</h2>
+    <p>{{ h.discover.body }}</p>
+  </div>
+  <div class="journey-wide city-gallery">
+    {% for city in h.discover.ribbon %}
+    <figure data-reveal style="--i: {{ loop.index0 }}">
+      {{ picture(city.key, city.alt, "(max-width: 600px) 46vw, 455px" if loop.first else "(max-width: 600px) 46vw, 320px") }}
+      <figcaption class="city-label">{{ city.ar if arabic else city.en }}</figcaption>
+    </figure>
+    {% endfor %}
   </div>
 </section>
 
-<section class="journey-step journey-step--rail" id="routes" aria-labelledby="rail-title">
-  <div class="journey-grid">
-    <div class="journey-text" data-reveal>
+{#- Cairo to Luxor: Ramses Station across the whole width, the question on the shaded side, and the app's own route
+    results floating over the hall. A card is listed in home/<lang>.json and shows once its image is built. -#}
+<section class="route-band" id="routes" aria-labelledby="rail-title">
+  <div class="route-band__scene">{{ picture("photos/P14", "", "(max-width: 760px) 300vw, 100vw") }}</div>
+  <div class="route-band__inner">
+    <div class="journey-text route-band__text" data-reveal>
       <h2 id="rail-title">{{ h.train.title }}</h2>
       <p>{{ h.train.body }}</p>
       {{ textLink(h.train.href | url, h.train.link) }}
     </div>
-    <div class="rail-photo" data-reveal style="--i: 1">
-      {{ picture("photos/P14", "", "(max-width: 760px) 95vw, 490px") }}
-      <img class="rail-table" src="{{ ('/assets/img/journey/timetable-' + lang + '.webp') | url }}" width="720" height="{{ 716 if arabic else 697 }}" loading="lazy" alt="{{ h.train.alt }}">
-    </div>
+    <ul class="route-band__cards" aria-label="{{ h.train.cardsLabel }}">
+      {%- for c in h.train.cards %}{% if images["cards/" + c.key] %}
+      <li class="route-card" data-reveal style="--i: {{ loop.index }}">{{ picture("cards/" + c.key, c.alt, "(max-width: 760px) 86vw, 380px") }}</li>
+      {%- endif %}{% endfor %}
+    </ul>
   </div>
 </section>
 
-<div class="journey-wide essentials">
-  <section class="essential" id="prices" aria-labelledby="arrival-title" data-reveal>
-    <div class="journey-text">
-      <h2 id="arrival-title">{{ h.price.title }}</h2>
-      <p>{{ h.price.body }}</p>
-      {{ textLink(h.price.href | url, h.price.link) }}
-    </div>
-    <div class="arrival-ticket">
-      {{ ticket("price_airport_taxi", lang) }}
-      {% if h.price.fullList.guide in guides.live %}{{ textLink(h.price.fullList.href | url, h.price.fullList.text) }}{% endif %}
-    </div>
-  </section>
-  <section class="essential" id="safety" aria-labelledby="safety-title" data-reveal style="--i: 1">
-    <div class="journey-text">
-      <h2 id="safety-title">{{ h.safety.title }}</h2>
-      <p>{{ h.safety.body }}</p>
-      {{ textLink(h.safety.href | url, h.safety.link) }}
-    </div>
-    <div class="safe-phones">
-      {{ picture("screens/s11-emergency-light-framed", h.safety.emergencyAlt, "(max-width: 760px) 40vw, 205px") }}
-      {{ picture("screens/s10-tips-light-framed", h.safety.tipsAlt, "(max-width: 760px) 40vw, 205px") }}
-    </div>
-  </section>
-</div>
+<section class="home-price" id="prices" aria-labelledby="arrival-title">
+  <div class="home-intro" data-reveal>
+    <h2 id="arrival-title">{{ h.price.title }}</h2>
+    <p>{{ h.price.body }}</p>
+    {{ textLink(h.price.href | url, h.price.link) }}
+  </div>
+  <div class="arrival-ticket" data-reveal style="--i: 1">
+    {{ ticket("price_airport_taxi", lang) }}
+    {% if h.price.fullList.guide in guides.live %}{{ textLink(h.price.fullList.href | url, h.price.fullList.text) }}{% endif %}
+  </div>
+</section>
+
+<section class="home-safety" id="safety" aria-labelledby="safety-title">
+  <div class="home-intro" data-reveal>
+    <h2 id="safety-title">{{ h.safety.title }}</h2>
+    <p>{{ h.safety.body }}</p>
+    {{ textLink(h.safety.href | url, h.safety.link) }}
+  </div>
+  <div class="safe-phones">
+    <div data-reveal style="--i: 1">{{ picture("screens/s11-emergency-light-framed", h.safety.emergencyAlt, "(max-width: 760px) 44vw, 250px") }}</div>
+    <div data-reveal style="--i: 2">{{ picture("screens/s10-tips-light-framed", h.safety.tipsAlt, "(max-width: 760px) 44vw, 250px") }}</div>
+  </div>
+</section>
 
 <section class="journey-maker" id="maker" aria-labelledby="maker-title">
-  <div class="journey-grid">
-    <div class="journey-text" data-reveal>
-      <h2 id="maker-title">{{ h.maker.title }}</h2>
-      <p>{{ h.maker.note }}</p>
-      <p class="maker-signature">{{ h.maker.signature }}</p>
-      {{ textLink(h.maker.href | url, h.maker.link) }}
-    </div>
-    <div class="traveller-review" data-reveal style="--i: 1">
-      <figure lang="en" dir="ltr">
-        <blockquote>“{{ h.maker.review.text }}”</blockquote>
-        <figcaption>{{ h.maker.review.who }} · {{ h.maker.review.store }} · {{ h.maker.review.date }}</figcaption>
-      </figure>
-      <details class="review-details">
-        <summary>{{ h.maker.moreLabel }} {% icon "caret-down" %}</summary>
-        <ul class="more-reviews" lang="en" dir="ltr">
-          {%- for r in h.maker.more %}
-          <li><figure><blockquote>“{{ r.text }}”</blockquote><figcaption>{{ r.who }} · {{ r.store }} · {{ r.date }}</figcaption></figure></li>
-          {%- endfor %}
-        </ul>
-      </details>
-      {%- if h.maker.reviewsNote %}<p class="journey-note">{{ h.maker.reviewsNote }}</p>{% endif %}
-      {{ textLink((ct + "reviews") | appLink, h.maker.reviewsLink) }}
-    </div>
+  <div class="home-intro" data-reveal>
+    <h2 id="maker-title">{{ h.maker.title }}</h2>
+    <p>{{ h.maker.note }}</p>
+    <p class="maker-signature">{{ h.maker.signature }}</p>
+    {{ textLink(h.maker.href | url, h.maker.link) }}
   </div>
 </section>
 
+{#- One traveller's words on their own, large; the rest stay one tap away. Reviews keep their language and attribution. -#}
+<div class="home-review">
+  <figure class="home-review__quote" lang="en" dir="ltr" data-reveal>
+    <blockquote>“{{ h.maker.review.text }}”</blockquote>
+    <figcaption>{{ h.maker.review.who }} · {{ h.maker.review.store }} · {{ h.maker.review.date }}</figcaption>
+  </figure>
+  <details class="review-details" data-reveal style="--i: 1">
+    <summary>{{ h.maker.moreLabel }} {% icon "caret-down" %}</summary>
+    <ul class="more-reviews" lang="en" dir="ltr">
+      {%- for r in h.maker.more %}
+      <li><figure><blockquote>“{{ r.text }}”</blockquote><figcaption>{{ r.who }} · {{ r.store }} · {{ r.date }}</figcaption></figure></li>
+      {%- endfor %}
+    </ul>
+  </details>
+  {%- if h.maker.reviewsNote %}<p class="journey-note">{{ h.maker.reviewsNote }}</p>{% endif %}
+  {{ textLink((ct + "reviews") | appLink, h.maker.reviewsLink) }}
+</div>
+
 <section class="journey-plans" id="free-paid" aria-labelledby="plans-title">
-  <div class="journey-wide">
-    <h2 id="plans-title" data-reveal>{{ h.plans.title }}</h2>
-    <div class="plan-cards">
-      <article class="plan-card" data-reveal style="--i: 1">
-        <h3>{{ h.plans.free }}</h3>
-        <ul>{% for item in h.plans.freeItems %}<li>{% icon "check" %}<span>{{ item }}</span></li>{% endfor %}</ul>
-      </article>
-      <article class="plan-card plan-card--pro" data-reveal style="--i: 2">
-        <h3><bdi dir="ltr" lang="en">InEgypt <span class="pro-badge">PRO</span></bdi></h3>
-        <p class="plan-card__lead">{{ h.plans.proLead }}</p>
-        <ul>{% for item in h.plans.proItems %}<li>{% icon "check" %}<span>{{ item }}</span></li>{% endfor %}</ul>
-        <div class="plan-card__cta">
-          <p class="plan-card__price">{{ h.plans.proLine | fillFacts }}</p>
-          <p class="journey-note">{{ h.plans.currency }}</p>
-          <a class="btn" href="{{ h.plans.featuresHref | url }}">{{ h.plans.features }}</a>
-        </div>
-      </article>
-    </div>
+  <div class="home-intro" data-reveal><h2 id="plans-title">{{ h.plans.title }}</h2></div>
+  <div class="journey-wide plan-cards">
+    <article class="plan-card" data-reveal style="--i: 1">
+      <h3>{{ h.plans.free }}</h3>
+      <ul>{% for item in h.plans.freeItems %}<li>{% icon "check" %}<span>{{ item }}</span></li>{% endfor %}</ul>
+    </article>
+    <article class="plan-card plan-card--pro" data-reveal style="--i: 2">
+      <h3><bdi dir="ltr" lang="en">InEgypt <span class="pro-badge">PRO</span></bdi></h3>
+      <p class="plan-card__lead">{{ h.plans.proLead }}</p>
+      <ul>{% for item in h.plans.proItems %}<li>{% icon "check" %}<span>{{ item }}</span></li>{% endfor %}</ul>
+      <div class="plan-card__cta">
+        <p class="plan-card__price">{{ h.plans.proLine | fillFacts }}</p>
+        <p class="journey-note">{{ h.plans.currency }}</p>
+        <a class="btn" href="{{ h.plans.featuresHref | url }}">{{ h.plans.features }}</a>
+      </div>
+    </article>
   </div>
 </section>
 
 <section class="journey-faq" id="faq" aria-labelledby="faq-title">
-  <div class="journey-wide">
-    <h2 id="faq-title" data-reveal>{{ h.faq.h2 }}</h2>
-    <div class="faq faq--cols">
-      {%- for it in h.faq.items %}
-      <details data-reveal style="--i: {{ loop.index0 + 1 }}"><summary><h3>{{ it.q }}</h3>{% icon "caret-down" %}</summary><p>{{ it.a | fillFacts }}{% if it.link %} <a href="{{ it.link.href | url }}">{{ it.link.text }}</a>{% endif %}</p></details>
-      {%- endfor %}
-    </div>
+  <div class="home-intro" data-reveal><h2 id="faq-title">{{ h.faq.h2 }}</h2></div>
+  <div class="faq faq--cols">
+    {%- for it in h.faq.items %}
+    <details data-reveal style="--i: {{ loop.index0 + 1 }}"><summary><h3>{{ it.q }}</h3>{% icon "caret-down" %}</summary><p>{{ it.a | fillFacts }}{% if it.link %} <a href="{{ it.link.href | url }}">{{ it.link.text }}</a>{% endif %}</p></details>
+    {%- endfor %}
   </div>
 </section>
 
